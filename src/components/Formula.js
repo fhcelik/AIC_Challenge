@@ -8,9 +8,9 @@ function renderError(error) {
   return "Parse Error (details in console)";
 }
 
-export default function Formula(props) {
+export default function Formula({ formula }) {
   return (
-    <InlineMath math={props.formula} renderError={renderError} />
+    <InlineMath math={formula} renderError={renderError} />
   );
 }
 
