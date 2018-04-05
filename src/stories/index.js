@@ -38,11 +38,22 @@ storiesOf('FormulaCard', module)
         {execFormula: "(-b - sqrt(b^2-4a*c))/(2a)", name: "x_2"}]}
     />
   ))
-  .add('mudweight', () => (
+  .add('mudweight ft', () => (
     <FormulaCard id={1}
       args={[
         {name:"pressure", value:5000, unit: "psi"},
         {name:"TVD", value:8000, unit: "ft"}
+      ]}
+      execFormulae={[
+        {execFormula: "pressure / TVD", name: "Equivalent mud weight", unit: "ppg"}
+      ]}
+    />
+  ))
+  .add('mudweight m', () => (
+    <FormulaCard id={1}
+      args={[
+        {name:"pressure", value:5000, unit: "psi"},
+        {name:"TVD", value:2500, unit: "m"}
       ]}
       execFormulae={[
         {execFormula: "pressure / TVD", name: "Equivalent mud weight", unit: "ppg"}

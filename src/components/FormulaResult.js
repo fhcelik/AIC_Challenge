@@ -4,13 +4,18 @@ import Formula from './Formula';
 import math from 'mathjs';
 
 export default function FormulaResult(props) {
-  const builtFormula = math.parse(props.unit ? `(${props.execFormula}) to ${props.unit}` : props.execFormula);
+  const builtFormula = math.parse(props.execFormula);
+  let convert = false;
+  if (props.unit) {
+    const unit = new math.expression.node.ConstantNode(props.unit);
+    convert = new math.expression.node.OperatorNode("to", "to", [builtFormula, unit]);
+  }
   const { scope } = props;
 
   return (
     <div className="formula-result">
       <Formula formula={`${props.name}=${builtFormula.toTex()}=
-      ${math.format(builtFormula.eval(scope))}
+      ${math.format(convert ? convert.eval(scope) : builtFormula.eval(scope))}
       `} />
     </div>
   );
