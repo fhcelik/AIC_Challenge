@@ -3,7 +3,10 @@ import { storiesOf } from '@storybook/react';
 import Formula from '../components/Formula';
 import FormulaResult from '../components/FormulaResult';
 import FormulaCard from '../components/FormulaCard';
+import math from 'mathjs';
 import '../App.css';
+
+math.createUnit('ppg', '1 lbf / gal');
 
 storiesOf('Formula', module)
   .add('basic TeX', () => (
@@ -33,6 +36,17 @@ storiesOf('FormulaCard', module)
       execFormulae={[
         {execFormula: "(-b + sqrt(b^2-4a*c))/(2a)", name: "x_1"},
         {execFormula: "(-b - sqrt(b^2-4a*c))/(2a)", name: "x_2"}]}
+    />
+  ))
+  .add('mudweight', () => (
+    <FormulaCard id={1}
+      args={[
+        {name:"pressure", value:5000, unit: "psi"},
+        {name:"TVD", value:8000, unit: "ft"}
+      ]}
+      execFormulae={[
+        {execFormula: "pressure / TVD", name: "Equivalent mud weight", unit: "ppg"}
+      ]}
     />
   ))
   .add('errors', () => (

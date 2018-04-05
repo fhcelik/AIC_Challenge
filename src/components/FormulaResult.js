@@ -4,7 +4,7 @@ import Formula from './Formula';
 import math from 'mathjs';
 
 export default function FormulaResult(props) {
-  const builtFormula = math.parse(props.execFormula);
+  const builtFormula = math.parse(props.unit ? `(${props.execFormula}) to ${props.unit}` : props.execFormula);
   const { scope } = props;
 
   return (
@@ -19,4 +19,5 @@ FormulaResult.propTypes = {
   name: PropTypes.string.isRequired,
   execFormula: PropTypes.string.isRequired,
   scope: PropTypes.object.isRequired,
+  unit: PropTypes.string,
 }

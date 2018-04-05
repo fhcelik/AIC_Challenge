@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, lifecycle, withState, withHandlers } from 'recompose';
+import math from 'mathjs';
 import FormulaResult from './FormulaResult';
 
 function buildArg(arg, onChange) {
+  const argUnit = arg.unit ? ` (${arg.unit})` : '';
   return (
     <div className="formula-arg" key={arg.name}>
       <label>
-        {arg.name}:
+        {`${arg.name}${argUnit}:`}
         <input name={arg.name} type="number" defaultValue={arg.value} onChange={onChange}/>
       </label>
     </div>
@@ -18,7 +20,9 @@ function buildResult(formula, scope) {
   return (
     <FormulaResult key={formula.name} name={formula.name}
       execFormula={formula.execFormula}
-      scope={scope}/>
+      scope={scope}
+      unit={formula.unit}
+    />
   );
 }
 
@@ -50,17 +54,19 @@ FormulaCard.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       value: PropTypes.number.isRequired,
+      unit: PropTypes.string,
     }).isRequired,
   ).isRequired,
   execFormulae: PropTypes.arrayOf(
     PropTypes.shape({
       execFormula: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      unit: PropTypes.string,
     }).isRequired,
   ).isRequired,
   onChange: PropTypes.func.isRequired,
   scope: PropTypes.objectOf(
-    PropTypes.number.isRequired,
+    PropTypes.object.isRequired,
   ).isRequired,
   updateScope: PropTypes.func.isRequired,
   hasError: PropTypes.bool
@@ -70,7 +76,8 @@ const enhance = compose(
   withState('scope', 'updateScope', props => {
     const scope = {};
     for (const arg of props.args) {
-      scope[arg.name] = arg.value;
+      scope[arg.name] = arg.unit ?
+        math.unit(arg.value, arg.unit) : arg.value;
     }
     return scope;
   }),
