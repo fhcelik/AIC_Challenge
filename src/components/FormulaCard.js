@@ -31,13 +31,14 @@ buildArg(arg) {
 }
 
 buildResult(formula) {
-  let fun = math.compile(formula.execFormula);
+  const builtFormula = math.parse(formula.execFormula);
   const scope = this.state;
 
   return (
     <div className="formula-result" key={formula.name}>
-      {formula.name}:
-      {fun.eval(scope).toString()}
+      <Formula formula={builtFormula.toTex()} />
+      <Formula formula={"="} />
+      {math.format(builtFormula.eval(scope))}
     </div>
   );
 }
@@ -51,7 +52,6 @@ render() {
       <div className="formula-args">
         {args}
       </div>
-      <Formula formula={props.displayFormula}/>
       <div className="formula-results">
         {results}
       </div>

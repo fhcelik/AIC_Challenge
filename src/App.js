@@ -25,8 +25,8 @@ class App extends Component {
             {name:"c",value:4}]}
           displayFormula="x = {-b \pm \sqrt{b^2-4ac} \over 2a}"
           execFormulae={[
-            {execFormula: "-b + sqrt(b^2-4a*c)/(2a)", name: "$$x_1$$"},
-            {execFormula: "-b - sqrt(b^2-4a*c)/(2a)", name: "$$x_2$$"}]}
+            {execFormula: "(-b + sqrt(b^2-4a*c))/(2a)", name: "x_1"},
+            {execFormula: "(-b - sqrt(b^2-4a*c))/(2a)", name: "x_2"}]}
         />
       </div>
     );
