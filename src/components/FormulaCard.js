@@ -74,7 +74,6 @@ FormulaCard.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  displayFormula: PropTypes.string.isRequired,
 };
 
 export default FormulaCard;
