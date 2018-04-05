@@ -8,7 +8,7 @@ export default function FormulaResult(props) {
   const { scope } = props;
 
   return (
-    <div className="formula-result" key={props.name}>
+    <div className="formula-result">
       <Formula formula={`${props.name}=${builtFormula.toTex()}=
       ${math.format(builtFormula.eval(scope))}
       `} />

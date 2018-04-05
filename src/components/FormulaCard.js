@@ -1,58 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose, lifecycle, withState, withHandlers } from 'recompose';
 import FormulaResult from './FormulaResult';
 
-class FormulaCard extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    const scope = {};
-    for (const arg of props.args) {
-      scope[arg.name] = arg.value;
-    }
-    this.state = {scope, hasError: false };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-handleChange(event) {
-  const newScope = Object.assign({}, this.state.scope);
-  newScope[event.target.name] = event.target.value;
-  this.setState({scope: newScope});
-}
-
-componentDidCatch(error, info) {
-  this.setState({ hasError: true});
-  console.log(error.message);
-}
-
-buildArg(arg) {
+function buildArg(arg, onChange) {
   return (
     <div className="formula-arg" key={arg.name}>
       <label>
         {arg.name}:
-        <input name={arg.name} type="number" defaultValue={arg.value} onChange={this.handleChange}/>
+        <input name={arg.name} type="number" defaultValue={arg.value} onChange={onChange}/>
       </label>
-    </div>);
-}
-
-buildResult(formula) {
-  return (
-    <FormulaResult name={formula.name}
-      execFormula={formula.execFormula}
-      scope={this.state.scope}/>
+    </div>
   );
 }
 
-render() {
-  const { props } = this;
-  if (this.state.hasError) {
+function buildResult(formula, scope) {
+  return (
+    <FormulaResult key={formula.name} name={formula.name}
+      execFormula={formula.execFormula}
+      scope={scope}/>
+  );
+}
+
+function FormulaCard(props) {
+  if (props.hasError) {
     return (
       <div className="formula-card" key={props.id}>
         Invalid formula
       </div>
     );
   }
-  const args = props.args.map(arg => this.buildArg(arg));
-  const results = props.execFormulae.map(formula => this.buildResult(formula));
+  const args = props.args.map(arg => buildArg(arg, props.onChange));
+  const results = props.execFormulae.map(formula => buildResult(formula, props.scope));
   return (
     <div className="formula-card" key={props.id}>
       <div className="formula-args">
@@ -63,7 +42,6 @@ render() {
       </div>
     </div>
   );
-}
 }
 
 FormulaCard.propTypes = {
@@ -80,6 +58,39 @@ FormulaCard.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  onChange: PropTypes.func.isRequired,
+  scope: PropTypes.objectOf(
+    PropTypes.number.isRequired,
+  ).isRequired,
+  updateScope: PropTypes.func.isRequired,
+  hasError: PropTypes.bool
 };
 
-export default FormulaCard;
+const enhance = compose(
+  withState('scope', 'updateScope', props => {
+    const scope = {};
+    for (const arg of props.args) {
+      scope[arg.name] = arg.value;
+    }
+    return scope;
+  }),
+  withHandlers({
+    onChange: ({ updateScope }) => event => {
+      const name = event.target.name;
+      const value = Number(event.target.value);
+      updateScope(scope => {
+        const newScope = Object.assign({}, scope);
+        newScope[name] = value;
+        return newScope;
+      })
+    }
+  }),
+  lifecycle({
+    componentDidCatch(error, info) {
+      this.setState({ hasError: true });
+      console.log(error.message);
+    }
+  })
+);
+
+export default enhance(FormulaCard);
