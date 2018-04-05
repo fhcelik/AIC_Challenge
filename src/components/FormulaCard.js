@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Formula from './Formula';
-import math from 'mathjs';
+import FormulaResult from './FormulaResult';
 
 class FormulaCard extends React.PureComponent {
   constructor(props) {
@@ -10,14 +9,19 @@ class FormulaCard extends React.PureComponent {
     for (const arg of props.args) {
       scope[arg.name] = arg.value;
     }
-    this.state = scope;
+    this.state = {scope, hasError: false };
     this.handleChange = this.handleChange.bind(this);
   }
 
 handleChange(event) {
-  const newScope = {};
+  const newScope = Object.assign({}, this.state.scope);
   newScope[event.target.name] = event.target.value;
-  this.setState(newScope);
+  this.setState({scope: newScope});
+}
+
+componentDidCatch(error, info) {
+  this.setState({ hasError: true});
+  console.log(error.message);
 }
 
 buildArg(arg) {
@@ -31,20 +35,22 @@ buildArg(arg) {
 }
 
 buildResult(formula) {
-  const builtFormula = math.parse(formula.execFormula);
-  const scope = this.state;
-
   return (
-    <div className="formula-result" key={formula.name}>
-      <Formula formula={builtFormula.toTex()} />
-      <Formula formula={"="} />
-      {math.format(builtFormula.eval(scope))}
-    </div>
+    <FormulaResult name={formula.name}
+      execFormula={formula.execFormula}
+      scope={this.state.scope}/>
   );
 }
 
 render() {
   const { props } = this;
+  if (this.state.hasError) {
+    return (
+      <div className="formula-card" key={props.id}>
+        Invalid formula
+      </div>
+    );
+  }
   const args = props.args.map(arg => this.buildArg(arg));
   const results = props.execFormulae.map(formula => this.buildResult(formula));
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Formula from '../components/Formula';
+import FormulaResult from '../components/FormulaResult';
 import FormulaCard from '../components/FormulaCard';
 import '../App.css';
 
@@ -17,6 +18,11 @@ storiesOf('Formula', module)
     </p>
   ))
 
+storiesOf('FormulaResult', module)
+  .add('polynomial x=3', () => (
+    <FormulaResult name="y_1" execFormula="x^2+x" scope={({x:3})}/>
+  ))
+
 storiesOf('FormulaCard', module)
   .add('quadratic theorem', () => (
     <FormulaCard id={0}
@@ -27,5 +33,16 @@ storiesOf('FormulaCard', module)
       execFormulae={[
         {execFormula: "(-b + sqrt(b^2-4a*c))/(2a)", name: "x_1"},
         {execFormula: "(-b - sqrt(b^2-4a*c))/(2a)", name: "x_2"}]}
+    />
+  ))
+  .add('errors', () => (
+    <FormulaCard id={1}
+      args={[
+        {name:"x",value:1},
+        {name:"y",value:2}
+      ]}
+      execFormulae={[
+        {execFormula: "x^2+y+z", name: "w"}
+      ]}
     />
   ))
