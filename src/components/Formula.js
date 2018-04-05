@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { renderToString } from 'katex';
+import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
+function renderError(error) {
+  console.error(error.message);
+  return "Parse Error (details in console)";
+}
+
 export default function Formula(props) {
-  const rendered = {};
-  try {
-    rendered.__html = renderToString(props.formula);
-  } catch (err) {
-    console.error(err.message);
-    rendered.__html = "Parse Error (details in console)";
-  }
   return (
-    <span className="formula" dangerouslySetInnerHTML={rendered}/>
+    <InlineMath math={props.formula} renderError={renderError} />
   );
 }
 
