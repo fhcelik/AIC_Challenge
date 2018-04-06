@@ -27,7 +27,7 @@ function buildArg(arg, onChange) {
   } else {
     return (
       <div className="formula-arg" key={arg.name}>
-        <TextField label={label} type="number" defaultValue={arg.value} onChange={onChange}
+        <TextField name={arg.name} label={label} type="number" defaultValue={arg.value} onChange={onChange}
           InputProps={{endAdornment: <InputAdornment position="end">{argUnit}</InputAdornment>}}
         />
       </div>
