@@ -98,7 +98,15 @@ function evalFormula(state, formulaCardId) {
     const value = exists(cardArg.refId) ?
       evalFormula(state, cardArg.refId) :
       exists(cardArg.value) ? cardArg.value : arg.value;
-    scope[arg.name] = exists(unit) ? math.unit(value, unit) : value;
+    if (exists(unit)) {
+      if (typeof(value) === typeof(math.unit(unit))) {
+        scope[arg.name] = value.to(unit);
+      } else {
+        scope[arg.name] = math.unit(value, unit);
+      }
+    } else {
+      scope[arg.name] = value;
+    }
   }
 
   const builtFormula = math.parse(formula.result.execFormula);
