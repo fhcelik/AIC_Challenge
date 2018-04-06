@@ -23,6 +23,9 @@ export default function FormulaResult(props) {
 FormulaResult.propTypes = {
   name: PropTypes.string.isRequired,
   execFormula: PropTypes.string.isRequired,
-  scope: PropTypes.object.isRequired,
+  scope: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.instanceOf(math.type.Unit),
+      PropTypes.number,
+  ])).isRequired,
   unit: PropTypes.string,
 }

@@ -2,16 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, lifecycle, withState, withHandlers } from 'recompose';
 import math from 'mathjs';
+import TextField from 'material-ui/TextField';
 import FormulaResult from './FormulaResult';
 
 function buildArg(arg, onChange) {
   const argUnit = arg.unit ? ` (${arg.unit})` : '';
   return (
     <div className="formula-arg" key={arg.name}>
-      <label>
-        {`${arg.name}${argUnit}:`}
-        <input name={arg.name} type="number" defaultValue={arg.value} onChange={onChange}/>
-      </label>
+      <TextField name={arg.name} label={`${arg.name}${argUnit}:`} type="number" defaultValue={arg.value} onChange={onChange}/>
     </div>
   );
 }
@@ -65,9 +63,10 @@ FormulaCard.propTypes = {
     }).isRequired,
   ).isRequired,
   onChange: PropTypes.func.isRequired,
-  scope: PropTypes.objectOf(
-    PropTypes.object.isRequired,
-  ).isRequired,
+  scope: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.instanceOf(math.type.Unit),
+      PropTypes.number,
+  ])).isRequired,
   updateScope: PropTypes.func.isRequired,
   hasError: PropTypes.bool
 };
