@@ -5,24 +5,39 @@ import { connect } from 'react-redux';
 import { compose, lifecycle, withHandlers, pure } from 'recompose';
 import math from 'mathjs';
 import TextField from 'material-ui/TextField';
+import { InputLabel } from 'material-ui/Input';
 import FormulaResult from './FormulaResult';
 import { changeFormulaArg } from '../Actions';
 
-function buildArg(arg, onChange) {
-  const argUnit = arg.unit ? ` (${arg.unit})` : '';
-  return (
-    <div className="formula-arg" key={arg.name}>
-      <TextField name={arg.name} label={`${arg.name}${argUnit}:`} type="number" defaultValue={arg.value} onChange={onChange}/>
-    </div>
-  );
+function exists(obj) {
+  return "undefined" !== typeof(obj);
 }
 
-function buildResult(formula, scope) {
+function buildArg(arg, onChange) {
+  const argUnit = arg.unit ? ` (${arg.unit})` : '';
+  const label = `${arg.name}${argUnit}:`;
+
+  if (exists(arg.refId)) {
+    return (
+      <div className="formula-arg" key={arg.name}>
+        <InputLabel>{label}</InputLabel>
+        <EnhancedFormulaCard id={arg.refId} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="formula-arg" key={arg.name}>
+        <TextField name={arg.name} label={label} type="number" defaultValue={arg.value} onChange={onChange}/>
+      </div>
+    );
+  }
+}
+
+function buildResult(formula) {
   return (
     <FormulaResult key={formula.name} name={formula.name}
-      execFormula={formula.execFormula}
-      scope={scope}
-      unit={formula.unit}
+      displayFormula={formula.displayFormula}
+      result={formula.result}
     />
   );
 }
@@ -35,9 +50,7 @@ function FormulaCard(props) {
       </div>
     );
   }
-  const scope = {};
   const args = props.args.map(arg => {
-    scope[arg.name] = arg.unit ? math.unit(arg.value, arg.unit) : arg.value;
     return buildArg(arg, props.onChange)
   });
   return (
@@ -46,7 +59,7 @@ function FormulaCard(props) {
         {args}
       </div>
       <div className="formula-results">
-        {buildResult(props.result, scope)}
+        {buildResult(props.result)}
       </div>
     </div>
   );
@@ -59,39 +72,65 @@ FormulaCard.propTypes = {
       name: PropTypes.string.isRequired,
       value: PropTypes.number,
       unit: PropTypes.string,
+      refId: PropTypes.number,
     }).isRequired,
   ).isRequired,
   result: PropTypes.shape({
-      execFormula: PropTypes.string.isRequired,
+      displayFormula: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       unit: PropTypes.string,
+      result: PropTypes.string,
   }).isRequired,
   onChange: PropTypes.func.isRequired,
   updateScope: PropTypes.func.isRequired,
   hasError: PropTypes.bool
 };
 
+function evalFormula(state, formulaCardId) {
+  const fc = state.formulaCards[formulaCardId];
+  const formula = state.formulas[fc.formula];
+
+  const scope = {};
+  for(const arg of formula.args) {
+    scope[arg.name] = 0;
+    const cardArg = fc.argvals[arg.name];
+    const unit = exists(cardArg.unit) ? cardArg.unit : arg.unit;
+    const value = exists(cardArg.refId) ?
+      evalFormula(state, cardArg.refId) :
+      exists(cardArg.value) ? cardArg.value : arg.value;
+    scope[arg.name] = exists(unit) ? math.unit(value, unit) : value;
+  }
+
+  const builtFormula = math.parse(formula.result.execFormula);
+  let convert = builtFormula;
+  const resultUnit = formula.result.unit;
+  if (resultUnit) {
+    const unit = new math.expression.node.ConstantNode(resultUnit);
+    convert = new math.expression.node.OperatorNode("to", "to", [builtFormula, unit]);
+  }
+  return convert.eval(scope);
+}
+
 const enhance = compose(
   lifecycle({
     componentDidCatch(error, info) {
       this.setState({ hasError: true });
-      console.log(error.message);
-    }
+      console.log(error.message); }
   }),
   connect(
     (state, { id }) => {
       const fc = state.formulaCards[id];
-      const args = state.formulas[fc.formula].args.map(arg =>
-        Object.assign({}, arg, {
-          value: fc.argvals[arg.name].value ? fc.argvals[arg.name].value : 0,
-          unit: fc.argvals[arg.name].unit,
-        })
-      );
-
-      return ({
-        args,
-        result: state.formulas[fc.formula].result,
+      const formula = state.formulas[fc.formula];
+      const args = formula.args.map(arg => {
+        const base = {value: 0};
+        Object.assign(base, arg, fc.argvals[arg.name])
+        return base;
       });
+      const result = Object.assign(
+        {displayFormula: math.parse(formula.result.execFormula).toTex(),
+        result: math.format(evalFormula(state, id))},
+        formula.result);
+      return {args, result};
     },
     dispatch => bindActionCreators({
       updateScope: changeFormulaArg,
@@ -107,4 +146,5 @@ const enhance = compose(
   pure,
 );
 
-export default enhance(FormulaCard);
+const EnhancedFormulaCard = enhance(FormulaCard);
+export default EnhancedFormulaCard;

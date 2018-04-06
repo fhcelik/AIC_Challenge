@@ -37,6 +37,15 @@ store.dispatch(addFormula(
     {execFormula: "x^2 + y + z", name: "error"}
 ));
 
+store.dispatch(addFormula(
+    [
+      {name:"MW", value:12, unit: "ppg"},
+      {name:"TVD", value:8000, unit: "ft"}
+    ],
+    {execFormula: "MW * TVD", name: "Pressure", unit: "psi"}
+
+));
+
 store.dispatch(addFormulaCard(0, {
   a: ({value:1}),
   b: ({value:8}),
@@ -57,6 +66,18 @@ store.dispatch(addFormulaCard(2, {
   x: ({value:1}),
   y: ({value:3}),
 }));
+
+store.dispatch(addFormulaCard(0, {
+  a: ({value:1}),
+  b: ({refId:0}),
+  c: ({value:4})
+}));
+
+store.dispatch(addFormulaCard(3, {
+  MW: ({refId: 1}),
+  TVD: ({value:8000, unit:"ft"})
+}));
+
 
 math.createUnit('ppg', '1 lbf / gal');
 
@@ -95,4 +116,10 @@ storiesOf('FormulaCard', module)
   ))
   .add('errors', () => (
     <FormulaCard id={3} />
+  ))
+  .add('quadratic from quadratic', () => (
+    <FormulaCard id={4} />
+  ))
+  .add('pressure from mudweight', () => (
+    <FormulaCard id={5} />
   ))
