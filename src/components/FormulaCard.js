@@ -72,13 +72,6 @@ FormulaCard.propTypes = {
 };
 
 const enhance = compose(
-  withHandlers({
-    onChange: ({ id, updateScope }) => event => {
-      const newScope = {};
-      newScope[event.target.name] = Number(event.target.value);
-      updateScope(id, newScope);
-    }
-  }),
   lifecycle({
     componentDidCatch(error, info) {
       this.setState({ hasError: true });
@@ -104,6 +97,13 @@ const enhance = compose(
       updateScope: changeFormulaArg,
     }, dispatch)
   ),
+  withHandlers({
+    onChange: ({ id, updateScope }) => event => {
+      const newScope = {};
+      newScope[event.target.name] = { value: Number(event.target.value) };
+      updateScope(id, newScope);
+    }
+  }),
   pure,
 );
 
