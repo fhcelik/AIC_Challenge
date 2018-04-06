@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.4.0",
+    "redux-devtools-extension": "^2.13.2",
     "storybook": "^1.0.0"
   }
 }

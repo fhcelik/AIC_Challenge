@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, lifecycle, withState, withHandlers } from 'recompose';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { compose, lifecycle, withHandlers, pure } from 'recompose';
 import math from 'mathjs';
 import TextField from 'material-ui/TextField';
 import FormulaResult from './FormulaResult';
+import { changeFormulaArg } from '../Actions';
 
 function buildArg(arg, onChange) {
   const argUnit = arg.unit ? ` (${arg.unit})` : '';
@@ -32,15 +35,18 @@ function FormulaCard(props) {
       </div>
     );
   }
-  const args = props.args.map(arg => buildArg(arg, props.onChange));
-  const results = props.execFormulae.map(formula => buildResult(formula, props.scope));
+  const scope = {};
+  const args = props.args.map(arg => {
+    scope[arg.name] = arg.unit ? math.unit(arg.value, arg.unit) : arg.value;
+    return buildArg(arg, props.onChange)
+  });
   return (
     <div className="formula-card" key={props.id}>
       <div className="formula-args">
         {args}
       </div>
       <div className="formula-results">
-        {results}
+        {buildResult(props.result, scope)}
       </div>
     </div>
   );
@@ -51,44 +57,26 @@ FormulaCard.propTypes = {
   args: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
+      value: PropTypes.number,
       unit: PropTypes.string,
     }).isRequired,
   ).isRequired,
-  execFormulae: PropTypes.arrayOf(
-    PropTypes.shape({
+  result: PropTypes.shape({
       execFormula: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       unit: PropTypes.string,
-    }).isRequired,
-  ).isRequired,
+  }).isRequired,
   onChange: PropTypes.func.isRequired,
-  scope: PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.instanceOf(math.type.Unit),
-      PropTypes.number,
-  ])).isRequired,
   updateScope: PropTypes.func.isRequired,
   hasError: PropTypes.bool
 };
 
 const enhance = compose(
-  withState('scope', 'updateScope', props => {
-    const scope = {};
-    for (const arg of props.args) {
-      scope[arg.name] = arg.unit ?
-        math.unit(arg.value, arg.unit) : arg.value;
-    }
-    return scope;
-  }),
   withHandlers({
-    onChange: ({ updateScope }) => event => {
-      const name = event.target.name;
-      const value = Number(event.target.value);
-      updateScope(scope => {
-        const newScope = Object.assign({}, scope);
-        newScope[name] = value;
-        return newScope;
-      })
+    onChange: ({ id, updateScope }) => event => {
+      const newScope = {};
+      newScope[event.target.name] = Number(event.target.value);
+      updateScope(id, newScope);
     }
   }),
   lifecycle({
@@ -96,7 +84,27 @@ const enhance = compose(
       this.setState({ hasError: true });
       console.log(error.message);
     }
-  })
+  }),
+  connect(
+    (state, { id }) => {
+      const fc = state.formulaCards[id];
+      const args = state.formulas[fc.formula].args.map(arg =>
+        Object.assign({}, arg, {
+          value: fc.argvals[arg.name].value ? fc.argvals[arg.name].value : 0,
+          unit: fc.argvals[arg.name].unit,
+        })
+      );
+
+      return ({
+        args,
+        result: state.formulas[fc.formula].result,
+      });
+    },
+    dispatch => bindActionCreators({
+      updateScope: changeFormulaArg,
+    }, dispatch)
+  ),
+  pure,
 );
 
 export default enhance(FormulaCard);
