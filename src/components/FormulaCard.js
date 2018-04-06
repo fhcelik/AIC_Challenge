@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { compose, lifecycle, withHandlers, pure } from 'recompose';
 import math from 'mathjs';
 import TextField from 'material-ui/TextField';
-import { InputLabel } from 'material-ui/Input';
+import { InputAdornment, InputLabel } from 'material-ui/Input';
 import FormulaResult from './FormulaResult';
 import { changeFormulaArg } from '../Actions';
 
@@ -14,8 +14,8 @@ function exists(obj) {
 }
 
 function buildArg(arg, onChange) {
-  const argUnit = arg.unit ? ` (${arg.unit})` : '';
-  const label = `${arg.name}${argUnit}:`;
+  const argUnit = arg.unit ? ` ${arg.unit}` : '';
+  const label = `${arg.name}:`;
 
   if (exists(arg.refId)) {
     return (
@@ -27,7 +27,9 @@ function buildArg(arg, onChange) {
   } else {
     return (
       <div className="formula-arg" key={arg.name}>
-        <TextField name={arg.name} label={label} type="number" defaultValue={arg.value} onChange={onChange}/>
+        <TextField label={label} type="number" defaultValue={arg.value} onChange={onChange}
+          InputProps={{endAdornment: <InputAdornment position="end">{argUnit}</InputAdornment>}}
+        />
       </div>
     );
   }
