@@ -6,15 +6,6 @@ import Typography from 'material-ui/Typography';
 import CalculatorArgument from './CalculatorArgument';
 import FormulaResult from './FormulaResult';
 
-function buildResult(formula) {
-  return (
-    <FormulaResult key={formula.name} name={formula.name}
-      displayFormula={formula.displayFormula}
-      result={formula.result}
-    />
-  );
-}
-
 export default function Calculator(props) {
   if (props.hasError) {
     return (
@@ -29,7 +20,8 @@ export default function Calculator(props) {
   const args = props.args.map(arg => (
     <CalculatorArgument key={arg.name}
       arg={arg}
-      onArgChange={props.onArgChange}
+      onArgValueChange={props.onArgValueChange}
+      onArgUnitChange={props.onArgUnitChange}
       setArgToFormula={props.setArgToFormula}
     />
   ));
@@ -44,9 +36,7 @@ export default function Calculator(props) {
       <div className="calculator-args">
         {args}
       </div>
-      <div className="calculator-results">
-        {buildResult(props.result)}
-      </div>
+      <FormulaResult {...props.result} onResultUnitChange={props.onResultUnitChange} />
     </div>
   );
 }
@@ -65,16 +55,18 @@ Calculator.propTypes = {
       ).isRequired,
     }).isRequired,
   ).isRequired,
+  onArgValueChange: PropTypes.func.isRequired,
+  onArgUnitChange: PropTypes.func.isRequired,
   result: PropTypes.shape({
       displayFormula: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       unit: PropTypes.string,
       result: PropTypes.string,
   }).isRequired,
+  onResultUnitChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onArgChange: PropTypes.func.isRequired,
   setArgToFormula: PropTypes.func.isRequired,
   hasError: PropTypes.bool
 };

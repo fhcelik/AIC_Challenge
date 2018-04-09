@@ -8,6 +8,7 @@ import Formula from '../components/Formula';
 import FormulaResult from '../components/FormulaResult';
 import Calculator from '../containers/Calculator';
 import Dashboard from '../containers/Dashboard';
+import UnitSelect from '../components/UnitSelect';
 import math from 'mathjs';
 import '../App.css';
 
@@ -132,7 +133,7 @@ storiesOf('Formula', module)
 
 storiesOf('FormulaResult', module)
   .add('polynomial x=3', () => (
-    <FormulaResult name="y_1" execFormula="x^2+x" scope={({x:3})}/>
+    <FormulaResult name="y_1" displayFormula="x^2+x" result="12"/>
   ))
 
 storiesOf('Calculator', module)
@@ -158,6 +159,17 @@ storiesOf('Calculator', module)
   ))
   .add('pressure from mudweight', () => (
     <Calculator id={nestedPressureCalcId} />
+  ))
+
+storiesOf('UnitSelect', module)
+  .add('Length', () => (
+    <UnitSelect name="Length" defaultUnit="m" onChange={(event) => console.log(event.target.value)} />
+  ))
+  .add('Pressure', () => (
+    <UnitSelect name="Pressure" defaultUnit="psi" onChange={(event) => console.log(event.target.value)} />
+  ))
+  .add('Density', () => (
+    <UnitSelect name="Density" defaultUnit="ppg" onChange={(event) => console.log(event.target.value)} />
   ))
 
 storiesOf('Dashboard', module)

@@ -7,3 +7,5 @@ export const changeCalculatorArg = createAction("@@calcoola/calculator/argument-
 export const addCalculatorFormulaArg = createAction("@@calcoola/calculator/formula-argument-add");
 
 export const removeCalculatorFormulaArg = createAction("@@calcoola/calculator/formula-argument-remove");
+
+export const changeCalculatorResult = createAction("@@calcoola/calculator/result-change");

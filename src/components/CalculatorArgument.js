@@ -5,9 +5,9 @@ import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import TextField from 'material-ui/TextField';
 import Calculator, { ENTER_VALUE } from '../containers/Calculator';
+import UnitSelect from './UnitSelect';
 
-export default function CalculatorArgument({arg, onArgChange, setArgToFormula}) {
-  const argUnit = arg.unit ? ` ${arg.unit}` : '';
+export default function CalculatorArgument({arg, onArgValueChange, onArgUnitChange, setArgToFormula}) {
   const formulas = [(
     <MenuItem key={arg.name} value={arg.name}>{arg.name}:</MenuItem>), (
     <MenuItem key={`${arg.name}=`} value={ENTER_VALUE}>{ENTER_VALUE}</MenuItem>)]
@@ -32,8 +32,10 @@ export default function CalculatorArgument({arg, onArgChange, setArgToFormula}) 
   } else {
     return (
       <div className="formula-arg">
-        <TextField name={arg.name} label={label} type="number" value={arg.value} onChange={onArgChange}
-          InputProps={{endAdornment: <InputAdornment position="end">{argUnit}</InputAdornment>}}
+        <TextField name={arg.name} label={label} type="number" value={arg.value} onChange={onArgValueChange}
+          InputProps={arg.unit ? {endAdornment: (<InputAdornment position="end">
+            <UnitSelect name={arg.name} defaultUnit={arg.unit} onChange={onArgUnitChange} />
+          </InputAdornment>)} : null}
         />
       </div>
     );
@@ -51,6 +53,7 @@ CalculatorArgument.propTypes = {
       title: PropTypes.string.isRequired})
     ).isRequired,
   }),
-  onArgChange: PropTypes.func.isRequired,
+  onArgValueChange: PropTypes.func.isRequired,
+  onArgUnitChange: PropTypes.func.isRequired,
   setArgToFormula: PropTypes.func.isRequired,
 }

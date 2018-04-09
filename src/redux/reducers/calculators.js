@@ -42,4 +42,8 @@ export default handleActions({
     }
     return recursiveDelete(calculators, payload);
   },
+  [Actions.changeCalculatorResult]: (calculators, { payload: {id, result} }) =>
+    R.assocPath([id, 'result'],
+      R.merge(calculators[id].result, result),
+      calculators),
 }, {});
