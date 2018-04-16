@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import createStore from '../redux/store';
 import { addFormula } from '../redux/actions/formulas';
 import { addCalculator } from '../redux/actions/calculators';
@@ -25,7 +25,6 @@ store.dispatch(addFormula({
 }));
 
 const quadraticId = Object.keys(store.getState().formulas).find(id => "Quadratic Formula" === store.getState().formulas[id].title);
-const test = store.getState();
 
 store.dispatch(addFormula({
     args: [
