@@ -69,7 +69,7 @@ store.dispatch(addCalculator({formula: quadraticId, argvals: {
   a: ({value:1}),
   b: ({value:8}),
   c: ({value:-9})
-}, isTop: false}));
+}}));
 
 const quadraticCalcId = Object.keys(store.getState().calculators).find(id => 1 === store.getState().calculators[id].argvals.a.value);
 const calcIds = [quadraticCalcId];
@@ -77,7 +77,7 @@ const calcIds = [quadraticCalcId];
 store.dispatch(addCalculator({formula: mwId, argvals: {
   pressure: ({value: 5000, unit:"psi"}),
   TVD: ({value:8000, unit:"ft"})
-}, isTop: false}));
+}}));
 
 const mwCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
 calcIds.push(mwCalcId);
@@ -85,7 +85,7 @@ calcIds.push(mwCalcId);
 store.dispatch(addCalculator({formula: mwId, argvals: {
   pressure: ({value: 5000, unit:"psi"}),
   TVD: ({value:2500, unit:"m"})
-}, isTop: true}));
+}}));
 
 const mwMCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
 calcIds.push(mwMCalcId);
@@ -93,7 +93,7 @@ calcIds.push(mwMCalcId);
 store.dispatch(addCalculator({formula: errId, argvals: {
   x: ({value:1}),
   y: ({value:3}),
-}, isTop: true}));
+}}));
 
 const errCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
 calcIds.push(errCalcId);
@@ -102,7 +102,7 @@ store.dispatch(addCalculator({formula: quadraticId, argvals: {
   a: ({value:1}),
   b: ({refId:quadraticCalcId}),
   c: ({value:4})
-}, isTop: true}));
+}}));
 
 const nestedQuadraticCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
 calcIds.push(nestedQuadraticCalcId);
@@ -110,7 +110,7 @@ calcIds.push(nestedQuadraticCalcId);
 store.dispatch(addCalculator({formula: pressureId, argvals: {
   MW: ({refId: mwCalcId}),
   TVD: ({value:8000, unit:"ft"})
-}, isTop: true}));
+}}));
 
 const nestedPressureCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
 calcIds.push(nestedPressureCalcId);

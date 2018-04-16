@@ -19,7 +19,7 @@ export default handleActions({
     return {...calculators,
       [id]: R.assocPath(['argvals', argname, 'refId'],
         newCalcId, calculators[id]),
-      [newCalcId]: {formula: formulaId, argvals: {}, isTop: false}
+      [newCalcId]: {formula: formulaId, argvals: {}}
     };
   },
   [Actions.removeCalculatorFormulaArg]: (calculators, {payload}) => {

@@ -7,12 +7,12 @@ export default compose(
   connect((state) => ({
     formulas: Object.keys(state.formulas).map((id) => (
       {id, title: state.formulas[id].title}) ),
-    calculators: Object.keys(state.calculators).filter(key => state.calculators[key].isTop),
+    calculators: Object.keys(state.calculators),
   }),{
     addCalculator: addCalculator,
   }),
   withHandlers({
-    onClick: (({addCalculator}) => id => addCalculator({formula: id, argvals: {}, isTop: true}))
+    onClick: (({addCalculator}) => id => addCalculator({formula: id}))
   }),
   pure,
 )(Dashboard);
