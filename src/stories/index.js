@@ -1,82 +1,119 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
 import { Provider, connect } from 'react-redux';
-import reducer from '../Reducers';
-import { addFormula, addFormulaCard } from '../Actions';
+import createStore from '../redux/store';
+import { addFormula } from '../redux/actions/formulas';
+import { addCalculator } from '../redux/actions/calculators';
 import Formula from '../components/Formula';
 import FormulaResult from '../components/FormulaResult';
-import FormulaCard from '../components/FormulaCard';
+import Calculator from '../containers/Calculator';
+import Dashboard from '../containers/Dashboard';
 import math from 'mathjs';
 import '../App.css';
 
-const store = createStore(reducer, devToolsEnhancer());
+const store = createStore();
 
-store.dispatch(addFormula(
-  [{name:"a"},
-    {name:"b"},
-    {name:"c"}],
-  {name: "x",
-    execFormula: "(-b + sqrt(b^2-4a*c))/(2a)",}
-));
+store.dispatch(addFormula({
+  args: [{name:"a", value:1},
+    {name:"b", value:1},
+    {name:"c", value:1}],
+  result: {name: "x",
+    execFormula: "(-b + sqrt(b^2-4a*c))/(2a)",},
+  title: "Quadratic Formula",
+  description: "Formula for finding roots of a quadratic polynomial",
+  tags: ["pure math",]
+}));
 
-store.dispatch(addFormula(
-    [
+const quadraticId = Object.keys(store.getState().formulas).find(id => "Quadratic Formula" === store.getState().formulas[id].title);
+const test = store.getState();
+
+store.dispatch(addFormula({
+    args: [
       {name:"pressure", value:5000, unit: "psi"},
       {name:"TVD", value:8000, unit: "ft"}
     ],
-    {execFormula: "pressure / TVD", name: "Equivalent mud weight", unit: "ppg"}
-));
+    result: {execFormula: "pressure / TVD", name: "Equivalent mud weight", unit: "ppg"},
+    title: "Mud weight",
+    description: "Find mud weight based on pressure and total vertical distance (TVD)",
+    tags: ["basic drilling",]
+}));
 
-store.dispatch(addFormula(
-    [
-      {name:"x"},
-      {name:"y"}
+const mwId = Object.keys(store.getState().formulas).find(id => "Mud weight" === store.getState().formulas[id].title);
+
+store.dispatch(addFormula({
+    args: [
+      {name:"x", value:1},
+      {name:"y", value:1}
     ],
-    {execFormula: "x^2 + y + z", name: "error"}
-));
+    result: {execFormula: "x^2 + y + x", name: "error"},
+    title: "Error test",
+    description: "error", tags: []
+}));
 
-store.dispatch(addFormula(
-    [
+const errId = Object.keys(store.getState().formulas).find(id => "Error test" === store.getState().formulas[id].title);
+
+store.dispatch(addFormula({
+    args: [
       {name:"MW", value:12, unit: "ppg"},
       {name:"TVD", value:8000, unit: "ft"}
     ],
-    {execFormula: "MW * TVD", name: "Pressure", unit: "psi"}
+    result: {execFormula: "MW * TVD", name: "Pressure", unit: "psi"},
+    title: "Derive Pressure",
+    description: "Find pressure based on mud weight and total vertical distance (TVD)",
+    tags: ["basic drilling",]
+}));
 
-));
+const pressureId = Object.keys(store.getState().formulas).find(id => "Derive Pressure" === store.getState().formulas[id].title);
 
-store.dispatch(addFormulaCard(0, {
+store.dispatch(addCalculator({formula: quadraticId, argvals: {
   a: ({value:1}),
   b: ({value:8}),
   c: ({value:-9})
-}));
+}, isTop: false}));
 
-store.dispatch(addFormulaCard(1, {
+const quadraticCalcId = Object.keys(store.getState().calculators).find(id => 1 === store.getState().calculators[id].argvals.a.value);
+const calcIds = [quadraticCalcId];
+
+store.dispatch(addCalculator({formula: mwId, argvals: {
   pressure: ({value: 5000, unit:"psi"}),
   TVD: ({value:8000, unit:"ft"})
-}));
+}, isTop: false}));
 
-store.dispatch(addFormulaCard(1, {
+const mwCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
+calcIds.push(mwCalcId);
+
+store.dispatch(addCalculator({formula: mwId, argvals: {
   pressure: ({value: 5000, unit:"psi"}),
   TVD: ({value:2500, unit:"m"})
-}));
+}, isTop: true}));
 
-store.dispatch(addFormulaCard(2, {
+const mwMCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
+calcIds.push(mwMCalcId);
+
+store.dispatch(addCalculator({formula: errId, argvals: {
   x: ({value:1}),
   y: ({value:3}),
-}));
+}, isTop: true}));
 
-store.dispatch(addFormulaCard(0, {
+const errCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
+calcIds.push(errCalcId);
+
+store.dispatch(addCalculator({formula: quadraticId, argvals: {
   a: ({value:1}),
-  b: ({refId:0}),
+  b: ({refId:quadraticCalcId}),
   c: ({value:4})
-}));
+}, isTop: true}));
 
-store.dispatch(addFormulaCard(3, {
-  MW: ({refId: 1}),
+const nestedQuadraticCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
+calcIds.push(nestedQuadraticCalcId);
+
+store.dispatch(addCalculator({formula: pressureId, argvals: {
+  MW: ({refId: mwCalcId}),
   TVD: ({value:8000, unit:"ft"})
-}));
+}, isTop: true}));
+
+const nestedPressureCalcId = Object.keys(store.getState().calculators).find(id => !calcIds.includes(id));
+calcIds.push(nestedPressureCalcId);
 
 
 math.createUnit('ppg', '1 lbf / gal');
@@ -99,27 +136,37 @@ storiesOf('FormulaResult', module)
     <FormulaResult name="y_1" execFormula="x^2+x" scope={({x:3})}/>
   ))
 
-storiesOf('FormulaCard', module)
+storiesOf('Calculator', module)
   .addDecorator(story => (
     <Provider store={store}>
       {story()}
     </Provider>
   ))
   .add('quadratic from state', () => (
-    <FormulaCard id={0} />
+    <Calculator id={quadraticCalcId} />
   ))
   .add('mudweight ft from state', () => (
-    <FormulaCard id={1} />
+    <Calculator id={mwCalcId} />
   ))
   .add('mudweight m from state', () => (
-    <FormulaCard id={2} />
+    <Calculator id={mwMCalcId} />
   ))
   .add('errors', () => (
-    <FormulaCard id={3} />
+    <Calculator id={errCalcId} />
   ))
   .add('quadratic from quadratic', () => (
-    <FormulaCard id={4} />
+    <Calculator id={nestedQuadraticCalcId} />
   ))
   .add('pressure from mudweight', () => (
-    <FormulaCard id={5} />
+    <Calculator id={nestedPressureCalcId} />
+  ))
+
+storiesOf('Dashboard', module)
+  .addDecorator(story => (
+    <Provider store={store}>
+      {story()}
+    </Provider>
+  ))
+  .add("Dashboard", () => (
+    <Dashboard />
   ))
