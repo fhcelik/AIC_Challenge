@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
 import { Calculator } from '../schemas/calculator';
+import { nestedCalculatorSelector } from '../selectors/calculators';
 
 export const addCalculator = createAction("@@calcoola/calculator/add", Calculator);
 
@@ -29,21 +30,14 @@ export const removeCalculatorArg = createAction("@@calcoola/calculator/argument-
 export const removeCalculator = createAction("@@calcoola/calculator/remove");
 
 export const removeCalculatorArgReference = createAction("@@calcoola/calculator/argument-reference-remove",
-  ({id, argname}) => (dispatch, getStore) => {
-    function recursiveDelete(calculators, id, argname) {
-      const toRemove = R.path([id, 'argvals', argname, 'refId'],
-        calculators);
-      if (toRemove) {
-        for(const argname in calculators[toRemove].argvals) {
-          if (calculators[toRemove].argvals[argname].refId) {
-            recursiveDelete(calculators, toRemove, argname);
-          }
-        }
-        dispatch(removeCalculator({id: toRemove}));
-      }
+  ({id, argname}) => (dispatch, getState) => {
+    const state = getState();
+    const toRemove = R.path(['calculators', id, 'argvals', argname, 'refId'], state);
+    if (toRemove) {
+      dispatch(removeCalculatorArg({id, argname, argprop: 'refId'}));
+      R.forEach(id => dispatch(removeCalculator({id})),
+        R.keys(nestedCalculatorSelector(state, {id: toRemove})));
     }
-    recursiveDelete(getStore().calculators, id, argname);
-    dispatch(removeCalculatorArg({id, argname, argprop: 'refId'}));
   }
 );
 

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { compose, pure, withHandlers } from 'recompose';
-import { addCalculator } from '../redux/actions/calculators';
 import Dashboard from '../components/Dashboard';
+import { addCalculator } from '../redux/actions/calculators';
+import { listCalculatorIdsSelector } from '../redux/selectors/calculators';
+import { formulasByTitleSelector } from '../redux/selectors/formulas';
 
 export default compose(
   connect((state) => ({
-    formulas: Object.keys(state.formulas).map((id) => (
-      {id, title: state.formulas[id].title}) ),
-    calculators: Object.keys(state.calculators),
+    formulas: formulasByTitleSelector(state),
+    calculators: listCalculatorIdsSelector(state),
   }),{
-    addCalculator: addCalculator,
+    addCalculator,
   }),
   withHandlers({
     onClick: (({addCalculator}) => id => addCalculator({formula: id}))

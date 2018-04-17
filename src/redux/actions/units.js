@@ -12,7 +12,7 @@ export const getUnitDefinitions = () => (dispatch, _, httpClient) =>
       math.createUnit(unitDefinitions, { override: true });
       const recordUnit = unit => dispatch(addUnit({unit}));
       R.forEach(recordUnit, unitList);
-      R.forEachObjIndexed((_, unit) => recordUnit(unit), unitDefinitions);
+      R.forEach(recordUnit, R.keys(unitDefinitions));
     }
   )
 ;

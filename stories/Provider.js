@@ -42,7 +42,7 @@ store.dispatch(addFormula({
       {name:"x", value:1},
       {name:"y", value:1}
     ],
-    result: {execFormula: "x^2 + y + x", name: "error"},
+    result: {execFormula: "x^2 + y + z", name: "error"},
     title: "Error test",
     description: "error", tags: []
 }));

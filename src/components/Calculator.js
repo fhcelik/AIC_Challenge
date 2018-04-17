@@ -7,13 +7,6 @@ import CalculatorArgument from './CalculatorArgument';
 import FormulaResult from './FormulaResult';
 
 export default function Calculator(props) {
-  if (props.hasError) {
-    return (
-      <div className="formula-card" key={props.id}>
-        Invalid formula
-      </div>
-    );
-  }
   const tags = props.tags.map(tag => (
     <Chip key={tag} label={tag} />
   ))
@@ -26,7 +19,7 @@ export default function Calculator(props) {
     />
   ));
   return (
-    <div className="calculator-card" key={props.id}>
+    <div className="calculator-card">
       <div className="calculator-header">
         <Tooltip id={`${props.id}-tooltip`} title={props.description}>
           <Typography>{props.title}</Typography>
@@ -68,5 +61,4 @@ Calculator.propTypes = {
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   setArgToFormula: PropTypes.func.isRequired,
-  hasError: PropTypes.bool
 };
