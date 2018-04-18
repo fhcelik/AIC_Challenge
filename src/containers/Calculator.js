@@ -2,7 +2,7 @@ import math from 'mathjs';
 import { connect } from 'react-redux';
 import { compose, lifecycle, pure, withHandlers } from 'recompose';
 import { createSelector } from 'reselect';
-import { addCalculatorFormulaArg, changeCalculatorArg, changeCalculatorResult, removeCalculatorFormulaArg } from '../redux/actions/calculators';
+import { addCalculatorArgReference, changeCalculatorArg, changeCalculatorResult, removeCalculatorArgReference } from '../redux/actions/calculators';
 import Calculator from '../components/Calculator';
 
 export const ENTER_VALUE = "Enter value";
@@ -84,10 +84,10 @@ export default compose(
         return {args, result, title, description, tags};
       }
     ), {
-      addCalculatorFormulaArg,
+      addCalculatorArgReference,
       changeCalculatorArg,
       changeCalculatorResult,
-      removeCalculatorFormulaArg,
+      removeCalculatorArgReference,
     }
   ),
   withHandlers({
@@ -106,12 +106,12 @@ export default compose(
         result: {unit: event.target.value}
       });
     },
-    setArgToFormula: ({ id, addCalculatorFormulaArg, removeCalculatorFormulaArg }) => argname =>
+    setArgToFormula: ({ id, addCalculatorArgReference, removeCalculatorArgReference }) => argname =>
     event => {
       if (id.length === event.target.value.length) {
-        addCalculatorFormulaArg({id, argname, formulaId: event.target.value});
+        addCalculatorArgReference({id, argname, formulaId: event.target.value});
       } else if (ENTER_VALUE === event.target.value) {
-        removeCalculatorFormulaArg({id, argname});
+        removeCalculatorArgReference({id, argname});
       }
     },
   }),
