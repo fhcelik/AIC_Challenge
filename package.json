@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ajv": "^6.4.0",
-    "katex": "^0.9.0",
     "material-ui": "^1.0.0-beta.40",
     "mathjs": "^4.0.1",
     "normalizr": "^3.2.4",
@@ -17,6 +15,7 @@
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
+    "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "uuid": "^3.2.1"
   },
@@ -25,11 +24,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "json-server": "json-server api/db.json",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
     "@storybook/react": "^3.4.0",
+    "axios": "^0.18.0",
+    "json-server": "^0.12.1",
     "redux-devtools-extension": "^2.13.2",
+    "server-destroy": "^1.0.1",
     "storybook": "^1.0.0"
   }
 }

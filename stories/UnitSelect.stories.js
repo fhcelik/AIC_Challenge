@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import UnitSelect from '../src/components/UnitSelect';
+import UnitSelect from '../src/containers/UnitSelect';
 import Decorator from './Provider';
 
 storiesOf('UnitSelect', module)

@@ -5,7 +5,7 @@ import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import TextField from 'material-ui/TextField';
 import Calculator, { ENTER_VALUE } from '../containers/Calculator';
-import UnitSelect from './UnitSelect';
+import UnitSelect from '../containers/UnitSelect';
 
 export default function CalculatorArgument({arg, onArgValueChange, onArgUnitChange, setArgToFormula}) {
   const formulas = [(

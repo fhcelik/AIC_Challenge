@@ -1,0 +1,187 @@
+{
+  "units": {
+    "unitList": ["m", "ft", "psi", "atm", "bar", "kPa", "km", "N/L"],
+    "unitDefinitions": {
+      "ppg": "1 lbf / gal"
+    }
+  },
+  "formulas": {
+    "1354b9f8-31e0-4ad6-8d77-12bf72149742": {
+      "args": [
+        {
+          "name": "a",
+          "value": 1
+        },
+        {
+          "name": "b",
+          "value": 1
+        },
+        {
+          "name": "c",
+          "value": 1
+        }
+      ],
+      "result": {
+        "name": "x",
+        "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)"
+      },
+      "title": "Quadratic Formula",
+      "description": "Formula for finding roots of a quadratic polynomial",
+      "tags": [
+        "pure math"
+      ]
+    },
+    "708c2437-1e9c-49ae-a2b6-273323ac8026": {
+      "args": [
+        {
+          "name": "pressure",
+          "value": 5000,
+          "unit": "psi"
+        },
+        {
+          "name": "TVD",
+          "value": 8000,
+          "unit": "ft"
+        }
+      ],
+      "result": {
+        "execFormula": "pressure / TVD",
+        "name": "Equivalent mud weight",
+        "unit": "ppg"
+      },
+      "title": "Mud weight",
+      "description": "Find mud weight based on pressure and total vertical distance (TVD)",
+      "tags": [
+        "basic drilling"
+      ]
+    },
+    "20cd7729-02e8-4596-a651-4d707b52a04f": {
+      "args": [
+        {
+          "name": "x",
+          "value": 1
+        },
+        {
+          "name": "y",
+          "value": 1
+        }
+      ],
+      "result": {
+        "execFormula": "x^2 + y + x",
+        "name": "error"
+      },
+      "title": "Error test",
+      "description": "error",
+      "tags": []
+    },
+    "d9a855a7-0b69-4281-aa81-3aa83dac4477": {
+      "args": [
+        {
+          "name": "MW",
+          "value": 12,
+          "unit": "ppg"
+        },
+        {
+          "name": "TVD",
+          "value": 8000,
+          "unit": "ft"
+        }
+      ],
+      "result": {
+        "execFormula": "MW * TVD",
+        "name": "Pressure",
+        "unit": "psi"
+      },
+      "title": "Derive Pressure",
+      "description": "Find pressure based on mud weight and total vertical distance (TVD)",
+      "tags": [
+        "basic drilling"
+      ]
+    }
+  },
+  "calculators": {
+    "dff02bc7-1c06-41dd-83ea-1fc6c454214c": {
+      "formula": "1354b9f8-31e0-4ad6-8d77-12bf72149742",
+      "argvals": {
+        "a": {
+          "value": 1
+        },
+        "b": {
+          "value": 8
+        },
+        "c": {
+          "value": -9
+        }
+      },
+      "isTop": false
+    },
+    "588ade3a-6008-4ca2-912d-c5818de891cb": {
+      "formula": "708c2437-1e9c-49ae-a2b6-273323ac8026",
+      "argvals": {
+        "pressure": {
+          "value": 5000,
+          "unit": "psi"
+        },
+        "TVD": {
+          "value": 8000,
+          "unit": "ft"
+        }
+      },
+      "isTop": false
+    },
+    "0f5be547-d11c-46a3-a451-01126aa34f68": {
+      "formula": "708c2437-1e9c-49ae-a2b6-273323ac8026",
+      "argvals": {
+        "pressure": {
+          "value": 5000,
+          "unit": "psi"
+        },
+        "TVD": {
+          "value": 2500,
+          "unit": "m"
+        }
+      },
+      "isTop": true
+    },
+    "87cb7ca0-10cf-487a-9360-b6984f64b4fc": {
+      "formula": "20cd7729-02e8-4596-a651-4d707b52a04f",
+      "argvals": {
+        "x": {
+          "value": 1
+        },
+        "y": {
+          "value": 3
+        }
+      },
+      "isTop": true
+    },
+    "ab5aaab7-48f3-4ea2-ba37-eec90fcb6dac": {
+      "formula": "1354b9f8-31e0-4ad6-8d77-12bf72149742",
+      "argvals": {
+        "a": {
+          "value": 1
+        },
+        "b": {
+          "refId": "dff02bc7-1c06-41dd-83ea-1fc6c454214c"
+        },
+        "c": {
+          "value": 4
+        }
+      },
+      "isTop": true
+    },
+    "26aa8046-4f26-46ba-8a8d-e538ceb05a8e": {
+      "formula": "d9a855a7-0b69-4281-aa81-3aa83dac4477",
+      "argvals": {
+        "MW": {
+          "refId": "588ade3a-6008-4ca2-912d-c5818de891cb"
+        },
+        "TVD": {
+          "value": 8000,
+          "unit": "ft"
+        }
+      },
+      "isTop": true
+    }
+  }
+}

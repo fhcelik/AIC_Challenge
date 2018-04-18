@@ -3,10 +3,13 @@ import { Provider } from 'react-redux';
 import createStore from '../src/redux/store';
 import { addFormula } from '../src/redux/actions/formulas';
 import { addCalculator } from '../src/redux/actions/calculators';
+import { getUnitDefinitions } from '../src/redux/actions/units';
 import math from 'mathjs';
 import '../src/App.css';
 
 const store = createStore();
+
+store.dispatch(getUnitDefinitions());
 
 store.dispatch(addFormula({
   args: [{name:"a", value:1},

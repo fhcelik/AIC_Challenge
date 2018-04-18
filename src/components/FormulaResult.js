@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Formula from './Formula';
-import UnitSelect from './UnitSelect';
+import UnitSelect from '../containers/UnitSelect';
 
 export default function FormulaResult({ name, displayFormula, unit, result, onResultUnitChange }) {
   return (
