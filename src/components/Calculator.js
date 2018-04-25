@@ -7,11 +7,10 @@ import CalculatorArgument from './CalculatorArgument';
 import FormulaResult from './FormulaResult';
 
 export default function Calculator(props) {
-  const tags = props.tags.map(tag => (
-    <Chip key={tag} label={tag} />
-  ))
+  const tags = props.tags.map(tag => <Chip key={tag} label={tag} />);
   const args = props.args.map(arg => (
-    <CalculatorArgument key={arg.name}
+    <CalculatorArgument
+      key={arg.name}
       arg={arg}
       onArgValueChange={props.onArgValueChange}
       onArgUnitChange={props.onArgUnitChange}
@@ -26,10 +25,11 @@ export default function Calculator(props) {
         </Tooltip>
         {tags}
       </div>
-      <div className="calculator-args">
-        {args}
-      </div>
-      <FormulaResult {...props.result} onResultUnitChange={props.onResultUnitChange} />
+      <div className="calculator-args">{args}</div>
+      <FormulaResult
+        {...props.result}
+        onResultUnitChange={props.onResultUnitChange}
+      />
     </div>
   );
 }
@@ -42,23 +42,25 @@ Calculator.propTypes = {
       value: PropTypes.number,
       unit: PropTypes.string,
       refId: PropTypes.string,
-      formulas: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired})
-      ).isRequired,
-    }).isRequired,
+      formulas: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        })
+      ).isRequired
+    }).isRequired
   ).isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
   result: PropTypes.shape({
-      displayFormula: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      unit: PropTypes.string,
-      result: PropTypes.string,
+    displayFormula: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    unit: PropTypes.string,
+    result: PropTypes.string
   }).isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setArgToFormula: PropTypes.func.isRequired,
+  setArgToFormula: PropTypes.func.isRequired
 };

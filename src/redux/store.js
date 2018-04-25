@@ -6,9 +6,13 @@ import fsaThunk from './fsa-thunk';
 import reducer from './reducers/index';
 
 const httpClient = Axios.create({
-  baseURL: 'http://localhost:3000',
-})
+  baseURL: 'http://localhost:3000'
+});
 
-export default () => createStore(reducer, composeWithDevTools(
-  applyMiddleware(fsaThunk, thunk.withExtraArgument(httpClient)))
-);
+export default () =>
+  createStore(
+    reducer,
+    composeWithDevTools(
+      applyMiddleware(fsaThunk, thunk.withExtraArgument(httpClient))
+    )
+  );

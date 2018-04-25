@@ -1,7 +1,10 @@
 import math from 'mathjs';
 
 export function getBaseUnit(unit) {
-  return math.unit(unit).toSI().toJSON().unit;
+  return math
+    .unit(unit)
+    .toSI()
+    .toJSON().unit;
 }
 
 export function Unit(props) {

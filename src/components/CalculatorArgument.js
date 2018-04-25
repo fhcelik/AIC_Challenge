@@ -7,17 +7,33 @@ import TextField from 'material-ui/TextField';
 import Calculator, { ENTER_VALUE } from '../containers/Calculator';
 import UnitSelect from '../containers/UnitSelect';
 
-export default function CalculatorArgument({arg, onArgValueChange, onArgUnitChange, setArgToFormula}) {
-  const formulas = [(
-    <MenuItem key={arg.name} value={arg.name}>{arg.name}:</MenuItem>), (
-    <MenuItem key={`${arg.name}=`} value={ENTER_VALUE}>{ENTER_VALUE}</MenuItem>)]
-    .concat(arg.formulas.map(({id, title}) => (
-    <MenuItem key={id} value={id}>{title}</MenuItem>
-  )
-  ));
+export default function CalculatorArgument({
+  arg,
+  onArgValueChange,
+  onArgUnitChange,
+  setArgToFormula
+}) {
+  const formulas = [
+    <MenuItem key={arg.name} value={arg.name}>
+      {arg.name}:
+    </MenuItem>,
+    <MenuItem key={`${arg.name}=`} value={ENTER_VALUE}>
+      {ENTER_VALUE}
+    </MenuItem>
+  ].concat(
+    arg.formulas.map(({ id, title }) => (
+      <MenuItem key={id} value={id}>
+        {title}
+      </MenuItem>
+    ))
+  );
 
   const label = (
-    <Select value={arg.name} onChange={setArgToFormula(arg.name)} inputProps={{name: arg.name}}>
+    <Select
+      value={arg.name}
+      onChange={setArgToFormula(arg.name)}
+      inputProps={{ name: arg.name }}
+    >
       {formulas}
     </Select>
   );
@@ -32,10 +48,27 @@ export default function CalculatorArgument({arg, onArgValueChange, onArgUnitChan
   } else {
     return (
       <div className="formula-arg">
-        <TextField name={arg.name} label={label} type="number" value={arg.value} onChange={onArgValueChange}
-          InputProps={arg.unit ? {endAdornment: (<InputAdornment position="end">
-            <UnitSelect name={arg.name} defaultUnit={arg.unit} onChange={onArgUnitChange} />
-          </InputAdornment>)} : null}
+        <TextField
+          name={arg.name}
+          label={label}
+          type="number"
+          value={arg.value}
+          onChange={onArgValueChange}
+          InputProps={
+            arg.unit
+              ? {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <UnitSelect
+                        name={arg.name}
+                        defaultUnit={arg.unit}
+                        onChange={onArgUnitChange}
+                      />
+                    </InputAdornment>
+                  )
+                }
+              : null
+          }
         />
       </div>
     );
@@ -48,12 +81,14 @@ CalculatorArgument.propTypes = {
     value: PropTypes.number,
     unit: PropTypes.string,
     refId: PropTypes.string,
-    formulas: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired})
-    ).isRequired,
+    formulas: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired
+      })
+    ).isRequired
   }),
   onArgValueChange: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
-  setArgToFormula: PropTypes.func.isRequired,
-}
+  setArgToFormula: PropTypes.func.isRequired
+};
