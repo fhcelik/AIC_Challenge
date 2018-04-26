@@ -1,21 +1,46 @@
 import math from 'mathjs';
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
-import { formulasSelector } from './formulas';
 
 export const calculatorsSelector = R.prop('calculators');
 
 export const calculatorSelector = (state, { id }) =>
   R.path(['calculators', id], state);
 
-export const calculatorFormulaSelector = createSelector(
-  [calculatorSelector, formulasSelector],
-  (calculator, formulas) => formulas[calculator.formula]
+function recursiveFlatten(calculators, calculator) {
+  const formulaSource = R.path(['result', 'refId'], calculator);
+  if (!formulaSource) {
+    return calculator;
+  }
+  const rootCalculator = recursiveFlatten(
+    calculators,
+    calculators[formulaSource]
+  );
+  return {
+    ...rootCalculator,
+    ...calculator,
+    argvals: R.map(
+      rootArg =>
+        R.merge(
+          R.dissoc('refId', rootArg),
+          R.path(['argvals', rootArg.name], calculator)
+        ),
+      rootCalculator.argvals
+    ),
+    result: R.merge(rootCalculator.result, calculator.result)
+  };
+}
+
+export const flatCalculatorSelector = createSelector(
+  [calculatorsSelector, calculatorSelector],
+  (calculators, calc) => {
+    return recursiveFlatten(calculators, calc);
+  }
 );
 
 export const calculatorDisplayFormulaSelector = createSelector(
-  [calculatorFormulaSelector],
-  formula => math.parse(formula.result.execFormula).toTex()
+  [flatCalculatorSelector],
+  flatCalculator => math.parse(flatCalculator.result.execFormula).toTex()
 );
 
 export const nestedCalculatorSelector = createSelector(
@@ -37,16 +62,10 @@ export const nestedCalculatorSelector = createSelector(
   }
 );
 
-export const nestedCalculatorFormulaSelector = createSelector(
-  [nestedCalculatorSelector, formulasSelector],
-  (calculators, formulas) => ({
-    calculators,
-    formulas: R.reduce(
-      (acc, elem) => R.assoc(elem.formula, formulas[elem.formula], acc),
-      {},
-      R.values(calculators)
-    )
-  })
+export const nestedFlatCalculatorSelector = createSelector(
+  [nestedCalculatorSelector, calculatorsSelector],
+  (nestedSlice, calculators) =>
+    R.map(calc => recursiveFlatten(calculators, calc), nestedSlice)
 );
 
 function exists(obj) {
@@ -59,25 +78,35 @@ function unitEquals(u1, u2) {
   return math.unit(u1).equalBase(math.unit(u2));
 }
 
+const formulasSelector = createSelector(calculatorsSelector, calculators =>
+  R.filter(R.path(['result', 'execFormula']), calculators)
+);
+
 export const calculatorArgsSelector = createSelector(
-  [formulasSelector, calculatorSelector, calculatorFormulaSelector],
-  (formulas, calc, formula) =>
-    formula.args.map(arg => ({
-      ...arg,
-      ...calc.argvals[arg.name],
-      formulas: R.values(
-        R.map(
-          R.pick(['id', 'title']),
-          R.filter(
-            argFormula => unitEquals(arg.unit, argFormula.result.unit),
-            formulas
+  [formulasSelector, flatCalculatorSelector],
+  (formulas, flatCalculator) =>
+    R.values(
+      R.map(
+        arg => ({
+          value: 0,
+          ...arg,
+          formulas: R.values(
+            R.map(
+              R.pick(['id', 'title']),
+              R.filter(
+                argFormula => unitEquals(arg.unit, argFormula.result.unit),
+                formulas
+              )
+            )
           )
-        )
+        }),
+        flatCalculator.argvals
       )
-    }))
+    )
 );
 
 function convertToUnit(value, unit) {
+  if (!exists(value)) return convertToUnit(0, unit);
   if (exists(unit)) {
     if (typeof value === typeof math.unit(unit)) {
       return value.to(unit);
@@ -96,56 +125,49 @@ function convertToNumber(value, unit) {
   return value;
 }
 
-function evalFormula(state, calc) {
-  const formula = state.formulas[calc.formula];
-
-  const scope = {};
+function evalCalculator(flatCalculators, calcId) {
+  const calc = flatCalculators[calcId];
+  let scope = {};
   try {
-    R.forEach(arg => {
-      const calcArg = { ...arg, ...calc.argvals[arg.name] };
-      const value = exists(calcArg.refId)
-        ? evalFormula(state, state.calculators[calcArg.refId])
-        : calcArg.value;
-      scope[arg.name] = convertToUnit(value, calcArg.unit);
-    }, formula.args);
-  } catch (_) {
+    scope = R.map(arg => {
+      const value = exists(arg.refId)
+        ? evalCalculator(flatCalculators, arg.refId)
+        : arg.value;
+      return convertToUnit(value, arg.unit);
+    }, calc.argvals);
+  } catch (error) {
+    console.error(error);
     return NaN;
   }
 
-  const builtFormula = math.parse(formula.result.execFormula);
-  const resultUnit = calc.result ? calc.result.unit : formula.result.unit;
-  return convertToNumber(builtFormula.eval(scope), resultUnit);
+  const builtFormula = math.parse(calc.result.execFormula);
+  return convertToNumber(builtFormula.eval(scope), calc.result.unit);
 }
 
 export const calculatorResultValueSelector = createSelector(
-  [nestedCalculatorFormulaSelector, calculatorSelector],
-  (stateSlice, calc) => {
-    return math.format(evalFormula(stateSlice, calc));
+  [nestedFlatCalculatorSelector, (_, { id }) => id],
+  (flatCalculators, calcId) => {
+    return math.format(evalCalculator(flatCalculators, calcId));
   }
 );
 
 export const calculatorResultSelector = createSelector(
   [
-    calculatorFormulaSelector,
+    flatCalculatorSelector,
     calculatorDisplayFormulaSelector,
     calculatorResultValueSelector
   ],
-  (formula, displayFormula, result) => ({
-    ...formula.result,
+  (flatCalculator, displayFormula, result) => ({
+    ...flatCalculator.result,
     displayFormula,
     result
   })
 );
 
 export const calculatorPropsSelector = createSelector(
-  [
-    calculatorArgsSelector,
-    calculatorResultSelector,
-    calculatorSelector,
-    calculatorFormulaSelector
-  ],
-  (args, result, calc, formula) => {
-    const { title, description, tags } = { ...formula, ...calc };
+  [calculatorArgsSelector, calculatorResultSelector, flatCalculatorSelector],
+  (args, result, flatCalculator) => {
+    const { title, description, tags } = flatCalculator;
     return { args, result, title, description, tags };
   }
 );

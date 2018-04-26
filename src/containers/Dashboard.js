@@ -3,12 +3,11 @@ import { compose, pure, withHandlers } from 'recompose';
 import Dashboard from '../components/Dashboard';
 import { addCalculator } from '../redux/actions/calculators';
 import { listCalculatorIdsSelector } from '../redux/selectors/calculators';
-import { formulasByTitleSelector } from '../redux/selectors/formulas';
 
 export default compose(
   connect(
     state => ({
-      formulas: formulasByTitleSelector(state),
+      formulas: [],
       calculators: listCalculatorIdsSelector(state)
     }),
     {

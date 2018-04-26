@@ -15,8 +15,8 @@ export const changeCalculatorArg = createAction(
 export const addCalculatorArgReference = createAction(
   '@@calcoola/calculator/argument-reference-add',
   ({ id, argname, formulaId }) => (dispatch, getState) => {
-    const newCalcId = dispatch(addCalculator({ formula: formulaId })).payload
-      .id;
+    const newCalcId = dispatch(addCalculator({ result: { refId: formulaId } }))
+      .payload.id;
     const toRemove = R.path(
       ['calculators', id, 'argvals', argname, 'refId'],
       getState()
