@@ -1,4 +1,4 @@
-import math from 'mathjs';
+import math from '../../mathjs-secured';
 
 export function getBaseUnit(unit) {
   return math

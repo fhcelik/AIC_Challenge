@@ -1,4 +1,4 @@
-import math from 'mathjs';
+import math, { parse } from '../../mathjs-secured';
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
 
@@ -40,7 +40,7 @@ export const flatCalculatorSelector = createSelector(
 
 export const calculatorDisplayFormulaSelector = createSelector(
   [flatCalculatorSelector],
-  flatCalculator => math.parse(flatCalculator.result.execFormula).toTex()
+  flatCalculator => parse(flatCalculator.result.execFormula).toTex()
 );
 
 export const nestedCalculatorSelector = createSelector(
@@ -140,7 +140,7 @@ function evalCalculator(flatCalculators, calcId) {
     return NaN;
   }
 
-  const builtFormula = math.parse(calc.result.execFormula);
+  const builtFormula = parse(calc.result.execFormula);
   return convertToNumber(builtFormula.eval(scope), calc.result.unit);
 }
 
