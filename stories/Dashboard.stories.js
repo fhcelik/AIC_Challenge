@@ -5,6 +5,4 @@ import Decorator from './Provider';
 
 storiesOf('Dashboard', module)
   .addDecorator(Decorator)
-  .add("Dashboard", () => (
-    <Dashboard />
-  ))
+  .add('Dashboard', () => <Dashboard />);
