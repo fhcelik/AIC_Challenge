@@ -1,39 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Chip from 'material-ui/Chip';
+import Grid from 'material-ui/Grid';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import CalculatorArgument from './CalculatorArgument';
+import CalculatorHeader from './CalculatorHeader';
 import CalculatorResult from './CalculatorResult';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    flexDirection: 'column',
-    border: '2px black solid',
+    display: 'inline-block',
+    width: '20em',
+    backgroundColor: theme.colors.cardBackground,
+  },
+
+  content: {
+    margin: '0 0.4em 0.4em',
+  },
+
+  tag: {
+    backgroundColor: theme.colors.tagBackground,
+    border: `1px solid ${theme.colors.tagHighlight}`,
+    color: theme.colors.tagHighlight,
+    textTransform: 'uppercase',
+    margin: 3,
+    padding: 6,
   },
 
   args: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    marginBottom: 6,
   },
 
-  header: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+  title: {
+    textTransform: 'uppercase',
+    marginTop: '0.1em',
+    marginBottom: '0.5em',
   },
 });
 
 const Calculator = ({
   classes,
+  id,
   description,
   title,
-  id,
   tags,
   args,
   onArgValueChange,
@@ -43,38 +53,56 @@ const Calculator = ({
   onResultUnitChange,
 }) => (
   <div className={classes.root}>
-    <div className={classes.header}>
-      <Tooltip id={`${id}-tooltip`} title={description}>
-        <Typography>{title}</Typography>
-      </Tooltip>
-      {tags.map(tag => <Chip key={tag} label={tag} />)}
+    <CalculatorHeader />
+    <div className={classes.content}>
+      <Grid
+        container
+        direction="column"
+        alignItems="flex-start"
+        className={classes.title}
+      >
+        <Tooltip id={`${id}-tooltip`} title={description}>
+          <Typography variant="display3">{title}</Typography>
+        </Tooltip>
+        {tags.map(tag => (
+          <Typography variant="subheading" className={classes.tag}>
+            {tag}
+          </Typography>
+        ))}
+      </Grid>
+      <Grid
+        container
+        direction="column"
+        justify="space-evenly"
+        className={classes.args}
+      >
+        {args.map(arg => (
+          <CalculatorArgument
+            key={arg.name}
+            arg={arg}
+            onArgValueChange={onArgValueChange}
+            onArgUnitChange={onArgUnitChange}
+            setArgToFormula={setArgToFormula}
+          />
+        ))}
+      </Grid>
+      <CalculatorResult {...result} onResultUnitChange={onResultUnitChange} />
     </div>
-    <div className={classes.args}>
-      {args.map(arg => (
-        <CalculatorArgument
-          key={arg.name}
-          arg={arg}
-          onArgValueChange={onArgValueChange}
-          onArgUnitChange={onArgUnitChange}
-          setArgToFormula={setArgToFormula}
-        />
-      ))}
-    </div>
-    <CalculatorResult {...result} onResultUnitChange={onResultUnitChange} />
   </div>
 );
 
 Calculator.propTypes = {
+  classes: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   args: PropTypes.array.isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
+  setArgToFormula: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setArgToFormula: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Calculator);

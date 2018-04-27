@@ -16,6 +16,7 @@ import Info from 'material-ui-icons/InfoOutline';
 
 const styles = theme => ({
   root: {
+    background: theme.colors.backgroundGradient,
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',

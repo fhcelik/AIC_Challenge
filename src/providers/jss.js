@@ -1,9 +1,9 @@
 import React from 'react';
 import { create } from 'jss';
 import compose from 'jss-compose';
+import { createGenerateClassName, jssPreset } from 'material-ui/styles';
 import JssProvider from 'react-jss/lib/JssProvider';
 import 'typeface-oxygen-mono/index.css';
-import { createGenerateClassName, jssPreset } from 'material-ui/styles';
 
 // Configure JSS
 const jss = create({ plugins: [...jssPreset().plugins, compose()] });

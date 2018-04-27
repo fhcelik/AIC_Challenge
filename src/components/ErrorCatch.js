@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Typography from 'material-ui/Typography';
 
 export default function ErrorCatch(props) {
-  return <div className="calculator-card">{props.message}</div>;
+  return <Typography variant="display4">{props.message}</Typography>;
 }
 
 ErrorCatch.propTypes = {

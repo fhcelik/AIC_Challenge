@@ -3,11 +3,14 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
 
 export const colors = {
-  background: '#1E2937',
+  background: '#1C2938',
+  backgroundGradient: 'linear-gradient(180deg, #263440 0%, #1C2938 100%)',
   headerBackground: '#212E3D',
-  cardBackground: '#222F3B',
+  cardBackground: 'rgba(26, 60, 71, 0.5)',
+  tagBackground: '#1C444D',
   cardHeader: '#314352',
   fadedText: '#4F6374',
+  tagHighlight: '#5C7488',
   text: '#D5DBD8',
   orange: '#A53C25',
 };
@@ -85,6 +88,7 @@ const theme = createMuiTheme({
     MuiInput: {
       input: {
         padding: 0,
+        ...typography.display2,
       },
     },
     MuiMenuItem: {

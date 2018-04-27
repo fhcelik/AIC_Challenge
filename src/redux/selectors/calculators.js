@@ -152,20 +152,16 @@ export const calculatorResultValueSelector = createSelector(
       convertToNumber(
         evalCalculator(flatCalculators, calcId),
         R.path([calcId, 'result', 'unit'], flatCalculators)
-      )
+      ),
+      5
     );
   }
 );
 
 export const calculatorResultSelector = createSelector(
-  [
-    flatCalculatorSelector,
-    calculatorDisplayFormulaSelector,
-    calculatorResultValueSelector,
-  ],
-  (flatCalculator, displayFormula, result) => ({
+  [flatCalculatorSelector, calculatorResultValueSelector],
+  (flatCalculator, result) => ({
     ...flatCalculator.result,
-    displayFormula,
     result,
   })
 );
