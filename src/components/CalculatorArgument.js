@@ -15,9 +15,9 @@ export default function CalculatorArgument({
 }) {
   const formulas = [
     <MenuItem key={arg.name} value={arg.name}>
-      {arg.name}:
+      {arg.alias || arg.name}:
     </MenuItem>,
-    <MenuItem key={`${arg.name}=`} value={ENTER_VALUE}>
+    <MenuItem key={ENTER_VALUE} value={ENTER_VALUE}>
       {ENTER_VALUE}
     </MenuItem>
   ].concat(
@@ -78,6 +78,7 @@ export default function CalculatorArgument({
 CalculatorArgument.propTypes = {
   arg: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    alias: PropTypes.string,
     value: PropTypes.number,
     unit: PropTypes.string,
     refId: PropTypes.string,
