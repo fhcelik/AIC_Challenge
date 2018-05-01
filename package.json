@@ -7,6 +7,7 @@
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "material-ui": "^1.0.0-beta.40",
+    "material-ui-icons": "^1.0.0-beta.36",
     "mathjs": "^4.0.1",
     "normalizr": "^3.2.4",
     "ramda": "^0.25.0",

@@ -7,7 +7,7 @@ import { withStyles } from 'material-ui/styles';
 import CalculatorArgument from './CalculatorArgument';
 import FormulaResult from './FormulaResult';
 
-const styles = () => ({
+const styles = theme => ({
   root: {
     display: 'flex',
     justifyContent: 'space-evenly',
