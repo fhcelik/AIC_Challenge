@@ -129,25 +129,31 @@ function evalCalculator(flatCalculators, calcId) {
   const calc = flatCalculators[calcId];
   let scope = {};
   try {
-    scope = R.map(arg => {
-      const value = exists(arg.refId)
-        ? evalCalculator(flatCalculators, arg.refId)
-        : arg.value;
-      return convertToUnit(value, arg.unit);
-    }, calc.argvals);
+    scope = R.map(
+      arg =>
+        exists(arg.refId)
+          ? evalCalculator(flatCalculators, arg.refId)
+          : convertToUnit(arg.value, arg.unit),
+      calc.argvals
+    );
   } catch (error) {
     console.error(error);
     return NaN;
   }
 
   const builtFormula = parse(calc.result.execFormula);
-  return convertToNumber(builtFormula.eval(scope), calc.result.unit);
+  return builtFormula.eval(scope);
 }
 
 export const calculatorResultValueSelector = createSelector(
   [nestedFlatCalculatorSelector, (_, { id }) => id],
   (flatCalculators, calcId) => {
-    return math.format(evalCalculator(flatCalculators, calcId));
+    return math.format(
+      convertToNumber(
+        evalCalculator(flatCalculators, calcId),
+        R.path([calcId, 'result', 'unit'], flatCalculators)
+      )
+    );
   }
 );
 
