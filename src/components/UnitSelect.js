@@ -20,5 +20,5 @@ UnitSelect.propTypes = {
   name: PropTypes.string.isRequired,
   defaultUnit: PropTypes.string.isRequired,
   units: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };

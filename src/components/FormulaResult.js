@@ -8,7 +8,7 @@ export default function FormulaResult({
   displayFormula,
   unit,
   result,
-  onResultUnitChange
+  onResultUnitChange,
 }) {
   return (
     <div className="formula-result">
@@ -28,5 +28,5 @@ FormulaResult.propTypes = {
   displayFormula: PropTypes.string.isRequired,
   result: PropTypes.string.isRequired,
   unit: PropTypes.string,
-  onResultUnitChange: PropTypes.func
+  onResultUnitChange: PropTypes.func,
 };

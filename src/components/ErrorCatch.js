@@ -6,5 +6,5 @@ export default function ErrorCatch(props) {
 }
 
 ErrorCatch.propTypes = {
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };

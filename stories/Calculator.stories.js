@@ -7,7 +7,7 @@ import Decorator, {
   mwMCalcId,
   nestedPressureCalcId,
   nestedQuadraticCalcId,
-  quadraticCalcId
+  quadraticCalcId,
 } from './Provider';
 
 storiesOf('Calculator', module)

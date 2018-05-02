@@ -6,7 +6,7 @@ export default handleActions(
   {
     [Actions.addCalculator]: (calculators, { payload }) => ({
       ...calculators,
-      [payload.id]: payload
+      [payload.id]: payload,
     }),
     [Actions.removeCalculator]: (calculators, { payload: { id } }) =>
       R.dissoc(id, calculators),
@@ -30,7 +30,7 @@ export default handleActions(
         [id, 'result'],
         R.merge(calculators[id].result, result),
         calculators
-      )
+      ),
   },
   {}
 );

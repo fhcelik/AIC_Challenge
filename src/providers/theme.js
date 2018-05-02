@@ -9,69 +9,69 @@ export const colors = {
   cardHeader: '#314352',
   fadedText: '#4F6374',
   text: '#D5DBD8',
-  orange: '#A53C25'
+  orange: '#A53C25',
 };
 
 const typography = {
   fontFamily: 'oxygen mono',
   subheading: {
     fontSize: '0.7rem',
-    color: colors.fadedText
+    color: colors.fadedText,
   },
   display1: {
     fontSize: '0.8rem',
-    color: colors.text
+    color: colors.text,
   },
   display2: {
     fontSize: '0.9rem',
     color: colors.text,
-    fontWeight: '600'
+    fontWeight: '600',
   },
   display3: {
     fontSize: '1rem',
-    color: colors.text
+    color: colors.text,
   },
   display4: {
     fontSize: '1.4rem',
     color: colors.text,
-    fontWeight: 800
-  }
+    fontWeight: 800,
+  },
 };
 // setup basic theme and any overrides that are
 // needed here
 const theme = createMuiTheme({
   palette: {
     background: {
-      default: colors.background
-    }
+      default: colors.background,
+    },
   },
   overrides: {
     MuiButton: {
       root: {
-        borderRadius: 0
+        borderRadius: 0,
       },
       label: {
-        ...typography.display3
-      }
+        ...typography.display3,
+      },
     },
     MuiToolbar: {
-      gutters: {}
+      gutters: {},
     },
     MuiCard: {
       root: {
         borderRadius: 0,
-        boxShadow: 'none'
-      }
+        boxShadow: 'none',
+      },
     },
     MuiSelect: {
       root: {
-        height: '1.1em'
+        height: '1.1em',
       },
       select: {
-        paddingRight: '0.2em'
+        paddingRight: '0.2em',
       },
       selectMenu: {
-        ...typography.display2
+        ...typography.display2,
       },
       icon: {
         color: colors.orange,
@@ -79,28 +79,28 @@ const theme = createMuiTheme({
         top: 'auto',
         bottom: '-0.35em',
         right: '-0.5em',
-        transform: 'rotate(-45deg)'
-      }
+        transform: 'rotate(-45deg)',
+      },
     },
     MuiInput: {
       input: {
-        padding: 0
-      }
+        padding: 0,
+      },
     },
     MuiMenuItem: {
       root: {
         backgroundColor: colors.cardHeader,
-        ...typography.display2
-      }
+        ...typography.display2,
+      },
     },
     MuiPaper: {
       root: {
-        backgroundColor: colors.cardHeader
-      }
-    }
+        backgroundColor: colors.cardHeader,
+      },
+    },
   },
   typography,
-  colors
+  colors,
 });
 
 export const CalcoolaTheme = props => (

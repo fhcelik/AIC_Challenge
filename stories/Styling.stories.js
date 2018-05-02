@@ -29,7 +29,7 @@ storiesOf('Styling', module)
               style={{
                 backgroundColor: colors[name],
                 height: '4em',
-                padding: '1em'
+                padding: '1em',
               }}
             >
               <Typography
@@ -51,7 +51,7 @@ storiesOf('Styling', module)
         'display1',
         'display2',
         'display3',
-        'display4'
+        'display4',
       ])}
     </Grid>
   ));

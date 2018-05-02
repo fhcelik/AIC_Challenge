@@ -8,14 +8,14 @@ export default compose(
   connect(
     state => ({
       formulas: [],
-      calculators: listCalculatorIdsSelector(state)
+      calculators: listCalculatorIdsSelector(state),
     }),
     {
-      addCalculator
+      addCalculator,
     }
   ),
   withHandlers({
-    onClick: ({ addCalculator }) => id => addCalculator({ formula: id })
+    onClick: ({ addCalculator }) => id => addCalculator({ formula: id }),
   }),
   pure
 )(Dashboard);

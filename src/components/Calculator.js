@@ -13,20 +13,20 @@ const styles = theme => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexDirection: 'column',
-    border: '2px black solid'
+    border: '2px black solid',
   },
 
   args: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
   },
 
   header: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 const Calculator = ({
@@ -40,7 +40,7 @@ const Calculator = ({
   onArgUnitChange,
   setArgToFormula,
   result,
-  onResultUnitChange
+  onResultUnitChange,
 }) => (
   <div className={classes.root}>
     <div className={classes.header}>
@@ -74,7 +74,7 @@ Calculator.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setArgToFormula: PropTypes.func.isRequired
+  setArgToFormula: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Calculator);

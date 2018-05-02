@@ -4,5 +4,5 @@ import units from './units';
 
 export default combineReducers({
   calculators,
-  units
+  units,
 });

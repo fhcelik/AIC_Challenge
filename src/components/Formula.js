@@ -13,5 +13,5 @@ export default function Formula({ formula }) {
 }
 
 Formula.propTypes = {
-  formula: PropTypes.string.isRequired
+  formula: PropTypes.string.isRequired,
 };

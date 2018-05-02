@@ -25,14 +25,15 @@
     "uuid": "^3.2.1"
   },
   "lint-staged": {
-    "{src}/**/*.{js, jsx}": [
-      "prettier --single-quote --write",
+    "(./**/*.{js, jsx}": [
+      "prettier --write",
       "yarn lint",
       "git add"
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "babel": {
     "presets": [

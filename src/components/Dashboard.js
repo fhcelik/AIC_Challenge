@@ -24,8 +24,8 @@ Dashboard.propTypes = {
   formulas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
+      title: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  calculators: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  calculators: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };

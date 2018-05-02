@@ -46,7 +46,7 @@ math.import([
   string,
   trigonometry,
   unit,
-  utils
+  utils,
 ]);
 
 math.import(json);
@@ -75,7 +75,7 @@ math.import(
     },
     derivative: function() {
       throw new Error('Function derivative is disabled');
-    }
+    },
   },
   { override: true }
 );

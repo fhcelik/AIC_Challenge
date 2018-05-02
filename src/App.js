@@ -7,7 +7,7 @@ import {
   Card,
   Grid,
   Select,
-  MenuItem
+  MenuItem,
 } from 'material-ui';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 import Favorite from 'material-ui-icons/FavoriteBorder';
@@ -18,65 +18,65 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   header: {
     backgroundColor: theme.colors.headerBackground,
     border: `1px solid ${theme.colors.cardHeader}`,
     boxShadow: 'none',
     flex: '0 0 auto',
-    minHeight: '3em'
+    minHeight: '3em',
   },
   search: {
     flex: 1,
     textAlign: 'left',
     color: theme.colors.fadedText,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   searchIcon: {
-    paddingTop: '0.2em'
+    paddingTop: '0.2em',
   },
   searchText: {
     display: 'inline',
     position: 'absolute',
     top: '0.9em',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
   },
   content: {
     position: 'relative',
     flex: '1 1 100%',
-    margin: '1em'
+    margin: '1em',
   },
   calculator: {
     display: 'inline-block',
     width: '20em',
-    backgroundColor: theme.colors.cardBackground
+    backgroundColor: theme.colors.cardBackground,
   },
   calculatorHeader: {
     backgroundColor: theme.colors.cardHeader,
     padding: '0.2em',
-    color: theme.colors.text
+    color: theme.colors.text,
   },
   calculatorTitle: {
     textTransform: 'uppercase',
     marginTop: '0.1em',
-    marginBottom: '0.5em'
+    marginBottom: '0.5em',
   },
   calculatorContent: {
-    margin: '0 0.4em 0.4em'
+    margin: '0 0.4em 0.4em',
   },
   calculatorArgument: {
     border: `2px solid ${theme.colors.cardHeader}`,
     padding: '0.2em',
-    marginTop: '-2px'
+    marginTop: '-2px',
   },
   calculatorContainer: {
     padding: '0 0.3em',
-    position: 'relative'
+    position: 'relative',
   },
   label: {
     textTransform: 'uppercase',
-    marginBottom: '0.5em'
+    marginBottom: '0.5em',
   },
   typeArrow: {
     border: `3px solid ${theme.colors.orange}`,
@@ -86,17 +86,17 @@ const styles = theme => ({
     right: 0,
     bottom: 0,
     height: 0,
-    width: 0
+    width: 0,
   },
   result: {
     marginTop: '0.5em',
     backgroundColor: theme.colors.cardHeader,
     padding: '0.8em 0',
-    border: `1px solid ${theme.colors.fadedText}`
+    border: `1px solid ${theme.colors.fadedText}`,
   },
   resultSelect: {
     select: {
-      paddingRight: '0.2em'
+      paddingRight: '0.2em',
     },
     icon: {
       color: theme.colors.orange,
@@ -104,19 +104,19 @@ const styles = theme => ({
       top: 'auto',
       bottom: '-0.35em',
       right: '-0.5em',
-      transform: 'rotate(-45deg)'
-    }
+      transform: 'rotate(-45deg)',
+    },
   },
   resultSelectMenu: {
-    ...theme.typography.display4
+    ...theme.typography.display4,
   },
   resultSelectIcon: {
     fontSize: '22px',
     top: 'auto',
     bottom: '-0.75em',
     right: '-0.35em',
-    transform: 'rotate(-45deg)'
-  }
+    transform: 'rotate(-45deg)',
+  },
 });
 
 const App = ({ classes }) => (
@@ -131,7 +131,7 @@ const App = ({ classes }) => (
           variant="display3"
           color="inherit"
           classes={{
-            root: classes.searchText
+            root: classes.searchText,
           }}
         >
           Search for Calculators...
@@ -200,7 +200,7 @@ const App = ({ classes }) => (
                 disableUnderline
                 classes={{
                   selectMenu: classes.resultSelectMenu,
-                  icon: classes.resultSelectIcon
+                  icon: classes.resultSelectIcon,
                 }}
               >
                 <MenuItem value="ft">ft</MenuItem>

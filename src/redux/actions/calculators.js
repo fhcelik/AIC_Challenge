@@ -27,7 +27,7 @@ export const addCalculatorArgReference = createAction(
     dispatch(
       changeCalculatorArg({
         id,
-        argvals: { [argname]: { refId: newCalcId } }
+        argvals: { [argname]: { refId: newCalcId } },
       })
     );
   }

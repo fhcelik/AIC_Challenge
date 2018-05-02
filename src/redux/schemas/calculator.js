@@ -10,7 +10,7 @@ export function Calculator(props = {}) {
     argvals: R.mapObjIndexed(
       (arg, name) => ({ ...arg, name }),
       R.prop('argvals', props)
-    )
+    ),
   };
 }
 
@@ -18,5 +18,5 @@ export const calculator = new schema.Entity('calculators');
 
 calculator.define({
   argvals: new schema.Values({ refId: calculator }),
-  result: { refId: calculator }
+  result: { refId: calculator },
 });

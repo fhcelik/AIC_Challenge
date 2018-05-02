@@ -27,7 +27,7 @@ function recursiveFlatten(calculators, calculator) {
         ),
       rootCalculator.argvals
     ),
-    result: R.merge(rootCalculator.result, calculator.result)
+    result: R.merge(rootCalculator.result, calculator.result),
   };
 }
 
@@ -98,7 +98,7 @@ export const calculatorArgsSelector = createSelector(
                 formulas
               )
             )
-          )
+          ),
         }),
         flatCalculator.argvals
       )
@@ -155,12 +155,12 @@ export const calculatorResultSelector = createSelector(
   [
     flatCalculatorSelector,
     calculatorDisplayFormulaSelector,
-    calculatorResultValueSelector
+    calculatorResultValueSelector,
   ],
   (flatCalculator, displayFormula, result) => ({
     ...flatCalculator.result,
     displayFormula,
-    result
+    result,
   })
 );
 

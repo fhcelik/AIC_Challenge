@@ -5,8 +5,8 @@ export default handleActions(
   {
     [Actions.addUnit]: (units, { payload: { base, unit } }) => ({
       ...units,
-      [base]: (units[base] ? units[base] : []).concat(unit)
-    })
+      [base]: (units[base] ? units[base] : []).concat(unit),
+    }),
   },
   {}
 );

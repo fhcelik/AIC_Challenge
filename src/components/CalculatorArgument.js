@@ -11,7 +11,7 @@ export default function CalculatorArgument({
   arg,
   onArgValueChange,
   onArgUnitChange,
-  setArgToFormula
+  setArgToFormula,
 }) {
   const formulas = [
     <MenuItem key={arg.name} value={arg.name}>
@@ -19,7 +19,7 @@ export default function CalculatorArgument({
     </MenuItem>,
     <MenuItem key={ENTER_VALUE} value={ENTER_VALUE}>
       {ENTER_VALUE}
-    </MenuItem>
+    </MenuItem>,
   ].concat(
     arg.formulas.map(({ id, title }) => (
       <MenuItem key={id} value={id}>
@@ -65,7 +65,7 @@ export default function CalculatorArgument({
                         onChange={onArgUnitChange}
                       />
                     </InputAdornment>
-                  )
+                  ),
                 }
               : null
           }
@@ -85,11 +85,11 @@ CalculatorArgument.propTypes = {
     formulas: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
       })
-    ).isRequired
+    ).isRequired,
   }),
   onArgValueChange: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
-  setArgToFormula: PropTypes.func.isRequired
+  setArgToFormula: PropTypes.func.isRequired,
 };

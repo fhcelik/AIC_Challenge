@@ -5,7 +5,7 @@ import { getBaseUnit } from '../redux/schemas/units';
 
 export default compose(
   connect((state, { defaultUnit }) => ({
-    units: state.units[getBaseUnit(defaultUnit)] || [defaultUnit]
+    units: state.units[getBaseUnit(defaultUnit)] || [defaultUnit],
   })),
   pure
 )(UnitSelect);

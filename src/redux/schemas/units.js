@@ -10,6 +10,6 @@ export function getBaseUnit(unit) {
 export function Unit(props) {
   return {
     base: getBaseUnit(props.unit),
-    ...props
+    ...props,
   };
 }
