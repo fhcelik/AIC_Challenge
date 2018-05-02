@@ -66,28 +66,10 @@ const Calculator = ({
 
 Calculator.propTypes = {
   id: PropTypes.string.isRequired,
-  args: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      value: PropTypes.number,
-      unit: PropTypes.string,
-      refId: PropTypes.string,
-      formulas: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired
-        })
-      ).isRequired
-    }).isRequired
-  ).isRequired,
+  args: PropTypes.array.isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
-  result: PropTypes.shape({
-    displayFormula: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    unit: PropTypes.string,
-    result: PropTypes.string
-  }).isRequired,
+  result: PropTypes.object.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

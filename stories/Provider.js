@@ -48,7 +48,8 @@ export const mwCalcId = store.dispatch(
 export const mwMCalcId = store.dispatch(
   addCalculator({
     argvals: {
-      TVD: { value: 2500, unit: 'm' }
+      pressure: { value: 5000, unit: 'psi' },
+      TVD: { value: 2500, unit: 'm', alias: 'Total vertical distance' }
     },
     result: { refId: mwCalcId }
   })
