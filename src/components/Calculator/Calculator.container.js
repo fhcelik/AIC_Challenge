@@ -8,15 +8,15 @@ import {
   withHandlers,
   withProps,
 } from 'recompose';
-import Calculator from '../components/Calculator';
-import ErrorCatch from '../components/ErrorCatch';
+import Calculator from './Calculator.view';
+import ErrorCatch from '../ErrorCatch';
 import {
   addCalculatorArgReference,
   changeCalculatorArg,
   changeCalculatorResult,
   removeCalculatorArgReference,
-} from '../redux/actions/calculators';
-import { calculatorPropsSelector } from '../redux/selectors/calculators';
+} from '../../redux/actions/calculators';
+import { calculatorPropsSelector } from '../../redux/selectors/calculators';
 
 export const ENTER_VALUE = 'Enter value';
 

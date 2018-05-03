@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { compose, pure, withHandlers } from 'recompose';
-import Dashboard from '../components/Dashboard';
-import { addCalculator } from '../redux/actions/calculators';
-import { listCalculatorIdsSelector } from '../redux/selectors/calculators';
+import Collection from './Collection.view';
+import { addCalculator } from '../../redux/actions/calculators';
+import { listCalculatorIdsSelector } from '../../redux/selectors/calculators';
 
 export default compose(
   connect(
@@ -18,4 +18,4 @@ export default compose(
     onClick: ({ addCalculator }) => id => addCalculator({ formula: id }),
   }),
   pure
-)(Dashboard);
+)(Collection);

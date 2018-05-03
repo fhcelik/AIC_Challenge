@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Calculator from '../src/containers/Calculator';
+import Calculator from '../src/components/Calculator';
 import Decorator, {
   errCalcId,
   mwCalcId,

@@ -4,8 +4,9 @@ import { InputAdornment, InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import TextField from 'material-ui/TextField';
-import Calculator, { ENTER_VALUE } from '../containers/Calculator';
-import UnitSelect from '../containers/UnitSelect';
+import Calculator from '../Calculator';
+import { ENTER_VALUE } from './Calculator.container';
+import UnitSelect from '../UnitSelect';
 
 export default function CalculatorArgument({
   arg,

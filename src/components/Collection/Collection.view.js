@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
-import Calculator from '../containers/Calculator';
+import Calculator from '../Calculator';
 
-export default function Dashboard(props) {
+export default function Collection(props) {
   const formulas = props.formulas.map(({ id, title }) => (
     <Button key={id} variant="raised" onClick={_ => props.onClick(id)}>
       {title}
@@ -20,7 +20,7 @@ export default function Dashboard(props) {
   );
 }
 
-Dashboard.propTypes = {
+Collection.propTypes = {
   formulas: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

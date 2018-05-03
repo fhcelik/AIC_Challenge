@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Formula from './Formula';
-import UnitSelect from '../containers/UnitSelect';
+import Formula from '../Formula';
+import UnitSelect from '../UnitSelect';
 
-export default function FormulaResult({
+export default function CalculatorResult({
   name,
   displayFormula,
   unit,
@@ -23,7 +23,7 @@ export default function FormulaResult({
     </div>
   );
 }
-FormulaResult.propTypes = {
+CalculatorResult.propTypes = {
   name: PropTypes.string.isRequired,
   displayFormula: PropTypes.string.isRequired,
   result: PropTypes.string.isRequired,

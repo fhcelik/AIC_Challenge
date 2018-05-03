@@ -5,7 +5,7 @@ import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import CalculatorArgument from './CalculatorArgument';
-import FormulaResult from './FormulaResult';
+import CalculatorResult from './CalculatorResult';
 
 const styles = theme => ({
   root: {
@@ -60,7 +60,7 @@ const Calculator = ({
         />
       ))}
     </div>
-    <FormulaResult {...result} onResultUnitChange={onResultUnitChange} />
+    <CalculatorResult {...result} onResultUnitChange={onResultUnitChange} />
   </div>
 );
 

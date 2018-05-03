@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Dashboard from '../src/containers/Dashboard';
+import Collection from '../src/components/Collection';
 import Decorator from './Provider';
 
-storiesOf('Dashboard', module)
+storiesOf('Collection', module)
   .addDecorator(Decorator)
-  .add('Dashboard', () => <Dashboard />);
+  .add('Collection', () => <Collection />);
