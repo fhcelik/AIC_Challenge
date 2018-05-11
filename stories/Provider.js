@@ -2,11 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import JssProvider from '../src/providers/jss';
 import ThemeProvider from '../src/providers/theme';
-import createStore from '../src/redux/store';
+import configureStore from '../src/redux/store';
 import { addCalculator } from '../src/redux/actions/calculators';
 import { getUnitDefinitions } from '../src/redux/actions/units';
 
-const store = createStore();
+const { isReady, store, persistor } = configureStore({}, false);
 
 store.dispatch(getUnitDefinitions());
 
