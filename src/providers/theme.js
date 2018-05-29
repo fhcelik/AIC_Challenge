@@ -13,6 +13,7 @@ export const colors = {
   tagHighlight: '#5C7488',
   text: '#D5DBD8',
   orange: '#A53C25',
+  white: 'white',
 };
 
 const typography = {
@@ -55,6 +56,11 @@ const theme = createMuiTheme({
       },
       label: {
         ...typography.display3,
+      },
+    },
+    MuiInputLabel: {
+      root: {
+        color: colors.fadedText,
       },
     },
     MuiToolbar: {

@@ -8,17 +8,21 @@ import {
   withHandlers,
   withProps,
 } from 'recompose';
-import Calculator from './Calculator.view';
-import ErrorCatch from '../ErrorCatch';
 import {
-  addCalculatorArgReference,
-  changeCalculatorArg,
-  changeCalculatorResult,
-  removeCalculatorArgReference,
+  changeCalculatorArgUnit,
+  changeCalculatorResultUnit,
 } from '../../redux/actions/calculators';
-import { calculatorPropsSelector } from '../../redux/selectors/calculators';
-
-export const ENTER_VALUE = 'Enter value';
+import { getUnit } from '../../redux/schemas/units';
+import {
+  calculatorArgsSelector,
+  calculatorDescriptionSelector,
+  calculatorResultSelector,
+  calculatorTagsSelector,
+  calculatorTitleSelector,
+} from '../../redux/selectors/calculators';
+import ErrorCatch from '../ErrorCatch';
+import Display from './Display';
+import Editor from './Editor';
 
 export default compose(
   lifecycle({
@@ -34,46 +38,34 @@ export default compose(
       renderComponent(ErrorCatch)
     )
   ),
-  connect(calculatorPropsSelector, {
-    addCalculatorArgReference,
-    changeCalculatorArg,
-    changeCalculatorResult,
-    removeCalculatorArgReference,
-  }),
+  connect(
+    (state, props) => ({
+      args: calculatorArgsSelector(state, props),
+      result: calculatorResultSelector(state, props),
+      title: calculatorTitleSelector(state, props),
+      description: calculatorDescriptionSelector(state, props),
+      tags: calculatorTagsSelector(state, props),
+    }),
+    {
+      changeCalculatorArgUnit,
+      changeCalculatorResultUnit,
+    }
+  ),
   withHandlers({
-    onArgValueChange: ({ id, changeCalculatorArg }) => event => {
-      changeCalculatorArg({
+    onArgUnitChange: ({ id, changeCalculatorArgUnit }) => event => {
+      changeCalculatorArgUnit({
         id,
-        argvals: { [event.target.name]: { value: Number(event.target.value) } },
+        argname: event.target.name,
+        unit: getUnit(event.target.value),
       });
     },
-    onArgUnitChange: ({ id, changeCalculatorArg }) => event => {
-      changeCalculatorArg({
+    onResultUnitChange: ({ id, changeCalculatorResultUnit }) => event => {
+      changeCalculatorResultUnit({
         id,
-        argvals: { [event.target.name]: { unit: event.target.value } },
+        unit: getUnit(event.target.value),
       });
-    },
-    onResultUnitChange: ({ id, changeCalculatorResult }) => event => {
-      changeCalculatorResult({
-        id,
-        result: { unit: event.target.value },
-      });
-    },
-    setArgToFormula: ({
-      id,
-      addCalculatorArgReference,
-      removeCalculatorArgReference,
-    }) => argname => event => {
-      if (id.length === event.target.value.length) {
-        addCalculatorArgReference({
-          id,
-          argname,
-          formulaId: event.target.value,
-        });
-      } else if (ENTER_VALUE === event.target.value) {
-        removeCalculatorArgReference({ id, argname });
-      }
     },
   }),
-  pure
-)(Calculator);
+  pure,
+  branch(props => props.edit, renderComponent(Editor))
+)(Display);

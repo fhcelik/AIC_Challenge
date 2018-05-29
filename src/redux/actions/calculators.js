@@ -8,8 +8,44 @@ export const addCalculator = createAction(
   Calculator
 );
 
+export const changeCalculatorTitle = createAction(
+  '@@calcoola/calculator/change/title'
+);
+
+export const changeCalculatorDescription = createAction(
+  '@@calcoola/calculator/change/description'
+);
+
+export const addCalculatorTag = createAction('@@calcoola/calculator/tag-add');
+
+export const removeCalculatorTag = createAction(
+  '@@calcoola/calculator/tag-remove'
+);
+
+export const addCalculatorArg = createAction(
+  '@@calcoola/calculator/argument-add'
+);
+
 export const changeCalculatorArg = createAction(
   '@@calcoola/calculator/argument-change'
+);
+
+export const changeCalculatorArgAlias = createAction(
+  '@@calcoola/calculator/argument-change/alias',
+  ({ id, argname, alias }) => dispatch =>
+    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { alias } } }))
+);
+
+export const changeCalculatorArgValue = createAction(
+  '@@calcoola/calculator/argument-change/value',
+  ({ id, argname, value }) => dispatch =>
+    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { value } } }))
+);
+
+export const changeCalculatorArgUnit = createAction(
+  '@@calcoola/calculator/argument-change/unit',
+  ({ id, argname, unit }) => dispatch =>
+    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { unit } } }))
 );
 
 export const addCalculatorArgReference = createAction(
@@ -33,6 +69,10 @@ export const addCalculatorArgReference = createAction(
   }
 );
 
+export const removeCalculatorArgProp = createAction(
+  '@@calcoola/calculator/argument-prop-remove'
+);
+
 export const removeCalculatorArg = createAction(
   '@@calcoola/calculator/argument-remove'
 );
@@ -48,7 +88,7 @@ export const removeCalculatorArgReference = createAction(
       state
     );
     if (toRemove) {
-      dispatch(removeCalculatorArg({ id, argname, argprop: 'refId' }));
+      dispatch(removeCalculatorArgProp({ id, argname, argprop: 'refId' }));
       R.forEach(
         id => dispatch(removeCalculator({ id })),
         R.keys(nestedCalculatorSelector(state, { id: toRemove }))
@@ -59,4 +99,16 @@ export const removeCalculatorArgReference = createAction(
 
 export const changeCalculatorResult = createAction(
   '@@calcoola/calculator/result-change'
+);
+
+export const changeCalculatorResultUnit = createAction(
+  '@@calcoola/calculator/result-change/unit',
+  ({ id, unit }) => dispatch =>
+    dispatch(changeCalculatorResult({ id, result: { unit } }))
+);
+
+export const changeCalculatorResultFormula = createAction(
+  '@@calcoola/calculator/result-change/formula',
+  ({ id, execFormula }) => dispatch =>
+    dispatch(changeCalculatorResult({ id, result: { execFormula } }))
 );

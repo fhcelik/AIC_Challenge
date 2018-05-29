@@ -25,4 +25,11 @@ storiesOf('UnitSelect', module)
       defaultUnit="ppg"
       onChange={event => console.log(event.target.value)}
     />
+  ))
+  .add('Any', () => (
+    <UnitSelect
+      name="Any"
+      unrestricted
+      onChange={event => console.log(event.target.value)}
+    />
   ));

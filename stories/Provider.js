@@ -6,7 +6,7 @@ import configureStore from '../src/redux/store';
 import { addCalculator } from '../src/redux/actions/calculators';
 import { getUnitDefinitions } from '../src/redux/actions/units';
 
-const { isReady, store, persistor } = configureStore({}, false);
+const { store } = configureStore({}, false);
 
 store.dispatch(getUnitDefinitions());
 

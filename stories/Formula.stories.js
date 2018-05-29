@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Formula from '../src/components/Formula';
+import Formula from '../src/components/Calculator/Formula';
 
 storiesOf('Formula', module)
   .add('basic TeX', () => (

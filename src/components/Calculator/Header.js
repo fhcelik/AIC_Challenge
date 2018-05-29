@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import FavoriteIcon from 'material-ui-icons/FavoriteBorder';
-import InfoIcon from 'material-ui-icons/InfoOutline';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const classes = theme => ({
   root: {
@@ -13,17 +11,16 @@ const classes = theme => ({
   },
 });
 
-const CalculatorHeader = ({ classes }) => (
+const Header = ({ classes, children }) => (
   <div className={classes.root}>
     <Grid container justify="flex-end">
-      <FavoriteIcon />
-      <InfoIcon />
+      {children}
     </Grid>
   </div>
 );
 
-CalculatorHeader.propTypes = {
+Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(classes)(CalculatorHeader);
+export default withStyles(classes)(Header);

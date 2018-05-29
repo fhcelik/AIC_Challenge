@@ -27,6 +27,7 @@ function recursiveFlatten(calculators, calculator) {
         ),
       rootCalculator.argvals
     ),
+    tags: R.uniq(R.concat(rootCalculator.tags, calculator.tags)),
     result: R.merge(rootCalculator.result, calculator.result),
   };
 }
@@ -88,7 +89,6 @@ export const calculatorArgsSelector = createSelector(
     R.values(
       R.map(
         arg => ({
-          value: 0,
           ...arg,
           formulas: R.values(
             R.map(
@@ -106,7 +106,6 @@ export const calculatorArgsSelector = createSelector(
 );
 
 function convertToUnit(value, unit) {
-  if (!exists(value)) return convertToUnit(0, unit);
   if (exists(unit)) {
     if (typeof value === typeof math.unit(unit)) {
       return value.to(unit);
@@ -120,7 +119,11 @@ function convertToUnit(value, unit) {
 
 function convertToNumber(value, unit) {
   if (exists(unit) && typeof value === typeof math.unit(unit)) {
-    return value.toNumber(unit);
+    try {
+      return value.toNumber(unit);
+    } catch (error) {
+      return NaN;
+    }
   }
   return value;
 }
@@ -136,14 +139,70 @@ function evalCalculator(flatCalculators, calcId) {
           : convertToUnit(arg.value, arg.unit),
       calc.argvals
     );
+    const builtFormula = parse(calc.result.execFormula);
+    return builtFormula.eval(scope);
   } catch (error) {
-    console.error(error);
     return NaN;
   }
-
-  const builtFormula = parse(calc.result.execFormula);
-  return builtFormula.eval(scope);
 }
+
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+const wrap = letters.length;
+
+function* newCalculatorArgnameGenerator() {
+  let generation = 0;
+  let prefix = '';
+  while (true) {
+    yield prefix + letters[generation % wrap];
+    generation += 1;
+    if (generation % wrap === 0) {
+      prefix += letters[letters.length - 1];
+    }
+  }
+}
+
+export const newCalculatorArgNameSelector = createSelector(
+  calculatorSelector,
+  calc => {
+    const namegen = newCalculatorArgnameGenerator();
+    while (true) {
+      const name = namegen.next().value;
+      if (!calc.argvals[name]) {
+        return name;
+      }
+    }
+  }
+);
+
+export const calculatorResultFormulaSelector = createSelector(
+  [flatCalculatorSelector],
+  calc => {
+    try {
+      return parse(calc.result.execFormula).toTex();
+    } catch (error) {
+      return '';
+    }
+  }
+);
+
+export const calculatorResultUnitSelector = createSelector(
+  [nestedFlatCalculatorSelector, calculatorSelector],
+  (flatCalculators, calc) => {
+    const result = evalCalculator(flatCalculators, calc.id);
+    let finalResult;
+    try {
+      const prevUnit = calc.result.unit;
+      if (prevUnit && typeof result === typeof math.unit(prevUnit)) {
+        finalResult = convertToUnit(result, prevUnit);
+      } else {
+        finalResult = result;
+      }
+    } catch (error) {
+      finalResult = result;
+    }
+    return finalResult.toJSON && finalResult.toJSON().unit;
+  }
+);
 
 export const calculatorResultValueSelector = createSelector(
   [nestedFlatCalculatorSelector, (_, { id }) => id],
@@ -166,12 +225,19 @@ export const calculatorResultSelector = createSelector(
   })
 );
 
-export const calculatorPropsSelector = createSelector(
-  [calculatorArgsSelector, calculatorResultSelector, flatCalculatorSelector],
-  (args, result, flatCalculator) => {
-    const { title, description, tags } = flatCalculator;
-    return { args, result, title, description, tags };
-  }
+export const calculatorTitleSelector = createSelector(
+  flatCalculatorSelector,
+  R.prop('title')
+);
+
+export const calculatorDescriptionSelector = createSelector(
+  flatCalculatorSelector,
+  R.prop('description')
+);
+
+export const calculatorTagsSelector = createSelector(
+  flatCalculatorSelector,
+  R.prop('tags')
 );
 
 export const listCalculatorIdsSelector = createSelector(

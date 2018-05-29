@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.2.0",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "localforage": "^1.7.1",
     "material-ui": "^1.0.0-beta.40",
+    "material-ui-chip-input": "^v1.0.0-beta.5",
     "material-ui-icons": "^1.0.0-beta.36",
     "mathjs": "^4.0.1",
     "normalizr": "^3.2.4",
