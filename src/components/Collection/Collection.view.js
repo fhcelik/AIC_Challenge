@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import Calculator from '../Calculator';
+import NewCalculatorButton from '../NewCalculatorButton';
 
 export default function Collection(props) {
   const formulas = props.formulas.map(({ id, title }) => (
@@ -14,6 +15,7 @@ export default function Collection(props) {
   ));
   return (
     <div>
+      <NewCalculatorButton />
       {formulas}
       {calculators}
     </div>
