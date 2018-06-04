@@ -1,0 +1,31 @@
+{
+  "branch": "master",
+  "verifyConditions": ["@semantic-release/git", "@semantic-release/github"],
+  "getLastRelease": "@semantic-release/git",
+  "prepare": [
+    {
+      "path": "@semantic-release/npm",
+      "npmPublish": false
+    },
+    "@semantic-release/git"
+  ],
+  "publish": [
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "NODE_ENV=production yarn build 1>&2"
+    },
+    "@semantic-release/github"
+  ],
+  "analyzeCommits": {
+    "preset": "angular",
+    "releaseRules": [
+      { "type": "docs", "release": "patch" },
+      { "type": "refactor", "release": "patch" },
+      { "type": "style", "release": "patch" },
+      { "type": "minor", "release": "minor" },
+      { "type": "patch", "release": "patch" },
+      { "type": "major", "release": "major" },
+      { "type": "breaking", "release": "major" }
+    ]
+  }
+}
