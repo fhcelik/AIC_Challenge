@@ -3,53 +3,80 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
 
 export const colors = {
-  background: '#1C2938',
-  backgroundGradient: 'linear-gradient(180deg, #263440 0%, #1C2938 100%)',
-  headerBackground: 'rgba(33, 46, 61, 0.9)',
-  cardBackground: 'rgba(26, 60, 71, 0.5)',
-  tagBackground: '#1C444D',
-  cardHeader: '#314352',
-  fadedText: '#4F6374',
-  tagHighlight: '#5C7488',
-  text: '#D5DBD8',
+  darkGray: '#4F6374',
+  gunmetal: '#1C2938',
+  gunmetalGradient: 'linear-gradient(180deg, #263440 0%, #1C2938 100%)',
+  lightGray: '#D5DBD8',
+  midnightBlue: '#212E3D',
+  navyBlue: '#314352',
   orange: '#A53C25',
+  steelBlue: '#5C7488',
+  steelTeal: 'rgba(26, 60, 71, 0.5)',
+  stormcloud: '#1C444D',
   white: 'white',
 };
+
+const palette = {
+  background: {
+    default: colors.gunmetal,
+    gradient: colors.gunmetalGradient,
+  },
+  header: {
+    background: colors.midnightBlue,
+  },
+  card: {
+    background: colors.steelTeal,
+    header: colors.navyBlue,
+  },
+  tag: {
+    background: colors.stormcloud,
+    highlight: colors.steelBlue,
+  },
+  text: {
+    primary: colors.lightGray,
+    faded: colors.darkGray,
+  },
+  select: {
+    icon: colors.orange,
+  },
+}
 
 const typography = {
   fontFamily: 'oxygen mono',
   subheading: {
     fontSize: '0.7rem',
-    color: colors.fadedText,
+    color: palette.text.faded,
   },
   display1: {
     fontSize: '0.8rem',
-    color: colors.text,
+    color: palette.text.primary,
   },
   display2: {
     fontSize: '0.9rem',
-    color: colors.text,
     fontWeight: '600',
+    color: palette.text.primary,
   },
   display3: {
     fontSize: '1rem',
-    color: colors.text,
+    color: palette.text.primary,
   },
   display4: {
     fontSize: '1.4rem',
-    color: colors.text,
     fontWeight: 800,
+    color: palette.text.primary,
   },
 };
 // setup basic theme and any overrides that are
 // needed here
 const theme = createMuiTheme({
-  palette: {
-    background: {
-      default: colors.background,
-    },
-  },
+  palette,
+  typography,
   overrides: {
+    MuiTypography: {
+      root: {
+        color: palette.text.primary,
+      },
+    },
     MuiButton: {
       root: {
         borderRadius: 0,
@@ -83,7 +110,7 @@ const theme = createMuiTheme({
         ...typography.display2,
       },
       icon: {
-        color: colors.orange,
+        color: palette.select.icon,
         fontSize: '22px',
         top: 'auto',
         bottom: '-0.35em',
@@ -108,13 +135,13 @@ const theme = createMuiTheme({
     },
     MuiMenuItem: {
       root: {
-        backgroundColor: colors.cardHeader,
+        backgroundColor: palette.card.header,
         ...typography.display2,
       },
     },
     MuiPaper: {
       root: {
-        backgroundColor: colors.cardHeader,
+        backgroundColor: palette.card.header,
       },
     },
   },
@@ -137,8 +164,6 @@ const theme = createMuiTheme({
       fullWidth: false,
     },
   },
-  typography,
-  colors,
 });
 
 export const CalcoolaTheme = props => (

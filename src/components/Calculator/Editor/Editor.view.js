@@ -22,7 +22,7 @@ const styles = theme => ({
   },
 
   addIcon: {
-    color: theme.colors.text,
+    color: theme.palette.text.primary,
     fontSize: '30px',
   },
 });

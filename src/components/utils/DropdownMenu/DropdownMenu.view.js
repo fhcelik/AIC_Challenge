@@ -24,8 +24,8 @@ const styles = theme => ({
     position: 'relative',
   },
   items: {
-    background: theme.colors.headerBackground,
-    borderColor: theme.colors.cardHeader,
+    background: theme.palette.header.background,
+    borderColor: theme.palette.card.header,
     border: '1px solid',
   },
 });

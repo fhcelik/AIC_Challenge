@@ -10,8 +10,8 @@ import CollectionSelect from './CollectionSelect';
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.colors.headerBackground,
-    border: `1px solid ${theme.colors.cardHeader}`,
+    backgroundColor: theme.palette.header.background,
+    border: `1px solid ${theme.palette.card.header}`,
     boxShadow: 'none',
     flex: '0 0 auto',
     minHeight: '3em',
@@ -26,7 +26,7 @@ const styles = theme => ({
   search: {
     flex: 1,
     textAlign: 'left',
-    color: theme.colors.fadedText,
+    color: theme.palette.text.faded,
     alignItems: 'center',
   },
   searchIcon: {
@@ -37,9 +37,10 @@ const styles = theme => ({
     position: 'absolute',
     top: '0.9em',
     textTransform: 'uppercase',
+    color: theme.palette.text.primary
   },
   activeLink: {
-    backgroundColor: theme.colors.cardHeader,
+    backgroundColor: theme.palette.card.header,
   },
   'activeLink:active': {
     textDecoration: 'none',

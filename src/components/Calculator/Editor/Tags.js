@@ -9,7 +9,7 @@ const styles = theme => ({
   ...CalculatorStyles(theme),
   ...InfoStyles(theme),
   selectedTag: {
-    border: `1px solid ${theme.colors.tagHighlight}`,
+    border: `1px solid ${theme.palette.tag.highlight}`,
   },
 });
 

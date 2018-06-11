@@ -5,7 +5,7 @@ import Routing from './Routing';
 
 const styles = theme => ({
   root: {
-    background: theme.colors.backgroundGradient,
+    background: theme.palette.background.gradient,
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',

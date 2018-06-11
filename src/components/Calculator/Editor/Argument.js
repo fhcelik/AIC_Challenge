@@ -17,7 +17,7 @@ const styles = theme => ({
     height: '16px',
   },
   deleteIcon: {
-    color: theme.colors.text,
+    color: theme.palette.text.primary,
     fontSize: '16px',
   },
 });

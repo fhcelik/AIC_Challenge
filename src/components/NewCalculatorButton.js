@@ -8,12 +8,12 @@ const styles = theme => ({
   root: {
     width: '23em',
     height: '12em',
-    backgroundColor: theme.colors.cardBackground,
+    backgroundColor: theme.palette.card.background,
     margin: '.5em 0',
-    border: `1.5px dashed ${theme.colors.cardHeader}`
+    border: `1.5px dashed ${theme.palette.card.header}`
   },
   icon: {
-    color: theme.colors.text,
+    color: theme.palette.text.primary,
     fontSize: '84px'
   }
 });

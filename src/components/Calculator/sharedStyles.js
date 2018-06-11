@@ -2,7 +2,7 @@ export const CalculatorStyles = theme => ({
   root: {
     display: 'inline-block',
     width: '20em',
-    backgroundColor: theme.colors.cardBackground,
+    backgroundColor: theme.palette.card.background,
   },
 
   content: {
@@ -12,9 +12,9 @@ export const CalculatorStyles = theme => ({
 
   tag: {
     ...theme.typography.subheading,
-    backgroundColor: theme.colors.tagBackground,
+    backgroundColor: theme.palette.tag.background,
     borderRadius: '0px',
-    color: theme.colors.tagHighlight,
+    color: theme.palette.tag.highlight,
     textTransform: 'uppercase',
     margin: 3,
     padding: 6,
@@ -35,7 +35,7 @@ export const CalculatorStyles = theme => ({
 });
 export const ArgumentStyles = theme => ({
   argument: {
-    border: `2px solid ${theme.colors.cardHeader}`,
+    border: `2px solid ${theme.palette.card.header}`,
     padding: '0.2em',
     marginTop: '-2px',
   },
@@ -51,9 +51,9 @@ export const ArgumentStyles = theme => ({
 export const ResultStyles = theme => ({
   result: {
     margin: '0.5em 0',
-    backgroundColor: theme.colors.cardHeader,
+    backgroundColor: theme.palette.card.header,
     padding: '0.8em 0',
-    border: `1px solid ${theme.colors.fadedText}`,
+    border: `1px solid ${theme.palette.text.faded}`,
   },
   container: {
     padding: '0 0.3em',
@@ -73,13 +73,13 @@ export const ResultStyles = theme => ({
 
 export const InfoStyles = theme => ({
   border: {
-    border: `2px solid ${theme.colors.cardHeader}`,
+    border: `2px solid ${theme.palette.card.header}`,
     padding: '0.2em',
     marginTop: '-2px',
     width: '100%',
   },
   formula: {
-    color: theme.colors.text,
+    color: theme.palette.text.primary,
   },
   description: {
     ...theme.typography.display3,

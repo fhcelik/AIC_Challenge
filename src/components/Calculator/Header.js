@@ -5,9 +5,9 @@ import React from 'react';
 
 const classes = theme => ({
   root: {
-    backgroundColor: theme.colors.cardHeader,
+    backgroundColor: theme.palette.card.header,
     padding: '0.2em',
-    color: theme.colors.text,
+    color: theme.palette.text.primary,
   },
 });
 

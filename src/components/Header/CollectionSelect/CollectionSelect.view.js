@@ -15,7 +15,7 @@ const styles = theme => ({
     paddingLeft: '16px',
     paddingRight: '15px',
     '&:hover': {
-      backgroundColor: theme.colors.cardHeader,
+      backgroundColor: theme.palette.card.header,
     },
   },
 });
