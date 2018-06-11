@@ -2,13 +2,18 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import JssProvider from '../src/providers/jss';
 import ThemeProvider from '../src/providers/theme';
-import configureStore from '../src/redux/store';
 import { addCalculator } from '../src/redux/actions/calculators';
-import { getUnitDefinitions } from '../src/redux/actions/units';
+import { registerUnitDefinitions } from '../src/redux/actions/units';
+import configureStore from '../src/redux/store';
 
 const { store } = configureStore({}, false);
 
-store.dispatch(getUnitDefinitions());
+const unitList = ['m', 'ft', 'psi', 'atm', 'bar', 'kPa', 'km', 'N/L'];
+const unitDefinitions = {
+  ppg: '1 lbf / gal',
+};
+
+store.dispatch(registerUnitDefinitions({ unitList, unitDefinitions }));
 
 export const quadraticCalcId = store.dispatch(
   addCalculator({
