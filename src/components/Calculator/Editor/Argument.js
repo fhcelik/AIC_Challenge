@@ -41,12 +41,9 @@ function Argument({
         name={name}
         label={`ARGUMENT: ${name}`}
         type="text"
-        margin="dense"
-        fullWidth
         value={alias}
         onChange={onArgAliasChange}
         InputProps={{
-          disableUnderline: true,
           endAdornment: (
             <UnitSelect
               name={name}
@@ -55,10 +52,6 @@ function Argument({
               onChange={onArgUnitChange}
             />
           ),
-        }}
-        InputLabelProps={{
-          focused: false,
-          shrink: true,
         }}
       />
 

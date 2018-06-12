@@ -33,6 +33,7 @@ const styles = theme => ({
 
 const Editor = ({
   classes,
+  theme,
   title,
   description,
   tags,
@@ -67,8 +68,6 @@ const Editor = ({
         value={title}
         onChange={onTitleChange}
         placeholder="Calculator Name"
-        disableUnderline
-        fullWidth
         type="text"
         multiline
         className={classes.title}
@@ -104,31 +103,28 @@ const Editor = ({
       <div className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
       </div>
-      <TextField
-        name="description"
-        label="DESCRIPTION"
-        value={description}
-        onChange={onDescriptionChange}
-        placeholder="Calculator Description"
-        fullWidth
-        type="text"
-        multiline
-        className={classes.border}
-        InputProps={{
-          disableUnderline: true,
-          classes: { input: classes.textEditor },
-        }}
-        InputLabelProps={{
-          focused: false,
-          shrink: true,
-        }}
-      />
+      <div className={classes.border}>
+        <TextField
+          name="description"
+          label="DESCRIPTION"
+          value={description}
+          onChange={onDescriptionChange}
+          placeholder="Calculator Description"
+          type="text"
+          multiline
+          {...theme.props.MuiFormControl}
+          InputProps={{
+            classes: { input: classes.textEditor },
+          }}
+        />
+      </div>
     </Grid>
   </div>
 );
 
 Editor.propTypes = {
   classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -150,4 +146,4 @@ Editor.propTypes = {
   formula: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(Editor);
+export default withStyles(styles, { withTheme: true })(Editor);

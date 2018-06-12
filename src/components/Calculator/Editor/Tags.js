@@ -2,6 +2,7 @@ import cx from 'classnames';
 import { Chip, withStyles } from 'material-ui';
 import ChipInput from 'material-ui-chip-input';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 
 const styles = theme => ({
@@ -12,7 +13,7 @@ const styles = theme => ({
   },
 });
 
-const Tags = ({ classes, tags, onTagAdd, onTagDelete }) => {
+const Tags = ({ classes, theme, tags, onTagAdd, onTagDelete }) => {
   const Tag = ({ text, isFocused, handleDelete, className }, key) => (
     <Chip
       key={key}
@@ -30,20 +31,23 @@ const Tags = ({ classes, tags, onTagAdd, onTagDelete }) => {
         chipRenderer={Tag}
         onAdd={onTagAdd}
         onDelete={onTagDelete}
-        fullWidth
-        margin="dense"
         classes={{
           input: classes.textEditor,
           chip: classes.tag,
         }}
-        disableUnderline
-        InputLabelProps={{
-          focused: false,
-          shrink: true,
-        }}
+        {...theme.props.MuiFormControl}
+        InputLabelProps={theme.props.MuiInputLabel}
       />
     </div>
   );
 };
 
-export default withStyles(styles)(Tags);
+Tags.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onTagAdd: PropTypes.func.isRequired,
+  onTagDelete: PropTypes.func.isRequired,
+};
+
+export default withStyles(styles, { withTheme: true })(Tags);

@@ -41,7 +41,6 @@ function Argument({
     <Select
       value={name}
       onChange={setArgToFormula(name)}
-      disableUnderline
       inputProps={{ name }}
       classes={{ selectMenu: classes.label }}
     >
@@ -57,11 +56,16 @@ function Argument({
         type="number"
         value={value}
         onChange={onArgValueChange}
-        disableUnderline
+        endAdornment={
+          unit && (
+            <UnitSelect
+              name={name}
+              defaultUnit={unit}
+              onChange={onArgUnitChange}
+            />
+          )
+        }
       />
-      {unit && (
-        <UnitSelect name={name} defaultUnit={unit} onChange={onArgUnitChange} />
-      )}
     </Grid>
   );
 

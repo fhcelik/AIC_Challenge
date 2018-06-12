@@ -14,7 +14,6 @@ function UnitSelect({ classes, name, defaultUnit, units, onChange }) {
     <Select
       value={defaultUnit || R.head(units)}
       onChange={onChange}
-      disableUnderline
       classes={classes}
       inputProps={{
         name,

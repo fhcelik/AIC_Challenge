@@ -109,6 +109,25 @@ const theme = createMuiTheme({
       },
     },
   },
+  props: {
+    MuiFormControl: {
+      disableUnderline: true,
+      fullWidth: true,
+      margin: 'dense',
+    },
+    MuiInput: {
+      disableUnderline: true,
+      fullWidth: true,
+    },
+    MuiInputLabel: {
+      focused: false,
+      shrink: true,
+    },
+    MuiSelect: {
+      disableUnderline: true,
+      fullWidth: false,
+    },
+  },
   typography,
   colors,
 });

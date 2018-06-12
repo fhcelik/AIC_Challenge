@@ -32,9 +32,7 @@ const Result = ({
       onChange={onFormulaChange}
       error={isNaN(result)}
       type="text"
-      fullWidth
       multiline
-      disableUnderline
       endAdornment={
         unit && (
           <UnitSelect
