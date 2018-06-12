@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
+import { Typography } from 'material-ui';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Calculator from '../Calculator';
 import NewCalculatorButton from '../NewCalculatorButton';
 
@@ -15,6 +16,10 @@ export default function Collection(props) {
   ));
   return (
     <div>
+      <Typography variant="display4" style={{ float: 'right' }}>
+        Collection: {props.collectionUrl}
+        {/* TODO: connect to actual collection */}
+      </Typography>
       <NewCalculatorButton />
       {formulas}
       {calculators}

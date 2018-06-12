@@ -5,7 +5,7 @@ import CssBaseline from 'material-ui/CssBaseline';
 export const colors = {
   background: '#1C2938',
   backgroundGradient: 'linear-gradient(180deg, #263440 0%, #1C2938 100%)',
-  headerBackground: '#212E3D',
+  headerBackground: 'rgba(33, 46, 61, 0.9)',
   cardBackground: 'rgba(26, 60, 71, 0.5)',
   tagBackground: '#1C444D',
   cardHeader: '#314352',

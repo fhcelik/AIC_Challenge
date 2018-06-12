@@ -5,9 +5,8 @@ import { ConnectedRouter } from 'react-router-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import JssProvider from './providers/jss';
 import ThemeProvider from './providers/theme';
-import { Route } from 'react-router';
 import configureStore, { history } from './redux/store';
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 const { store, persistor, isReady } = configureStore();
@@ -19,7 +18,7 @@ const app = (
       <ConnectedRouter history={history}>
         <JssProvider>
           <ThemeProvider>
-            <Route path="/" component={App} />
+            <App />
           </ThemeProvider>
         </JssProvider>
       </ConnectedRouter>
