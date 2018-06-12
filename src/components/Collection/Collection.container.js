@@ -9,7 +9,6 @@ export default compose(
   withRouter,
   connect(
     state => ({
-      formulas: [],
       calculators: listCalculatorIdsSelector(state),
     }),
     {

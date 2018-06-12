@@ -12,15 +12,17 @@ import {
 import {
   changeCalculatorArgUnit,
   changeCalculatorResultUnit,
+  saveCalculator,
 } from '../../redux/actions/calculators';
 import { getUnit } from '../../redux/schemas/units';
 import {
   calculatorArgsSelector,
   calculatorDescriptionSelector,
+  calculatorIsNewSelector,
+  calculatorResultFormulaSelector,
   calculatorResultSelector,
   calculatorTagsSelector,
   calculatorTitleSelector,
-  calculatorResultFormulaSelector,
 } from '../../redux/selectors/calculators';
 import ErrorCatch from '../ErrorCatch';
 import CalculatorView from './Calculator.view';
@@ -47,33 +49,20 @@ export default compose(
       description: calculatorDescriptionSelector(state, props),
       tags: calculatorTagsSelector(state, props),
       formula: calculatorResultFormulaSelector(state, props),
+      isNew: calculatorIsNewSelector(state, props),
     }),
     {
       changeCalculatorArgUnit,
       changeCalculatorResultUnit,
+      saveCalculator,
     }
   ),
-  withHandlers({
-    onArgUnitChange: ({ id, changeCalculatorArgUnit }) => event => {
-      changeCalculatorArgUnit({
-        id,
-        argname: event.target.name,
-        unit: getUnit(event.target.value),
-      });
-    },
-    onResultUnitChange: ({ id, changeCalculatorResultUnit }) => event => {
-      changeCalculatorResultUnit({
-        id,
-        unit: getUnit(event.target.value),
-      });
-    },
-  }),
   withStateHandlers(
-    {
-      renderDisplay: true,
-      renderEditor: false,
+    ({ isNew }) => ({
+      renderDisplay: !isNew,
+      renderEditor: isNew,
       renderInfo: false,
-    },
+    }),
     {
       showDisplay: () => () => ({
         renderDisplay: true,
@@ -90,5 +79,24 @@ export default compose(
       }),
     }
   ),
+  withHandlers({
+    onArgUnitChange: ({ id, changeCalculatorArgUnit }) => event => {
+      changeCalculatorArgUnit({
+        id,
+        argname: event.target.name,
+        unit: getUnit(event.target.value),
+      });
+    },
+    onResultUnitChange: ({ id, changeCalculatorResultUnit }) => event => {
+      changeCalculatorResultUnit({
+        id,
+        unit: getUnit(event.target.value),
+      });
+    },
+    onEditDone: ({ id, saveCalculator, showDisplay }) => () => {
+      saveCalculator({ id });
+      showDisplay();
+    },
+  }),
   pure
 )(CalculatorView);

@@ -150,6 +150,9 @@ const theme = createMuiTheme({
       fullWidth: true,
       margin: 'dense',
     },
+    MuiIconButton: {
+      color: 'inherit',
+    },
     MuiInput: {
       disableUnderline: true,
       fullWidth: true,

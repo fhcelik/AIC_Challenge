@@ -14,7 +14,6 @@ const styles = theme => ({
 
 const Result = ({
   classes,
-  name,
   execFormula,
   onFormulaChange,
   result,
@@ -27,7 +26,6 @@ const Result = ({
         root: cx(classes.result, classes.resultText),
         input: classes.formulaInput,
       }}
-      name={name}
       value={execFormula}
       onChange={onFormulaChange}
       error={isNaN(result)}
@@ -40,7 +38,7 @@ const Result = ({
               selectMenu: classes.resultSelectMenu,
               icon: classes.resultSelectIcon,
             }}
-            name={name}
+            name="Result"
             defaultUnit={unit}
             onChange={onUnitChange}
           />
@@ -52,7 +50,6 @@ const Result = ({
 
 Result.propTypes = {
   classes: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
   execFormula: PropTypes.string.isRequired,
   onFormulaChange: PropTypes.func.isRequired,
   result: PropTypes.any,

@@ -19,6 +19,8 @@ export default handleActions(
       ...calculators,
       [id]: R.merge(calculators[id], rest),
     }),
+    [Actions.saveCalculator]: (calculators, { payload: { id } }) =>
+      R.dissocPath([id, 'isNew'], calculators),
     [Actions.addCalculatorTag]: (calculators, { payload: { id, tag } }) =>
       R.over(
         calculatorTagLensCreator(id),

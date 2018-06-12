@@ -44,6 +44,7 @@ const Editor = ({
   onArgRemove,
   result,
   resultBaseUnit,
+  onEditDone,
   showDisplay,
   onResultFormulaChange,
   onResultUnitChange,
@@ -51,7 +52,7 @@ const Editor = ({
 }) => (
   <div className={cx(classes.root, classes.editorRoot)}>
     <Header>
-      <IconButton onClick={showDisplay}>
+      <IconButton onClick={onEditDone}>
         <CheckIcon />
       </IconButton>
       <IconButton>
@@ -96,6 +97,7 @@ const Editor = ({
         <AddIcon className={classes.addIcon} />
       </IconButton>
       <Result
+        execFormula={formula}
         {...result}
         unit={resultBaseUnit}
         onFormulaChange={onResultFormulaChange}
@@ -142,6 +144,7 @@ Editor.propTypes = {
   onArgRemove: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
   resultBaseUnit: PropTypes.string,
+  onEditDone: PropTypes.func.isRequired,
   showDisplay: PropTypes.func,
   onResultFormulaChange: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,

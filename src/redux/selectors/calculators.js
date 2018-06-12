@@ -173,7 +173,7 @@ export const calculatorResultUnitSelector = createSelector(
     } catch (error) {
       finalResult = result;
     }
-    return finalResult.toJSON && finalResult.toJSON().unit;
+    return R.prop('toJSON', finalResult) && finalResult.toJSON().unit;
   }
 );
 
@@ -200,17 +200,22 @@ export const calculatorResultSelector = createSelector(
 
 export const calculatorTitleSelector = createSelector(
   flatCalculatorSelector,
-  R.prop('title')
+  R.propOr('', 'title')
 );
 
 export const calculatorDescriptionSelector = createSelector(
   flatCalculatorSelector,
-  R.prop('description')
+  R.propOr('', 'description')
 );
 
 export const calculatorTagsSelector = createSelector(
   flatCalculatorSelector,
   R.prop('tags')
+);
+
+export const calculatorIsNewSelector = createSelector(
+  calculatorSelector,
+  R.propOr(false, 'isNew')
 );
 
 export const listCalculatorIdsSelector = createSelector(

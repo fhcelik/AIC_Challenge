@@ -6,7 +6,7 @@ import React from 'react';
 import UnitSelect from '../../UnitSelect';
 import { ResultStyles as styles } from '../sharedStyles';
 
-const Result = ({ classes, name, unit, result, onResultUnitChange }) => (
+const Result = ({ classes, unit, result, onResultUnitChange }) => (
   <div className={classes.result}>
     <Grid container justify="space-between" className={classes.container}>
       <Typography className={classes.resultText}>{result}</Typography>
@@ -16,7 +16,7 @@ const Result = ({ classes, name, unit, result, onResultUnitChange }) => (
             selectMenu: classes.resultSelectMenu,
             icon: classes.resultSelectIcon,
           }}
-          name={name}
+          name="Result"
           defaultUnit={unit}
           onChange={onResultUnitChange}
         />
@@ -27,7 +27,6 @@ const Result = ({ classes, name, unit, result, onResultUnitChange }) => (
 
 Result.propTypes = {
   classes: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
   result: PropTypes.string.isRequired,
   unit: PropTypes.string,
   onResultUnitChange: PropTypes.func,

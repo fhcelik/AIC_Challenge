@@ -16,6 +16,9 @@ export const changeCalculatorDescription = createAction(
   '@@calcoola/calculator/change/description'
 );
 
+//TODO: Implement logic to save to server
+export const saveCalculator = createAction('@@calcoola/calculator/save');
+
 export const addCalculatorTag = createAction('@@calcoola/calculator/tag-add');
 
 export const removeCalculatorTag = createAction(

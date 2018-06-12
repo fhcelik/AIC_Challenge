@@ -20,6 +20,7 @@ const stubs = {
   onArgRemove: stubHandler,
   onResultFormulaChange: stubHandler,
   onResultUnitChange: stubHandler,
+  onEditDone: stubHandler,
 };
 
 storiesOf('CalculatorEditor', module)

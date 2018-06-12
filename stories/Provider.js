@@ -23,7 +23,6 @@ export const quadraticCalcId = store.dispatch(
       c: { value: -9 },
     },
     result: {
-      name: 'x',
       execFormula: '(-b + sqrt(b^2-4a*c))/(2a)',
     },
     title: 'Quadratic Formula',
@@ -40,7 +39,6 @@ export const mwCalcId = store.dispatch(
     },
     result: {
       execFormula: 'pressure / TVD',
-      name: 'Equivalent mud weight',
       unit: 'ppg',
     },
     title: 'Mud weight',
@@ -66,7 +64,7 @@ export const errCalcId = store.dispatch(
       x: { value: 1 },
       y: { value: 3 },
     },
-    result: { execFormula: 'x^2 + y + z', name: 'error' },
+    result: { execFormula: 'x^2 + y + z' },
     title: 'Error test',
     description: 'error',
     tags: [],
@@ -90,7 +88,7 @@ export const nestedPressureCalcId = store.dispatch(
       MW: { refId: mwCalcId, unit: 'ppg' },
       TVD: { value: 8000, unit: 'ft' },
     },
-    result: { execFormula: 'MW * TVD', name: 'Pressure', unit: 'psi' },
+    result: { execFormula: 'MW * TVD', unit: 'psi' },
     title: 'Derive Pressure',
     description:
       'Find pressure based on mud weight and total vertical distance (TVD)',

@@ -9,7 +9,8 @@ function renderError(error) {
 }
 
 export default function Formula({ formula }) {
-  return <BlockMath math={formula} renderError={renderError} />;
+  const tex = '' === formula ? ' ' : formula;
+  return <BlockMath math={tex} renderError={renderError} />;
 }
 
 Formula.propTypes = {

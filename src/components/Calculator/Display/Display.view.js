@@ -48,11 +48,13 @@ const Display = ({
         <Tooltip id={`${id}-tooltip`} title={description}>
           <Typography className={classes.titleText}>{title}</Typography>
         </Tooltip>
-        {tags.map(tag => (
-          <Typography key={tag} className={classes.tag}>
-            {tag}
-          </Typography>
-        ))}
+        <Grid item container direction="row">
+          {tags.map(tag => (
+            <Typography key={tag} className={classes.tag}>
+              {tag}
+            </Typography>
+          ))}
+        </Grid>
       </Grid>
       <Grid container direction="column" className={classes.args}>
         {args.map(arg => (
