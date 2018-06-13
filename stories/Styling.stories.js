@@ -1,25 +1,30 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import * as R from 'ramda';
-import Decorator from './Provider';
+import TestProvider from '../src/tests/TestProvider';
 import { Typography, Grid, Paper } from 'material-ui';
 import { colors } from '../src/providers/theme';
 import { getContrastRatio } from 'material-ui/styles/colorManipulator';
 
 const getContrastingColor = background => {
-  return getContrastRatio('#FFF', background) < 6 ? '#000' : '#FFF';
+  try {
+    return getContrastRatio('#FFF', background) < 6 ? '#000' : '#FFF';
+  } catch (error) {
+    console.error(error);
+    return '#888';
+  }
 };
 
 const getTypographyContainer = variant => (
-  <Grid item>
+  <Grid item key={variant}>
     <Typography variant={variant}>
-      lorem ipsum LOREM IPSUM 2,182.34 m/s(^2)
+      {variant}: lorem ipsum LOREM IPSUM 2,182.34 m/s(^2)
     </Typography>
   </Grid>
 );
 
 storiesOf('Styling', module)
-  .addDecorator(Decorator)
+  .addDecorator(TestProvider)
   .add('Colours', () => (
     <div>
       <Grid container direction="column" spacing={16}>

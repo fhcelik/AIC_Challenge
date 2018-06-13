@@ -2,8 +2,8 @@ import Axios from 'axios';
 import Promise from 'bluebird';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import persistStore from 'redux-persist/es/persistStore';
-import persistReducer from 'redux-persist/es/persistReducer';
+import persistStore from 'redux-persist/lib/persistStore';
+import persistReducer from 'redux-persist/lib/persistReducer';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import thunk from 'redux-thunk';
@@ -41,6 +41,7 @@ export default function configureStore(initialState = {}, persist = true) {
   });
   const store = createStore(
     persistedReducer,
+    initialState,
     composeWithDevTools(applyMiddleware(...middleware))
   );
   const persistor = persist ? persistStore(store, null, done) : null;

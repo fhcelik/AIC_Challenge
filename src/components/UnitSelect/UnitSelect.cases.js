@@ -1,35 +1,33 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import UnitSelect from '../src/components/UnitSelect';
-import Decorator from './Provider';
+import UnitSelect from '../UnitSelect';
 
-storiesOf('UnitSelect', module)
-  .addDecorator(Decorator)
-  .add('Length', () => (
+export default {
+  Length: () => (
     <UnitSelect
       name="Length"
       defaultUnit="m"
       onChange={event => console.log(event.target.value)}
     />
-  ))
-  .add('Pressure', () => (
+  ),
+  Pressure: () => (
     <UnitSelect
       name="Pressure"
       defaultUnit="psi"
       onChange={event => console.log(event.target.value)}
     />
-  ))
-  .add('Density', () => (
+  ),
+  Density: () => (
     <UnitSelect
       name="Density"
       defaultUnit="ppg"
       onChange={event => console.log(event.target.value)}
     />
-  ))
-  .add('Any', () => (
+  ),
+  Any: () => (
     <UnitSelect
       name="Any"
       unrestricted
       onChange={event => console.log(event.target.value)}
     />
-  ));
+  ),
+};

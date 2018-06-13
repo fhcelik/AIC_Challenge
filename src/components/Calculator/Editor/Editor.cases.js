@@ -1,7 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Decorator from './Provider';
-import CalculatorEditor from '../src/components/Calculator/Editor/Editor.view';
+import CalculatorEditor from './Editor.view';
 
 const stubHandler = () => null;
 
@@ -23,19 +21,19 @@ const stubs = {
   onEditDone: stubHandler,
 };
 
-storiesOf('CalculatorEditor', module)
-  .addDecorator(Decorator)
-  .add('editor', () => (
+export default {
+  editor: () => (
     <CalculatorEditor
       args={[]}
       result={{ name: 'a', execFormula: '' }}
       {...stubs}
     />
-  ))
-  .add('with arg', () => (
+  ),
+  'with arg': () => (
     <CalculatorEditor
       args={[{ name: 'a', alias: 'STARTING DENSITY' }]}
       result={{ name: 'test', execFormula: '(100 * (b - a)))/(35-b)' }}
       {...stubs}
     />
-  ));
+  ),
+};
