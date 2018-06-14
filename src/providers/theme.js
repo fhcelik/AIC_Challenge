@@ -97,6 +97,15 @@ const theme = createMuiTheme({
         ...typography.display2,
       },
     },
+    MuiIconButton: {
+      root: {
+        width: 'auto',
+        height: 'auto',
+        '&:hover': {
+          backgroundColor: 'none',
+        },
+      },
+    },
     MuiMenuItem: {
       root: {
         backgroundColor: colors.cardHeader,

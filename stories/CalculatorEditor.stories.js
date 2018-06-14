@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Decorator, { mwCalcId } from './Provider';
-import Calculator from '../src/components/Calculator';
+import Decorator from './Provider';
 import CalculatorEditor from '../src/components/Calculator/Editor/Editor.view';
 
 const stubHandler = () => null;
@@ -38,5 +37,4 @@ storiesOf('CalculatorEditor', module)
       result={{ name: 'test', execFormula: '(100 * (b - a)))/(35-b)' }}
       {...stubs}
     />
-  ))
-  .add('from store', () => <Calculator edit={true} id={mwCalcId} />);
+  ));

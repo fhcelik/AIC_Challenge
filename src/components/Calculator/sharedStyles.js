@@ -81,4 +81,7 @@ export const InfoStyles = theme => ({
   formula: {
     color: theme.colors.text,
   },
+  description: {
+    ...theme.typography.display3,
+  },
 });

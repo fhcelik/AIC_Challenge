@@ -7,6 +7,7 @@ import {
   renderComponent,
   withHandlers,
   withProps,
+  withStateHandlers,
 } from 'recompose';
 import {
   changeCalculatorArgUnit,
@@ -19,10 +20,10 @@ import {
   calculatorResultSelector,
   calculatorTagsSelector,
   calculatorTitleSelector,
+  calculatorResultFormulaSelector,
 } from '../../redux/selectors/calculators';
 import ErrorCatch from '../ErrorCatch';
-import Display from './Display';
-import Editor from './Editor';
+import CalculatorView from './Calculator.view';
 
 export default compose(
   lifecycle({
@@ -45,6 +46,7 @@ export default compose(
       title: calculatorTitleSelector(state, props),
       description: calculatorDescriptionSelector(state, props),
       tags: calculatorTagsSelector(state, props),
+      formula: calculatorResultFormulaSelector(state, props),
     }),
     {
       changeCalculatorArgUnit,
@@ -66,6 +68,27 @@ export default compose(
       });
     },
   }),
-  pure,
-  branch(props => props.edit, renderComponent(Editor))
-)(Display);
+  withStateHandlers(
+    {
+      renderDisplay: true,
+      renderEditor: false,
+      renderInfo: false,
+    },
+    {
+      showDisplay: () => () => ({
+        renderDisplay: true,
+      }),
+      showEditor: () => () => ({
+        renderDisplay: false,
+        renderEditor: true,
+        renderInfo: false,
+      }),
+      showInfo: () => () => ({
+        renderDisplay: false,
+        renderEditor: false,
+        renderInfo: true,
+      }),
+    }
+  ),
+  pure
+)(CalculatorView);

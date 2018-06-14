@@ -11,7 +11,6 @@ import {
   removeCalculatorTag,
 } from '../../../redux/actions/calculators';
 import {
-  calculatorResultFormulaSelector,
   calculatorResultUnitSelector,
   newCalculatorArgNameSelector,
 } from '../../../redux/selectors/calculators';
@@ -22,7 +21,6 @@ export default compose(
     (state, props) => ({
       newArgName: newCalculatorArgNameSelector(state, props),
       resultBaseUnit: calculatorResultUnitSelector(state, props),
-      formula: calculatorResultFormulaSelector(state, props),
     }),
     {
       addCalculatorArg,

@@ -9135,6 +9135,10 @@ react-event-listener@^0.6.0:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-flipper@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-flipper/-/react-flipper-0.2.5.tgz#8112e29bead44f97bc50764769223fc5a30b914e"
+
 react-fuzzy@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-fuzzy/-/react-fuzzy-0.5.2.tgz#fc13bf6f0b785e5fefe908724efebec4935eaefe"

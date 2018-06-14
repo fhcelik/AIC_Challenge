@@ -1,3 +1,5 @@
+import { IconButton } from 'material-ui';
+import EditIcon from 'material-ui-icons/Edit';
 import FavoriteIcon from 'material-ui-icons/FavoriteBorder';
 import InfoIcon from 'material-ui-icons/InfoOutline';
 import Grid from 'material-ui/Grid';
@@ -22,12 +24,19 @@ const Display = ({
   onArgUnitChange,
   setArgToFormula,
   result,
+  showEditor,
+  showInfo,
   onResultUnitChange,
 }) => (
   <div className={classes.root}>
     <Header>
+      <IconButton onClick={showEditor}>
+        <EditIcon />
+      </IconButton>
       <FavoriteIcon />
-      <InfoIcon />
+      <IconButton onClick={showInfo}>
+        <InfoIcon />
+      </IconButton>
     </Header>
     <div className={classes.content}>
       <Grid
@@ -76,6 +85,8 @@ Display.propTypes = {
   onArgUnitChange: PropTypes.func.isRequired,
   setArgToFormula: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
+  showEditor: PropTypes.func.isRequired,
+  showInfo: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
 };
 

@@ -21,10 +21,6 @@ const styles = theme => ({
     backgroundImage: `url(${dot})`,
   },
 
-  textEditor: {
-    ...theme.typography.display3,
-  },
-
   addIcon: {
     color: theme.colors.text,
     fontSize: '30px',
@@ -48,14 +44,19 @@ const Editor = ({
   onArgRemove,
   result,
   resultBaseUnit,
+  showDisplay,
   onResultFormulaChange,
   onResultUnitChange,
   formula,
 }) => (
   <div className={cx(classes.root, classes.editorRoot)}>
     <Header>
-      <CheckIcon />
-      <CancelIcon />
+      <IconButton onClick={showDisplay}>
+        <CheckIcon />
+      </IconButton>
+      <IconButton>
+        <CancelIcon onClick={showDisplay} />
+      </IconButton>
     </Header>
     <Grid
       container
@@ -114,7 +115,7 @@ const Editor = ({
           multiline
           {...theme.props.MuiFormControl}
           InputProps={{
-            classes: { input: classes.textEditor },
+            classes: { input: classes.description },
           }}
         />
       </div>
@@ -141,6 +142,7 @@ Editor.propTypes = {
   onArgRemove: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
   resultBaseUnit: PropTypes.string,
+  showDisplay: PropTypes.func,
   onResultFormulaChange: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
   formula: PropTypes.string.isRequired,
