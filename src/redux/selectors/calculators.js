@@ -19,13 +19,13 @@ function recursiveFlatten(calculators, calculator) {
   return {
     ...rootCalculator,
     ...calculator,
-    argvals: R.map(
+    args: R.map(
       rootArg =>
         R.merge(
           R.dissoc('refId', rootArg),
-          R.path(['argvals', rootArg.name], calculator)
+          R.path(['args', rootArg.name], calculator)
         ),
-      rootCalculator.argvals
+      rootCalculator.args
     ),
     tags: R.uniq(R.concat(rootCalculator.tags, calculator.tags)),
     result: R.merge(rootCalculator.result, calculator.result),
@@ -56,7 +56,7 @@ export const nestedCalculatorSelector = createSelector(
       return R.reduce(
         (acc, elem) => recursiveLookup(calculators, elem.refId, acc),
         ret,
-        R.filter(arg => arg.refId, R.values(calc.argvals))
+        R.filter(arg => arg.refId, R.values(calc.args))
       );
     }
     return recursiveLookup(calculators, id, {});
@@ -75,7 +75,7 @@ function exists(obj) {
 
 export const calculatorArgsSelector = createSelector(
   [flatCalculatorSelector],
-  flatCalculator => R.values(flatCalculator.argvals)
+  flatCalculator => R.values(flatCalculator.args)
 );
 
 function convertToUnit(value, unit) {
@@ -110,7 +110,7 @@ function evalCalculator(flatCalculators, calcId) {
         exists(arg.refId)
           ? evalCalculator(flatCalculators, arg.refId)
           : convertToUnit(arg.value, arg.unit),
-      calc.argvals
+      calc.args
     );
     const builtFormula = parse(calc.result.execFormula);
     return builtFormula.eval(scope);
@@ -140,7 +140,7 @@ export const newCalculatorArgNameSelector = createSelector(
     const namegen = newCalculatorArgnameGenerator();
     while (true) {
       const name = namegen.next().value;
-      if (!calc.argvals[name]) {
+      if (!calc.args[name]) {
         return name;
       }
     }

@@ -8,6 +8,10 @@ export const addCalculator = createAction(
   Calculator
 );
 
+export const saveCalculators = createAction(
+  '@@calcoola/calculator/saveCalculators'
+);
+
 export const changeCalculatorTitle = createAction(
   '@@calcoola/calculator/change/title'
 );
@@ -36,19 +40,19 @@ export const changeCalculatorArg = createAction(
 export const changeCalculatorArgAlias = createAction(
   '@@calcoola/calculator/argument-change/alias',
   ({ id, argname, alias }) => dispatch =>
-    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { alias } } }))
+    dispatch(changeCalculatorArg({ id, args: { [argname]: { alias } } }))
 );
 
 export const changeCalculatorArgValue = createAction(
   '@@calcoola/calculator/argument-change/value',
   ({ id, argname, value }) => dispatch =>
-    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { value } } }))
+    dispatch(changeCalculatorArg({ id, args: { [argname]: { value } } }))
 );
 
 export const changeCalculatorArgUnit = createAction(
   '@@calcoola/calculator/argument-change/unit',
   ({ id, argname, unit }) => dispatch =>
-    dispatch(changeCalculatorArg({ id, argvals: { [argname]: { unit } } }))
+    dispatch(changeCalculatorArg({ id, args: { [argname]: { unit } } }))
 );
 
 export const addCalculatorArgReference = createAction(
@@ -57,7 +61,7 @@ export const addCalculatorArgReference = createAction(
     const newCalcId = dispatch(addCalculator({ result: { refId: formulaId } }))
       .payload.id;
     const toRemove = R.path(
-      ['calculators', id, 'argvals', argname, 'refId'],
+      ['calculators', id, 'args', argname, 'refId'],
       getState()
     );
     if (toRemove) {
@@ -66,7 +70,7 @@ export const addCalculatorArgReference = createAction(
     dispatch(
       changeCalculatorArg({
         id,
-        argvals: { [argname]: { refId: newCalcId } },
+        args: { [argname]: { refId: newCalcId } },
       })
     );
   }
@@ -87,7 +91,7 @@ export const removeCalculatorArgReference = createAction(
   ({ id, argname }) => (dispatch, getState) => {
     const state = getState();
     const toRemove = R.path(
-      ['calculators', id, 'argvals', argname, 'refId'],
+      ['calculators', id, 'args', argname, 'refId'],
       state
     );
     if (toRemove) {

@@ -6,7 +6,7 @@ export const initialState = {
   calculators: {
     quadraticCalcId: CalculatorSchema({
       id: 'quadraticCalcId',
-      argvals: {
+      args: {
         a: { value: 1 },
         b: { value: 8 },
         c: { value: -9 },
@@ -21,7 +21,7 @@ export const initialState = {
 
     mwCalcId: CalculatorSchema({
       id: 'mwCalcId',
-      argvals: {
+      args: {
         pressure: { value: 5000, unit: 'psi' },
         TVD: { value: 8000, unit: 'ft' },
       },
@@ -37,7 +37,7 @@ export const initialState = {
 
     mwMCalcId: CalculatorSchema({
       id: 'mwMCalcId',
-      argvals: {
+      args: {
         pressure: { value: 5000, unit: 'psi' },
         TVD: { value: 2500, unit: 'm', alias: 'Total vertical distance' },
       },
@@ -46,7 +46,7 @@ export const initialState = {
 
     errCalcId: CalculatorSchema({
       id: 'errCalcId',
-      argvals: {
+      args: {
         x: { value: 1 },
         y: { value: 3 },
       },
@@ -58,7 +58,7 @@ export const initialState = {
 
     nestedQuadraticCalcId: CalculatorSchema({
       id: 'nestedQuadraticCalcId',
-      argvals: {
+      args: {
         a: { value: 1 },
         b: { refId: 'quadraticCalcId' },
         c: { value: 4 },
@@ -68,7 +68,7 @@ export const initialState = {
 
     nestedPressureCalcId: CalculatorSchema({
       id: 'nestedPressureCalcId',
-      argvals: {
+      args: {
         MW: { refId: 'mwCalcId', unit: 'ppg' },
         TVD: { value: 8000, unit: 'ft' },
       },

@@ -10,16 +10,17 @@ export function Calculator(props = {}) {
     result: {},
     tags: [],
     ...props,
-    argvals: R.mapObjIndexed(
+    args: R.mapObjIndexed(
       (arg, name) => ({ value: DEFAULT_ARG_VALUE, ...arg, name }),
-      R.prop('argvals', props)
+      R.prop('args', props)
     ),
   };
 }
 
 export const calculator = new schema.Entity('calculators');
+export const calculatorList = new schema.Array(calculator);
 
 calculator.define({
-  argvals: new schema.Values({ refId: calculator }),
+  args: new schema.Values({ refId: calculator }),
   result: { refId: calculator },
 });

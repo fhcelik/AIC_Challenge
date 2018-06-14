@@ -3,7 +3,7 @@ import { combineActions, handleActions } from 'redux-actions';
 import * as Actions from '../actions/calculators';
 import { DEFAULT_ARG_VALUE } from '../schemas/calculator';
 
-const calculatorArgPathCreator = (id, argname) => [id, 'argvals', argname];
+const calculatorArgPathCreator = (id, argname) => [id, 'args', argname];
 const calculatorTagLensCreator = id => R.lensPath([id, 'tags']);
 
 export default handleActions(
@@ -12,6 +12,8 @@ export default handleActions(
       ...calculators,
       [payload.id]: payload,
     }),
+    [Actions.saveCalculators]: (calculators, { payload }) =>
+      R.merge(calculators, payload),
     [combineActions(
       Actions.changeCalculatorTitle,
       Actions.changeCalculatorDescription
@@ -42,10 +44,10 @@ export default handleActions(
     [Actions.removeCalculator]: (calculators, { payload: { id } }) =>
       R.dissoc(id, calculators),
     [Actions.changeCalculatorArg]: (calculators, { payload }) => {
-      const { id, argvals } = payload;
+      const { id, args } = payload;
       return R.assocPath(
-        [id, 'argvals'],
-        R.mergeDeepRight(calculators[id].argvals, argvals),
+        [id, 'args'],
+        R.mergeDeepRight(calculators[id].args, args),
         calculators
       );
     },

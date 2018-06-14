@@ -15,8 +15,8 @@ export const registerUnitDefinitions = createAction(
   }
 );
 
-export const getUnitDefinitions = createAction(
-  '@@calcoola/units/getDefinitions',
+export const fetchUnitDefinitions = createAction(
+  '@@calcoola/units/fetchUnitDefinitions',
   () => (dispatch, _, httpClient) =>
     httpClient
       .get('/units')

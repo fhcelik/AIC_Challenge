@@ -62,8 +62,8 @@ CollectionSelect.propTypes = {
   className: PropTypes.string,
   collections: PropTypes.arrayOf(
     PropTypes.shape({
-      route: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     })
   ),
 };

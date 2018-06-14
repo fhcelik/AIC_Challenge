@@ -17,6 +17,9 @@ export const colors = {
 };
 
 const palette = {
+  primary: {
+    main: colors.navyBlue,
+  },
   background: {
     default: colors.gunmetal,
     gradient: colors.gunmetalGradient,

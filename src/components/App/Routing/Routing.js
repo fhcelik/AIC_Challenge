@@ -5,7 +5,7 @@ import Collection from '../../Collection';
 
 export const Routes = {
   root: '/',
-  collection: '/collection/:id',
+  collection: '/collection/',
 };
 
 const Mock404 = () => <Typography variant="display4">Not Found</Typography>;
@@ -18,7 +18,7 @@ const Routing = () => (
       render={() => <Typography variant="display4">The Dashboard</Typography>}
     />
     <Route
-      path={Routes.collection}
+      path={Routes.collection + ':id'}
       render={({ match }) => <Collection id={match.params.id} />}
     />
     <Route component={Mock404} />

@@ -11,6 +11,7 @@ jest.mock('react-flipper', () => ({
   Back: 'Back',
 }));
 jest.mock('react-transition-group', () => 'Transition');
+jest.mock('react-stack-grid', () => 'StackGrid');
 
 const snapshotCase = story => () => {
   const tree = renderer.create(story()).toJSON();

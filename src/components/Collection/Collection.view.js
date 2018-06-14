@@ -1,24 +1,20 @@
-import { Grid, Typography } from 'material-ui';
+import { Typography } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Calculator from '../Calculator';
-import NewCalculatorButton from '../NewCalculatorButton';
+import CalculatorGrid from '../CalculatorGrid';
 
-export default function Collection(props) {
-  const calculators = props.calculators.map(id => (
-    <Calculator key={id} id={id} />
-  ));
+export default function Collection({ collection }) {
   return (
-    <Grid container>
-      <Typography variant="display4" style={{ float: 'right' }}>
-        Collection: {props.id}
-      </Typography>
-      {calculators}
-      <NewCalculatorButton />
-    </Grid>
+    <React.Fragment>
+      <Typography variant="display4">{collection.name}</Typography>
+      <CalculatorGrid calculatorIds={collection.calculators} addButton={true} />
+    </React.Fragment>
   );
 }
 
 Collection.propTypes = {
-  calculators: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  collection: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    calculators: PropTypes.arrayOf(PropTypes.string.isRequired),
+  }).isRequired,
 };

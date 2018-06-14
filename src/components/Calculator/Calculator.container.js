@@ -98,5 +98,13 @@ export default compose(
       showDisplay();
     },
   }),
+  lifecycle({
+    componentDidUpdate({ renderDisplay: renderDisplayPrev }) {
+      const { onResize, renderDisplay } = this.props;
+      if (renderDisplay !== renderDisplayPrev && onResize) {
+        onResize();
+      }
+    },
+  }),
   pure
 )(CalculatorView);

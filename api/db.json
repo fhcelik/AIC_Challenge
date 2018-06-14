@@ -96,94 +96,131 @@
     }
   },
   "calculators": {
-    "dff02bc7-1c06-41dd-83ea-1fc6c454214c": {
-      "formula": "1354b9f8-31e0-4ad6-8d77-12bf72149742",
-      "argvals": {
-        "a": {
-          "value": 1
-        },
-        "b": {
-          "value": 8
-        },
-        "c": {
-          "value": -9
-        }
+    "4938d829-b7b3-4693-8a89-0f3ffb40d804": {
+      "id": "4938d829-b7b3-4693-8a89-0f3ffb40d804",
+      "result": { "name": "x", "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)" },
+      "tags": ["pure math"],
+      "args": {
+        "a": { "value": 1, "name": "a" },
+        "b": { "value": 8, "name": "b" },
+        "c": { "value": -9, "name": "c" }
       },
-      "isTop": false
+      "title": "Quadratic Formula",
+      "description": "Formula for finding roots of a quadratic polynomial"
     },
-    "588ade3a-6008-4ca2-912d-c5818de891cb": {
-      "formula": "708c2437-1e9c-49ae-a2b6-273323ac8026",
-      "argvals": {
-        "pressure": {
-          "value": 5000,
-          "unit": "psi"
-        },
-        "TVD": {
-          "value": 8000,
-          "unit": "ft"
-        }
+    "ef18139d-d736-403b-bd52-7396337a78c3": {
+      "id": "ef18139d-d736-403b-bd52-7396337a78c3",
+      "result": {
+        "execFormula": "pressure / TVD",
+        "name": "Equivalent mud weight",
+        "unit": "ppg"
       },
-      "isTop": false
+      "tags": ["basic drilling"],
+      "args": {
+        "pressure": { "value": 5000, "unit": "psi", "name": "pressure" },
+        "TVD": { "value": 8000, "unit": "ft", "name": "TVD" }
+      },
+      "title": "Mud weight",
+      "description":
+        "Find mud weight based on pressure and total vertical distance (TVD)"
     },
-    "0f5be547-d11c-46a3-a451-01126aa34f68": {
-      "formula": "708c2437-1e9c-49ae-a2b6-273323ac8026",
-      "argvals": {
-        "pressure": {
-          "value": 5000,
-          "unit": "psi"
-        },
+    "3cb10d04-f85c-4655-95da-5488a7fbf0c2": {
+      "id": "3cb10d04-f85c-4655-95da-5488a7fbf0c2",
+      "result": { "refId": "ef18139d-d736-403b-bd52-7396337a78c3" },
+      "tags": [],
+      "args": {
+        "pressure": { "value": 5000, "unit": "psi", "name": "pressure" },
         "TVD": {
           "value": 2500,
-          "unit": "m"
+          "unit": "m",
+          "alias": "Total vertical distance",
+          "name": "TVD"
         }
-      },
-      "isTop": true
+      }
     },
-    "87cb7ca0-10cf-487a-9360-b6984f64b4fc": {
-      "formula": "20cd7729-02e8-4596-a651-4d707b52a04f",
-      "argvals": {
-        "x": {
-          "value": 1
-        },
-        "y": {
-          "value": 3
-        }
+    "5cd0d466-a6aa-40c9-99da-a1e83df35e68": {
+      "id": "5cd0d466-a6aa-40c9-99da-a1e83df35e68",
+      "result": { "execFormula": "x^2 + y + z", "name": "error" },
+      "tags": [],
+      "args": {
+        "x": { "value": 1, "name": "x" },
+        "y": { "value": 3, "name": "y" }
       },
-      "isTop": true
+      "title": "Error test",
+      "description": "error"
     },
-    "ab5aaab7-48f3-4ea2-ba37-eec90fcb6dac": {
-      "formula": "1354b9f8-31e0-4ad6-8d77-12bf72149742",
-      "argvals": {
-        "a": {
-          "value": 1
-        },
+    "220bde7b-f2a2-4a3e-9cde-1e5b6b205174": {
+      "id": "220bde7b-f2a2-4a3e-9cde-1e5b6b205174",
+      "result": { "refId": "4938d829-b7b3-4693-8a89-0f3ffb40d804" },
+      "tags": [],
+      "args": {
+        "a": { "value": 1, "name": "a" },
         "b": {
-          "refId": "dff02bc7-1c06-41dd-83ea-1fc6c454214c"
+          "value": 1,
+          "refId": "4938d829-b7b3-4693-8a89-0f3ffb40d804",
+          "name": "b"
         },
-        "c": {
-          "value": 4
-        }
-      },
-      "isTop": true
+        "c": { "value": 4, "name": "c" }
+      }
     },
-    "26aa8046-4f26-46ba-8a8d-e538ceb05a8e": {
-      "formula": "d9a855a7-0b69-4281-aa81-3aa83dac4477",
-      "argvals": {
-        "MW": {
-          "refId": "588ade3a-6008-4ca2-912d-c5818de891cb"
-        },
-        "TVD": {
-          "value": 8000,
-          "unit": "ft"
-        }
+    "167d8351-8337-444a-a188-ec63e3a3c1d3": {
+      "id": "167d8351-8337-444a-a188-ec63e3a3c1d3",
+      "result": {
+        "execFormula": "MW * TVD",
+        "name": "Pressure",
+        "unit": "psi"
       },
-      "isTop": true
+      "tags": ["basic drilling"],
+      "args": {
+        "MW": {
+          "value": 1,
+          "refId": "ef18139d-d736-403b-bd52-7396337a78c3",
+          "unit": "ppg",
+          "name": "MW"
+        },
+        "TVD": { "value": 8000, "unit": "ft", "name": "TVD" }
+      },
+      "title": "Derive Pressure",
+      "description":
+        "Find pressure based on mud weight and total vertical distance (TVD)"
     }
   },
   "collections": [
     {
       "id": "cdec5f41-e5c2-4d02-898a-481904234749",
-      "name": "My Calculators"
+      "name": "My Calculators",
+      "calculators": [
+        {
+          "id": "5838d829-b7b3-4693-8a89-0f3ffb40d804",
+          "result": {
+            "name": "x",
+            "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)"
+          },
+          "tags": ["pure math"],
+          "args": {
+            "a": { "value": 1, "name": "a" },
+            "b": { "value": 8, "name": "b" },
+            "c": { "value": -9, "name": "c" }
+          },
+          "title": "Quadratic Formula",
+          "description": "Formula for finding roots of a quadratic polynomial"
+        },
+        {
+          "id": "8308d829-b7b3-4693-8a89-0f3ffb40d804",
+          "result": {
+            "name": "x",
+            "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)"
+          },
+          "tags": ["pure math"],
+          "args": {
+            "a": { "value": 1, "name": "a" },
+            "b": { "value": 8, "name": "b" },
+            "c": { "value": -9, "name": "c" }
+          },
+          "title": "Quadratic Formula",
+          "description": "Formula for finding roots of a quadratic polynomial"
+        }
+      ]
     },
     {
       "id": "f604cabd-49e0-4be5-85d7-5de58c2692ba",
