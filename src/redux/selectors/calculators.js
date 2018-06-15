@@ -147,11 +147,28 @@ export const newCalculatorArgNameSelector = createSelector(
   }
 );
 
+const mapArgToAlias = argMap => node => {
+  if (node.isSymbolNode && argMap[node.name]) {
+    return new math.expression.node.SymbolNode(argMap[node.name]);
+  }
+  return node;
+};
+
+const symbolToTeX = node => {
+  if (node.isSymbolNode) {
+    return ' ' + JSON.stringify(node.name).replace(/\W/g, '');
+  }
+};
+
 export const calculatorResultFormulaSelector = createSelector(
-  [flatCalculatorSelector],
-  calc => {
+  [flatCalculatorSelector, calculatorArgsSelector],
+  (calc, args) => {
     try {
-      return parse(calc.result.execFormula).toTex();
+      const argMap = R.zipObj(R.pluck('name', args), R.pluck('alias', args));
+      const tree = parse(calc.result.execFormula).transform(
+        mapArgToAlias(argMap)
+      );
+      return tree.toTex({ handler: symbolToTeX });
     } catch (error) {
       return '';
     }
