@@ -41,7 +41,6 @@ export const ArgumentStyles = theme => ({
   },
   label: {
     textTransform: 'uppercase',
-    ...theme.typography.subheading,
   },
   container: {
     padding: '0 0.3em',

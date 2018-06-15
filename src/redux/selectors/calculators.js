@@ -73,36 +73,9 @@ function exists(obj) {
   return 'undefined' !== typeof obj;
 }
 
-function unitEquals(u1, u2) {
-  if (exists(u1) !== exists(u2)) return false;
-  if (!exists(u1) && !exists(u2)) return true;
-  return math.unit(u1).equalBase(math.unit(u2));
-}
-
-const formulasSelector = createSelector(calculatorsSelector, calculators =>
-  R.filter(R.path(['result', 'execFormula']), calculators)
-);
-
 export const calculatorArgsSelector = createSelector(
-  [formulasSelector, flatCalculatorSelector],
-  (formulas, flatCalculator) =>
-    R.values(
-      R.map(
-        arg => ({
-          ...arg,
-          formulas: R.values(
-            R.map(
-              R.pick(['id', 'title']),
-              R.filter(
-                argFormula => unitEquals(arg.unit, argFormula.result.unit),
-                formulas
-              )
-            )
-          ),
-        }),
-        flatCalculator.argvals
-      )
-    )
+  [flatCalculatorSelector],
+  flatCalculator => R.values(flatCalculator.argvals)
 );
 
 function convertToUnit(value, unit) {

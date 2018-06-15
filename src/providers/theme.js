@@ -39,7 +39,7 @@ const palette = {
   select: {
     icon: colors.orange,
   },
-}
+};
 
 const typography = {
   fontFamily: 'oxygen mono',
@@ -87,7 +87,7 @@ const theme = createMuiTheme({
     },
     MuiInputLabel: {
       root: {
-        color: colors.fadedText,
+        color: palette.text.faded,
       },
     },
     MuiToolbar: {
@@ -147,7 +147,6 @@ const theme = createMuiTheme({
   },
   props: {
     MuiFormControl: {
-      disableUnderline: true,
       fullWidth: true,
       margin: 'dense',
     },
@@ -157,7 +156,6 @@ const theme = createMuiTheme({
     },
     MuiInputLabel: {
       focused: false,
-      shrink: true,
     },
     MuiSelect: {
       disableUnderline: true,

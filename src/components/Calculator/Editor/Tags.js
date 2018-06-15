@@ -35,6 +35,7 @@ const Tags = ({ classes, theme, tags, onTagAdd, onTagDelete }) => {
           input: classes.textEditor,
           chip: classes.tag,
         }}
+        {...theme.props.MuiInput}
         {...theme.props.MuiFormControl}
         InputLabelProps={theme.props.MuiInputLabel}
       />

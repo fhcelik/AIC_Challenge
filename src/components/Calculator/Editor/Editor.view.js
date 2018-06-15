@@ -110,7 +110,6 @@ const Editor = ({
           label="DESCRIPTION"
           value={description}
           onChange={onDescriptionChange}
-          placeholder="Calculator Description"
           type="text"
           multiline
           {...theme.props.MuiFormControl}

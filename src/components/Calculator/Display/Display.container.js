@@ -20,7 +20,7 @@ export default compose(
       changeCalculatorArgValue({
         id,
         argname: event.target.name,
-        value: Number(event.target.value),
+        value: event.target.value,
       });
     },
     setArgToFormula: ({
