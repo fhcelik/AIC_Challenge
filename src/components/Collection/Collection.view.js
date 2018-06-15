@@ -17,8 +17,7 @@ export default function Collection(props) {
   return (
     <div>
       <Typography variant="display4" style={{ float: 'right' }}>
-        Collection: {props.collectionUrl}
-        {/* TODO: connect to actual collection */}
+        Collection: {props.id}
       </Typography>
       <NewCalculatorButton />
       {formulas}

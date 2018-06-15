@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import Routes from '../../routes';
 import CollectionSelect from './CollectionSelect';
+import { Routes } from '../App/Routing';
 
 const styles = theme => ({
   root: {

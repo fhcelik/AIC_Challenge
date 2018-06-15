@@ -27,9 +27,7 @@
       },
       "title": "Quadratic Formula",
       "description": "Formula for finding roots of a quadratic polynomial",
-      "tags": [
-        "pure math"
-      ]
+      "tags": ["pure math"]
     },
     "708c2437-1e9c-49ae-a2b6-273323ac8026": {
       "args": [
@@ -50,10 +48,9 @@
         "unit": "ppg"
       },
       "title": "Mud weight",
-      "description": "Find mud weight based on pressure and total vertical distance (TVD)",
-      "tags": [
-        "basic drilling"
-      ]
+      "description":
+        "Find mud weight based on pressure and total vertical distance (TVD)",
+      "tags": ["basic drilling"]
     },
     "20cd7729-02e8-4596-a651-4d707b52a04f": {
       "args": [
@@ -93,10 +90,9 @@
         "unit": "psi"
       },
       "title": "Derive Pressure",
-      "description": "Find pressure based on mud weight and total vertical distance (TVD)",
-      "tags": [
-        "basic drilling"
-      ]
+      "description":
+        "Find pressure based on mud weight and total vertical distance (TVD)",
+      "tags": ["basic drilling"]
     }
   },
   "calculators": {
@@ -183,5 +179,23 @@
       },
       "isTop": true
     }
-  }
+  },
+  "collections": [
+    {
+      "id": "cdec5f41-e5c2-4d02-898a-481904234749",
+      "name": "My Calculators"
+    },
+    {
+      "id": "f604cabd-49e0-4be5-85d7-5de58c2692ba",
+      "name": "My Favourites"
+    },
+    {
+      "id": "a10d006b-c1a2-4fa3-8b3f-1bca7ad74bd3",
+      "name": "Interesting Calculators"
+    },
+    {
+      "id": "62ae405e-8fc3-4a33-be11-a0e02326b289",
+      "name": "Collection of Calculators with a really long name"
+    }
+  ]
 }

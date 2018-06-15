@@ -8,6 +8,7 @@ import ThemeProvider from './providers/theme';
 import configureStore, { history } from './redux/store';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+import { bootstrap } from './redux/actions/app';
 
 const { store, persistor, isReady } = configureStore();
 
@@ -43,8 +44,7 @@ const render = () => {
  * Wait for persistor to be ready
  */
 isReady.finally(async () => {
-  // get the search resources from the server
-  //await store.dispatch(fetchSearchResources);
+  await store.dispatch(bootstrap());
 
   return render();
 });

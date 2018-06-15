@@ -2,8 +2,10 @@ import { ListItem, MenuList, Typography, withStyles } from 'material-ui';
 import * as R from 'ramda';
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 import DropdownMenu from '../../utils/DropdownMenu';
+import { Routes } from '../../App/Routing';
 
 const styles = theme => ({
   '@global a, a:active, a:visited': {
@@ -18,6 +20,9 @@ const styles = theme => ({
       backgroundColor: theme.palette.card.header,
     },
   },
+  listItemText: {
+    maxWidth: '300px',
+  },
 });
 
 const CollectionSelect = ({ classes, className, collections }) => (
@@ -26,13 +31,22 @@ const CollectionSelect = ({ classes, className, collections }) => (
     offset="-16px, 12px"
     className={className}
   >
-    <MenuList role="menu">
+    <MenuList disablePadding role="menu">
       {R.map(
         collection => (
-          <NavLink to={collection.route} exact={true} key={collection.route}>
+          <NavLink
+            to={`${Routes.collection}${collection.id}`}
+            exact={true}
+            key={collection.id}
+          >
             <ListItem button className={classes.listItem}>
-              <Typography variant="display3" color="inherit">
-                {collection.title}
+              <Typography
+                variant="display3"
+                color="inherit"
+                noWrap
+                className={classes.listItemText}
+              >
+                {collection.name}
               </Typography>
             </ListItem>
           </NavLink>

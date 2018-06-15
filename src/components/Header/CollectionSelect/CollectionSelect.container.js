@@ -1,34 +1,14 @@
-import { compose, withProps } from 'recompose';
+import { compose } from 'recompose';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import DropdownMenuView from './CollectionSelect.view';
-import routes from '../../../routes';
+import { collectionsSelector } from '../../../redux/selectors/collections';
 
 const enhance = compose(
-  withRouter,
-  withProps(() => ({
-    collections: [
-      {
-        key: 'my-calculators',
-        route: routes.collection + '?my-calculators',
-        title: 'My Calculators',
-      },
-      {
-        key: 'my-favourites',
-        route: routes.collection + '?my-favourites',
-        title: 'My Favourites',
-      },
-      {
-        key: 'custom-collection',
-        route: routes.collection + '?custom-collection',
-        title: 'Custom Collection',
-      },
-      {
-        key: 'new-collection',
-        route: routes.collection + '?new-collection',
-        title: 'New Collection',
-      },
-    ],
-  }))
+  connect(state => ({
+    collections: collectionsSelector(state),
+  })),
+  withRouter
 );
 
 export default enhance(DropdownMenuView);
