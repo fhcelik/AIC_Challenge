@@ -202,7 +202,7 @@ export const calculatorResultValueSelector = createSelector(
         evalCalculator(flatCalculators, calcId),
         R.path([calcId, 'result', 'unit'], flatCalculators)
       ),
-      5
+      10
     );
   }
 );

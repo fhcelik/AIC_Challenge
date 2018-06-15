@@ -591,7 +591,7 @@ exports[`Calculator mwCalcId 1`] = `
             <p
               className="MuiTypography-root MuiTypography-body1 Result-resultText"
             >
-              12.031
+              12.03125069
             </p>
             <div
               className="MuiInput-root"
@@ -995,7 +995,7 @@ exports[`Calculator mwMCalcId 1`] = `
             <p
               className="MuiTypography-root MuiTypography-body1 Result-resultText"
             >
-              11.735
+              11.73480067
             </p>
             <div
               className="MuiInput-root"
@@ -1539,7 +1539,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                           <p
                             className="MuiTypography-root MuiTypography-body1 Result-resultText"
                           >
-                            12.031
+                            12.03125069
                           </p>
                           <div
                             className="MuiInput-root"
@@ -2333,7 +2333,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
             <p
               className="MuiTypography-root MuiTypography-body1 Result-resultText"
             >
-              -0.5 + 1.9365i
+              -0.5 + 1.936491673i
             </p>
           </div>
         </div>
