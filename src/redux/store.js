@@ -14,7 +14,7 @@ import localforage from 'localforage';
 export const history = createHistory();
 
 const httpClient = Axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 const reduxPersistConfig = {
