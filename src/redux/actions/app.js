@@ -15,3 +15,7 @@ export const bootstrap = createAction(
 export const saveMenuCollectionList = createAction(
   '@@calcoola/app/saveMenuCollectionList'
 );
+
+export const saveSearchResults = createAction(
+  '@@calcoola/app/saveSearchResults'
+);

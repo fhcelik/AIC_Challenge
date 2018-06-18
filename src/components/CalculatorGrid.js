@@ -24,8 +24,8 @@ const CalculatorGrid = ({ addButton = false, calculatorIds }) => {
 };
 
 CalculatorGrid.propTypes = {
-  addButton: PropTypes.bool.isRequired,
-  calculatorIds: PropTypes.arrayOf(PropTypes.string.isRequired),
+  addButton: PropTypes.bool,
+  calculatorIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default CalculatorGrid;

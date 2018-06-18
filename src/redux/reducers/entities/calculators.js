@@ -12,8 +12,6 @@ export default handleActions(
       ...calculators,
       [payload.id]: payload,
     }),
-    [Actions.saveCalculators]: (calculators, { payload }) =>
-      R.merge(calculators, payload),
     [combineActions(
       Actions.changeCalculatorTitle,
       Actions.changeCalculatorDescription

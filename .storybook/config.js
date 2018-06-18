@@ -27,9 +27,9 @@ function loadStories() {
         ? testDirectory
         : `${testDirectory}/${basename}`;
     const stories = storiesOf(testName, module)
-      .addDecorator(TestProvider)
       .addDecorator(StoryRouter())
       .addDecorator(Decorator)
+      .addDecorator(TestProvider)
       .addDecorator(InitialState(initialState));
     R.forEachObjIndexed((story, name) => {
       stories.add(name, story);

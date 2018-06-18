@@ -10,8 +10,13 @@ export default handleActions(
       ...app,
       menuCollectionList,
     }),
+    [Actions.saveSearchResults]: (app, { payload: searchResults }) => ({
+      ...app,
+      searchResults,
+    }),
   },
   {
     menuCollectionList: [],
+    searchResults: [],
   }
 );

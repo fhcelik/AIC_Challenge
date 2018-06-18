@@ -1,12 +1,13 @@
 import cx from 'classnames';
-import { Button, Grid, Toolbar, Typography, withStyles } from 'material-ui';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
+import { Button, Toolbar, Typography, withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import CollectionSelect from './CollectionSelect';
+import { compose } from 'recompose';
 import { Routes } from '../App/Routing';
+import SearchBar from '../SearchBar';
+import CollectionSelect from './CollectionSelect';
 
 const styles = theme => ({
   root: {
@@ -22,22 +23,6 @@ const styles = theme => ({
     padding: '1em',
     cursor: 'pointer',
     height: '3em',
-  },
-  search: {
-    flex: 1,
-    textAlign: 'left',
-    color: theme.palette.text.faded,
-    alignItems: 'center',
-  },
-  searchIcon: {
-    paddingTop: '0.2em',
-  },
-  searchText: {
-    display: 'inline',
-    position: 'absolute',
-    top: '0.9em',
-    textTransform: 'uppercase',
-    color: theme.palette.text.primary
   },
   activeLink: {
     backgroundColor: theme.palette.card.header,
@@ -62,18 +47,7 @@ const Header = ({ classes, location }) => (
         [classes.activeLink]: location.pathname.includes(Routes.collection),
       })}
     />
-    <Grid className={classes.search}>
-      <MoreVertIcon className={classes.searchIcon} />
-      <Typography
-        variant="display3"
-        color="inherit"
-        classes={{
-          root: classes.searchText,
-        }}
-      >
-        Search for Calculators...
-      </Typography>
-    </Grid>
+    <SearchBar />
     <Button color="inherit">John Wicked</Button>
   </Toolbar>
 );
@@ -82,4 +56,4 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
-export default withRouter(withStyles(styles)(Header));
+export default compose(withRouter, withStyles(styles))(Header);

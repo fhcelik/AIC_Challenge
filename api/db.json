@@ -5,98 +5,8 @@
       "ppg": "1 lbf / gal"
     }
   },
-  "formulas": {
-    "1354b9f8-31e0-4ad6-8d77-12bf72149742": {
-      "args": [
-        {
-          "name": "a",
-          "value": 1
-        },
-        {
-          "name": "b",
-          "value": 1
-        },
-        {
-          "name": "c",
-          "value": 1
-        }
-      ],
-      "result": {
-        "name": "x",
-        "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)"
-      },
-      "title": "Quadratic Formula",
-      "description": "Formula for finding roots of a quadratic polynomial",
-      "tags": ["pure math"]
-    },
-    "708c2437-1e9c-49ae-a2b6-273323ac8026": {
-      "args": [
-        {
-          "name": "pressure",
-          "value": 5000,
-          "unit": "psi"
-        },
-        {
-          "name": "TVD",
-          "value": 8000,
-          "unit": "ft"
-        }
-      ],
-      "result": {
-        "execFormula": "pressure / TVD",
-        "name": "Equivalent mud weight",
-        "unit": "ppg"
-      },
-      "title": "Mud weight",
-      "description":
-        "Find mud weight based on pressure and total vertical distance (TVD)",
-      "tags": ["basic drilling"]
-    },
-    "20cd7729-02e8-4596-a651-4d707b52a04f": {
-      "args": [
-        {
-          "name": "x",
-          "value": 1
-        },
-        {
-          "name": "y",
-          "value": 1
-        }
-      ],
-      "result": {
-        "execFormula": "x^2 + y + x",
-        "name": "error"
-      },
-      "title": "Error test",
-      "description": "error",
-      "tags": []
-    },
-    "d9a855a7-0b69-4281-aa81-3aa83dac4477": {
-      "args": [
-        {
-          "name": "MW",
-          "value": 12,
-          "unit": "ppg"
-        },
-        {
-          "name": "TVD",
-          "value": 8000,
-          "unit": "ft"
-        }
-      ],
-      "result": {
-        "execFormula": "MW * TVD",
-        "name": "Pressure",
-        "unit": "psi"
-      },
-      "title": "Derive Pressure",
-      "description":
-        "Find pressure based on mud weight and total vertical distance (TVD)",
-      "tags": ["basic drilling"]
-    }
-  },
-  "calculators": {
-    "4938d829-b7b3-4693-8a89-0f3ffb40d804": {
+  "calculators": [
+    {
       "id": "4938d829-b7b3-4693-8a89-0f3ffb40d804",
       "result": { "name": "x", "execFormula": "(-b + sqrt(b^2-4a*c))/(2a)" },
       "tags": ["pure math"],
@@ -108,7 +18,7 @@
       "title": "Quadratic Formula",
       "description": "Formula for finding roots of a quadratic polynomial"
     },
-    "ef18139d-d736-403b-bd52-7396337a78c3": {
+    {
       "id": "ef18139d-d736-403b-bd52-7396337a78c3",
       "result": {
         "execFormula": "pressure / TVD",
@@ -124,7 +34,7 @@
       "description":
         "Find mud weight based on pressure and total vertical distance (TVD)"
     },
-    "3cb10d04-f85c-4655-95da-5488a7fbf0c2": {
+    {
       "id": "3cb10d04-f85c-4655-95da-5488a7fbf0c2",
       "result": { "refId": "ef18139d-d736-403b-bd52-7396337a78c3" },
       "tags": [],
@@ -138,7 +48,7 @@
         }
       }
     },
-    "5cd0d466-a6aa-40c9-99da-a1e83df35e68": {
+    {
       "id": "5cd0d466-a6aa-40c9-99da-a1e83df35e68",
       "result": { "execFormula": "x^2 + y + z", "name": "error" },
       "tags": [],
@@ -149,7 +59,7 @@
       "title": "Error test",
       "description": "error"
     },
-    "220bde7b-f2a2-4a3e-9cde-1e5b6b205174": {
+    {
       "id": "220bde7b-f2a2-4a3e-9cde-1e5b6b205174",
       "result": { "refId": "4938d829-b7b3-4693-8a89-0f3ffb40d804" },
       "tags": [],
@@ -163,7 +73,7 @@
         "c": { "value": 4, "name": "c" }
       }
     },
-    "167d8351-8337-444a-a188-ec63e3a3c1d3": {
+    {
       "id": "167d8351-8337-444a-a188-ec63e3a3c1d3",
       "result": {
         "execFormula": "MW * TVD",
@@ -184,7 +94,7 @@
       "description":
         "Find pressure based on mud weight and total vertical distance (TVD)"
     }
-  },
+  ],
   "collections": [
     {
       "id": "cdec5f41-e5c2-4d02-898a-481904234749",

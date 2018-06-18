@@ -4425,11 +4425,11 @@ exports[`Header CollectionSelect 1`] = `
     </div>
   </div>
   <div
-    className="Header-search"
+    className="MuiInput-root MuiInput-fullWidth SearchBar-searchText"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root Header-searchIcon"
+      className="MuiSvgIcon-root SearchBar-searchIcon"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"
@@ -4438,11 +4438,28 @@ exports[`Header CollectionSelect 1`] = `
         d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
       />
     </svg>
-    <h1
-      className="MuiTypography-root Header-searchText MuiTypography-display3 MuiTypography-colorInherit"
-    >
-      Search for Calculators...
-    </h1>
+    <input
+      aria-invalid={undefined}
+      aria-required={undefined}
+      autoComplete={undefined}
+      autoFocus={undefined}
+      className="MuiInput-input"
+      defaultValue={undefined}
+      disabled={undefined}
+      id={undefined}
+      name={undefined}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={undefined}
+      onKeyUp={undefined}
+      placeholder="Search for Calculators..."
+      readOnly={undefined}
+      required={undefined}
+      rows={undefined}
+      type="text"
+      value={undefined}
+    />
   </div>
   <button
     className="MuiButtonBase-root MuiButton-root MuiButton-colorInherit"
@@ -4525,6 +4542,54 @@ exports[`Routing root 1`] = `
 >
   The Dashboard
 </h1>
+`;
+
+exports[`Routing search 1`] = `
+<StackGrid
+  columnWidth={320}
+  gridRef={[Function]}
+  gutter={15}
+/>
+`;
+
+exports[`SearchBar base 1`] = `
+<div
+  className="MuiInput-root MuiInput-fullWidth SearchBar-searchText"
+>
+  <svg
+    aria-hidden="true"
+    className="MuiSvgIcon-root SearchBar-searchIcon"
+    color={undefined}
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+    />
+  </svg>
+  <input
+    aria-invalid={undefined}
+    aria-required={undefined}
+    autoComplete={undefined}
+    autoFocus={undefined}
+    className="MuiInput-input"
+    defaultValue={undefined}
+    disabled={undefined}
+    id={undefined}
+    name={undefined}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={undefined}
+    onKeyUp={undefined}
+    placeholder="Search for Calculators..."
+    readOnly={undefined}
+    required={undefined}
+    rows={undefined}
+    type="text"
+    value={undefined}
+  />
+</div>
 `;
 
 exports[`UnitSelect Any 1`] = `

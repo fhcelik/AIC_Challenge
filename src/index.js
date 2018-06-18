@@ -49,5 +49,4 @@ isReady.finally(async () => {
   return render();
 });
 
-ReactDOM.render(app, target);
 registerServiceWorker();

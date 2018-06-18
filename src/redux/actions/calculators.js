@@ -8,10 +8,6 @@ export const addCalculator = createAction(
   Calculator
 );
 
-export const saveCalculators = createAction(
-  '@@calcoola/calculator/saveCalculators'
-);
-
 export const changeCalculatorTitle = createAction(
   '@@calcoola/calculator/change/title'
 );

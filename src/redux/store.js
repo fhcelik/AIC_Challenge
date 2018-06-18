@@ -1,15 +1,16 @@
 import Axios from 'axios';
 import Promise from 'bluebird';
-import { applyMiddleware, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import persistStore from 'redux-persist/lib/persistStore';
-import persistReducer from 'redux-persist/lib/persistReducer';
-import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+import localforage from 'localforage';
+import { routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, createStore } from 'redux';
+import debounceMiddleware from 'redux-debounce';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import persistReducer from 'redux-persist/lib/persistReducer';
+import persistStore from 'redux-persist/lib/persistStore';
 import thunk from 'redux-thunk';
 import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
-import localforage from 'localforage';
 
 export const history = createHistory();
 
@@ -17,19 +18,28 @@ const httpClient = Axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
 
+export const debounceConfigNames = {
+  SEARCH: 'search',
+};
+
+const debounceConfig = {
+  [debounceConfigNames.SEARCH]: 300,
+};
+
+const middleware = [
+  debounceMiddleware(debounceConfig),
+  fsaThunk,
+  thunk.withExtraArgument(httpClient),
+  routerMiddleware(history),
+];
+
 const reduxPersistConfig = {
-  key: 'calcoola/root/2',
+  key: 'calcoola/root/102-search-calculators',
   timeout: 35000,
   storage: localforage,
   //transforms,
   //blacklist
 };
-
-const middleware = [
-  fsaThunk,
-  thunk.withExtraArgument(httpClient),
-  routerMiddleware(history),
-];
 
 const persistedReducer = persistReducer(reduxPersistConfig, reducer);
 
