@@ -38,7 +38,7 @@
     "webpack": "3.8.1"
   },
   "lint-staged": {
-    "(./**/*.{js, jsx}": [
+    "*.js": [
       "prettier --write",
       "yarn lint",
       "git add"
