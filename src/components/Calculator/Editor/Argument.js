@@ -38,6 +38,7 @@ function Argument({
       className={cx(classes.argument, classes.container)}
     >
       <TextField
+        autoComplete="off"
         name={name}
         label={`ARGUMENT: ${name}`}
         type="text"

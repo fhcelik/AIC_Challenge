@@ -26,6 +26,7 @@ function Argument({
   ) : (
     <Grid container justify="space-between">
       <TextField
+        autoComplete="off"
         name={name}
         label={alias}
         type="number"

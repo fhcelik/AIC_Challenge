@@ -29,6 +29,7 @@ const Info = ({ classes, title, description, formula, showDisplay, theme }) => (
         <Formula formula={formula} />
       </div>
       <TextField
+        autoComplete="off"
         label="DESCRIPTION"
         value={description}
         disabled

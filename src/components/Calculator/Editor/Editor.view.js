@@ -106,6 +106,7 @@ const Editor = ({
       </div>
       <div className={classes.border}>
         <TextField
+          autoComplete="off"
           name="description"
           label="DESCRIPTION"
           value={description}
