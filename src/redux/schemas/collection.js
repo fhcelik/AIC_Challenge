@@ -11,8 +11,12 @@ export function Collection(props = {}) {
   };
 }
 
-export const collection = new schema.Entity('collections', {
-  calculators: calculatorList,
-});
+export const collection = new schema.Entity(
+  'collections',
+  {
+    calculators: calculatorList,
+  },
+  { processStrategy: value => Collection(value) }
+);
 
 export const collectionList = new schema.Array(collection);

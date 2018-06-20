@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
-import { fetchCollections } from './collections.js';
-import { fetchUnitDefinitions } from './units.js';
+import { fetchCollections } from './collections';
+import { fetchUnitDefinitions } from './units';
 
 export const bootstrap = createAction(
   '@@calcoola/app/bootstrap',

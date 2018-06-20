@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Calculator errors 1`] = `
+exports[`Calculator errCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"
@@ -248,7 +248,7 @@ exports[`Calculator errors 1`] = `
 </Flipper>
 `;
 
-exports[`Calculator mudweight ft from state 1`] = `
+exports[`Calculator mwCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"
@@ -652,7 +652,7 @@ exports[`Calculator mudweight ft from state 1`] = `
 </Flipper>
 `;
 
-exports[`Calculator mudweight m from state 1`] = `
+exports[`Calculator mwMCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"
@@ -1056,7 +1056,7 @@ exports[`Calculator mudweight m from state 1`] = `
 </Flipper>
 `;
 
-exports[`Calculator pressure from mudweight 1`] = `
+exports[`Calculator nestedPressureCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"
@@ -1773,7 +1773,7 @@ exports[`Calculator pressure from mudweight 1`] = `
 </Flipper>
 `;
 
-exports[`Calculator quadratic from quadratic 1`] = `
+exports[`Calculator nestedQuadraticCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"
@@ -2344,7 +2344,7 @@ exports[`Calculator quadratic from quadratic 1`] = `
 </Flipper>
 `;
 
-exports[`Calculator quadratic from state 1`] = `
+exports[`Calculator quadraticCalcId 1`] = `
 <Flipper
   isFlipped={false}
   orientation="horizontal"

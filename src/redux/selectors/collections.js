@@ -3,10 +3,10 @@ import { createSelector } from 'reselect';
 
 const menuCollectionListSelector = R.path(['app', 'menuCollectionList']);
 
-const collectionsSelector = R.prop('collections');
+const collectionsSelector = R.path(['entities', 'collections']);
 
 export const collectionByIdSelector = (state, { id }) =>
-  R.path(['collections', id], state);
+  R.prop(id, collectionsSelector(state));
 
 export const menuCollectionsSelector = createSelector(
   menuCollectionListSelector,

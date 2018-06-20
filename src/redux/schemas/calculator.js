@@ -17,7 +17,11 @@ export function Calculator(props = {}) {
   };
 }
 
-export const calculator = new schema.Entity('calculators');
+export const calculator = new schema.Entity(
+  'calculators',
+  {},
+  { processStrategy: value => Calculator(value) }
+);
 export const calculatorList = new schema.Array(calculator);
 
 calculator.define({

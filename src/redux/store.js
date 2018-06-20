@@ -18,8 +18,7 @@ const httpClient = Axios.create({
 });
 
 const reduxPersistConfig = {
-  key: 'calcoola/root/1',
-  version: 1,
+  key: 'calcoola/root/2',
   timeout: 35000,
   storage: localforage,
   //transforms,

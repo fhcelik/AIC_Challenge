@@ -2,10 +2,10 @@ import math, { parse } from '../../mathjs-secured';
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
 
-export const calculatorsSelector = R.prop('calculators');
+export const calculatorsSelector = R.path(['entities', 'calculators']);
 
 export const calculatorSelector = (state, { id }) =>
-  R.path(['calculators', id], state);
+  R.prop(id, calculatorsSelector(state));
 
 function recursiveFlatten(calculators, calculator) {
   const formulaSource = R.path(['result', 'refId'], calculator);
