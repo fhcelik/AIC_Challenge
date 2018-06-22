@@ -98,7 +98,7 @@ function convertToNumber(value, unit) {
       return NaN;
     }
   }
-  return value;
+  return math.complex(value);
 }
 
 function evalCalculator(flatCalculators, calcId) {
