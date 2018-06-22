@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose, withHandlers } from 'recompose';
+import { compose, lifecycle, withHandlers } from 'recompose';
 import {
   addCalculatorArg,
   addCalculatorTag,
@@ -64,6 +64,17 @@ export default compose(
         id,
         execFormula: event.target.value,
       });
+    },
+  }),
+  lifecycle({
+    componentDidUpdate({ resultBaseUnit: prevResultBaseUnit }) {
+      const { resultBaseUnit, changeCalculatorResultUnit, id } = this.props;
+      if (resultBaseUnit !== prevResultBaseUnit) {
+        changeCalculatorResultUnit({
+          id,
+          unit: resultBaseUnit,
+        });
+      }
     },
   })
 )(Editor);
