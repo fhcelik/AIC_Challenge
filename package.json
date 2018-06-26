@@ -14,7 +14,7 @@
     "mathjs": "^4.0.1",
     "normalizr": "^3.2.4",
     "prop-types": "^15.5.10",
-    "query-string": "^6.1.0",
+    "qs": "^6.5.2",
     "ramda": "^0.25.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",

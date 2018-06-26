@@ -1,4 +1,4 @@
-import qs from 'query-string';
+import qs from 'qs';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { push } from 'react-router-redux';
@@ -20,7 +20,7 @@ export default compose(
     push,
   }),
   withProps(({ location }) => {
-    const params = qs.parse(location.search);
+    const params = qs.parse(location.search, { ignoreQueryPrefix: true });
     return {
       query: location.pathname === Routes.search ? params.q : undefined,
     };
