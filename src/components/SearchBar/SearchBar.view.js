@@ -6,7 +6,9 @@ import React from 'react';
 
 const styles = theme => ({
   searchIcon: {
-    paddingTop: '0.2em',
+    fontSize: 32,
+    display: 'flex',
+    alignItems: 'center',
     color: theme.palette.text.faded,
   },
   searchText: {

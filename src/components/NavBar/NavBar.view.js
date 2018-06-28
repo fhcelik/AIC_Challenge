@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import { Toolbar, Typography, withStyles } from 'material-ui';
+import { AppBar, Toolbar, Typography, withStyles } from 'material-ui';
 import Account from 'material-ui-icons/AccountBox';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -12,12 +12,12 @@ import CollectionSelect from './CollectionSelect';
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.palette.header.background,
+    backgroundColor: theme.palette.navbar.background,
     border: `1px solid ${theme.palette.card.header}`,
     boxShadow: 'none',
-    flex: '0 0 auto',
+  },
+  toolbar: {
     minHeight: '3em',
-    zIndex: 100,
   },
   navigation: {
     textTransform: 'uppercase',
@@ -42,35 +42,37 @@ const styles = theme => ({
   },
 });
 
-const Header = ({ classes, location }) => (
-  <Toolbar className={classes.root}>
-    <NavLink
-      to={Routes.root}
-      className={classes.navigation}
-      activeClassName={classes.activeLink}
-      exact={true}
-    >
-      <Typography variant="display3">Dashboard</Typography>
-    </NavLink>
-    <CollectionSelect
-      className={cx(classes.navigation, {
-        [classes.activeLink]: location.pathname.includes(Routes.collection),
-      })}
-    />
-    <SearchBar />
-    <Account className={classes.profilePicture} />
-    <Typography
-      noWrap
-      className={cx(classes.navigation, classes.profile)}
-      variant="display3"
-    >
-      John Wicked
-    </Typography>
-  </Toolbar>
+const NavBar = ({ classes, location }) => (
+  <AppBar position="static" className={classes.root}>
+    <Toolbar className={classes.toolbar}>
+      <NavLink
+        to={Routes.root}
+        className={classes.navigation}
+        activeClassName={classes.activeLink}
+        exact
+      >
+        <Typography variant="display3">Dashboard</Typography>
+      </NavLink>
+      <CollectionSelect
+        className={cx(classes.navigation, {
+          [classes.activeLink]: location.pathname.includes(Routes.collection),
+        })}
+      />
+      <SearchBar />
+      <Account className={classes.profilePicture} />
+      <Typography
+        noWrap
+        className={cx(classes.navigation, classes.profile)}
+        variant="display3"
+      >
+        John Wicked
+      </Typography>
+    </Toolbar>
+  </AppBar>
 );
 
-Header.propTypes = {
+NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
-export default compose(withRouter, withStyles(styles))(Header);
+export default compose(withRouter, withStyles(styles))(NavBar);

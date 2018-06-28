@@ -24,7 +24,7 @@ const styles = theme => ({
     position: 'relative',
   },
   items: {
-    background: theme.palette.header.background,
+    background: theme.palette.navbar.background,
     borderColor: theme.palette.card.header,
     border: '1px solid',
   },

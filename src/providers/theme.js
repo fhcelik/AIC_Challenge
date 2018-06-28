@@ -24,7 +24,7 @@ const palette = {
     default: colors.gunmetal,
     gradient: colors.gunmetalGradient,
   },
-  header: {
+  navbar: {
     background: colors.midnightBlue,
   },
   card: {

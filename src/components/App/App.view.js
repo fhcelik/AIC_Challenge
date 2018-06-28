@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import Header from '../Header';
+import NavBar from '../NavBar';
 import Routing from './Routing';
 
 const styles = theme => ({
@@ -14,7 +14,7 @@ const styles = theme => ({
 
 const App = ({ classes }) => (
   <div className={classes.root}>
-    <Header />
+    <NavBar />
     <Routing />
   </div>
 );
