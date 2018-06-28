@@ -17,7 +17,7 @@ const styles = theme => ({
     paddingLeft: '16px',
     paddingRight: '15px',
     '&:hover': {
-      backgroundColor: theme.palette.card.header,
+      backgroundColor: theme.palette.link.hover,
     },
   },
   listItemText: {
@@ -27,9 +27,11 @@ const styles = theme => ({
 
 const CollectionSelect = ({ classes, className, collections }) => (
   <DropdownMenu
-    target={<Typography variant="display3">Collections</Typography>}
-    offset="-16px, 12px"
-    className={className}
+    target={
+      <Typography className={className} variant="display3">
+        Collections
+      </Typography>
+    }
   >
     <MenuList disablePadding role="menu">
       {R.map(

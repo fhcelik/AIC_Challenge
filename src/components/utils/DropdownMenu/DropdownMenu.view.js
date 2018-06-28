@@ -11,9 +11,9 @@ const styles = theme => ({
   },
   icon: {
     top: 'auto',
-    right: '-20px',
+    right: '0',
     color: '#A53C25',
-    bottom: '-8px',
+    bottom: '4px',
     position: 'absolute',
     fontSize: '28px',
     transform: 'rotate(-45deg)',
@@ -33,7 +33,6 @@ const styles = theme => ({
 const DropdownMenu = ({
   children,
   classes,
-  className,
   handleClose,
   handleToggle,
   hasIcon = true,
@@ -41,7 +40,7 @@ const DropdownMenu = ({
   open,
   target,
 }) => (
-  <Manager className={className}>
+  <Manager>
     <ClickAwayListener onClickAway={handleClose}>
       <Target onClick={handleToggle} className={classes.target}>
         {target}

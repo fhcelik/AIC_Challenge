@@ -1,5 +1,6 @@
 import cx from 'classnames';
-import { Button, Toolbar, Typography, withStyles } from 'material-ui';
+import { Toolbar, Typography, withStyles } from 'material-ui';
+import Account from 'material-ui-icons/AccountBox';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -22,13 +23,22 @@ const styles = theme => ({
     textTransform: 'uppercase',
     padding: '1em',
     cursor: 'pointer',
-    height: '3em',
+    '&:hover': {
+      backgroundColor: theme.palette.link.hover,
+    },
   },
   activeLink: {
-    backgroundColor: theme.palette.card.header,
+    backgroundColor: theme.palette.link.active,
   },
   'activeLink:active': {
     textDecoration: 'none',
+  },
+  profile: {
+    width: '180px',
+  },
+  profilePicture: {
+    fontSize: '36px',
+    color: 'white',
   },
 });
 
@@ -48,7 +58,14 @@ const Header = ({ classes, location }) => (
       })}
     />
     <SearchBar />
-    <Button color="inherit">John Wicked</Button>
+    <Account className={classes.profilePicture} />
+    <Typography
+      noWrap
+      className={cx(classes.navigation, classes.profile)}
+      variant="display3"
+    >
+      John Wicked
+    </Typography>
   </Toolbar>
 );
 

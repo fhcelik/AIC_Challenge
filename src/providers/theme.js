@@ -31,6 +31,10 @@ const palette = {
     background: colors.steelTeal,
     header: colors.navyBlue,
   },
+  link: {
+    active: colors.navyBlue,
+    hover: colors.steelTeal,
+  },
   tag: {
     background: colors.stormcloud,
     highlight: colors.steelBlue,
