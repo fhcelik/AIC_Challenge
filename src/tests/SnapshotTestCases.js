@@ -5,11 +5,6 @@ import renderer from 'react-test-renderer';
 expect.addSnapshotSerializer(jssSerializer);
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip');
-jest.mock('react-flipper', () => ({
-  Flipper: 'Flipper',
-  Front: 'Front',
-  Back: 'Back',
-}));
 jest.mock('react-transition-group', () => 'Transition');
 jest.mock('react-stack-grid', () => 'StackGrid');
 

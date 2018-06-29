@@ -52,11 +52,11 @@ const Editor = ({
 }) => (
   <div className={cx(classes.root, classes.editorRoot)}>
     <Header>
-      <IconButton onClick={onEditDone}>
+      <IconButton onClick={onEditDone} disableRipple>
         <CheckIcon />
       </IconButton>
-      <IconButton>
-        <CancelIcon onClick={showDisplay} />
+      <IconButton onClick={showDisplay} disableRipple>
+        <CancelIcon />
       </IconButton>
     </Header>
     <Grid

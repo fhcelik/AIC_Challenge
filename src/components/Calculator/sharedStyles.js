@@ -1,7 +1,7 @@
 export const CalculatorStyles = theme => ({
   root: {
     display: 'inline-block',
-    width: '20em',
+    width: '320px',
     backgroundColor: theme.palette.card.background,
   },
 
@@ -29,6 +29,7 @@ export const CalculatorStyles = theme => ({
     marginTop: '0.1em',
     marginBottom: '0.5em',
   },
+
   titleText: {
     ...theme.typography.display3,
   },

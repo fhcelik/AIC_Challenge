@@ -99,11 +99,9 @@ export default compose(
     },
   }),
   lifecycle({
-    componentDidUpdate({ renderDisplay: renderDisplayPrev }) {
-      const { onResize, renderDisplay } = this.props;
-      if (renderDisplay !== renderDisplayPrev && onResize) {
-        onResize();
-      }
+    componentDidUpdate() {
+      const { onResize } = this.props;
+      onResize && onResize();
     },
   }),
   pure

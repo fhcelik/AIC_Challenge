@@ -17,7 +17,7 @@ const styles = theme => ({
 const Info = ({ classes, title, description, formula, showDisplay, theme }) => (
   <div className={classes.root}>
     <Header>
-      <IconButton onClick={showDisplay}>
+      <IconButton onClick={showDisplay} disableRipple>
         <CancelIcon />
       </IconButton>
     </Header>

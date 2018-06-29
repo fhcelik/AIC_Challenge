@@ -9,7 +9,7 @@ const styles = theme => ({
     width: '23em',
     height: '12em',
     backgroundColor: theme.palette.card.background,
-    margin: '.5em 0',
+    margin: '0',
     border: `1.5px dashed ${theme.palette.card.header}`,
   },
   icon: {

@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Back, Flipper, Front } from 'react-flipper';
+import { Back, Flipper, Front } from '../utils/Flipper';
 import Display from './Display';
 import Editor from './Editor';
 import Info from './Info';
 
-const Calculator = ({ renderDisplay, renderEditor, renderInfo, ...rest }) => (
-  <Flipper isFlipped={!renderDisplay} orientation="horizontal">
+const Calculator = ({
+  renderDisplay,
+  renderEditor,
+  renderInfo,
+  onResize,
+  ...rest
+}) => (
+  <Flipper isFlipped={!renderDisplay} onResize={onResize}>
     <Front>
       <Display {...rest} />
     </Front>

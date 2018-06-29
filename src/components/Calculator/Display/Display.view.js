@@ -30,11 +30,11 @@ const Display = ({
 }) => (
   <div className={classes.root}>
     <Header>
-      <IconButton onClick={showEditor}>
+      <IconButton onClick={showEditor} disableRipple>
         <EditIcon />
       </IconButton>
       <FavoriteIcon />
-      <IconButton onClick={showInfo}>
+      <IconButton onClick={showInfo} disableRipple>
         <InfoIcon />
       </IconButton>
     </Header>
