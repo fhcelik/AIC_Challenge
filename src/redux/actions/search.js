@@ -4,7 +4,7 @@ import { createAction } from 'redux-actions';
 import { Routes } from '../../components/App/Routing';
 import { calculatorList } from '../schemas/calculator';
 import { debounceConfigNames } from '../store';
-import { saveSearchResults } from './app';
+import { saveSearchQuery, saveSearchResults } from './app';
 import { saveEntities } from './entities';
 
 export const fetchSearchCalculators = createAction(
@@ -15,6 +15,7 @@ export const fetchSearchCalculators = createAction(
       .then(({ data }) => {
         const { entities, result } = normalize(data, calculatorList);
         dispatch(saveEntities(entities));
+        dispatch(saveSearchQuery(search));
         dispatch(saveSearchResults(result));
         dispatch(replace(`${Routes.search}?q=${search}`));
       }),

@@ -2572,15 +2572,15 @@ exports[`Calculator quadraticCalcId 1`] = `
 
 exports[`Collection base 1`] = `
 <div
-  className="Collection-root"
+  className="CalculatorGrid-root"
 >
   <h1
     className="MuiTypography-root MuiTypography-display4"
   >
-    My Calculators
+    COLLECTION: My Calculators
   </h1>
   <StackGrid
-    className="Collection-grid"
+    className="CalculatorGrid-grid"
     columnWidth={320}
     gridRef={[Function]}
     gutterHeight={25}
@@ -3209,6 +3209,34 @@ exports[`Collection base 1`] = `
       />
     </button>
   </StackGrid>
+</div>
+`;
+
+exports[`Collection beforeLoad 1`] = `
+<div
+  className="MuiCircularProgress-root MuiCircularProgress-colorPrimary"
+  role="progressbar"
+  style={
+    Object {
+      "height": 100,
+      "width": 100,
+    }
+  }
+>
+  <svg
+    className="MuiCircularProgress-svg MuiCircularProgress-svgIndeterminate"
+    viewBox="0 0 50 50"
+  >
+    <circle
+      className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+      cx={25}
+      cy={25}
+      fill="none"
+      r={20}
+      strokeWidth={3.6}
+      style={Object {}}
+    />
+  </svg>
 </div>
 `;
 
@@ -4538,13 +4566,22 @@ exports[`Routing root 1`] = `
 `;
 
 exports[`Routing search 1`] = `
-<StackGrid
-  className={undefined}
-  columnWidth={320}
-  gridRef={[Function]}
-  gutterHeight={25}
-  gutterWidth={25}
-/>
+<div
+  className="CalculatorGrid-root"
+>
+  <h1
+    className="MuiTypography-root MuiTypography-display4"
+  >
+    SEARCH RESULTS: 
+  </h1>
+  <StackGrid
+    className="CalculatorGrid-grid"
+    columnWidth={320}
+    gridRef={[Function]}
+    gutterHeight={25}
+    gutterWidth={25}
+  />
+</div>
 `;
 
 exports[`SearchBar base 1`] = `

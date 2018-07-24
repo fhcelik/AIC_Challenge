@@ -1,7 +1,7 @@
 import { normalize } from 'normalizr';
 import React from 'react';
 import { collection } from '../../redux/schemas/collection';
-import Collection from './Collection.view';
+import Collection from '../Collection';
 
 const baseCollection = {
   id: 'cdec5f41-e5c2-4d02-898a-481904234749',
@@ -45,5 +45,6 @@ const { entities, result } = normalize(baseCollection, collection);
 export const initialState = { entities };
 
 export default {
-  base: () => <Collection collection={entities.collections[result]} />,
+  base: () => <Collection id={result} />,
+  beforeLoad: () => <Collection id="wrong-id" />,
 };

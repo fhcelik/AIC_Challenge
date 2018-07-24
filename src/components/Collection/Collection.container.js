@@ -1,19 +1,20 @@
+import { CircularProgress } from 'material-ui';
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  compose,
-  pure,
-  withHandlers,
-  lifecycle,
-  branch,
-  renderComponent,
-} from 'recompose';
-import Collection from './Collection.view';
 import { withRouter } from 'react-router';
+import {
+  branch,
+  compose,
+  lifecycle,
+  pure,
+  renderComponent,
+  withHandlers,
+  withProps,
+} from 'recompose';
 import { addCalculator } from '../../redux/actions/calculators';
 import { fetchCollection } from '../../redux/actions/collections';
 import { collectionByIdSelector } from '../../redux/selectors/collections';
-import { CircularProgress } from 'material-ui';
+import CalculatorGrid from '../CalculatorGrid';
 
 export default compose(
   withRouter,
@@ -39,5 +40,10 @@ export default compose(
     ({ collection }) => !collection,
     renderComponent(() => <CircularProgress size={100} />)
   ),
+  withProps(({ collection }) => ({
+    title: `COLLECTION: ${collection.name}`,
+    calculatorIds: collection.calculators,
+    addButton: true,
+  })),
   pure
-)(Collection);
+)(CalculatorGrid);

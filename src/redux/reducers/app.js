@@ -14,9 +14,14 @@ export default handleActions(
       ...app,
       searchResults,
     }),
+    [Actions.saveSearchQuery]: (app, { payload: searchQuery }) => ({
+      ...app,
+      searchQuery,
+    }),
   },
   {
     menuCollectionList: [],
     searchResults: [],
+    searchQuery: '',
   }
 );

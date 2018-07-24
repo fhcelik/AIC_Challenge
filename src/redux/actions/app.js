@@ -16,6 +16,8 @@ export const saveMenuCollectionList = createAction(
   '@@calcoola/app/saveMenuCollectionList'
 );
 
+export const saveSearchQuery = createAction('@@calcoola/app/saveSearchQuery');
+
 export const saveSearchResults = createAction(
   '@@calcoola/app/saveSearchResults'
 );
