@@ -1,4 +1,7 @@
-import { IconButton } from 'material-ui';
+import cx from 'classnames';
+import { CircularProgress } from 'material-ui';
+import CancelIcon from 'material-ui-icons/Cancel';
+import CheckIcon from 'material-ui-icons/CheckCircle';
 import EditIcon from 'material-ui-icons/Edit';
 import InfoIcon from 'material-ui-icons/InfoOutline';
 import Grid from 'material-ui/Grid';
@@ -8,47 +11,72 @@ import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../Header';
+import HeaderButton from '../HeaderButton';
 import { CalculatorStyles as styles } from '../sharedStyles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Result from './Result';
 
 const Display = ({
-  classes,
-  id,
-  description,
-  title,
-  tags,
   args,
-  onArgValueChange,
+  classes,
+  description,
+  id,
+  isNew,
+  isSaving,
   onArgUnitChange,
-  setArgToFormula,
+  onArgValueChange,
+  onCancel,
+  onEditDone,
+  onResultUnitChange,
   result,
+  setArgToFormula,
   showEditor,
   showInfo,
-  onResultUnitChange,
+  tags,
+  title,
 }) => (
-  <div className={classes.root}>
-    <Header>
-      <IconButton onClick={showEditor} disableRipple>
-        <EditIcon />
-      </IconButton>
-      <AddToCollectionButton calculatorId={id} />
-      <IconButton onClick={showInfo} disableRipple>
-        <InfoIcon />
-      </IconButton>
-    </Header>
-    <div className={classes.content}>
-      <Grid
-        container
-        direction="column"
-        alignItems="flex-start"
-        className={classes.title}
-      >
+  <Grid
+    container
+    direction="column"
+    className={cx(classes.root, { [classes.isSaving]: isSaving })}
+  >
+    {isNew ? (
+      <Header>
+        <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
+        <HeaderButton
+          onClick={showEditor}
+          icon={EditIcon}
+          tooltipTitle="Edit"
+        />
+        <HeaderButton
+          onClick={onEditDone}
+          icon={CheckIcon}
+          tooltipTitle="Save"
+        />
+        <HeaderButton
+          onClick={onCancel}
+          icon={CancelIcon}
+          tooltipTitle="Cancel"
+        />
+      </Header>
+    ) : (
+      <Header>
+        <AddToCollectionButton calculatorId={id} />
+        <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
+      </Header>
+    )}
+    <Grid
+      container
+      direction="column"
+      justify="space-between"
+      className={classes.content}
+    >
+      <Grid className={classes.title}>
         <Tooltip id={`${id}-tooltip`} title={description}>
           <Typography className={classes.titleText}>{title}</Typography>
         </Tooltip>
-        <Grid item container direction="row">
+        <Grid container>
           {tags.map(tag => (
             <Typography key={tag} className={classes.tag}>
               {tag}
@@ -68,28 +96,33 @@ const Display = ({
         ))}
       </Grid>
       <Result {...result} onResultUnitChange={onResultUnitChange} />
-    </div>
-  </div>
+    </Grid>
+    {isSaving && <CircularProgress className={classes.progress} size={150} />}
+  </Grid>
 );
 
 Display.propTypes = {
-  classes: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   args: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
-  onArgValueChange: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  isNew: PropTypes.bool,
+  isSaving: PropTypes.bool,
   onArgUnitChange: PropTypes.func.isRequired,
-  setArgToFormula: PropTypes.func.isRequired,
+  onArgValueChange: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  onEditDone: PropTypes.func.isRequired,
+  onResultUnitChange: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
+  setArgToFormula: PropTypes.func.isRequired,
   showEditor: PropTypes.func.isRequired,
   showInfo: PropTypes.func.isRequired,
-  onResultUnitChange: PropTypes.func.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Display);

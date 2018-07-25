@@ -1,6 +1,7 @@
-import math, { parse } from '../../mathjs-secured';
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
+import math, { parse } from '../../mathjs-secured';
+import { newCalculatorsByCollectionIdSelector } from './collections';
 
 export const calculatorsSelector = R.path(['entities', 'calculators']);
 
@@ -244,8 +245,13 @@ export const calculatorTagsSelector = createSelector(
 );
 
 export const calculatorIsNewSelector = createSelector(
-  calculatorSelector,
-  R.propOr(false, 'isNew')
+  (state, { collectionId, id: calculatorId }) => ({
+    newCalculators: newCalculatorsByCollectionIdSelector(state, {
+      id: collectionId,
+    }),
+    calculatorId,
+  }),
+  ({ newCalculators, calculatorId }) => R.contains(calculatorId, newCalculators)
 );
 
 export const listCalculatorIdsSelector = createSelector(

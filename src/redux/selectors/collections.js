@@ -5,15 +5,32 @@ const menuCollectionListSelector = R.path(['app', 'menuCollectionList']);
 
 const collectionsSelector = R.path(['entities', 'collections']);
 
-export const collectionByIdSelector = (state, { id }) =>
-  R.prop(id, collectionsSelector(state));
+export const collectionByIdSelector = createSelector(
+  (state, { id }) => id,
+  collectionsSelector,
+  R.prop
+);
 
 export const menuCollectionsSelector = createSelector(
   menuCollectionListSelector,
   collectionsSelector,
-  (ids, collections) => {
-    return R.props(ids, collections);
-  }
+  R.props
+);
+
+export const calculatorsByCollectionIdSelector = createSelector(
+  collectionByIdSelector,
+  R.propOr([], 'calculators')
+);
+
+export const newCalculatorsByCollectionIdSelector = createSelector(
+  collectionByIdSelector,
+  R.propOr([], 'newCalculators')
+);
+
+export const calculatorIdsByCollectionId = createSelector(
+  calculatorsByCollectionIdSelector,
+  newCalculatorsByCollectionIdSelector,
+  R.concat
 );
 
 export const collectionHasCalculatorSelector = createSelector(

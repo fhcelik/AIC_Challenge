@@ -1,4 +1,3 @@
-import { IconButton } from '@material-ui/core';
 import cx from 'classnames';
 import { Grid, TextField, Typography } from 'material-ui';
 import CancelIcon from 'material-ui-icons/Cancel';
@@ -7,6 +6,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Formula from '../Formula';
 import Header from '../Header';
+import HeaderButton from '../HeaderButton';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 
 const styles = theme => ({
@@ -14,20 +14,27 @@ const styles = theme => ({
   ...InfoStyles(theme),
 });
 
-const Info = ({ classes, title, description, formula, showDisplay, theme }) => (
-  <div className={classes.root}>
+const Info = ({ classes, description, formula, showDisplay, theme, title }) => (
+  <Grid container direction="column" className={classes.root}>
     <Header>
-      <IconButton onClick={showDisplay} disableRipple>
-        <CancelIcon />
-      </IconButton>
+      <HeaderButton
+        onClick={showDisplay}
+        icon={CancelIcon}
+        tooltipTitle="Cancel"
+      />
     </Header>
-    <Grid container direction="column" className={classes.content}>
+    <Grid
+      container
+      direction="column"
+      justify="space-between"
+      className={classes.content}
+    >
       <Typography className={cx(classes.titleText, classes.title)}>
         {title}
       </Typography>
-      <div className={cx(classes.border, classes.formula)}>
+      <Grid className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
-      </div>
+      </Grid>
       <TextField
         autoComplete="off"
         label="DESCRIPTION"
@@ -41,16 +48,16 @@ const Info = ({ classes, title, description, formula, showDisplay, theme }) => (
         }}
       />
     </Grid>
-  </div>
+  </Grid>
 );
 
 Info.propTypes = {
   classes: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   formula: PropTypes.string.isRequired,
   showDisplay: PropTypes.func.isRequired,
   theme: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(Info);

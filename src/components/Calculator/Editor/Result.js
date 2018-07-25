@@ -50,7 +50,7 @@ const Result = ({
 
 Result.propTypes = {
   classes: PropTypes.object.isRequired,
-  execFormula: PropTypes.string.isRequired,
+  execFormula: PropTypes.string,
   onFormulaChange: PropTypes.func.isRequired,
   result: PropTypes.any,
   unit: PropTypes.string,

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import {
   branch,
   compose,
@@ -10,6 +11,7 @@ import {
   withStateHandlers,
 } from 'recompose';
 import {
+  cancelAddingNewCalculator,
   changeCalculatorArgUnit,
   changeCalculatorResultUnit,
   saveCalculator,
@@ -29,6 +31,7 @@ import updateLayoutOnChangeEnhancer from '../updateLayoutOnChange.enhancer';
 import CalculatorView from './Calculator.view';
 
 export default compose(
+  withRouter,
   lifecycle({
     componentDidCatch(error, info) {
       this.setState({ brokenId: this.props.id });
@@ -42,6 +45,7 @@ export default compose(
       renderComponent(ErrorCatch)
     )
   ),
+  withProps(({ match: { params } }) => ({ collectionId: params.id })),
   connect(
     (state, props) => ({
       args: calculatorArgsSelector(state, props),
@@ -55,6 +59,7 @@ export default compose(
     {
       changeCalculatorArgUnit,
       changeCalculatorResultUnit,
+      cancelAddingNewCalculator,
       saveCalculator,
     }
   ),
@@ -63,10 +68,12 @@ export default compose(
       renderDisplay: !isNew,
       renderEditor: isNew,
       renderInfo: false,
+      isSaving: false,
     }),
     {
       showDisplay: () => () => ({
         renderDisplay: true,
+        isSaving: false,
       }),
       showEditor: () => () => ({
         renderDisplay: false,
@@ -77,6 +84,9 @@ export default compose(
         renderDisplay: false,
         renderEditor: false,
         renderInfo: true,
+      }),
+      setIsSaving: () => value => ({
+        isSaving: value,
       }),
     }
   ),
@@ -94,11 +104,21 @@ export default compose(
         unit: getUnit(event.target.value),
       });
     },
-    onEditDone: ({ id, saveCalculator, showDisplay }) => () => {
-      saveCalculator({ id });
-      showDisplay();
+    onEditDone: ({ id, saveCalculator, setIsSaving, collectionId }) => () => {
+      setIsSaving(true);
+      saveCalculator({ collectionId, calculatorId: id })
+        .then(() => setIsSaving(false))
+        .catch(() => setIsSaving(false));
     },
+    onCancel: ({ cancelAddingNewCalculator, id, collectionId }) => () =>
+      cancelAddingNewCalculator({ collectionId, calculatorId: id }),
   }),
   updateLayoutOnChangeEnhancer,
+  lifecycle({
+    componentDidUpdate({ isNew: prevIsNew }) {
+      const { isNew, showDisplay } = this.props;
+      prevIsNew && !isNew && showDisplay();
+    },
+  }),
   pure
 )(CalculatorView);

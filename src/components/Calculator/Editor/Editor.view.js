@@ -2,13 +2,14 @@ import cx from 'classnames';
 import { Grid, IconButton, Input, TextField } from 'material-ui';
 import AddIcon from 'material-ui-icons/AddCircleOutline';
 import CancelIcon from 'material-ui-icons/Cancel';
-import CheckIcon from 'material-ui-icons/CheckCircle';
+import PreviewIcon from 'material-ui-icons/PlayCircleFilled';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { dot } from '../../../images';
 import Formula from '../Formula';
 import Header from '../Header';
+import HeaderButton from '../HeaderButton';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 import Argument from './Argument';
 import Result from './Result';
@@ -28,36 +29,40 @@ const styles = theme => ({
 });
 
 const Editor = ({
-  classes,
-  theme,
-  title,
-  description,
-  tags,
-  onTagAdd,
-  onTagDelete,
   args,
-  onTitleChange,
-  onDescriptionChange,
+  classes,
+  description,
+  formula,
   onArgAdd,
   onArgAliasChange,
-  onArgUnitChange,
   onArgRemove,
-  result,
-  resultBaseUnit,
-  onEditDone,
-  showDisplay,
+  onArgUnitChange,
+  onCancel,
+  onDescriptionChange,
   onResultFormulaChange,
   onResultUnitChange,
-  formula,
+  onTagAdd,
+  onTagDelete,
+  onTitleChange,
+  result,
+  resultBaseUnit,
+  showDisplay,
+  tags,
+  theme,
+  title,
 }) => (
-  <div className={cx(classes.root, classes.editorRoot)}>
+  <Grid className={cx(classes.root, classes.editorRoot)}>
     <Header>
-      <IconButton onClick={onEditDone} disableRipple>
-        <CheckIcon />
-      </IconButton>
-      <IconButton onClick={showDisplay} disableRipple>
-        <CancelIcon />
-      </IconButton>
+      <HeaderButton
+        onClick={showDisplay}
+        icon={PreviewIcon}
+        tooltipTitle="Preview"
+      />
+      <HeaderButton
+        onClick={onCancel}
+        icon={CancelIcon}
+        tooltipTitle="Cancel"
+      />
     </Header>
     <Grid
       container
@@ -102,10 +107,10 @@ const Editor = ({
         onFormulaChange={onResultFormulaChange}
         onUnitChange={onResultUnitChange}
       />
-      <div className={cx(classes.border, classes.formula)}>
+      <Grid className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
-      </div>
-      <div className={classes.border}>
+      </Grid>
+      <Grid className={classes.border}>
         <TextField
           autoComplete="off"
           name="description"
@@ -119,35 +124,35 @@ const Editor = ({
             classes: { input: classes.description },
           }}
         />
-      </div>
+      </Grid>
     </Grid>
-  </div>
+  </Grid>
 );
 
 Editor.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onTagAdd: PropTypes.func.isRequired,
-  onTagDelete: PropTypes.func.isRequired,
   args: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string.isRequired })
   ).isRequired,
-  onTitleChange: PropTypes.func.isRequired,
-  onDescriptionChange: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
+  formula: PropTypes.string.isRequired,
   onArgAdd: PropTypes.func.isRequired,
   onArgAliasChange: PropTypes.func.isRequired,
-  onArgUnitChange: PropTypes.func.isRequired,
   onArgRemove: PropTypes.func.isRequired,
-  result: PropTypes.object.isRequired,
-  resultBaseUnit: PropTypes.string,
-  onEditDone: PropTypes.func.isRequired,
-  showDisplay: PropTypes.func,
+  onArgUnitChange: PropTypes.func.isRequired,
+  onCancel: PropTypes.func,
+  onDescriptionChange: PropTypes.func.isRequired,
   onResultFormulaChange: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
-  formula: PropTypes.string.isRequired,
+  onTagAdd: PropTypes.func.isRequired,
+  onTagDelete: PropTypes.func.isRequired,
+  onTitleChange: PropTypes.func.isRequired,
+  result: PropTypes.object.isRequired,
+  resultBaseUnit: PropTypes.string,
+  showDisplay: PropTypes.func,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  theme: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(Editor);

@@ -17,13 +17,25 @@ describe('Calculator Reducers', () => {
   });
 
   it('should handle addCalculator', () => {
-    const mockCalc1 = { id: 'calculator_id_1' };
-    const mockCalc2 = { id: 'calculator_id_2' };
+    const mockCalc1 = {
+      collectionId: 'collection_id_1',
+      id: 'calculator_id_1',
+    };
+    const mockCalc2 = {
+      collectionId: 'collection_id_1',
+      id: 'calculator_id_2',
+    };
 
-    let state = calculatorReducer({}, Actions.addCalculator(mockCalc1));
+    let state = calculatorReducer(
+      {},
+      { type: Actions.addCalculator(mockCalc1).type, payload: mockCalc1 }
+    );
     expect(state[mockCalc1.id].id).to.equal(mockCalc1.id);
 
-    state = calculatorReducer(state, Actions.addCalculator(mockCalc2));
+    state = calculatorReducer(state, {
+      type: Actions.addCalculator(mockCalc2).type,
+      payload: mockCalc2,
+    });
     expect(state[mockCalc1.id].id).to.equal(mockCalc1.id);
     expect(state[mockCalc2.id].id).to.equal(mockCalc2.id);
   });

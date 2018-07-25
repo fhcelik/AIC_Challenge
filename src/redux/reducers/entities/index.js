@@ -14,7 +14,7 @@ const subReducers = combineReducers({
 const entityReducer = handleActions(
   {
     [Actions.saveEntities]: (entities, { payload }) =>
-      R.mergeWith(R.merge, entities, payload),
+      R.mergeDeepRight(entities, payload),
   },
   {}
 );

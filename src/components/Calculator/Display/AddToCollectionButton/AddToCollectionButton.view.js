@@ -1,10 +1,11 @@
-import { IconButton, List, withStyles } from 'material-ui';
+import { List, withStyles } from 'material-ui';
 import AddToCollectionIcon from 'material-ui-icons/PlaylistAdd';
 import PropTypes from 'prop-types';
 import React from 'react';
 import DropdownMenu from '../../../utils/DropdownMenu';
 import CollectionChecklist from './CollectionChecklist';
 import CollectionCreatorList from './CollectionCreatorList';
+import HeaderButton from '../../HeaderButton';
 
 const styles = {
   items: {
@@ -20,9 +21,10 @@ const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
     onResize={onResize}
     placement="bottom-end"
     target={
-      <IconButton disableRipple>
-        <AddToCollectionIcon />
-      </IconButton>
+      <HeaderButton
+        icon={AddToCollectionIcon}
+        tooltipTitle="Add to collection"
+      />
     }
   >
     <List>

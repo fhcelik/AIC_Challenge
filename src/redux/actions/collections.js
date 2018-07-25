@@ -2,6 +2,7 @@ import { normalize } from 'normalizr';
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
 import { collection, Collection, collectionList } from '../schemas/collection';
+import { newCalculatorsByCollectionIdSelector } from '../selectors/collections';
 import { prependMenuCollectionList, saveMenuCollectionList } from './app';
 import { saveEntities } from './entities';
 import { displayNotification } from './notifications';
@@ -18,10 +19,23 @@ export const fetchCollections = createAction(
 
 export const fetchCollection = createAction(
   '@@calcoola/collections/fetchCollection',
-  ({ id }) => (dispatch, _, httpClient) =>
-    httpClient.get('/collections/' + id).then(({ data }) => {
+  ({ id }) => (dispatch, getState, httpClient) =>
+    httpClient.get(`/collections/${id}`).then(({ data }) => {
       const { entities } = normalize(data, collection);
+
+      const newCalculatorsPrev = newCalculatorsByCollectionIdSelector(
+        getState(),
+        { id }
+      );
+      const newCalculators = R.pipe(
+        R.path(['collections', id, 'calculators']),
+        R.without(R.__, newCalculatorsPrev)
+      )(entities);
+
       dispatch(saveEntities(entities));
+      dispatch(
+        resetNewCalculatorsToCollection({ collectionId: id, newCalculators })
+      );
     })
 );
 
@@ -81,4 +95,40 @@ export const removeCollection = createAction(
     httpClient
       .delete(`/collections/${collectionId}`)
       .then(() => ({ collectionId }))
+);
+
+export const addNewCalculatorToCollection = createAction(
+  '@@calcoola/collections/addNewCalculatorToCollection'
+);
+
+export const removeNewCalculatorFromCollection = createAction(
+  '@@calcoola/collections/removeNewCalculatorFromCollection'
+);
+
+export const resetNewCalculatorsToCollection = createAction(
+  '@@calcoola/collections/resetNewCalculatorsToCollection'
+);
+
+export const saveCalculatorToCollection = createAction(
+  '@@calcoola/calculator/saveCalculatorToCollection',
+  ({ calculatorId, collectionId }) => dispatch => {
+    dispatch(addCalculatorToMyCalculatorsCollection(calculatorId));
+    return dispatch(addCalculatorToCollection({ collectionId, calculatorId }))
+      .catch(() =>
+        dispatch(
+          displayNotification(
+            'Failed saving new calculator to collection, you can find your calculator in the My Calculators collection'
+          )
+        )
+      )
+      .finally(() =>
+        dispatch(
+          removeNewCalculatorFromCollection({ collectionId, calculatorId })
+        )
+      );
+  }
+);
+
+export const addCalculatorToMyCalculatorsCollection = createAction(
+  '@@calcoola/calculator/addCalculatorToMyCalculatorsCollection'
 );

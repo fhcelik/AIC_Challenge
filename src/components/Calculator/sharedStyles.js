@@ -1,11 +1,11 @@
 export const CalculatorStyles = theme => ({
   root: {
-    display: 'inline-block',
     width: '320px',
     backgroundColor: theme.palette.card.background,
   },
 
   content: {
+    flexGrow: 1,
     width: 'auto',
     margin: '0 0.4em 0.4em',
   },
@@ -21,6 +21,7 @@ export const CalculatorStyles = theme => ({
   },
 
   args: {
+    flexGrow: 2,
     marginBottom: 6,
   },
 
@@ -32,6 +33,22 @@ export const CalculatorStyles = theme => ({
 
   titleText: {
     ...theme.typography.display3,
+  },
+
+  progress: {
+    margin: 'auto',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    zIndex: 100,
+  },
+
+  isSaving: {
+    pointerEvents: 'none',
+    opacity: '0.6',
+    minHeight: '200px',
   },
 });
 export const ArgumentStyles = theme => ({

@@ -1,11 +1,42 @@
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
 import { Calculator } from '../schemas/calculator';
-import { nestedCalculatorSelector } from '../selectors/calculators';
+import {
+  calculatorSelector,
+  nestedCalculatorSelector,
+} from '../selectors/calculators';
+import {
+  addNewCalculatorToCollection,
+  removeNewCalculatorFromCollection,
+  saveCalculatorToCollection,
+} from './collections';
+import { displayNotification } from './notifications';
 
 export const addCalculator = createAction(
   '@@calcoola/calculator/add',
-  Calculator
+  ({ collectionId, ...rest }) => dispatch => {
+    const newCalculator = Calculator(rest);
+    dispatch(
+      addNewCalculatorToCollection({
+        collectionId,
+        calculatorId: newCalculator.id,
+      })
+    );
+    return newCalculator;
+  }
+);
+
+export const cancelAddingNewCalculator = createAction(
+  '@@calcoola/calculator/cancelAddingNewCalculator',
+  ({ collectionId, calculatorId }) => dispatch => {
+    dispatch(
+      removeNewCalculatorFromCollection({
+        collectionId,
+        calculatorId,
+      })
+    );
+    return { id: calculatorId };
+  }
 );
 
 export const changeCalculatorTitle = createAction(
@@ -16,8 +47,23 @@ export const changeCalculatorDescription = createAction(
   '@@calcoola/calculator/change/description'
 );
 
-//TODO: Implement logic to save to server
-export const saveCalculator = createAction('@@calcoola/calculator/save');
+export const saveCalculator = createAction(
+  '@@calcoola/calculator/save',
+  ({ calculatorId, collectionId }) => (dispatch, getState, httpClient) => {
+    const calculatorToSave = calculatorSelector(getState(), {
+      id: calculatorId,
+    });
+
+    return httpClient
+      .put(`/calculators/${calculatorId}`, calculatorToSave)
+      .then(() => {
+        dispatch(
+          displayNotification('Your calculator has been saved successfully.')
+        );
+        dispatch(saveCalculatorToCollection({ collectionId, calculatorId }));
+      });
+  }
+);
 
 export const addCalculatorTag = createAction('@@calcoola/calculator/tag-add');
 
@@ -72,6 +118,8 @@ export const addCalculatorArgReference = createAction(
   }
 );
 
+export const removeCalculator = createAction('@@calcoola/calculator/remove');
+
 export const removeCalculatorArgProp = createAction(
   '@@calcoola/calculator/argument-prop-remove'
 );
@@ -79,8 +127,6 @@ export const removeCalculatorArgProp = createAction(
 export const removeCalculatorArg = createAction(
   '@@calcoola/calculator/argument-remove'
 );
-
-export const removeCalculator = createAction('@@calcoola/calculator/remove');
 
 export const removeCalculatorArgReference = createAction(
   '@@calcoola/calculator/argument-reference-remove',

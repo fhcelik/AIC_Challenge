@@ -8,12 +8,13 @@ import {
   lifecycle,
   pure,
   renderComponent,
-  withHandlers,
   withProps,
 } from 'recompose';
-import { addCalculator } from '../../redux/actions/calculators';
 import { fetchCollection } from '../../redux/actions/collections';
-import { collectionByIdSelector } from '../../redux/selectors/collections';
+import {
+  calculatorIdsByCollectionId,
+  collectionByIdSelector,
+} from '../../redux/selectors/collections';
 import CalculatorGrid from '../CalculatorGrid';
 
 export default compose(
@@ -21,15 +22,10 @@ export default compose(
   connect(
     (state, props) => ({
       collection: collectionByIdSelector(state, props),
+      calculatorIds: calculatorIdsByCollectionId(state, props),
     }),
-    {
-      addCalculator,
-      fetchCollection,
-    }
+    { fetchCollection }
   ),
-  withHandlers({
-    onClick: ({ addCalculator }) => id => addCalculator({ formula: id }),
-  }),
   lifecycle({
     componentDidMount() {
       const { id, fetchCollection } = this.props;
@@ -42,8 +38,7 @@ export default compose(
   ),
   withProps(({ collection }) => ({
     title: `COLLECTION: ${collection.name}`,
-    calculatorIds: collection.calculators,
-    addButton: true,
+    showAddCalculatorButton: true,
   })),
   pure
 )(CalculatorGrid);

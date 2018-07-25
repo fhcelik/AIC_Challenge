@@ -2,6 +2,8 @@ import { schema } from 'normalizr';
 import { calculatorList } from './calculator';
 import uuid from 'uuid/v4';
 
+export const MY_COLLECTION_ID = 'my-calculators';
+
 export function Collection(props = {}) {
   return {
     id: uuid(),

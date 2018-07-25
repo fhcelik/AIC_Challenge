@@ -38,6 +38,7 @@ const baseCollection = {
       description: 'Formula for finding roots of a quadratic polynomial',
     },
   ],
+  newCalculators: [],
 };
 
 const { entities, result } = normalize(baseCollection, collection);
