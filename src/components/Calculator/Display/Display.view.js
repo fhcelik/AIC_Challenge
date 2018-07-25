@@ -1,6 +1,5 @@
 import { IconButton } from 'material-ui';
 import EditIcon from 'material-ui-icons/Edit';
-import FavoriteIcon from 'material-ui-icons/FavoriteBorder';
 import InfoIcon from 'material-ui-icons/InfoOutline';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
@@ -33,7 +32,6 @@ const Display = ({
       <IconButton onClick={showEditor} disableRipple>
         <EditIcon />
       </IconButton>
-      <FavoriteIcon />
       <IconButton onClick={showInfo} disableRipple>
         <InfoIcon />
       </IconButton>
