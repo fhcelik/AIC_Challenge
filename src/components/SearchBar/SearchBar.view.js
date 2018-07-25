@@ -15,12 +15,19 @@ const styles = theme => ({
     ...theme.typography.display3,
     textTransform: 'uppercase',
     color: theme.palette.text.primary,
+    padding: '10px 0',
+  },
+  focused: {
+    backgroundColor: `linear-gradient(to right, ${theme.palette.primary.main} ${
+      theme.palette.navbar.background
+    })`,
   },
 });
 
 const SearchBar = ({ classes, setInputRef, onSearchStart, onSearch }) => (
   <Input
     className={classes.searchText}
+    classes={{ focused: classes.focused }}
     type="text"
     placeholder="Search for Calculators..."
     inputRef={setInputRef}
