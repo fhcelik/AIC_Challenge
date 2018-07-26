@@ -1,6 +1,6 @@
 import { ClickAwayListener, Collapse } from 'material-ui';
-import { withStyles } from 'material-ui/styles';
 import DownIcon from 'material-ui-icons/ArrowDropDown';
+import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Manager, Popper, Target } from 'react-popper';
@@ -27,6 +27,11 @@ const styles = theme => ({
     background: theme.palette.navbar.background,
     borderColor: theme.palette.card.header,
     border: '1px solid',
+    overflowY: 'auto',
+    maxHeight: '75vh',
+  },
+  popover: {
+    zIndex: 2,
   },
 });
 
@@ -37,22 +42,29 @@ const DropdownMenu = ({
   handleToggle,
   hasIcon = true,
   offset = '0, 0',
+  onChildClick,
+  onResize,
   open,
+  placement = 'bottom-start',
   target,
 }) => (
   <Manager>
+    <Target onClick={handleToggle} className={classes.target}>
+      {target}
+      {hasIcon && <DownIcon className={classes.icon} />}
+    </Target>
     <ClickAwayListener onClickAway={handleClose}>
-      <Target onClick={handleToggle} className={classes.target}>
-        {target}
-        {hasIcon && <DownIcon className={classes.icon} />}
-      </Target>
       <Popper
-        placement="bottom-start"
+        className={classes.popover}
+        placement={placement}
         eventsEnabled={open}
-        modifiers={{ offset: { offset } }}
-        onClick={handleClose}
+        modifiers={{
+          offset: { offset },
+          flip: { enabled: false },
+        }}
+        onClick={onChildClick}
       >
-        <Collapse in={open}>
+        <Collapse in={open} onEntered={onResize} onExited={onResize}>
           <div className={classes.items}>{children}</div>
         </Collapse>
       </Popper>
@@ -63,12 +75,14 @@ const DropdownMenu = ({
 DropdownMenu.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
   handleClose: PropTypes.func.isRequired,
   handleToggle: PropTypes.func.isRequired,
   hasIcon: PropTypes.bool,
   offset: PropTypes.string,
+  onChildClick: PropTypes.func.isRequired,
+  onResize: PropTypes.func,
   open: PropTypes.bool.isRequired,
+  placement: PropTypes.string,
   target: PropTypes.node.isRequired,
 };
 

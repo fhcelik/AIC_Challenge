@@ -1,5 +1,4 @@
-import compose from 'recompose/compose';
-import { withStateHandlers } from 'recompose';
+import { compose, withHandlers, withStateHandlers } from 'recompose';
 import DropdownMenuView from './DropdownMenu.view';
 
 const enhance = compose(
@@ -11,7 +10,11 @@ const enhance = compose(
       handleToggle: ({ open }) => () => ({ open: !open }),
       handleClose: () => () => ({ open: false }),
     }
-  )
+  ),
+  withHandlers({
+    onChildClick: ({ handleClose, keepOpen }) => event =>
+      keepOpen ? null : handleClose(event),
+  })
 );
 
 export default enhance(DropdownMenuView);

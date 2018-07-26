@@ -25,6 +25,7 @@ import {
   calculatorTitleSelector,
 } from '../../redux/selectors/calculators';
 import ErrorCatch from '../ErrorCatch';
+import updateLayoutOnChangeEnhancer from '../updateLayoutOnChange.enhancer';
 import CalculatorView from './Calculator.view';
 
 export default compose(
@@ -98,11 +99,6 @@ export default compose(
       showDisplay();
     },
   }),
-  lifecycle({
-    componentDidUpdate() {
-      const { onResize } = this.props;
-      onResize && onResize();
-    },
-  }),
+  updateLayoutOnChangeEnhancer,
   pure
 )(CalculatorView);

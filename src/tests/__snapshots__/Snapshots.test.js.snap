@@ -4413,6 +4413,7 @@ exports[`NavBar base 1`] = `
         </svg>
       </div>
       <div
+        className="DropdownMenu-popover"
         data-placement={undefined}
         data-x-out-of-boundaries={undefined}
         onClick={[Function]}

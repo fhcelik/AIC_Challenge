@@ -2,9 +2,8 @@ import { Typography, withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import StackGrid from 'react-stack-grid';
-import { compose, withHandlers, withStateHandlers } from 'recompose';
-import Calculator from './Calculator';
-import NewCalculatorButton from './NewCalculatorButton';
+import Calculator from '../Calculator';
+import NewCalculatorButton from '../NewCalculatorButton';
 
 const styles = () => ({
   root: {
@@ -21,7 +20,6 @@ const CalculatorGrid = ({
   addButton = false,
   calculatorIds,
   setDomNode,
-  updateLayout,
 }) => {
   return (
     <div className={classes.root}>
@@ -33,9 +31,7 @@ const CalculatorGrid = ({
         gutterWidth={25}
         gutterHeight={25}
       >
-        {calculatorIds.map(id => (
-          <Calculator key={id} id={id} onResize={updateLayout} />
-        ))}
+        {calculatorIds.map(id => <Calculator key={id} id={id} />)}
         {addButton && <NewCalculatorButton />}
       </StackGrid>
     </div>
@@ -48,17 +44,6 @@ CalculatorGrid.propTypes = {
   addButton: PropTypes.bool,
   calculatorIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   setDomNode: PropTypes.func.isRequired,
-  updateLayout: PropTypes.func.isRequired,
 };
 
-const enhance = compose(
-  withStateHandlers(
-    { domNode: undefined },
-    { setDomNode: () => domNode => ({ domNode }) }
-  ),
-  withHandlers(() => ({
-    updateLayout: ({ domNode }) => () => domNode.updateLayout(),
-  })),
-  withStyles(styles)
-);
-export default enhance(CalculatorGrid);
+export default withStyles(styles)(CalculatorGrid);

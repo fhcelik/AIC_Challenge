@@ -1,6 +1,6 @@
-import React from 'react';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
+import { createMuiTheme, MuiThemeProvider } from 'material-ui/styles';
+import React from 'react';
 
 export const colors = {
   darkGray: '#4F6374',
@@ -19,6 +19,11 @@ export const colors = {
 const palette = {
   primary: {
     main: colors.navyBlue,
+    contrastText: colors.lightGray,
+  },
+  secondary: {
+    main: colors.lightGray,
+    contrastText: colors.navyBlue,
   },
   background: {
     default: colors.gunmetal,
@@ -144,6 +149,11 @@ const theme = createMuiTheme({
         '&:hover': {
           backgroundColor: 'none',
         },
+      },
+    },
+    MuiListItemIcon: {
+      root: {
+        color: 'inherit',
       },
     },
     MuiMenuItem: {
