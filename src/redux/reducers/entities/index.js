@@ -4,10 +4,11 @@ import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 import * as Actions from '../../actions/entities';
 import calculators from './calculators';
+import collections from './collections';
 
 const subReducers = combineReducers({
   calculators,
-  collections: handleActions({}, {}),
+  collections,
 });
 
 const entityReducer = handleActions(

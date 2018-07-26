@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../Header';
 import { CalculatorStyles as styles } from '../sharedStyles';
+import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Result from './Result';
 
@@ -32,6 +33,7 @@ const Display = ({
       <IconButton onClick={showEditor} disableRipple>
         <EditIcon />
       </IconButton>
+      <AddToCollectionButton calculatorId={id} />
       <IconButton onClick={showInfo} disableRipple>
         <InfoIcon />
       </IconButton>

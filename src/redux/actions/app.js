@@ -15,6 +15,10 @@ export const saveMenuCollectionList = createAction(
   '@@calcoola/app/saveMenuCollectionList'
 );
 
+export const prependMenuCollectionList = createAction(
+  '@@calcoola/app/prependMenuCollectionList'
+);
+
 export const saveSearchQuery = createAction('@@calcoola/app/saveSearchQuery');
 
 export const saveSearchResults = createAction(

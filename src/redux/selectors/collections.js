@@ -15,3 +15,9 @@ export const menuCollectionsSelector = createSelector(
     return R.props(ids, collections);
   }
 );
+
+export const collectionHasCalculatorSelector = createSelector(
+  [collectionByIdSelector, (_, { calculatorId }) => calculatorId],
+  (collection, calcId) =>
+    R.propSatisfies(R.contains(calcId), 'calculators', collection)
+);
