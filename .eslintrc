@@ -7,6 +7,9 @@
     "arrow-parens": 0,
     "no-console": 1,
     "no-debugger": 0,
-    "no-mixed-operators": "off"
-  }
+    "no-mixed-operators": "off",
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2
+  },
+  "plugins": ["chai-friendly"]
 }
