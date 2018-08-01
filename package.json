@@ -93,5 +93,8 @@
     "server-destroy": "^1.0.1",
     "storybook": "^1.0.0",
     "storybook-react-router": "^1.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js", "!src/**/*.cases.js"]
   }
 }
