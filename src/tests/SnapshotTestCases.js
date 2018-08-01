@@ -7,6 +7,7 @@ expect.addSnapshotSerializer(jssSerializer);
 const mockActionCreator = createAction('@@calcoola/stub');
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip');
+jest.mock('material-ui/transitions/Slide', () => 'Slide');
 jest.mock('react-transition-group', () => 'Transition');
 jest.mock('react-stack-grid', () => 'StackGrid');
 jest.mock('../redux/actions/collections', () => ({

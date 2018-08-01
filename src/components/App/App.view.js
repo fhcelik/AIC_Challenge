@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import NavBar from '../NavBar';
 import Routing from './Routing';
+import NotificationToaster from './NotificationToaster';
 
 const styles = theme => ({
   root: {
@@ -16,6 +17,7 @@ const App = ({ classes }) => (
   <div className={classes.root}>
     <NavBar />
     <Routing />
+    <NotificationToaster />
   </div>
 );
 

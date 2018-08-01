@@ -11,6 +11,7 @@ import persistStore from 'redux-persist/lib/persistStore';
 import thunk from 'redux-thunk';
 import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
+import { displayNotification } from './actions/notifications';
 
 export const history = createHistory();
 
@@ -34,7 +35,7 @@ const middleware = [
 ];
 
 const reduxPersistConfig = {
-  key: 'calcoola/root/120',
+  key: 'calcoola/root/129',
   timeout: 35000,
   storage: localforage,
   //transforms,
@@ -54,6 +55,12 @@ export default function configureStore(initialState = {}, persist = true) {
     composeWithDevTools(applyMiddleware(...middleware))
   );
   const persistor = persist ? persistStore(store, null, done) : null;
+
+  httpClient.interceptors.response.use(null, error => {
+    store.dispatch(displayNotification(error));
+    return Promise.reject(error);
+  });
+
   return {
     store,
     isReady,

@@ -46,6 +46,12 @@ const palette = {
   select: {
     icon: colors.orange,
   },
+  notification: {
+    background: colors.stormcloud,
+    error: {
+      background: colors.orange,
+    },
+  },
 };
 
 const typography = {
@@ -151,6 +157,11 @@ const theme = createMuiTheme({
         backgroundColor: palette.card.header,
       },
     },
+    MuiSnackbar: {
+      root: {
+        maxWidth: 640,
+      },
+    },
   },
   props: {
     MuiFormControl: {
@@ -170,6 +181,10 @@ const theme = createMuiTheme({
     MuiSelect: {
       disableUnderline: true,
       fullWidth: false,
+    },
+    MuiSnackbar: {
+      anchorOrigin: { horizontal: 'center', vertical: 'bottom' },
+      autoHideDuration: 5000,
     },
   },
 });
