@@ -91,14 +91,14 @@ function convertToUnit(value, unit) {
 }
 
 function convertToNumber(value, unit) {
-  if (exists(unit) && typeof value === typeof math.unit(unit)) {
-    try {
+  try {
+    if (exists(unit) && typeof value === typeof math.unit(unit)) {
       return value.toNumber(unit);
-    } catch (error) {
-      return NaN;
     }
+    return math.complex(value);
+  } catch (error) {
+    return NaN;
   }
-  return math.complex(value);
 }
 
 function evalCalculator(flatCalculators, calcId) {

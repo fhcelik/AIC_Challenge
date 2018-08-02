@@ -97,7 +97,6 @@ const Editor = ({
         <AddIcon className={classes.addIcon} />
       </IconButton>
       <Result
-        execFormula={formula}
         {...result}
         unit={resultBaseUnit}
         onFormulaChange={onResultFormulaChange}
