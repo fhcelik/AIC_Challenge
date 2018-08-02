@@ -35,7 +35,7 @@ const middleware = [
 ];
 
 const reduxPersistConfig = {
-  key: 'calcoola/root/129',
+  key: 'calcoola/root/137',
   timeout: 35000,
   storage: localforage,
   //transforms,
