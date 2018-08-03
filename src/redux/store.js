@@ -8,6 +8,7 @@ import debounceMiddleware from 'redux-debounce';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import persistReducer from 'redux-persist/lib/persistReducer';
 import persistStore from 'redux-persist/lib/persistStore';
+import promiseMiddleware from 'redux-promise';
 import thunk from 'redux-thunk';
 import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
@@ -31,6 +32,7 @@ const middleware = [
   debounceMiddleware(debounceConfig),
   fsaThunk,
   thunk.withExtraArgument(httpClient),
+  promiseMiddleware,
   routerMiddleware(history),
 ];
 
