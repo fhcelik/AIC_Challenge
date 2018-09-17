@@ -92,6 +92,9 @@ const enhance = compose(
         resizeNowAndLater();
       }
     },
+    componentWillUnmount() {
+      clearTimeout(this.props.hideHandler);
+    },
   }),
   withStyles(styles, { name: 'Flipper' }),
   pure

@@ -1,6 +1,5 @@
 import cx from 'classnames';
 import { AppBar, Toolbar, Typography, withStyles } from 'material-ui';
-import Account from 'material-ui-icons/AccountBox';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -9,6 +8,7 @@ import { compose } from 'recompose';
 import { Routes } from '../App/Routing';
 import SearchBar from '../SearchBar';
 import CollectionSelect from './CollectionSelect';
+import Login from './Login';
 
 const styles = theme => ({
   root: {
@@ -59,14 +59,7 @@ const NavBar = ({ classes, location }) => (
         })}
       />
       <SearchBar />
-      <Account className={classes.profilePicture} />
-      <Typography
-        noWrap
-        className={cx(classes.navigation, classes.profile)}
-        variant="display3"
-      >
-        John Wicked
-      </Typography>
+      <Login />
     </Toolbar>
   </AppBar>
 );

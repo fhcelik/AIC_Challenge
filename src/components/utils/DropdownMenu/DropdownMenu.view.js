@@ -47,13 +47,14 @@ const DropdownMenu = ({
   open,
   placement = 'bottom-start',
   target,
+  withPropsToChildren,
 }) => (
-  <Manager>
-    <Target onClick={handleToggle} className={classes.target}>
-      {target}
-      {hasIcon && <DownIcon className={classes.icon} />}
-    </Target>
-    <ClickAwayListener onClickAway={handleClose}>
+  <ClickAwayListener onClickAway={handleClose}>
+    <Manager>
+      <Target onClick={handleToggle} className={classes.target}>
+        {target}
+        {hasIcon && <DownIcon className={classes.icon} />}
+      </Target>
       <Popper
         className={classes.popover}
         placement={placement}
@@ -65,11 +66,17 @@ const DropdownMenu = ({
         onClick={onChildClick}
       >
         <Collapse in={open} onEntered={onResize} onExited={onResize}>
-          <div className={classes.items}>{children}</div>
+          <div className={classes.items}>
+            {withPropsToChildren
+              ? React.Children.map(children, child =>
+                  React.cloneElement(child, { open, handleClose })
+                )
+              : children}
+          </div>
         </Collapse>
       </Popper>
-    </ClickAwayListener>
-  </Manager>
+    </Manager>
+  </ClickAwayListener>
 );
 
 DropdownMenu.propTypes = {
@@ -84,6 +91,7 @@ DropdownMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   placement: PropTypes.string,
   target: PropTypes.node.isRequired,
+  withPropsToChildren: PropTypes.bool,
 };
 
 export default withStyles(styles)(DropdownMenu);
