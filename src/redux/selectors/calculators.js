@@ -7,15 +7,21 @@ export const calculatorsSelector = R.path(['entities', 'calculators']);
 export const calculatorSelector = (state, { id }) =>
   R.prop(id, calculatorsSelector(state));
 
-function recursiveFlatten(calculators, calculator) {
+const getCombinedPropsFromItemsList = (
+  prop,
+  combineFunc = R.identity,
+  ...items
+) => R.pipe(R.pluck(prop), R.flatten, R.filter(R.identity), combineFunc)(items);
+
+const recursiveFlatten = (calculators, calculator) => {
   const formulaSource = R.path(['result', 'refId'], calculator);
-  if (!formulaSource) {
-    return calculator;
-  }
+  if (!formulaSource) return calculator;
+
   const rootCalculator = recursiveFlatten(
     calculators,
     calculators[formulaSource]
   );
+
   return {
     ...rootCalculator,
     ...calculator,
@@ -25,23 +31,32 @@ function recursiveFlatten(calculators, calculator) {
           R.dissoc('refId', rootArg),
           R.path(['args', rootArg.name], calculator)
         ),
-      rootCalculator.args
+      R.propOr([], 'args', rootCalculator)
     ),
-    tags: R.uniq(R.concat(rootCalculator.tags, calculator.tags)),
-    result: R.merge(rootCalculator.result, calculator.result),
+    tags: getCombinedPropsFromItemsList(
+      'tags',
+      R.uniq,
+      rootCalculator,
+      calculator
+    ),
+    result: getCombinedPropsFromItemsList(
+      'result',
+      R.reduce(R.merge, null),
+      rootCalculator,
+      calculator
+    ),
   };
-}
+};
 
 export const flatCalculatorSelector = createSelector(
   [calculatorsSelector, calculatorSelector],
-  (calculators, calc) => {
-    return recursiveFlatten(calculators, calc);
-  }
+  recursiveFlatten
 );
 
 export const calculatorDisplayFormulaSelector = createSelector(
   [flatCalculatorSelector],
-  flatCalculator => parse(flatCalculator.result.execFormula).toTex()
+  flatCalculator =>
+    parse(R.pathOr('', ['result', 'execFormula'], flatCalculator)).toTex()
 );
 
 export const nestedCalculatorSelector = createSelector(
@@ -75,7 +90,7 @@ function exists(obj) {
 
 export const calculatorArgsSelector = createSelector(
   [flatCalculatorSelector],
-  flatCalculator => R.values(flatCalculator.args)
+  R.compose(R.values, R.propOr({}, 'args'))
 );
 
 function convertToUnit(value, unit) {
@@ -140,9 +155,7 @@ export const newCalculatorArgNameSelector = createSelector(
     const namegen = newCalculatorArgnameGenerator();
     while (true) {
       const name = namegen.next().value;
-      if (!calc.args[name]) {
-        return name;
-      }
+      if (!R.pathOr(null, ['args', name], calc)) return name;
     }
   }
 );
@@ -178,10 +191,10 @@ export const calculatorResultFormulaSelector = createSelector(
 export const calculatorResultUnitSelector = createSelector(
   [nestedFlatCalculatorSelector, calculatorSelector],
   (flatCalculators, calc) => {
-    const result = evalCalculator(flatCalculators, calc.id);
+    const result = evalCalculator(flatCalculators, R.propOr(null, 'id', calc));
     let finalResult;
     try {
-      const prevUnit = calc.result.unit;
+      const prevUnit = R.pathOr(null, ['result', 'unit'], calc);
       if (prevUnit && typeof result === typeof math.unit(prevUnit)) {
         finalResult = convertToUnit(result, prevUnit);
       } else {
@@ -227,7 +240,7 @@ export const calculatorDescriptionSelector = createSelector(
 
 export const calculatorTagsSelector = createSelector(
   flatCalculatorSelector,
-  R.prop('tags')
+  R.propOr([], 'tags')
 );
 
 export const calculatorIsNewSelector = createSelector(
