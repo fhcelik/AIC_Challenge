@@ -84,6 +84,7 @@ export const ResultStyles = theme => ({
   container: {
     padding: '0 0.3em',
     position: 'relative',
+    minHeight: 25,
   },
   resultText: {
     ...theme.typography.display4,

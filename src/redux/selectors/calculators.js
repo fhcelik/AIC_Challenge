@@ -221,11 +221,18 @@ export const calculatorResultValueSelector = createSelector(
   }
 );
 
+export const allArgsHaveValuesSelector = createSelector(
+  calculatorArgsSelector,
+  R.pipe(R.values, R.pluck('value'), R.all(v => typeof v === 'number'))
+);
+
 export const calculatorResultSelector = createSelector(
-  [flatCalculatorSelector, calculatorResultValueSelector],
-  (flatCalculator, result) => ({
+  flatCalculatorSelector,
+  calculatorResultValueSelector,
+  allArgsHaveValuesSelector,
+  (flatCalculator, result, allArgsHaveValues) => ({
     ...flatCalculator.result,
-    result,
+    result: allArgsHaveValues ? result : '',
   })
 );
 

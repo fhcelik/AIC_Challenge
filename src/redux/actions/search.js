@@ -4,7 +4,7 @@ import { replace } from 'react-router-redux';
 import { createAction } from 'redux-actions';
 import { Routes } from '../../components/App/Routing';
 import { calculatorList } from '../schemas/calculator';
-import { debounceConfigNames } from '../store';
+import { debounceConfigNames } from '../config';
 import { saveSearchQuery, saveSearchResults } from './app';
 import { saveEntities } from './entities';
 

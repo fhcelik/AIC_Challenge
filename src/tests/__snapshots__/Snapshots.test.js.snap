@@ -563,6 +563,11 @@ exports[`Calculator mwCalcId 1`] = `
           <div
             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
           >
+            <div
+              className="Usages-root"
+            >
+              365
+            </div>
             <div>
               <div
                 className="DropdownMenu-target"
@@ -1043,6 +1048,11 @@ exports[`Calculator mwMCalcId 1`] = `
           <div
             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
           >
+            <div
+              className="Usages-root"
+            >
+              2m
+            </div>
             <div>
               <div
                 className="DropdownMenu-target"
@@ -1736,6 +1746,11 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                           <div
                             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
                           >
+                            <div
+                              className="Usages-root"
+                            >
+                              365
+                            </div>
                             <div>
                               <div
                                 className="DropdownMenu-target"
@@ -2309,7 +2324,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
               <p
                 className="MuiTypography-root MuiTypography-body1 Result-resultText"
               >
-                5000
+                
               </p>
               <div
                 className="MuiInput-root"
@@ -2657,6 +2672,11 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                           <div
                             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
                           >
+                            <div
+                              className="Usages-root"
+                            >
+                              3k
+                            </div>
                             <div>
                               <div
                                 className="DropdownMenu-target"
@@ -3082,7 +3102,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
               <p
                 className="MuiTypography-root MuiTypography-body1 Result-resultText"
               >
-                -0.5 + 1.936491673i
+                
               </p>
             </div>
           </div>
@@ -3115,6 +3135,11 @@ exports[`Calculator quadraticCalcId 1`] = `
           <div
             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
           >
+            <div
+              className="Usages-root"
+            >
+              3k
+            </div>
             <div>
               <div
                 className="DropdownMenu-target"

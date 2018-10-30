@@ -5,10 +5,12 @@ import { handleActions } from 'redux-actions';
 import * as Actions from '../../actions/entities';
 import calculators from './calculators';
 import collections from './collections';
+import usages from './usages';
 
 const subReducers = combineReducers({
   calculators,
   collections,
+  usages,
 });
 
 const entityReducer = handleActions(

@@ -16,6 +16,7 @@ import { CalculatorStyles as styles } from '../sharedStyles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Result from './Result';
+import Usages from './Usages';
 
 const Display = ({
   args,
@@ -63,6 +64,7 @@ const Display = ({
       </Header>
     ) : (
       <Header>
+        <Usages id={id} />
         {isAuthorized && <AddToCollectionButton calculatorId={id} />}
         <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
       </Header>

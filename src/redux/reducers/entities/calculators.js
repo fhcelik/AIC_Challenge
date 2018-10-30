@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import { combineActions, handleActions } from 'redux-actions';
 import * as Actions from '../../actions/calculators';
-import { DEFAULT_ARG_VALUE } from '../../schemas/calculator';
 
 const calculatorArgPathCreator = (id, argname) => [id, 'args', argname];
 const calculatorTagLensCreator = id => R.lensPath([id, 'tags']);
@@ -34,7 +33,7 @@ export default handleActions(
     [Actions.addCalculatorArg]: (calculators, { payload: { id, argname } }) =>
       R.assocPath(
         calculatorArgPathCreator(id, argname),
-        { name: argname, value: DEFAULT_ARG_VALUE },
+        { name: argname, value: '' },
         calculators
       ),
     [combineActions(

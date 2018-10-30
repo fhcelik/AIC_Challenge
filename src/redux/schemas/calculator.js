@@ -2,8 +2,6 @@ import * as R from 'ramda';
 import { schema } from 'normalizr';
 import uuid from 'uuid/v4';
 
-export const DEFAULT_ARG_VALUE = 1;
-
 export function Calculator(props = {}) {
   return {
     id: uuid(),
@@ -11,7 +9,7 @@ export function Calculator(props = {}) {
     tags: [],
     ...props,
     args: R.mapObjIndexed(
-      (arg, name) => ({ value: DEFAULT_ARG_VALUE, ...arg, name }),
+      (arg, name) => ({ value: '', ...arg, name }),
       R.prop('args', props)
     ),
   };

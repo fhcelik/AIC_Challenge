@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import {
@@ -14,6 +15,7 @@ import {
   cancelAddingNewCalculator,
   changeCalculatorArgUnit,
   changeCalculatorResultUnit,
+  incrementCalculatorUsage,
   saveCalculator,
 } from '../../redux/actions/calculators';
 import { getUnit } from '../../redux/schemas/units';
@@ -60,6 +62,7 @@ export default compose(
       changeCalculatorArgUnit,
       changeCalculatorResultUnit,
       cancelAddingNewCalculator,
+      incrementCalculatorUsage,
       saveCalculator,
     }
   ),
@@ -115,9 +118,20 @@ export default compose(
   }),
   updateLayoutOnChangeEnhancer,
   lifecycle({
-    componentDidUpdate({ isNew: prevIsNew }) {
-      const { isNew, showDisplay } = this.props;
+    componentDidUpdate({ args: prevArgs, isNew: prevIsNew }) {
+      const {
+        args,
+        id,
+        incrementCalculatorUsage,
+        isNew,
+        showDisplay,
+      } = this.props;
+
       prevIsNew && !isNew && showDisplay();
+
+      if (!R.equals(prevArgs, args) && !isNew) {
+        incrementCalculatorUsage(id);
+      }
     },
   }),
   pure

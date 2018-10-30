@@ -1,13 +1,18 @@
+import * as R from 'ramda';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
   compose,
+  lifecycle,
   withContext,
   withHandlers,
   withStateHandlers,
 } from 'recompose';
+import { fetchUsages } from '../../redux/actions/usages';
 import CalculatorGrid from './CalculatorGrid.view';
 
 export default compose(
+  connect(null, { fetchUsages }),
   withStateHandlers(
     { domNode: undefined },
     { setDomNode: () => domNode => ({ domNode }) }
@@ -17,5 +22,11 @@ export default compose(
   })),
   withContext({ onResize: PropTypes.func }, ({ updateLayout }) => ({
     onResize: updateLayout,
-  }))
+  })),
+  lifecycle({
+    componentDidMount() {
+      const { calculatorIds, fetchUsages } = this.props;
+      if (R.length(calculatorIds)) fetchUsages(calculatorIds);
+    },
+  })
 )(CalculatorGrid);

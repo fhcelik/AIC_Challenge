@@ -15,20 +15,13 @@ import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
 import { displayNotification } from './actions/notifications';
 import { setJWT } from './actions/auth';
+import { debounceConfig } from './config';
 
 export const history = createHistory();
 
 const httpClient = Axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
-
-export const debounceConfigNames = {
-  SEARCH: 'search',
-};
-
-const debounceConfig = {
-  [debounceConfigNames.SEARCH]: 300,
-};
 
 const middleware = [
   debounceMiddleware(debounceConfig),

@@ -84,7 +84,13 @@ const testCalculators = [
 
 const { entities, result } = normalize(testCalculators, calculatorList);
 
-export const initialState = { entities, auth: { jwt } };
+export const initialState = {
+  auth: { jwt },
+  entities: {
+    ...entities,
+    usages: { quadraticCalcId: 2860, mwCalcId: 365, mwMCalcId: 2042394 },
+  },
+};
 
 export default R.zipObj(
   result,

@@ -2,6 +2,7 @@ import * as R from 'ramda';
 import { createAction } from 'redux-actions';
 import { Calculator } from '../schemas/calculator';
 import {
+  allArgsHaveValuesSelector,
   calculatorSelector,
   nestedCalculatorSelector,
 } from '../selectors/calculators';
@@ -11,6 +12,7 @@ import {
   saveCalculatorToCollection,
 } from './collections';
 import { displayNotification } from './notifications';
+import { debounceConfigNames } from '../config';
 
 export const addCalculator = createAction(
   '@@calcoola/calculator/add',
@@ -85,10 +87,17 @@ export const changeCalculatorArgAlias = createAction(
     dispatch(changeCalculatorArg({ id, args: { [argname]: { alias } } }))
 );
 
+const convertToNumber = R.when(R.compose(R.not, R.isEmpty), Number);
+
 export const changeCalculatorArgValue = createAction(
   '@@calcoola/calculator/argument-change/value',
   ({ id, argname, value }) => dispatch =>
-    dispatch(changeCalculatorArg({ id, args: { [argname]: { value } } }))
+    dispatch(
+      changeCalculatorArg({
+        id,
+        args: { [argname]: { value: convertToNumber(value) } },
+      })
+    )
 );
 
 export const changeCalculatorArgUnit = createAction(
@@ -160,4 +169,12 @@ export const changeCalculatorResultFormula = createAction(
   '@@calcoola/calculator/result-change/formula',
   ({ id, execFormula }) => dispatch =>
     dispatch(changeCalculatorResult({ id, result: { execFormula } }))
+);
+
+export const incrementCalculatorUsage = createAction(
+  '@@calcoola/calculator/incrementCalculatorUsage',
+  id => (dispatch, getState, httpClient) =>
+    allArgsHaveValuesSelector(getState(), { id }) &&
+    httpClient.post(`/usages/${id}`),
+  () => ({ debounce: debounceConfigNames.CALCULATOR_USAGE })
 );

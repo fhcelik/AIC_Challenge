@@ -7,7 +7,7 @@ import Calculator from '../../Calculator';
 import UnitSelect from '../../UnitSelect';
 import { ArgumentStyles as styles } from '../sharedStyles';
 
-function Argument({
+const Argument = ({
   classes,
   theme,
   name,
@@ -17,7 +17,7 @@ function Argument({
   refId,
   onArgValueChange,
   onArgUnitChange,
-}) {
+}) => {
   const content = refId ? (
     <React.Fragment>
       <InputLabel className={classes.label}>{alias}</InputLabel>
@@ -60,22 +60,14 @@ function Argument({
       </Grid>
     </div>
   );
-}
+};
 
 Argument.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   alias: PropTypes.string,
-  value: (props, propName, componentName) => {
-    if (isNaN(props[propName])) {
-      return new Error(
-        `Invalid prop ${propName} supplied to ${componentName}: ${
-          props[propName]
-        } is not a number`
-      );
-    }
-  },
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   unit: PropTypes.string,
   refId: PropTypes.string,
   onArgValueChange: PropTypes.func.isRequired,
