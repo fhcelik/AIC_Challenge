@@ -17,6 +17,7 @@ import {
   isCollectionAuthoredByLoggedInUserSelector,
 } from '../../redux/selectors/collections';
 import CalculatorGrid from '../CalculatorGrid';
+import { noUnitsSelector } from '../../redux/selectors/units';
 
 export default compose(
   withRouter,
@@ -28,6 +29,7 @@ export default compose(
         state,
         props
       ),
+      noUnits: noUnitsSelector(state, props),
     }),
     { fetchCollection }
   ),
@@ -41,9 +43,9 @@ export default compose(
     ({ collection }) => !collection,
     renderComponent(() => <CircularProgress size={100} />)
   ),
-  withProps(({ collection, isCollectionAuthoredByLoggedInUser }) => ({
+  withProps(({ collection, isCollectionAuthoredByLoggedInUser, noUnits }) => ({
     title: `COLLECTION: ${collection.name}`,
-    showAddCalculatorButton: isCollectionAuthoredByLoggedInUser,
+    showAddCalculatorButton: isCollectionAuthoredByLoggedInUser && !noUnits,
   })),
   pure
 )(CalculatorGrid);

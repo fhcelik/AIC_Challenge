@@ -26,10 +26,19 @@ const styles = theme => ({
   },
 });
 
-const CollectionSelect = ({ classes, className, collections }) => (
+const CollectionSelect = ({
+  classes,
+  className,
+  collections,
+  onTargetClick,
+}) => (
   <DropdownMenu
     target={
-      <Typography className={className} variant="display3">
+      <Typography
+        className={className}
+        onClick={onTargetClick}
+        variant="display3"
+      >
         Collections
       </Typography>
     }

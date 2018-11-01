@@ -9,7 +9,7 @@ import { withStyles } from 'material-ui/styles';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Header from '../Header';
 import HeaderButton from '../HeaderButton';
 import { CalculatorStyles as styles } from '../sharedStyles';
@@ -17,6 +17,7 @@ import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Result from './Result';
 import Usages from './Usages';
+import NoUnitsInfo from './NoUnitsInfo';
 
 const Display = ({
   args,
@@ -26,6 +27,7 @@ const Display = ({
   isAuthorized,
   isNew,
   isSaving,
+  noUnits,
   onArgUnitChange,
   onArgValueChange,
   onCancel,
@@ -87,18 +89,24 @@ const Display = ({
           ))}
         </Grid>
       </Grid>
-      <Grid container direction="column" className={classes.args}>
-        {args.map(arg => (
-          <Argument
-            key={arg.name}
-            {...arg}
-            onArgValueChange={onArgValueChange}
-            onArgUnitChange={onArgUnitChange}
-            setArgToFormula={setArgToFormula}
-          />
-        ))}
-      </Grid>
-      <Result {...result} onResultUnitChange={onResultUnitChange} />
+      {noUnits ? (
+        <NoUnitsInfo />
+      ) : (
+        <Fragment>
+          <Grid container direction="column" className={classes.args}>
+            {args.map(arg => (
+              <Argument
+                key={arg.name}
+                {...arg}
+                onArgValueChange={onArgValueChange}
+                onArgUnitChange={onArgUnitChange}
+                setArgToFormula={setArgToFormula}
+              />
+            ))}
+          </Grid>
+          <Result {...result} onResultUnitChange={onResultUnitChange} />
+        </Fragment>
+      )}
     </Grid>
     {isSaving && <CircularProgress className={classes.progress} size={150} />}
   </Grid>
@@ -116,6 +124,7 @@ Display.propTypes = {
   isAuthorized: PropTypes.bool.isRequired,
   isNew: PropTypes.bool,
   isSaving: PropTypes.bool,
+  noUnits: PropTypes.bool.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,

@@ -10,11 +10,16 @@ import { displayNotification } from './notifications';
 export const fetchCollections = createAction(
   '@@calcoola/collections/fetchCollections',
   () => (dispatch, _, httpClient) =>
-    httpClient.get('/collections').then(({ data }) => {
-      const { entities, result } = normalize(data, collectionList);
-      dispatch(saveEntities(entities));
-      dispatch(saveMenuCollectionList(result));
-    })
+    httpClient
+      .get('/collections')
+      .then(({ data }) => {
+        const { entities, result } = normalize(data, collectionList);
+        dispatch(saveEntities(entities));
+        dispatch(saveMenuCollectionList(result));
+      })
+      .catch(() =>
+        dispatch(displayNotification(new Error('Failed to load collections')))
+      )
 );
 
 export const fetchCollection = createAction(

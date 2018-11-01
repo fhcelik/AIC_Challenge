@@ -28,6 +28,8 @@ import {
   calculatorTagsSelector,
   calculatorTitleSelector,
 } from '../../redux/selectors/calculators';
+import { fetchUnitDefinitions } from '../../redux/actions/units';
+import { noUnitsSelector } from '../../redux/selectors/units';
 import ErrorCatch from '../ErrorCatch';
 import updateLayoutOnChangeEnhancer from '../updateLayoutOnChange.enhancer';
 import CalculatorView from './Calculator.view';
@@ -37,7 +39,6 @@ export default compose(
   lifecycle({
     componentDidCatch(error, info) {
       this.setState({ brokenId: this.props.id });
-      console.log(error.message);
     },
   }),
   branch(
@@ -57,12 +58,14 @@ export default compose(
       tags: calculatorTagsSelector(state, props),
       formula: calculatorResultFormulaSelector(state, props),
       isNew: calculatorIsNewSelector(state, props),
+      noUnits: noUnitsSelector(state, props),
     }),
     {
       changeCalculatorArgUnit,
       changeCalculatorResultUnit,
       cancelAddingNewCalculator,
       incrementCalculatorUsage,
+      fetchUnitDefinitions,
       saveCalculator,
     }
   ),
@@ -132,6 +135,10 @@ export default compose(
       if (!R.equals(prevArgs, args) && !isNew) {
         incrementCalculatorUsage(id);
       }
+    },
+    componentDidMount() {
+      const { noUnits, fetchUnitDefinitions } = this.props;
+      noUnits && fetchUnitDefinitions();
     },
   }),
   pure

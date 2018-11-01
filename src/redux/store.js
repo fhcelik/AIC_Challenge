@@ -35,8 +35,8 @@ const reduxPersistConfig = {
   key: 'calcoola/root/157',
   timeout: 35000,
   storage: localforage,
+  blacklist: ['notifications'],
   //transforms,
-  //blacklist
 };
 
 const persistedReducer = persistReducer(reduxPersistConfig, reducer);

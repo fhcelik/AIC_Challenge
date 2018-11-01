@@ -1,8 +1,10 @@
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
 import { createUnit } from '../../mathjs-secured';
+import { displayNotification } from '../actions/notifications';
 import { Unit } from '../schemas/units';
 import { unitDefinitionsSelector } from '../selectors/units';
+import { debounceConfigNames } from '../config';
 
 export const addUnit = createAction('@@calcoola/units/add', Unit);
 
@@ -31,8 +33,9 @@ export const fetchUnitDefinitions = createAction(
     httpClient
       .get('/units')
       .then(({ data }) => dispatch(registerUnitDefinitions(data)))
-      .catch(err => {
+      .catch(() => {
+        dispatch(displayNotification(new Error('Failed to load units')));
         loadUnitDefinitions(getState());
-        throw err;
-      })
+      }),
+  () => ({ debounce: debounceConfigNames.UNITS })
 );

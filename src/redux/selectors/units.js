@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { createSelector } from 'reselect';
 import { getBaseUnit, UNITLESS } from '../schemas/units';
 
-const unitsSelector = R.path(['units', 'unitList']);
+export const unitsSelector = R.path(['units', 'unitList']);
 
 export const matchingUnitsSelector = createSelector(
   [unitsSelector, (_, { defaultUnit }) => defaultUnit],
@@ -15,3 +15,5 @@ export const allUnitsSelector = createSelector(unitsSelector, units =>
 );
 
 export const unitDefinitionsSelector = R.path(['units', 'unitDefinitions']);
+
+export const noUnitsSelector = createSelector(unitsSelector, R.isEmpty);
