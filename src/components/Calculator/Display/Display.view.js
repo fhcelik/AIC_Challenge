@@ -6,7 +6,6 @@ import EditIcon from 'material-ui-icons/Edit';
 import InfoIcon from 'material-ui-icons/InfoOutline';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
@@ -44,6 +43,7 @@ const Display = ({
     container
     direction="column"
     className={cx(classes.root, { [classes.isSaving]: isSaving })}
+    wrap="nowrap"
   >
     {isNew ? (
       <Header>
@@ -76,14 +76,15 @@ const Display = ({
       direction="column"
       justify="space-between"
       className={classes.content}
+      wrap="nowrap"
     >
       <Grid className={classes.title}>
-        <Tooltip id={`${id}-tooltip`} title={description}>
-          <Typography className={classes.titleText}>{title}</Typography>
-        </Tooltip>
+        <Typography className={classes.titleText} title={description}>
+          {title}
+        </Typography>
         <Grid container>
           {tags.map(tag => (
-            <Typography key={tag} className={classes.tag}>
+            <Typography key={tag} className={classes.tag} noWrap title={tag}>
               {tag}
             </Typography>
           ))}

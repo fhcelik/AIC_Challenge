@@ -15,7 +15,7 @@ const styles = theme => ({
 });
 
 const Info = ({ classes, description, formula, showDisplay, theme, title }) => (
-  <Grid container direction="column" className={classes.root}>
+  <Grid container direction="column" className={classes.root} wrap="nowrap">
     <Header>
       <HeaderButton
         onClick={showDisplay}

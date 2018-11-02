@@ -11,20 +11,29 @@ const styles = theme => ({
   selectedTag: {
     border: `1px solid ${theme.palette.tag.highlight}`,
   },
+  tagLabel: {
+    display: 'block',
+    maxWidth: '264px',
+    overflow: 'hidden',
+    paddingLeft: 4,
+    textOverflow: 'ellipsis',
+  },
 });
 
 const Tags = ({ classes, theme, tags, onTagAdd, onTagDelete }) => {
   const Tag = ({ text, isFocused, handleDelete, className }, key) => (
     <Chip
       key={key}
+      classes={{ label: classes.tagLabel }}
       className={cx(className, { [classes.selectedTag]: isFocused })}
       onDelete={handleDelete}
       label={text}
+      title={text}
     />
   );
 
   return (
-    <div className={classes.border}>
+    <div className={cx(classes.border, classes.tags)}>
       <ChipInput
         value={tags}
         label="TAGS"
@@ -32,8 +41,8 @@ const Tags = ({ classes, theme, tags, onTagAdd, onTagDelete }) => {
         onAdd={onTagAdd}
         onDelete={onTagDelete}
         classes={{
-          input: classes.textEditor,
           chip: classes.tag,
+          input: classes.textEditor,
         }}
         {...theme.props.MuiInput}
         {...theme.props.MuiFormControl}

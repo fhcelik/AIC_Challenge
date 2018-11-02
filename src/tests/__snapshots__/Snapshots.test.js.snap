@@ -231,7 +231,7 @@ exports[`Calculator errCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -394,21 +394,17 @@ exports[`Calculator errCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="errCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="error"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Error test
-              </p>
-            </Tooltip>
+              Error test
+            </p>
             <div
               className="MuiGrid-container"
             />
@@ -430,6 +426,7 @@ exports[`Calculator errCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="x"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -482,6 +479,7 @@ exports[`Calculator errCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="y"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -555,7 +553,7 @@ exports[`Calculator mwCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -723,26 +721,23 @@ exports[`Calculator mwCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="mwCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="Find mud weight based on pressure and total vertical distance (TVD)"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Mud weight
-              </p>
-            </Tooltip>
+              Mud weight
+            </p>
             <div
               className="MuiGrid-container"
             >
               <p
-                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                title="basic drilling"
               >
                 basic drilling
               </p>
@@ -765,6 +760,7 @@ exports[`Calculator mwCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="pressure"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -867,6 +863,7 @@ exports[`Calculator mwCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="TVD"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -1040,7 +1037,7 @@ exports[`Calculator mwMCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -1208,26 +1205,23 @@ exports[`Calculator mwMCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="mwMCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="Find mud weight based on pressure and total vertical distance (TVD)"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Mud weight
-              </p>
-            </Tooltip>
+              Mud weight
+            </p>
             <div
               className="MuiGrid-container"
             >
               <p
-                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                title="basic drilling"
               >
                 basic drilling
               </p>
@@ -1250,6 +1244,7 @@ exports[`Calculator mwMCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="pressure"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -1352,6 +1347,7 @@ exports[`Calculator mwMCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="Total vertical distance"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -1525,7 +1521,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -1688,26 +1684,23 @@ exports[`Calculator nestedPressureCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="nestedPressureCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="Find pressure based on mud weight and total vertical distance (TVD)"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Derive Pressure
-              </p>
-            </Tooltip>
+              Derive Pressure
+            </p>
             <div
               className="MuiGrid-container"
             >
               <p
-                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                title="basic drilling"
               >
                 basic drilling
               </p>
@@ -1738,7 +1731,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                       className="Flipper-tile Flipper-front"
                     >
                       <div
-                        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+                        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
                       >
                         <div
                           className="Header-root"
@@ -1906,26 +1899,23 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                           </div>
                         </div>
                         <div
-                          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+                          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
                         >
                           <div
                             className="Display-title"
                           >
-                            <Tooltip
-                              id="mwCalcId-tooltip"
+                            <p
+                              className="MuiTypography-root MuiTypography-body1 Display-titleText"
                               title="Find mud weight based on pressure and total vertical distance (TVD)"
                             >
-                              <p
-                                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-                              >
-                                Mud weight
-                              </p>
-                            </Tooltip>
+                              Mud weight
+                            </p>
                             <div
                               className="MuiGrid-container"
                             >
                               <p
-                                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                                title="basic drilling"
                               >
                                 basic drilling
                               </p>
@@ -1948,6 +1938,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    title="pressure"
                                   >
                                     <label
                                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2050,6 +2041,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    title="TVD"
                                   >
                                     <label
                                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2226,6 +2218,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="TVD"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2399,7 +2392,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -2562,26 +2555,23 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="nestedQuadraticCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="Formula for finding roots of a quadratic polynomial"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Quadratic Formula
-              </p>
-            </Tooltip>
+              Quadratic Formula
+            </p>
             <div
               className="MuiGrid-container"
             >
               <p
-                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                title="pure math"
               >
                 pure math
               </p>
@@ -2604,6 +2594,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="a"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2664,7 +2655,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                       className="Flipper-tile Flipper-front"
                     >
                       <div
-                        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+                        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
                       >
                         <div
                           className="Header-root"
@@ -2832,26 +2823,23 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                           </div>
                         </div>
                         <div
-                          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+                          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
                         >
                           <div
                             className="Display-title"
                           >
-                            <Tooltip
-                              id="quadraticCalcId-tooltip"
+                            <p
+                              className="MuiTypography-root MuiTypography-body1 Display-titleText"
                               title="Formula for finding roots of a quadratic polynomial"
                             >
-                              <p
-                                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-                              >
-                                Quadratic Formula
-                              </p>
-                            </Tooltip>
+                              Quadratic Formula
+                            </p>
                             <div
                               className="MuiGrid-container"
                             >
                               <p
-                                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                                title="pure math"
                               >
                                 pure math
                               </p>
@@ -2874,6 +2862,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    title="a"
                                   >
                                     <label
                                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2926,6 +2915,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    title="b"
                                   >
                                     <label
                                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -2978,6 +2968,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    title="c"
                                   >
                                     <label
                                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3054,6 +3045,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="c"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3127,7 +3119,7 @@ exports[`Calculator quadraticCalcId 1`] = `
       className="Flipper-tile Flipper-front"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+        className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
       >
         <div
           className="Header-root"
@@ -3295,26 +3287,23 @@ exports[`Calculator quadraticCalcId 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+          className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
         >
           <div
             className="Display-title"
           >
-            <Tooltip
-              id="quadraticCalcId-tooltip"
+            <p
+              className="MuiTypography-root MuiTypography-body1 Display-titleText"
               title="Formula for finding roots of a quadratic polynomial"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 Display-titleText"
-              >
-                Quadratic Formula
-              </p>
-            </Tooltip>
+              Quadratic Formula
+            </p>
             <div
               className="MuiGrid-container"
             >
               <p
-                className="MuiTypography-root MuiTypography-body1 Display-tag"
+                className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                title="pure math"
               >
                 pure math
               </p>
@@ -3337,6 +3326,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="a"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3389,6 +3379,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="b"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3441,6 +3432,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                     className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
+                    title="c"
                   >
                     <label
                       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3529,7 +3521,7 @@ exports[`Collection base 1`] = `
           className="Flipper-tile Flipper-front"
         >
           <div
-            className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+            className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
           >
             <div
               className="Header-root"
@@ -3692,26 +3684,23 @@ exports[`Collection base 1`] = `
               </div>
             </div>
             <div
-              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
             >
               <div
                 className="Display-title"
               >
-                <Tooltip
-                  id="5838d829-b7b3-4693-8a89-0f3ffb40d804-tooltip"
+                <p
+                  className="MuiTypography-root MuiTypography-body1 Display-titleText"
                   title="Formula for finding roots of a quadratic polynomial"
                 >
-                  <p
-                    className="MuiTypography-root MuiTypography-body1 Display-titleText"
-                  >
-                    Quadratic Formula
-                  </p>
-                </Tooltip>
+                  Quadratic Formula
+                </p>
                 <div
                   className="MuiGrid-container"
                 >
                   <p
-                    className="MuiTypography-root MuiTypography-body1 Display-tag"
+                    className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                    title="pure math"
                   >
                     pure math
                   </p>
@@ -3734,6 +3723,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="a"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3786,6 +3776,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="b"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3838,6 +3829,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="c"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -3908,7 +3900,7 @@ exports[`Collection base 1`] = `
           className="Flipper-tile Flipper-front"
         >
           <div
-            className="MuiGrid-container MuiGrid-direction-xs-column Display-root"
+            className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
           >
             <div
               className="Header-root"
@@ -4071,26 +4063,23 @@ exports[`Collection base 1`] = `
               </div>
             </div>
             <div
-              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-justify-xs-space-between Display-content"
+              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
             >
               <div
                 className="Display-title"
               >
-                <Tooltip
-                  id="8308d829-b7b3-4693-8a89-0f3ffb40d804-tooltip"
+                <p
+                  className="MuiTypography-root MuiTypography-body1 Display-titleText"
                   title="Formula for finding roots of a quadratic polynomial"
                 >
-                  <p
-                    className="MuiTypography-root MuiTypography-body1 Display-titleText"
-                  >
-                    Quadratic Formula
-                  </p>
-                </Tooltip>
+                  Quadratic Formula
+                </p>
                 <div
                   className="MuiGrid-container"
                 >
                   <p
-                    className="MuiTypography-root MuiTypography-body1 Display-tag"
+                    className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                    title="pure math"
                   >
                     pure math
                   </p>
@@ -4113,6 +4102,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="a"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -4165,6 +4155,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="b"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -4217,6 +4208,7 @@ exports[`Collection base 1`] = `
                         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
+                        title="c"
                       >
                         <label
                           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
@@ -4487,7 +4479,7 @@ exports[`Editor editor 1`] = `
       </div>
     </div>
     <div
-      className="Tags-border"
+      className="Tags-border Tags-tags"
     >
       <div
         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth ChipInput-root"
@@ -4511,9 +4503,10 @@ exports[`Editor editor 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
+            title="tag1"
           >
             <span
-              className="MuiChip-label"
+              className="MuiChip-label Tags-tagLabel"
             >
               tag1
             </span>
@@ -4536,9 +4529,10 @@ exports[`Editor editor 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
+            title="tag2"
           >
             <span
-              className="MuiChip-label"
+              className="MuiChip-label Tags-tagLabel"
             >
               tag2
             </span>
@@ -4903,7 +4897,7 @@ exports[`Editor with arg 1`] = `
       </div>
     </div>
     <div
-      className="Tags-border"
+      className="Tags-border Tags-tags"
     >
       <div
         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth ChipInput-root"
@@ -4927,9 +4921,10 @@ exports[`Editor with arg 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
+            title="tag1"
           >
             <span
-              className="MuiChip-label"
+              className="MuiChip-label Tags-tagLabel"
             >
               tag1
             </span>
@@ -4952,9 +4947,10 @@ exports[`Editor with arg 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
+            title="tag2"
           >
             <span
-              className="MuiChip-label"
+              className="MuiChip-label Tags-tagLabel"
             >
               tag2
             </span>

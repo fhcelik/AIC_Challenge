@@ -10,6 +10,10 @@ export const CalculatorStyles = theme => ({
     margin: '0 0.4em 0.4em',
   },
 
+  tags: {
+    overflow: 'auto',
+  },
+
   tag: {
     ...theme.typography.subheading,
     backgroundColor: theme.palette.tag.background,
@@ -18,6 +22,7 @@ export const CalculatorStyles = theme => ({
     textTransform: 'uppercase',
     margin: 3,
     padding: 6,
+    maxWidth: 304,
   },
 
   args: {
@@ -26,9 +31,11 @@ export const CalculatorStyles = theme => ({
   },
 
   title: {
-    textTransform: 'uppercase',
-    marginTop: '0.1em',
     marginBottom: '0.5em',
+    marginTop: '0.1em',
+    overflowX: 'hidden',
+    textTransform: 'uppercase',
+    width: '100%',
   },
 
   titleText: {
@@ -57,8 +64,15 @@ export const ArgumentStyles = theme => ({
     padding: '0.2em',
     marginTop: '-2px',
   },
+  textField: {
+    overflowX: 'hidden',
+  },
   label: {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
     textTransform: 'uppercase',
+    whiteSpace: 'nowrap',
+    width: 380,
   },
   container: {
     padding: '0 0.3em',
@@ -107,6 +121,7 @@ export const InfoStyles = theme => ({
   },
   formula: {
     color: theme.palette.text.primary,
+    overflow: 'auto',
   },
   description: {
     ...theme.typography.display3,
