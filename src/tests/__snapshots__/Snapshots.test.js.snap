@@ -8078,6 +8078,205 @@ exports[`NotificationToaster base 1`] = `
 </div>
 `;
 
+exports[`Profile base 1`] = `
+<div
+  className={undefined}
+>
+  <h1
+    className="MuiTypography-root MuiTypography-display4 Profile-title"
+  >
+    YOUR PROFILE
+  </h1>
+  <div
+    className="MuiGrid-container MuiGrid-direction-xs-column Profile-fields"
+  >
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={true}
+        htmlFor={undefined}
+      >
+        Email
+      </label>
+      <div
+        className="MuiInput-root MuiInput-disabled MuiInput-fullWidth MuiInput-formControl"
+      >
+        <input
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input MuiInput-disabled MuiInput-inputMarginDense"
+          defaultValue={undefined}
+          disabled={true}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value="johnsmith@gmail.com"
+        />
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={true}
+        htmlFor={undefined}
+      >
+        Full Name
+      </label>
+      <div
+        className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+      >
+        <input
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input MuiInput-inputMarginDense"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value="John Smith"
+        />
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={true}
+        htmlFor={undefined}
+      >
+        Role
+      </label>
+      <div
+        className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+      >
+        <input
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input MuiInput-inputMarginDense"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value="Petroleum Engineer"
+        />
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={true}
+        htmlFor={undefined}
+      >
+        Company
+      </label>
+      <div
+        className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+      >
+        <input
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input MuiInput-inputMarginDense"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value="Suncor"
+        />
+      </div>
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButtonBase-disabled MuiButton-root Profile-submitButton MuiButton-disabled Profile-submitDisabled"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="-1"
+      type="submit"
+    >
+      <span
+        className="MuiButton-label Profile-submitLabel"
+      >
+        Save
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`PublishConfirmation base 1`] = `
 <div
   style={
@@ -8338,31 +8537,7 @@ exports[`Routing collections 1`] = `
 </div>
 `;
 
-exports[`Routing profile 1`] = `
-<div
-  className="MuiGrid-container ErrorPage-root"
->
-  <p
-    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
-  >
-    404
-  </p>
-  <div
-    className="ErrorPage-rightContent"
-  >
-    <p
-      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
-    >
-      Not found
-    </p>
-    <p
-      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
-    >
-      You're looking for something that probably doesn't exist.
-    </p>
-  </div>
-</div>
-`;
+exports[`Routing profile 1`] = `null`;
 
 exports[`Routing root 1`] = `null`;
 

@@ -50,6 +50,7 @@ const palette = {
   text: {
     primary: colors.lightGray,
     faded: colors.darkGray,
+    disabled: colors.steelBlue,
   },
   select: {
     icon: colors.orange,
@@ -95,8 +96,7 @@ const typography = {
     color: palette.text.primary,
   },
 };
-// setup basic theme and any overrides that are
-// needed here
+
 const theme = createMuiTheme({
   palette,
   typography,
@@ -148,10 +148,13 @@ const theme = createMuiTheme({
       },
     },
     MuiInput: {
-      input: {
-        padding: 0,
+      root: {
         ...typography.display2,
       },
+      input: {
+        padding: 0,
+      },
+      disabled: { color: palette.text.disabled },
     },
     MuiIconButton: {
       root: {

@@ -4,6 +4,7 @@ import CalculatorsByAuthor from '../../CalculatorsByAuthor';
 import Collection from '../../Collection';
 import Dashboard from '../../Dashboard';
 import { Error404 } from '../../ErrorPage';
+import Profile from '../../Profile';
 import SearchResults from '../../SearchResults';
 import SingleCalculator from '../../Calculator/SingleCalculator';
 
@@ -39,6 +40,7 @@ const Routing = () => (
       component={({ match }) => <Collection id={match.params.id} />}
     />
     <Route path={Routes.search} component={SearchResults} />
+    <Route path={Routes.profile} component={Profile} />
     <Route component={Error404} />
   </Switch>
 );
