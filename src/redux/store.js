@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import Axios from 'axios';
 import Promise from 'bluebird';
 import createHistory from 'history/createBrowserHistory';
@@ -13,6 +14,7 @@ import thunk from 'redux-thunk';
 import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
 import { displayNotification } from './actions/notifications';
+import { setJWT } from './actions/auth';
 
 export const history = createHistory();
 
@@ -37,7 +39,7 @@ const middleware = [
 ];
 
 const reduxPersistConfig = {
-  key: 'calcoola/root/137',
+  key: 'calcoola/root/157',
   timeout: 35000,
   storage: localforage,
   //transforms,
@@ -58,10 +60,20 @@ export default function configureStore(initialState = {}, persist = true) {
   );
   const persistor = persist ? persistStore(store, null, done) : null;
 
-  httpClient.interceptors.response.use(null, error => {
-    store.dispatch(displayNotification(error));
-    return Promise.reject(error);
-  });
+  httpClient.interceptors.response.use(
+    response => {
+      const refreshedToken = response.headers['Authorization'];
+      if (refreshedToken) store.dispatch(setJWT(refreshedToken));
+      return response;
+    },
+    error => {
+      const status = R.pathOr(null, ['response', 'status'], error);
+      if (status === 401 || status === 403) store.dispatch(setJWT(null));
+
+      store.dispatch(displayNotification(error));
+      return Promise.reject(error);
+    }
+  );
 
   return {
     store,
