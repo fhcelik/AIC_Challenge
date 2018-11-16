@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import React from 'react';
 import { calculatorList } from '../../redux/schemas/calculator';
 import Calculator from '../Calculator';
+import { jwt } from '../../tests/data';
 
 const testCalculators = [
   {
@@ -83,7 +84,7 @@ const testCalculators = [
 
 const { entities, result } = normalize(testCalculators, calculatorList);
 
-export const initialState = { entities };
+export const initialState = { entities, auth: { jwt } };
 
 export default R.zipObj(
   result,

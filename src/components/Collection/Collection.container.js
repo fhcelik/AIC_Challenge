@@ -14,6 +14,7 @@ import { fetchCollection } from '../../redux/actions/collections';
 import {
   calculatorIdsByCollectionId,
   collectionByIdSelector,
+  isCollectionAuthoredByLoggedInUserSelector,
 } from '../../redux/selectors/collections';
 import CalculatorGrid from '../CalculatorGrid';
 
@@ -23,6 +24,10 @@ export default compose(
     (state, props) => ({
       collection: collectionByIdSelector(state, props),
       calculatorIds: calculatorIdsByCollectionId(state, props),
+      isCollectionAuthoredByLoggedInUser: isCollectionAuthoredByLoggedInUserSelector(
+        state,
+        props
+      ),
     }),
     { fetchCollection }
   ),
@@ -36,9 +41,9 @@ export default compose(
     ({ collection }) => !collection,
     renderComponent(() => <CircularProgress size={100} />)
   ),
-  withProps(({ collection }) => ({
+  withProps(({ collection, isCollectionAuthoredByLoggedInUser }) => ({
     title: `COLLECTION: ${collection.name}`,
-    showAddCalculatorButton: true,
+    showAddCalculatorButton: isCollectionAuthoredByLoggedInUser,
   })),
   pure
 )(CalculatorGrid);

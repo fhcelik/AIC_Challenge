@@ -44,10 +44,10 @@ const render = () => {
 /**
  * Wait for persistor to be ready
  */
-isReady.finally(async () => {
-  if (store.dispatch(authorize()).payload) {
-    await store.dispatch(bootstrap());
-  }
+isReady.finally(() => {
+  store.dispatch(authorize());
+
+  store.dispatch(bootstrap());
 
   return render();
 });

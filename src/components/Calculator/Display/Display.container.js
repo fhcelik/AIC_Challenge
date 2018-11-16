@@ -5,16 +5,22 @@ import {
   changeCalculatorArgValue,
   removeCalculatorArgReference,
 } from '../../../redux/actions/calculators';
+import { isAuthorizedSelector } from '../../../redux/selectors/auth';
 import Display from './Display.view';
 
 export const ENTER_VALUE = 'Enter value';
 
 export default compose(
-  connect(null, {
-    addCalculatorArgReference,
-    changeCalculatorArgValue,
-    removeCalculatorArgReference,
-  }),
+  connect(
+    state => ({
+      isAuthorized: isAuthorizedSelector(state),
+    }),
+    {
+      addCalculatorArgReference,
+      changeCalculatorArgValue,
+      removeCalculatorArgReference,
+    }
+  ),
   withHandlers({
     onArgValueChange: ({ id, changeCalculatorArgValue }) => event => {
       changeCalculatorArgValue({

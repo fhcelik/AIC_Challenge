@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
+import { userSelector } from './auth';
 
 const menuCollectionListSelector = R.path(['app', 'menuCollectionList']);
 
@@ -37,4 +38,11 @@ export const collectionHasCalculatorSelector = createSelector(
   [collectionByIdSelector, (_, { calculatorId }) => calculatorId],
   (collection, calcId) =>
     R.propSatisfies(R.contains(calcId), 'calculators', collection)
+);
+
+export const isCollectionAuthoredByLoggedInUserSelector = createSelector(
+  collectionByIdSelector,
+  userSelector,
+  (collection, user) =>
+    R.equals(R.prop('author', collection), R.prop('id', user))
 );

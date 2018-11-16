@@ -43,12 +43,7 @@ export const authorize = createAction(
       () => process.env.REACT_APP_DEV_JWT || jwtSelector(getState())
     )(getTokenFromHashbang());
 
-    if (token) {
-      dispatch(setJWT(token));
-      return true;
-    }
-
-    return false;
+    if (token) dispatch(setJWT(token));
   }
 );
 

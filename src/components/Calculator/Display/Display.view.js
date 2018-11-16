@@ -22,6 +22,7 @@ const Display = ({
   classes,
   description,
   id,
+  isAuthorized,
   isNew,
   isSaving,
   onArgUnitChange,
@@ -62,7 +63,7 @@ const Display = ({
       </Header>
     ) : (
       <Header>
-        <AddToCollectionButton calculatorId={id} />
+        {isAuthorized && <AddToCollectionButton calculatorId={id} />}
         <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
       </Header>
     )}
@@ -110,6 +111,7 @@ Display.propTypes = {
   classes: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  isAuthorized: PropTypes.bool.isRequired,
   isNew: PropTypes.bool,
   isSaving: PropTypes.bool,
   onArgUnitChange: PropTypes.func.isRequired,
