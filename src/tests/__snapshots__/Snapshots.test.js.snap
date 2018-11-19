@@ -427,7 +427,7 @@ exports[`Calculator errCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -479,7 +479,7 @@ exports[`Calculator errCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -757,7 +757,7 @@ exports[`Calculator mwCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -859,7 +859,7 @@ exports[`Calculator mwCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -1237,7 +1237,7 @@ exports[`Calculator mwMCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -1339,7 +1339,7 @@ exports[`Calculator mwMCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -1930,7 +1930,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                                 >
                                   <div
                                     aria-describedby={undefined}
-                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
@@ -2032,7 +2032,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                                 >
                                   <div
                                     aria-describedby={undefined}
-                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
@@ -2208,7 +2208,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -2586,7 +2586,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -2851,7 +2851,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                 >
                                   <div
                                     aria-describedby={undefined}
-                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
@@ -2903,7 +2903,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                 >
                                   <div
                                     aria-describedby={undefined}
-                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
@@ -2955,7 +2955,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                 >
                                   <div
                                     aria-describedby={undefined}
-                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                   >
@@ -3031,7 +3031,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -3309,7 +3309,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -3361,7 +3361,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -3413,7 +3413,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                 >
                   <div
                     aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                     onBlur={[Function]}
                     onFocus={[Function]}
                   >
@@ -3706,7 +3706,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
@@ -3758,7 +3758,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
@@ -3810,7 +3810,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
@@ -4085,7 +4085,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
@@ -4137,7 +4137,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >
@@ -4189,7 +4189,7 @@ exports[`Collection base 1`] = `
                     >
                       <div
                         aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
                         onBlur={[Function]}
                         onFocus={[Function]}
                       >

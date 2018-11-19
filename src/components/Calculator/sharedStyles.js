@@ -64,6 +64,15 @@ export const ArgumentStyles = theme => ({
     padding: '0 0.3em',
     position: 'relative',
   },
+  textField: {
+    '& input::-webkit-inner-spin-button, & input::-webkit-outer-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '& input': {
+      '-moz-appearance': 'textfield',
+    },
+  },
 });
 export const ResultStyles = theme => ({
   result: {
