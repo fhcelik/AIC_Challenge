@@ -11,6 +11,9 @@ const styles = {
   items: {
     width: 300,
   },
+  list: {
+    maxHeight: 300,
+  },
 };
 
 const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
@@ -27,7 +30,7 @@ const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
       />
     }
   >
-    <List>
+    <List className={classes.list}>
       <CollectionCreatorList calculatorId={calculatorId} />
       <CollectionChecklist calculatorId={calculatorId} />
     </List>

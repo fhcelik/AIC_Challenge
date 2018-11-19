@@ -82,7 +82,7 @@ exports[`AddToCollectionButton base 1`] = `
               className="DropdownMenu-items AddToCollectionButton-items"
             >
               <ul
-                className="MuiList-root MuiList-padding"
+                className="MuiList-root MuiList-padding AddToCollectionButton-list"
               >
                 <div
                   className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -313,7 +313,7 @@ exports[`Calculator errCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -637,7 +637,7 @@ exports[`Calculator mwCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -1117,7 +1117,7 @@ exports[`Calculator mwMCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -1597,7 +1597,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -1810,7 +1810,7 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                                         className="DropdownMenu-items AddToCollectionButton-items"
                                       >
                                         <ul
-                                          className="MuiList-root MuiList-padding"
+                                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                                         >
                                           <div
                                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -2466,7 +2466,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -2731,7 +2731,7 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                                         className="DropdownMenu-items AddToCollectionButton-items"
                                       >
                                         <ul
-                                          className="MuiList-root MuiList-padding"
+                                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                                         >
                                           <div
                                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -3189,7 +3189,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                         className="DropdownMenu-items AddToCollectionButton-items"
                       >
                         <ul
-                          className="MuiList-root MuiList-padding"
+                          className="MuiList-root MuiList-padding AddToCollectionButton-list"
                         >
                           <div
                             className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -3586,7 +3586,7 @@ exports[`Collection base 1`] = `
                             className="DropdownMenu-items AddToCollectionButton-items"
                           >
                             <ul
-                              className="MuiList-root MuiList-padding"
+                              className="MuiList-root MuiList-padding AddToCollectionButton-list"
                             >
                               <div
                                 className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
@@ -3965,7 +3965,7 @@ exports[`Collection base 1`] = `
                             className="DropdownMenu-items AddToCollectionButton-items"
                           >
                             <ul
-                              className="MuiList-root MuiList-padding"
+                              className="MuiList-root MuiList-padding AddToCollectionButton-list"
                             >
                               <div
                                 className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
