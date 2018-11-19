@@ -70,7 +70,11 @@ export default function configureStore(initialState = {}, persist = true) {
       const status = R.pathOr(null, ['response', 'status'], error);
       if (status === 401 || status === 403) store.dispatch(setJWT(null));
 
-      store.dispatch(displayNotification(error));
+      const messageOrError = Error(
+        R.pathOr(error, ['response', 'data', 'message'], error)
+      );
+
+      store.dispatch(displayNotification(messageOrError));
       return Promise.reject(error);
     }
   );
