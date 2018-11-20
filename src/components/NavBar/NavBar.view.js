@@ -13,8 +13,7 @@ import Login from './Login';
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.navbar.background,
-    border: `1px solid ${theme.palette.card.header}`,
-    boxShadow: 'none',
+    borderBottom: `1px solid ${theme.palette.card.header}`,
   },
   toolbar: {
     minHeight: '3em',

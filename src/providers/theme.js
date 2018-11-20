@@ -15,6 +15,7 @@ export const colors = {
   steelTeal: 'rgba(26, 60, 71, 0.5)',
   stormcloud: '#1C444D',
   white: 'white',
+  gray: 'rgba(0, 0, 0, 0.2)',
 };
 
 const palette = {
@@ -58,6 +59,9 @@ const palette = {
     error: {
       background: colors.orange,
     },
+  },
+  dropdownMenu: {
+    shadow: colors.gray,
   },
 };
 

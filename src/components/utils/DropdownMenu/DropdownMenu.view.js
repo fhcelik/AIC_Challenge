@@ -6,9 +6,6 @@ import React from 'react';
 import { Manager, Popper, Target } from 'react-popper';
 
 const styles = theme => ({
-  root: {
-    display: 'inline-block',
-  },
   icon: {
     top: 'auto',
     right: '0',
@@ -32,6 +29,7 @@ const styles = theme => ({
   },
   popover: {
     zIndex: 2,
+    boxShadow: `${theme.palette.dropdownMenu.shadow} 4px 5px 4px -1px`,
   },
 });
 
