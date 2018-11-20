@@ -1,6 +1,7 @@
 import CssBaseline from 'material-ui/CssBaseline';
 import { createMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import React from 'react';
+import './app.css';
 
 export const colors = {
   darkGray: '#4F6374',

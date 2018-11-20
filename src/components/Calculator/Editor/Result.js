@@ -9,6 +9,7 @@ const styles = theme => ({
   ...ResultStyles(theme),
   formulaInput: {
     fontSize: 'inherit',
+    padding: '0 0.3em',
   },
 });
 
@@ -44,6 +45,7 @@ const Result = ({
           />
         )
       }
+      placeholder="Formula"
     />
   );
 };

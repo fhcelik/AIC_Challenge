@@ -20,6 +20,7 @@ const styles = theme => ({
   ...InfoStyles(theme),
   editorRoot: {
     backgroundImage: `url(${dot})`,
+    paddingBottom: '0.3em',
   },
 
   addIcon: {
