@@ -5,7 +5,7 @@ import { jwtSelector } from '../selectors/auth';
 export const login = createAction(
   '@@calcoola/auth/login',
   email => (dispatch, getState, httpClient) => {
-    return httpClient.post('/user/login', { email });
+    return httpClient.post('/login', { email });
   }
 );
 
