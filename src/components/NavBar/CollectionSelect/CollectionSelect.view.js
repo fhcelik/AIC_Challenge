@@ -21,6 +21,7 @@ const styles = theme => ({
     },
   },
   listItemText: {
+    textTransform: 'uppercase',
     maxWidth: '300px',
   },
 });

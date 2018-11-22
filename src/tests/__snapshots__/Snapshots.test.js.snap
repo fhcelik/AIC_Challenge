@@ -117,7 +117,7 @@ exports[`AddToCollectionButton base 1`] = `
                   </div>
                 </div>
                 <div
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button CollectionCheckEntry-root"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -144,7 +144,7 @@ exports[`AddToCollectionButton base 1`] = `
                     />
                   </svg>
                   <p
-                    className="MuiTypography-root MuiTypography-body1"
+                    className="MuiTypography-root MuiTypography-body1 CollectionCheckEntry-text"
                   >
                     My Favourites
                   </p>
@@ -153,7 +153,7 @@ exports[`AddToCollectionButton base 1`] = `
                   />
                 </div>
                 <div
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button CollectionCheckEntry-root"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -173,7 +173,7 @@ exports[`AddToCollectionButton base 1`] = `
                     className="material-icons MuiIcon-root MuiListItemIcon-root"
                   />
                   <p
-                    className="MuiTypography-root MuiTypography-body1"
+                    className="MuiTypography-root MuiTypography-body1 CollectionCheckEntry-text"
                   >
                     Interesting Calculators
                   </p>
@@ -182,7 +182,7 @@ exports[`AddToCollectionButton base 1`] = `
                   />
                 </div>
                 <div
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button CollectionCheckEntry-root"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -202,7 +202,7 @@ exports[`AddToCollectionButton base 1`] = `
                     className="material-icons MuiIcon-root MuiListItemIcon-root"
                   />
                   <p
-                    className="MuiTypography-root MuiTypography-body1"
+                    className="MuiTypography-root MuiTypography-body1 CollectionCheckEntry-text"
                   >
                     Collection of Calculators with a really long name
                   </p>

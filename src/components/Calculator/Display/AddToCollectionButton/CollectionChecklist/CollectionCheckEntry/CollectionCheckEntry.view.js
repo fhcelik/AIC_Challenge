@@ -1,19 +1,40 @@
-import { Icon, ListItem, ListItemIcon, Typography } from 'material-ui';
+import {
+  Icon,
+  ListItem,
+  ListItemIcon,
+  Typography,
+  withStyles,
+} from 'material-ui';
 import CheckedIcon from 'material-ui-icons/Check';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const CollectionCheckEntry = ({ checked, name, onCollectionChecked }) => (
-  <ListItem button onClick={onCollectionChecked}>
+const styles = {
+  root: {
+    padding: '4px 8px',
+  },
+  text: {
+    textTransform: 'uppercase',
+  },
+};
+
+const CollectionCheckEntry = ({
+  checked,
+  classes,
+  name,
+  onCollectionChecked,
+}) => (
+  <ListItem button className={classes.root} onClick={onCollectionChecked}>
     <ListItemIcon>{checked ? <CheckedIcon /> : <Icon />}</ListItemIcon>
-    <Typography>{name}</Typography>
+    <Typography className={classes.text}>{name}</Typography>
   </ListItem>
 );
 
 CollectionCheckEntry.propTypes = {
   checked: PropTypes.bool.isRequired,
+  classes: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   onCollectionChecked: PropTypes.func.isRequired,
 };
 
-export default CollectionCheckEntry;
+export default withStyles(styles)(CollectionCheckEntry);

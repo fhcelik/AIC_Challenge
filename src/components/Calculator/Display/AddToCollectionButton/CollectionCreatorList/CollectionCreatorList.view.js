@@ -13,6 +13,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = theme => ({
+  item: {
+    padding: '4px 8px',
+  },
   inputIcon: {
     color: theme.palette.text.faded,
   },
@@ -32,7 +35,7 @@ const CollectionCreatorList = ({
       </Grid>
     </ListItem>
     {newEntries.map(({ id, name, saving }) => (
-      <ListItem key={id}>
+      <ListItem key={id} className={classes.item}>
         <ListItemIcon>
           {saving ? <CircularProgress size={20} /> : <NewIcon />}
         </ListItemIcon>

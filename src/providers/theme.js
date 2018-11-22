@@ -32,6 +32,7 @@ const palette = {
   },
   navbar: {
     background: colors.midnightBlue,
+    border: colors.navyBlue,
   },
   card: {
     background: colors.steelTeal,
@@ -149,6 +150,14 @@ const theme = createMuiTheme({
         height: 'auto',
         '&:hover': {
           backgroundColor: 'none',
+        },
+      },
+    },
+    MuiListItem: {
+      root: {
+        borderBottom: `1px solid ${palette.navbar.border}`,
+        '&:last-child': {
+          borderBottom: 'none',
         },
       },
     },
