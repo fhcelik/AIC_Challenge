@@ -1,6 +1,8 @@
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
+import { push } from 'react-router-redux';
 import { jwtSelector } from '../selectors/auth';
+import { Routes } from '../../components/App/Routing';
 
 export const login = createAction(
   '@@calcoola/auth/login',
@@ -49,3 +51,8 @@ export const authorize = createAction(
     return false;
   }
 );
+
+export const logout = createAction('@@calcoola/auth/logout', () => dispatch => {
+  dispatch(setJWT(null));
+  dispatch(push(Routes.root));
+});

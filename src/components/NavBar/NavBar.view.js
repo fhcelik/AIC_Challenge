@@ -9,6 +9,7 @@ import { Routes } from '../App/Routing';
 import SearchBar from '../SearchBar';
 import CollectionSelect from './CollectionSelect';
 import Login from './Login';
+import UserProfileMenu from './UserProfileMenu';
 
 const styles = theme => ({
   root: {
@@ -41,7 +42,7 @@ const styles = theme => ({
   },
 });
 
-const NavBar = ({ classes, location }) => (
+const NavBar = ({ classes, isAuthorized, location }) => (
   <AppBar position="static" className={classes.root}>
     <Toolbar className={classes.toolbar}>
       <NavLink
@@ -58,13 +59,14 @@ const NavBar = ({ classes, location }) => (
         })}
       />
       <SearchBar />
-      <Login />
+      {isAuthorized ? <UserProfileMenu /> : <Login />}
     </Toolbar>
   </AppBar>
 );
 
 NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
+  isAuthorized: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
 };
 export default compose(withRouter, withStyles(styles))(NavBar);

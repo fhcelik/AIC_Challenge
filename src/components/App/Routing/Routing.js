@@ -8,6 +8,7 @@ export const Routes = {
   root: '/',
   collection: '/collection/',
   search: '/search',
+  profile: '/profile',
 };
 
 const Mock404 = () => <Typography variant="display4">Not Found</Typography>;

@@ -6164,6 +6164,14 @@ exports[`Routing collection 1`] = `
 </h1>
 `;
 
+exports[`Routing profile 1`] = `
+<h1
+  className="MuiTypography-root MuiTypography-display4"
+>
+  Not Found
+</h1>
+`;
+
 exports[`Routing root 1`] = `
 <h1
   className="MuiTypography-root MuiTypography-display4"
@@ -6439,6 +6447,176 @@ exports[`UnitSelect Pressure 1`] = `
         d="M7 10l5 5 5-5z"
       />
     </svg>
+  </div>
+</div>
+`;
+
+exports[`UserProfileMenu base 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "flex-end",
+      "margin": 10,
+    }
+  }
+>
+  <div>
+    <div
+      className="DropdownMenu-target"
+      onClick={[Function]}
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root UserProfileMenu-button"
+        disabled={false}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root UserProfileMenu-accountIcon"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+            />
+          </svg>
+          John Smith
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root DropdownMenu-icon"
+        color={undefined}
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <div
+      className="DropdownMenu-popover"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        className="MuiCollapse-container"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper"
+        >
+          <div
+            className="MuiCollapse-wrapperInner"
+          >
+            <div
+              className="DropdownMenu-items"
+            >
+              <ul
+                className="MuiList-root"
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                role="menu"
+              >
+                <a
+                  aria-current={false}
+                  className={undefined}
+                  href="/profile"
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  style={undefined}
+                  tabIndex={0}
+                >
+                  <div
+                    className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button UserProfileMenu-listItem"
+                    color="inherit"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    role="button"
+                    tabIndex="0"
+                  >
+                    <h1
+                      className="MuiTypography-root MuiTypography-display3 UserProfileMenu-listItemText"
+                    >
+                      Profile
+                    </h1>
+                    <span
+                      className="MuiTouchRipple-root"
+                    />
+                  </div>
+                </a>
+                <div
+                  className="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button UserProfileMenu-listItem"
+                  color="inherit"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="button"
+                  tabIndex={-1}
+                >
+                  <h1
+                    className="MuiTypography-root MuiTypography-display3 UserProfileMenu-listItemText"
+                  >
+                    Logout
+                  </h1>
+                  <span
+                    className="MuiTouchRipple-root"
+                  />
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

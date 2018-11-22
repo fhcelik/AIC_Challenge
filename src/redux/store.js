@@ -62,7 +62,7 @@ export default function configureStore(initialState = {}, persist = true) {
 
   httpClient.interceptors.response.use(
     response => {
-      const refreshedToken = response.headers['Authorization'];
+      const refreshedToken = response.headers.authorization;
       if (refreshedToken) store.dispatch(setJWT(refreshedToken));
       return response;
     },
