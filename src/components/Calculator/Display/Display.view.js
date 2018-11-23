@@ -15,6 +15,7 @@ import HeaderButton from '../HeaderButton';
 import NoUnitsInfo from './NoUnitsInfo';
 import PublishConfirmation from './PublishConfirmation';
 import Result from './Result';
+import ShareButton from '../../ShareButton';
 import Usages from './Usages';
 
 const Display = ({
@@ -33,6 +34,7 @@ const Display = ({
   onResultUnitChange,
   result,
   setArgToFormula,
+  shareLink,
   showEditor,
   showInfo,
   tags,
@@ -63,6 +65,7 @@ const Display = ({
       <Header>
         <Usages id={id} />
         {isAuthorized && <AddToCollectionButton calculatorId={id} />}
+        <ShareButton urlToShare={shareLink} hoverText="Share this calculator" />
         <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
       </Header>
     )}
@@ -136,6 +139,7 @@ Display.propTypes = {
   onResultUnitChange: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
   setArgToFormula: PropTypes.func.isRequired,
+  shareLink: PropTypes.string.isRequired,
   showEditor: PropTypes.func.isRequired,
   showInfo: PropTypes.func.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,

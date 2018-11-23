@@ -82,4 +82,5 @@ NavBar.propTypes = {
   isAuthorized: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
 };
+
 export default compose(withRouter, withStyles(styles))(NavBar);

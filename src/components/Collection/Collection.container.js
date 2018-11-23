@@ -7,6 +7,7 @@ import {
   collectionByIdSelector,
   isCollectionAuthoredByLoggedInUserSelector,
 } from '../../redux/selectors/collections';
+import { getCollectionLink } from '../App/Routing/Routing';
 import handleFetchEntity from '../hoc/handleFetchEntity';
 import CalculatorGrid from '../CalculatorGrid';
 import { noUnitsSelector } from '../../redux/selectors/units';
@@ -25,9 +26,13 @@ export default compose(
     entitySelector: collectionByIdSelector,
     fetchEntityAction: fetchCollection,
   }),
-  withProps(({ collection, isCollectionAuthoredByLoggedInUser, noUnits }) => ({
-    title: `COLLECTION: ${R.propOr('', 'name', collection)}`,
-    showAddCalculatorButton: isCollectionAuthoredByLoggedInUser && !noUnits,
-  })),
+  withProps(
+    ({ collection, id, isCollectionAuthoredByLoggedInUser, noUnits }) => ({
+      title: `COLLECTION: ${R.propOr('', 'name', collection)}`,
+      showAddCalculatorButton: isCollectionAuthoredByLoggedInUser && !noUnits,
+      onShareHoverText: 'Share this collection',
+      urlToShare: getCollectionLink(id),
+    })
+  ),
   pure
 )(CalculatorGrid);

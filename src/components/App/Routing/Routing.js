@@ -11,10 +11,17 @@ export const Routes = {
   root: '/',
   calculators: '/calculators/',
   collections: '/collections/',
-  profile: '/profile',
   search: '/search',
+  profile: '/profile',
   users: '/users/',
 };
+
+const rootUrl = window.location.origin;
+
+export const getCalculatorLink = id => `${rootUrl}${Routes.calculators}${id}`;
+export const getCollectionLink = id => `${rootUrl}${Routes.collections}${id}`;
+export const getCalculatorsByUserLink = id =>
+  `${rootUrl}${Routes.users}${id}/calculators`;
 
 const Routing = () => (
   <Switch>

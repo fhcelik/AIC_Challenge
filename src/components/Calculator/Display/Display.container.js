@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose, withHandlers } from 'recompose';
+import { compose, withHandlers, withProps } from 'recompose';
 import {
   addCalculatorArgReference,
   changeCalculatorArgValue,
@@ -7,6 +7,7 @@ import {
 } from '../../../redux/actions/calculators';
 import { isAuthorizedSelector } from '../../../redux/selectors/auth';
 import Display from './Display.view';
+import { getCalculatorLink } from '../../App/Routing/Routing';
 
 export const ENTER_VALUE = 'Enter value';
 
@@ -21,6 +22,9 @@ export default compose(
       removeCalculatorArgReference,
     }
   ),
+  withProps(({ id }) => ({
+    shareLink: getCalculatorLink(id),
+  })),
   withHandlers({
     onArgValueChange: ({ id, changeCalculatorArgValue }) => event => {
       changeCalculatorArgValue({
