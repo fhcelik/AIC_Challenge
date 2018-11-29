@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
-import DropdownMenu from '../../utils/DropdownMenu';
+import DropdownMenu from '../../DropdownMenu';
 import { Routes } from '../../App/Routing';
 
 const styles = theme => ({

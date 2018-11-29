@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 
 import DropdownMenu from './DropdownMenu.container';
 import { Button } from 'material-ui';
-import ThemeProvider from '../../../providers/theme';
+import ThemeProvider from '../../providers/theme';
 
 describe('<DropdownMenu/>', () => {
   let wrapper;

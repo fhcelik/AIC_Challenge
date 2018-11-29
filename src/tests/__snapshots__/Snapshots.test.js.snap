@@ -6165,6 +6165,14 @@ exports[`NoUnitsInfo base 1`] = `
 </div>
 `;
 
+exports[`NotFound base 1`] = `
+<h1
+  className="MuiTypography-root MuiTypography-display4"
+>
+  Not Found
+</h1>
+`;
+
 exports[`NotificationToaster base 1`] = `
 <div
   className="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter"

@@ -28,7 +28,6 @@ const Argument = ({
       <TextField
         className={classes.textField}
         autoComplete="off"
-        className={classes.textField}
         title={alias}
         name={name}
         label={alias}

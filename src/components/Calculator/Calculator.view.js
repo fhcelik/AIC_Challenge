@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Back, Flipper, Front } from '../utils/Flipper';
+import { Back, Flipper, Front } from '../Flipper';
 import Display from './Display';
 import Editor from './Editor';
 import Info from './Info';

@@ -24,7 +24,7 @@ export const fetchCollections = createAction(
 
 export const fetchCollection = createAction(
   '@@calcoola/collections/fetchCollection',
-  ({ id }) => (dispatch, getState, httpClient) =>
+  id => (dispatch, getState, httpClient) =>
     httpClient.get(`/collections/${id}`).then(({ data }) => {
       const { entities } = normalize(data, collection);
 

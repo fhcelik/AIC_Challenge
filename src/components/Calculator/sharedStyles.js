@@ -64,9 +64,6 @@ export const ArgumentStyles = theme => ({
     padding: '0.2em',
     marginTop: '-2px',
   },
-  textField: {
-    overflowX: 'hidden',
-  },
   label: {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -86,6 +83,7 @@ export const ArgumentStyles = theme => ({
     '& input': {
       '-moz-appearance': 'textfield',
     },
+    overflowX: 'hidden',
   },
 });
 export const ResultStyles = theme => ({

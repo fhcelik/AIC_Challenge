@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
-import WithTooltip from '../utils/WithTooltip';
+import WithTooltip from '../WithTooltip';
 
 const HeaderButton = ({ icon: Icon, onClick, tooltipTitle }) => (
   <WithTooltip title={tooltipTitle}>

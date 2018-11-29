@@ -1,50 +1,32 @@
-import { CircularProgress } from 'material-ui';
-import React from 'react';
+import * as R from 'ramda';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import {
-  branch,
-  compose,
-  lifecycle,
-  pure,
-  renderComponent,
-  withProps,
-} from 'recompose';
+import { compose, pure, withProps } from 'recompose';
 import { fetchCollection } from '../../redux/actions/collections';
 import {
   calculatorIdsByCollectionId,
   collectionByIdSelector,
   isCollectionAuthoredByLoggedInUserSelector,
 } from '../../redux/selectors/collections';
+import handleFetchEntityEnhancer from '../handleFetchEntity.enhancer';
 import CalculatorGrid from '../CalculatorGrid';
 import { noUnitsSelector } from '../../redux/selectors/units';
 
 export default compose(
-  withRouter,
-  connect(
-    (state, props) => ({
-      collection: collectionByIdSelector(state, props),
-      calculatorIds: calculatorIdsByCollectionId(state, props),
-      isCollectionAuthoredByLoggedInUser: isCollectionAuthoredByLoggedInUserSelector(
-        state,
-        props
-      ),
-      noUnits: noUnitsSelector(state, props),
-    }),
-    { fetchCollection }
-  ),
-  lifecycle({
-    componentDidMount() {
-      const { id, fetchCollection } = this.props;
-      fetchCollection({ id });
-    },
+  connect((state, props) => ({
+    calculatorIds: calculatorIdsByCollectionId(state, props),
+    isCollectionAuthoredByLoggedInUser: isCollectionAuthoredByLoggedInUserSelector(
+      state,
+      props
+    ),
+    noUnits: noUnitsSelector(state, props),
+  })),
+  handleFetchEntityEnhancer({
+    entityName: 'collection',
+    entitySelector: collectionByIdSelector,
+    fetchEntityAction: fetchCollection,
   }),
-  branch(
-    ({ collection }) => !collection,
-    renderComponent(() => <CircularProgress size={100} />)
-  ),
   withProps(({ collection, isCollectionAuthoredByLoggedInUser, noUnits }) => ({
-    title: `COLLECTION: ${collection.name}`,
+    title: `COLLECTION: ${R.propOr('', 'name', collection)}`,
     showAddCalculatorButton: isCollectionAuthoredByLoggedInUser && !noUnits,
   })),
   pure

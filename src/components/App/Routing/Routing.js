@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import Collection from '../../Collection';
 import SearchResults from '../../SearchResults';
+import NotFound from '../../NotFound';
 
 export const Routes = {
   root: '/',
@@ -10,8 +11,6 @@ export const Routes = {
   search: '/search',
   profile: '/profile',
 };
-
-const Mock404 = () => <Typography variant="display4">Not Found</Typography>;
 
 const Routing = () => (
   <Switch>
@@ -22,10 +21,10 @@ const Routing = () => (
     />
     <Route
       path={Routes.collection + ':id'}
-      render={({ match }) => <Collection id={match.params.id} />}
+      component={({ match }) => <Collection id={match.params.id} />}
     />
     <Route path={Routes.search} component={SearchResults} />
-    <Route component={Mock404} />
+    <Route component={NotFound} />
   </Switch>
 );
 

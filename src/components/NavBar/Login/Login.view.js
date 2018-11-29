@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import DropdownMenu from '../../utils/DropdownMenu';
+import DropdownMenu from '../../DropdownMenu';
 import Form from './Form';
 
 const styles = theme => ({

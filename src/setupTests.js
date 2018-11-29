@@ -1,7 +1,7 @@
+import Promise from 'bluebird';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import 'jest-enzyme';
-import { createAction } from 'redux-actions';
 
 configure({ adapter: new Adapter() });
 
@@ -16,14 +16,17 @@ if (global.document) {
   });
 }
 
-const mockActionCreator = createAction('@@calcoola/stub');
+const mockAsyncActionCreator = () => ({
+  type: '@@calcoola/stub',
+  payload: Promise.resolve(),
+});
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip');
 jest.mock('material-ui/transitions/Slide', () => 'Slide');
 jest.mock('material-ui/Tooltip', () => 'Tooltip');
 jest.mock('react-stack-grid', () => 'StackGrid');
 jest.mock('./redux/actions/collections', () => ({
-  fetchCollection: mockActionCreator,
+  fetchCollection: mockAsyncActionCreator,
 }));
 
 jest.mock(
