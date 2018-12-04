@@ -236,19 +236,24 @@ export const calculatorResultSelector = createSelector(
   })
 );
 
-export const calculatorTitleSelector = createSelector(
-  flatCalculatorSelector,
-  R.propOr('', 'title')
+const createCalculatorPropertySelector = (prop, defaultValue = '') =>
+  createSelector(flatCalculatorSelector, R.propOr(defaultValue, prop));
+
+export const calculatorTitleSelector = createCalculatorPropertySelector(
+  'title'
 );
 
-export const calculatorDescriptionSelector = createSelector(
-  flatCalculatorSelector,
-  R.propOr('', 'description')
+export const calculatorDescriptionSelector = createCalculatorPropertySelector(
+  'description'
 );
 
-export const calculatorTagsSelector = createSelector(
-  flatCalculatorSelector,
-  R.propOr([], 'tags')
+export const calculatorTagsSelector = createCalculatorPropertySelector(
+  'tags',
+  []
+);
+
+export const calculatorAuthorSelector = createCalculatorPropertySelector(
+  'author'
 );
 
 export const calculatorIsNewSelector = createSelector(

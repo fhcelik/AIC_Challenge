@@ -4,6 +4,7 @@ import CancelIcon from 'material-ui-icons/Cancel';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Author from '../../Author';
 import Formula from '../Formula';
 import Header from '../Header';
 import HeaderButton from '../HeaderButton';
@@ -14,7 +15,15 @@ const styles = theme => ({
   ...InfoStyles(theme),
 });
 
-const Info = ({ classes, description, formula, showDisplay, theme, title }) => (
+const Info = ({
+  classes,
+  description,
+  formula,
+  authorId,
+  showDisplay,
+  theme,
+  title,
+}) => (
   <Grid container direction="column" className={classes.root} wrap="nowrap">
     <Header>
       <HeaderButton
@@ -32,6 +41,9 @@ const Info = ({ classes, description, formula, showDisplay, theme, title }) => (
       <Typography className={cx(classes.titleText, classes.title)}>
         {title}
       </Typography>
+      <Grid className={classes.author}>
+        <Author id={authorId} />
+      </Grid>
       <Grid className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
       </Grid>

@@ -11,6 +11,7 @@ const baseCollection = {
   calculators: [
     {
       id: '5838d829-b7b3-4693-8a89-0f3ffb40d804',
+      author: user.id,
       result: {
         name: 'x',
         execFormula: '(-b + sqrt(b^2-4a*c))/(2a)',
@@ -26,6 +27,7 @@ const baseCollection = {
     },
     {
       id: '8308d829-b7b3-4693-8a89-0f3ffb40d804',
+      author: user.id,
       result: {
         name: 'x',
         execFormula: '(-b + sqrt(b^2-4a*c))/(2a)',
@@ -45,7 +47,19 @@ const baseCollection = {
 
 const { entities, result } = normalize(baseCollection, collection);
 
-export const initialState = { entities, auth: { jwt, user } };
+export const initialState = {
+  entities: {
+    ...entities,
+    users: {
+      [user.id]: {
+        fullName: 'John Smith',
+        role: 'Petroleum engineer',
+        company: 'Chevron',
+      },
+    },
+  },
+  auth: { jwt, user },
+};
 
 export default {
   base: () => <Collection id={result} />,

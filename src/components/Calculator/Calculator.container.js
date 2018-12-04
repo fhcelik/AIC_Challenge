@@ -21,6 +21,7 @@ import {
 import { getUnit } from '../../redux/schemas/units';
 import {
   calculatorArgsSelector,
+  calculatorAuthorSelector,
   calculatorDescriptionSelector,
   calculatorIsNewSelector,
   calculatorResultFormulaSelector,
@@ -52,6 +53,7 @@ export default compose(
   connect(
     (state, props) => ({
       args: calculatorArgsSelector(state, props),
+      authorId: calculatorAuthorSelector(state, props),
       result: calculatorResultSelector(state, props),
       title: calculatorTitleSelector(state, props),
       description: calculatorDescriptionSelector(state, props),

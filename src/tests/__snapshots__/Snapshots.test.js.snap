@@ -220,6 +220,231 @@ exports[`AddToCollectionButton base 1`] = `
 </div>
 `;
 
+exports[`Author base 1`] = `
+<Tooltip
+  classes={
+    Object {
+      "tooltip": "Author-tooltip-184",
+    }
+  }
+  placement="bottom-start"
+  title={
+    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+      id="user-uuid"
+    />
+  }
+>
+  <svg
+    aria-hidden="true"
+    className="MuiSvgIcon-root Author-icon"
+    color={undefined}
+    focusable="false"
+    onMouseEnter={[Function]}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+    />
+  </svg>
+</Tooltip>
+`;
+
+exports[`AuthorPopupInfo base 1`] = `
+<div
+  className="AuthorPopupInfo-root"
+>
+  <div
+    className="AuthorPopupInfo-header"
+  >
+    <div
+      className="MuiGrid-container MuiGrid-align-items-xs-center"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root AuthorPopupInfo-icon"
+        color={undefined}
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+        />
+      </svg>
+      <p
+        className="MuiTypography-root MuiTypography-body1 AuthorPopupInfo-name"
+      >
+        John Smith
+      </p>
+    </div>
+    <a
+      aria-current={false}
+      className="AuthorPopupInfo-navLink"
+      href="/users/user-uuid/calculators"
+      onClick={[Function]}
+      style={undefined}
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root AuthorPopupInfo-button"
+        disabled={false}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiButton-label AuthorPopupInfo-buttonLabel"
+        >
+          Show calculators by user
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+  <div
+    aria-describedby={undefined}
+    className="MuiFormControl-root MuiFormControl-marginDense AuthorPopupInfo-field"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense"
+      data-shrink={true}
+      htmlFor={undefined}
+    >
+      ROLE
+    </label>
+    <div
+      className="MuiInput-root MuiInput-disabled MuiInput-formControl MuiInput-multiline"
+    >
+      <div
+        className="MuiTextarea-root"
+        style={
+          Object {
+            "height": 19,
+          }
+        }
+      >
+        <textarea
+          aria-hidden="true"
+          className="MuiTextarea-shadow MuiTextarea-textarea"
+          readOnly={true}
+          rows="1"
+          tabIndex={-1}
+          value=""
+        />
+        <textarea
+          aria-hidden="true"
+          className="MuiTextarea-shadow MuiTextarea-textarea"
+          defaultValue={undefined}
+          readOnly={true}
+          rows={1}
+          tabIndex={-1}
+          value="Petroleum engineer"
+        />
+        <textarea
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete="off"
+          autoFocus={undefined}
+          className="MuiTextarea-textarea MuiInput-input MuiInput-disabled MuiInput-inputMultiline MuiInput-inputMarginDense AuthorPopupInfo-fieldValue"
+          defaultValue={undefined}
+          disabled={true}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={1}
+          type="text"
+          value="Petroleum engineer"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    aria-describedby={undefined}
+    className="MuiFormControl-root MuiFormControl-marginDense AuthorPopupInfo-field"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense"
+      data-shrink={true}
+      htmlFor={undefined}
+    >
+      COMPANY
+    </label>
+    <div
+      className="MuiInput-root MuiInput-disabled MuiInput-formControl MuiInput-multiline"
+    >
+      <div
+        className="MuiTextarea-root"
+        style={
+          Object {
+            "height": 19,
+          }
+        }
+      >
+        <textarea
+          aria-hidden="true"
+          className="MuiTextarea-shadow MuiTextarea-textarea"
+          readOnly={true}
+          rows="1"
+          tabIndex={-1}
+          value=""
+        />
+        <textarea
+          aria-hidden="true"
+          className="MuiTextarea-shadow MuiTextarea-textarea"
+          defaultValue={undefined}
+          readOnly={true}
+          rows={1}
+          tabIndex={-1}
+          value="Chevron"
+        />
+        <textarea
+          aria-invalid={false}
+          aria-required={false}
+          autoComplete="off"
+          autoFocus={undefined}
+          className="MuiTextarea-textarea MuiInput-input MuiInput-disabled MuiInput-inputMultiline MuiInput-inputMarginDense AuthorPopupInfo-fieldValue"
+          defaultValue={undefined}
+          disabled={true}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={undefined}
+          rows={1}
+          type="text"
+          value="Chevron"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Calculator errCalcId 1`] = `
 <div
   className="Flipper-flipperContainer"
@@ -407,7 +632,38 @@ exports[`Calculator errCalcId 1`] = `
             </p>
             <div
               className="MuiGrid-container"
-            />
+            >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
+            </div>
           </div>
           <div
             className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
@@ -735,6 +991,36 @@ exports[`Calculator mwCalcId 1`] = `
             <div
               className="MuiGrid-container"
             >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
               <p
                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                 title="basic drilling"
@@ -1219,6 +1505,36 @@ exports[`Calculator mwMCalcId 1`] = `
             <div
               className="MuiGrid-container"
             >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
               <p
                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                 title="basic drilling"
@@ -1698,6 +2014,36 @@ exports[`Calculator nestedPressureCalcId 1`] = `
             <div
               className="MuiGrid-container"
             >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
               <p
                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                 title="basic drilling"
@@ -1913,6 +2259,36 @@ exports[`Calculator nestedPressureCalcId 1`] = `
                             <div
                               className="MuiGrid-container"
                             >
+                              <div
+                                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                              >
+                                <Tooltip
+                                  classes={
+                                    Object {
+                                      "tooltip": "Author-tooltip-184",
+                                    }
+                                  }
+                                  placement="bottom-start"
+                                  title={
+                                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                                    />
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root Author-icon"
+                                    color={undefined}
+                                    focusable="false"
+                                    onMouseEnter={[Function]}
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                                    />
+                                  </svg>
+                                </Tooltip>
+                              </div>
                               <p
                                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                                 title="basic drilling"
@@ -2569,6 +2945,36 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
             <div
               className="MuiGrid-container"
             >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
               <p
                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                 title="pure math"
@@ -2837,6 +3243,36 @@ exports[`Calculator nestedQuadraticCalcId 1`] = `
                             <div
                               className="MuiGrid-container"
                             >
+                              <div
+                                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                              >
+                                <Tooltip
+                                  classes={
+                                    Object {
+                                      "tooltip": "Author-tooltip-184",
+                                    }
+                                  }
+                                  placement="bottom-start"
+                                  title={
+                                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                                    />
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root Author-icon"
+                                    color={undefined}
+                                    focusable="false"
+                                    onMouseEnter={[Function]}
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                                    />
+                                  </svg>
+                                </Tooltip>
+                              </div>
                               <p
                                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                                 title="pure math"
@@ -3301,6 +3737,36 @@ exports[`Calculator quadraticCalcId 1`] = `
             <div
               className="MuiGrid-container"
             >
+              <div
+                className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+              >
+                <Tooltip
+                  classes={
+                    Object {
+                      "tooltip": "Author-tooltip-184",
+                    }
+                  }
+                  placement="bottom-start"
+                  title={
+                    <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                      id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                    />
+                  }
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root Author-icon"
+                    color={undefined}
+                    focusable="false"
+                    onMouseEnter={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
               <p
                 className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                 title="pure math"
@@ -3583,6 +4049,36 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                 <div
                   className="MuiGrid-container"
                 >
+                  <div
+                    className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                  >
+                    <Tooltip
+                      classes={
+                        Object {
+                          "tooltip": "Author-tooltip-184",
+                        }
+                      }
+                      placement="bottom-start"
+                      title={
+                        <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                          id="some-author-uuid"
+                        />
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root Author-icon"
+                        color={undefined}
+                        focusable="false"
+                        onMouseEnter={[Function]}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                        />
+                      </svg>
+                    </Tooltip>
+                  </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                     title="pure math"
@@ -3867,6 +4363,36 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                 <div
                   className="MuiGrid-container"
                 >
+                  <div
+                    className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                  >
+                    <Tooltip
+                      classes={
+                        Object {
+                          "tooltip": "Author-tooltip-184",
+                        }
+                      }
+                      placement="bottom-start"
+                      title={
+                        <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                          id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                        />
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root Author-icon"
+                        color={undefined}
+                        focusable="false"
+                        onMouseEnter={[Function]}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                        />
+                      </svg>
+                    </Tooltip>
+                  </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                     title="pure math"
@@ -4266,6 +4792,36 @@ exports[`Collection base 1`] = `
                 <div
                   className="MuiGrid-container"
                 >
+                  <div
+                    className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                  >
+                    <Tooltip
+                      classes={
+                        Object {
+                          "tooltip": "Author-tooltip-184",
+                        }
+                      }
+                      placement="bottom-start"
+                      title={
+                        <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                          id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                        />
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root Author-icon"
+                        color={undefined}
+                        focusable="false"
+                        onMouseEnter={[Function]}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                        />
+                      </svg>
+                    </Tooltip>
+                  </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                     title="pure math"
@@ -4645,6 +5201,36 @@ exports[`Collection base 1`] = `
                 <div
                   className="MuiGrid-container"
                 >
+                  <div
+                    className="MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center Display-author"
+                  >
+                    <Tooltip
+                      classes={
+                        Object {
+                          "tooltip": "Author-tooltip-184",
+                        }
+                      }
+                      placement="bottom-start"
+                      title={
+                        <Connect(branch(flattenProp(pure(WithStyles(AuthorPopupInfo)))))
+                          id="7798bb40-2fd4-4afa-b2f4-19b245b1903b"
+                        />
+                      }
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root Author-icon"
+                        color={undefined}
+                        focusable="false"
+                        onMouseEnter={[Function]}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"
+                        />
+                      </svg>
+                    </Tooltip>
+                  </div>
                   <p
                     className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
                     title="pure math"

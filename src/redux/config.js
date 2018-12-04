@@ -1,12 +1,12 @@
 export const debounceConfigNames = {
-  SEARCH: 'search',
   CALCULATOR_USAGE: 'calculatorUsage',
+  SEARCH: 'search',
   UNITS: 'units',
 };
 
 export const debounceConfig = {
-  [debounceConfigNames.SEARCH]: 300,
   [debounceConfigNames.CALCULATOR_USAGE]: 3000,
+  [debounceConfigNames.SEARCH]: 300,
   [debounceConfigNames.UNITS]: {
     leading: true,
     trailing: false,

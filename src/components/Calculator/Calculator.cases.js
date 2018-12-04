@@ -3,11 +3,12 @@ import * as R from 'ramda';
 import React from 'react';
 import { calculatorList } from '../../redux/schemas/calculator';
 import Calculator from '../Calculator';
-import { jwt } from '../../tests/data';
+import { jwt, user } from '../../tests/data';
 
 const testCalculators = [
   {
     id: 'quadraticCalcId',
+    author: user.id,
     args: {
       a: { value: 1 },
       b: { value: 8 },
@@ -23,6 +24,7 @@ const testCalculators = [
 
   {
     id: 'mwCalcId',
+    author: user.id,
     args: {
       pressure: { value: 5000, unit: 'psi' },
       TVD: { value: 8000, unit: 'ft' },
@@ -39,6 +41,7 @@ const testCalculators = [
 
   {
     id: 'mwMCalcId',
+    author: user.id,
     args: {
       pressure: { value: 5000, unit: 'psi' },
       TVD: { value: 2500, unit: 'm', alias: 'Total vertical distance' },
@@ -48,6 +51,7 @@ const testCalculators = [
 
   {
     id: 'errCalcId',
+    author: user.id,
     args: {
       x: { value: 1 },
       y: { value: 3 },
@@ -60,6 +64,7 @@ const testCalculators = [
 
   {
     id: 'nestedQuadraticCalcId',
+    author: user.id,
     args: {
       a: { value: 1 },
       b: { refId: 'quadraticCalcId' },
@@ -70,6 +75,7 @@ const testCalculators = [
 
   {
     id: 'nestedPressureCalcId',
+    author: user.id,
     args: {
       MW: { refId: 'mwCalcId', unit: 'ppg' },
       TVD: { value: 8000, unit: 'ft' },
@@ -89,6 +95,13 @@ export const initialState = {
   entities: {
     ...entities,
     usages: { quadraticCalcId: 2860, mwCalcId: 365, mwMCalcId: 2042394 },
+    users: {
+      [user.id]: {
+        fullName: 'John Smith',
+        role: 'Petroleum engineer',
+        company: 'Chevron',
+      },
+    },
   },
 };
 

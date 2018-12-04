@@ -33,7 +33,7 @@ export const CalculatorStyles = theme => ({
   title: {
     marginBottom: '0.5em',
     marginTop: '0.1em',
-    overflowX: 'hidden',
+    overflow: 'hidden',
     textTransform: 'uppercase',
     width: '100%',
   },
@@ -56,6 +56,14 @@ export const CalculatorStyles = theme => ({
     pointerEvents: 'none',
     opacity: '0.6',
     minHeight: '200px',
+  },
+
+  author: {
+    margin: '2px 7px 0 5px',
+    padding: '0 7px',
+    width: 30,
+    height: 30,
+    borderRight: `1px solid ${theme.palette.card.header}`,
   },
 });
 export const ArgumentStyles = theme => ({
@@ -123,5 +131,8 @@ export const InfoStyles = theme => ({
   },
   description: {
     ...theme.typography.display3,
+  },
+  author: {
+    margin: '10px 0',
   },
 });

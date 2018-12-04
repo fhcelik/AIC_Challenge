@@ -74,8 +74,8 @@ export const createCollectionFromCalculator = createAction(
         `/collections/${newCollection.id}`,
         R.pick(['id', 'name'], newCollection)
       )
-      .then(() => {
-        const { entities, result } = normalize(newCollection, collection);
+      .then(({ data }) => {
+        const { entities, result } = normalize(data, collection);
         dispatch(saveEntities(entities));
         dispatch(prependMenuCollectionList(result));
         return dispatch(

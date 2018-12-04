@@ -63,13 +63,17 @@ export const changeCalculatorDescription = createAction(
 export const saveCalculator = createAction(
   '@@calcoola/calculator/save',
   ({ calculatorId, collectionId }) => (dispatch, getState, httpClient) => {
-    const calculatorToSave = calculatorSelector(getState(), {
-      id: calculatorId,
-    });
+    const calculatorToSave = R.pipe(
+      state => calculatorSelector(state, { id: calculatorId }),
+      R.over(R.lensProp('args'), R.map(R.dissoc('value')))
+    )(getState());
 
     return httpClient
       .put(`/calculators/${calculatorId}`, calculatorToSave)
-      .then(() => {
+      .then(({ data }) => {
+        const { entities } = normalize(data, calculator);
+        dispatch(saveEntities(entities));
+
         dispatch(
           displayNotification('Your calculator has been saved successfully.')
         );

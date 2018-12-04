@@ -14,12 +14,14 @@ import HeaderButton from '../HeaderButton';
 import { CalculatorStyles as styles } from '../sharedStyles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
+import Author from '../../Author';
 import Result from './Result';
 import Usages from './Usages';
 import NoUnitsInfo from './NoUnitsInfo';
 
 const Display = ({
   args,
+  authorId,
   classes,
   description,
   id,
@@ -83,6 +85,14 @@ const Display = ({
           {title}
         </Typography>
         <Grid container>
+          <Grid
+            container
+            justify="center"
+            alignItems="center"
+            className={classes.author}
+          >
+            <Author id={authorId} />
+          </Grid>
           {tags.map(tag => (
             <Typography key={tag} className={classes.tag} noWrap title={tag}>
               {tag}
@@ -119,6 +129,7 @@ Display.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
+  authorId: PropTypes.string.isRequired,
   classes: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
