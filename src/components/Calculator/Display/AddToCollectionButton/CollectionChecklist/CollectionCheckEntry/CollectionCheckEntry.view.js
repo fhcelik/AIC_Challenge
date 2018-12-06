@@ -11,7 +11,7 @@ import React from 'react';
 
 const styles = {
   root: {
-    padding: '4px 8px',
+    padding: 8,
   },
   text: {
     textTransform: 'uppercase',

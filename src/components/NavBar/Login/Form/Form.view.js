@@ -1,13 +1,8 @@
 import AccountIcon from 'material-ui-icons/AccountCircle';
-import {
-  Button,
-  Grid,
-  TextField,
-  Typography,
-  withStyles,
-} from '@material-ui/core';
+import { Button, Grid, Typography, withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TextField from '../../../TextField';
 
 const emailPattern =
   '[A-Za-z0-9._%+-]{1,}@[a-zA-Z]{1,}([.]{1}[a-zA-Z]{1,}|[.]{1}[a-zA-Z]{1,}[.]{1}[a-zA-Z]{1,})';
@@ -30,24 +25,13 @@ const styles = theme => ({
   },
   form: {
     width: '100%',
-  },
-  formControl: {
-    width: '100%',
-    height: 100,
-  },
-  input: {
-    marginTop: 20,
-    border: `1px solid ${theme.palette.card.header}`,
-    paddingTop: 5,
-    paddingLeft: 10,
-    height: 55,
-  },
-  inputLabel: {
-    textTransform: 'uppercase',
-    paddingLeft: 10,
+    marginTop: 7,
   },
   invalidInput: {
     color: theme.palette.notification.error.background,
+    padding: '5px 0',
+    width: 280,
+    height: 25,
   },
   submitButton: {
     marginTop: 10,
@@ -81,23 +65,20 @@ const Form = ({
     <AccountIcon className={classes.accountIcon} />
     <form onSubmit={onSubmit} className={classes.form} noValidate>
       <Grid container direction="column" alignItems="center">
-        <Grid className={classes.formControl}>
-          {open && (
-            <TextField
-              onChange={onInputChange}
-              className={classes.input}
-              name="email"
-              label="Email"
-              type="email"
-              inputProps={{ pattern: emailPattern }}
-              fullWidth
-              InputLabelProps={{ className: classes.inputLabel }}
-            />
-          )}
-          <Typography className={classes.invalidInput}>
-            {invalidInputText}
-          </Typography>
-        </Grid>
+        {open && (
+          <TextField
+            className={classes.textField}
+            onChange={onInputChange}
+            name="email"
+            label="Email"
+            type="email"
+            inputProps={{ pattern: emailPattern }}
+            fullWidth
+          />
+        )}
+        <Typography className={classes.invalidInput}>
+          {invalidInputText}
+        </Typography>
         <Button
           disabled={isSubmitDisabled}
           type="submit"

@@ -13,7 +13,7 @@ const styles = theme => ({
     height: '100%',
   },
   content: {
-    padding: '20px 30px',
+    padding: '75px 30px',
     height: 'inherit',
   },
 });

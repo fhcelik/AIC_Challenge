@@ -5,135 +5,55 @@ import { newCalculatorsByCollectionIdSelector } from './collections';
 
 export const calculatorsSelector = R.path(['entities', 'calculators']);
 
-export const calculatorSelector = (state, { id }) =>
-  R.prop(id, calculatorsSelector(state));
-
-const getCombinedPropsFromItemsList = (
-  prop,
-  combineFunc = R.identity,
-  ...items
-) => R.pipe(R.pluck(prop), R.flatten, R.filter(R.identity), combineFunc)(items);
-
-const recursiveFlatten = (calculators, calculator) => {
-  const formulaSource = R.path(['result', 'refId'], calculator);
-  if (!formulaSource) return calculator;
-
-  const rootCalculator = recursiveFlatten(
-    calculators,
-    calculators[formulaSource]
-  );
-
-  return {
-    ...rootCalculator,
-    ...calculator,
-    args: R.map(
-      rootArg =>
-        R.merge(
-          R.dissoc('refId', rootArg),
-          R.path(['args', rootArg.name], calculator)
-        ),
-      R.propOr([], 'args', rootCalculator)
-    ),
-    tags: getCombinedPropsFromItemsList(
-      'tags',
-      R.uniq,
-      rootCalculator,
-      calculator
-    ),
-    result: getCombinedPropsFromItemsList(
-      'result',
-      R.reduce(R.merge, null),
-      rootCalculator,
-      calculator
-    ),
-  };
-};
-
-export const flatCalculatorSelector = createSelector(
-  [calculatorsSelector, calculatorSelector],
-  recursiveFlatten
+export const calculatorSelector = createSelector(
+  (state, { id }) => id,
+  calculatorsSelector,
+  R.prop
 );
 
 export const calculatorDisplayFormulaSelector = createSelector(
-  [flatCalculatorSelector],
-  flatCalculator =>
-    parse(R.pathOr('', ['result', 'execFormula'], flatCalculator)).toTex()
+  calculatorSelector,
+  calculator =>
+    parse(R.pathOr('', ['result', 'execFormula'], calculator)).toTex()
 );
-
-export const nestedCalculatorSelector = createSelector(
-  [calculatorsSelector, (_, { id }) => id],
-  (calculators, id) => {
-    function recursiveLookup(calculators, id, nestedCalculators) {
-      const calc = calculators[id];
-      if (!calc) {
-        return nestedCalculators;
-      }
-      const ret = { ...nestedCalculators, [id]: calc };
-      return R.reduce(
-        (acc, elem) => recursiveLookup(calculators, elem.refId, acc),
-        ret,
-        R.filter(arg => arg.refId, R.values(calc.args))
-      );
-    }
-    return recursiveLookup(calculators, id, {});
-  }
-);
-
-export const nestedFlatCalculatorSelector = createSelector(
-  [nestedCalculatorSelector, calculatorsSelector],
-  (nestedSlice, calculators) =>
-    R.map(calc => recursiveFlatten(calculators, calc), nestedSlice)
-);
-
-function exists(obj) {
-  return 'undefined' !== typeof obj;
-}
 
 export const calculatorArgsSelector = createSelector(
-  [flatCalculatorSelector],
+  calculatorSelector,
   R.compose(R.values, R.propOr({}, 'args'))
 );
 
-function convertToUnit(value, unit) {
-  if (exists(unit)) {
-    if (typeof value === typeof math.unit(unit)) {
-      return value.to(unit);
-    } else {
-      return math.unit(value, unit);
-    }
-  } else {
-    return value;
-  }
-}
+const convertToUnit = (value, unit) => {
+  if (R.isNil(unit)) return value;
 
-function convertToNumber(value, unit) {
+  if (typeof value === typeof math.unit(unit)) {
+    return value.to(unit);
+  }
+
+  return math.unit(value, unit);
+};
+
+const convertToNumber = (value, unit) => {
   try {
-    if (exists(unit) && typeof value === typeof math.unit(unit)) {
+    if (!R.isNil(unit) && typeof value === typeof math.unit(unit)) {
       return value.toNumber(unit);
     }
     return math.complex(value);
   } catch (error) {
     return NaN;
   }
-}
+};
 
-function evalCalculator(flatCalculators, calcId) {
-  const calc = flatCalculators[calcId];
-  let scope = {};
+const evalCalculator = calculator => {
   try {
-    scope = R.map(
-      arg =>
-        exists(arg.refId)
-          ? evalCalculator(flatCalculators, arg.refId)
-          : convertToUnit(arg.value, arg.unit),
-      calc.args
+    const scope = R.map(
+      arg => convertToUnit(arg.value, arg.unit),
+      calculator.args
     );
-    const builtFormula = parse(calc.result.execFormula);
-    return builtFormula.eval(scope);
+    return parse(calculator.result.execFormula).eval(scope);
   } catch (error) {
     return NaN;
   }
-}
+};
 
 const letters = 'abcdefghijklmnopqrstuvwxyz';
 const wrap = letters.length;
@@ -152,11 +72,11 @@ function* newCalculatorArgnameGenerator() {
 
 export const newCalculatorArgNameSelector = createSelector(
   calculatorSelector,
-  calc => {
+  calculator => {
     const namegen = newCalculatorArgnameGenerator();
     while (true) {
       const name = namegen.next().value;
-      if (!R.pathOr(null, ['args', name], calc)) return name;
+      if (!R.pathOr(null, ['args', name], calculator)) return name;
     }
   }
 );
@@ -175,49 +95,43 @@ const symbolToTeX = node => {
 };
 
 export const calculatorResultFormulaSelector = createSelector(
-  [flatCalculatorSelector, calculatorArgsSelector],
-  (calc, args) => {
+  calculatorSelector,
+  calculatorArgsSelector,
+  (calculator, args) => {
     try {
       const argMap = R.zipObj(R.pluck('name', args), R.pluck('alias', args));
-      const tree = parse(calc.result.execFormula).transform(
-        mapArgToAlias(argMap)
-      );
-      return tree.toTex({ handler: symbolToTeX });
+      return parse(calculator.result.execFormula)
+        .transform(mapArgToAlias(argMap))
+        .toTex({ handler: symbolToTeX });
     } catch (error) {
       return '';
     }
   }
 );
 
-export const calculatorResultUnitSelector = createSelector(
-  [nestedFlatCalculatorSelector, calculatorSelector],
-  (flatCalculators, calc) => {
-    const result = evalCalculator(flatCalculators, R.propOr(null, 'id', calc));
-    let finalResult;
-    try {
-      const prevUnit = R.pathOr(null, ['result', 'unit'], calc);
-      if (prevUnit && typeof result === typeof math.unit(prevUnit)) {
-        finalResult = convertToUnit(result, prevUnit);
-      } else {
-        finalResult = result;
-      }
-    } catch (error) {
-      finalResult = result;
-    }
-    return R.prop('toJSON', finalResult) && finalResult.toJSON().unit;
-  }
-);
-
 export const calculatorResultValueSelector = createSelector(
-  [nestedFlatCalculatorSelector, (_, { id }) => id],
-  (flatCalculators, calcId) => {
-    return math.format(
+  calculatorSelector,
+  calculator =>
+    math.format(
       convertToNumber(
-        evalCalculator(flatCalculators, calcId),
-        R.path([calcId, 'result', 'unit'], flatCalculators)
+        evalCalculator(calculator),
+        R.path(['result', 'unit'], calculator)
       ),
       10
-    );
+    )
+);
+
+export const calculatorResultUnitSelector = createSelector(
+  calculatorSelector,
+  calculator => {
+    let result = evalCalculator(calculator);
+
+    const prevUnit = R.pathOr(null, ['result', 'unit'], calculator);
+    if (prevUnit && typeof result === typeof math.unit(prevUnit)) {
+      result = convertToUnit(result, prevUnit);
+    }
+
+    return R.prop('toJSON', result) && result.toJSON().unit;
   }
 );
 
@@ -227,17 +141,17 @@ export const allArgsHaveValuesSelector = createSelector(
 );
 
 export const calculatorResultSelector = createSelector(
-  flatCalculatorSelector,
+  calculatorSelector,
   calculatorResultValueSelector,
   allArgsHaveValuesSelector,
-  (flatCalculator, result, allArgsHaveValues) => ({
-    ...flatCalculator.result,
+  (calculator, result, allArgsHaveValues) => ({
+    ...calculator.result,
     result: allArgsHaveValues ? result : '',
   })
 );
 
 const createCalculatorPropertySelector = (prop, defaultValue = '') =>
-  createSelector(flatCalculatorSelector, R.propOr(defaultValue, prop));
+  createSelector(calculatorSelector, R.propOr(defaultValue, prop));
 
 export const calculatorTitleSelector = createCalculatorPropertySelector(
   'title'

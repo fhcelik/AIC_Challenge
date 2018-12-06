@@ -4,7 +4,6 @@ import { createAction } from 'redux-actions';
 import {
   allArgsHaveValuesSelector,
   calculatorSelector,
-  nestedCalculatorSelector,
 } from '../selectors/calculators';
 import {
   addNewCalculatorToCollection,
@@ -121,27 +120,6 @@ export const changeCalculatorArgUnit = createAction(
     dispatch(changeCalculatorArg({ id, args: { [argname]: { unit } } }))
 );
 
-export const addCalculatorArgReference = createAction(
-  '@@calcoola/calculator/argument-reference-add',
-  ({ id, argname, formulaId }) => (dispatch, getState) => {
-    const newCalcId = dispatch(addCalculator({ result: { refId: formulaId } }))
-      .payload.id;
-    const toRemove = R.path(
-      ['calculators', id, 'args', argname, 'refId'],
-      getState()
-    );
-    if (toRemove) {
-      dispatch(removeCalculatorArgReference({ id, argname }));
-    }
-    dispatch(
-      changeCalculatorArg({
-        id,
-        args: { [argname]: { refId: newCalcId } },
-      })
-    );
-  }
-);
-
 export const removeCalculator = createAction('@@calcoola/calculator/remove');
 
 export const removeCalculatorArgProp = createAction(
@@ -150,24 +128,6 @@ export const removeCalculatorArgProp = createAction(
 
 export const removeCalculatorArg = createAction(
   '@@calcoola/calculator/argument-remove'
-);
-
-export const removeCalculatorArgReference = createAction(
-  '@@calcoola/calculator/argument-reference-remove',
-  ({ id, argname }) => (dispatch, getState) => {
-    const state = getState();
-    const toRemove = R.path(
-      ['calculators', id, 'args', argname, 'refId'],
-      state
-    );
-    if (toRemove) {
-      dispatch(removeCalculatorArgProp({ id, argname, argprop: 'refId' }));
-      R.forEach(
-        id => dispatch(removeCalculator({ id })),
-        R.keys(nestedCalculatorSelector(state, { id: toRemove }))
-      );
-    }
-  }
 );
 
 export const changeCalculatorResult = createAction(

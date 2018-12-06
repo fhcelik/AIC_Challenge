@@ -23,7 +23,7 @@
     "number-abbreviate": "^2.0.0",
     "prop-types": "^15.5.10",
     "qs": "^6.5.2",
-    "ramda": "^0.26.0",
+    "ramda": "^0.26.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-katex": "^2.0.1",

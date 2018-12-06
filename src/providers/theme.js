@@ -166,14 +166,6 @@ const theme = createMuiTheme({
         },
       },
     },
-    MuiListItem: {
-      root: {
-        borderBottom: `1px solid ${palette.navbar.border}`,
-        '&:last-child': {
-          borderBottom: 'none',
-        },
-      },
-    },
     MuiListItemIcon: {
       root: {
         color: 'inherit',

@@ -15,6 +15,7 @@ import {
 import PropTypes from 'prop-types';
 import {
   cancelAddingNewCalculator,
+  changeCalculatorArgValue,
   changeCalculatorArgUnit,
   changeCalculatorResultUnit,
   incrementCalculatorUsage,
@@ -31,7 +32,9 @@ import {
   calculatorTagsSelector,
   calculatorTitleSelector,
 } from '../../redux/selectors/calculators';
+import { isAuthorizedSelector } from '../../redux/selectors/auth';
 import { fetchUnitDefinitions } from '../../redux/actions/units';
+import { getCalculatorLink } from '../App/Routing/Routing';
 import { noUnitsSelector } from '../../redux/selectors/units';
 import ErrorCatch from '../ErrorCatch';
 import updateLayoutOnChange from '../hoc/updateLayoutOnChange';
@@ -51,7 +54,10 @@ export default compose(
       renderComponent(ErrorCatch)
     )
   ),
-  withProps(({ match: { params } }) => ({ collectionId: params.id })),
+  withProps(({ id, match: { params } }) => ({
+    collectionId: params.id,
+    shareLink: getCalculatorLink(id),
+  })),
   connect(
     (state, props) => ({
       args: calculatorArgsSelector(state, props),
@@ -61,10 +67,12 @@ export default compose(
       description: calculatorDescriptionSelector(state, props),
       tags: calculatorTagsSelector(state, props),
       formula: calculatorResultFormulaSelector(state, props),
+      isAuthorized: isAuthorizedSelector(state),
       isNew: calculatorIsNewSelector(state, props),
       noUnits: noUnitsSelector(state, props),
     }),
     {
+      changeCalculatorArgValue,
       changeCalculatorArgUnit,
       changeCalculatorResultUnit,
       cancelAddingNewCalculator,
@@ -101,6 +109,13 @@ export default compose(
     }
   ),
   withHandlers({
+    onArgValueChange: ({ id, changeCalculatorArgValue }) => event => {
+      changeCalculatorArgValue({
+        id,
+        argname: event.target.name,
+        value: event.target.value,
+      });
+    },
     onArgUnitChange: ({ id, changeCalculatorArgUnit }) => event => {
       changeCalculatorArgUnit({
         id,

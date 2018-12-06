@@ -13,8 +13,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const styles = theme => ({
+  header: {
+    borderBottom: `1px solid ${theme.palette.navbar.border}`,
+  },
   item: {
-    padding: '4px 8px',
+    padding: 8,
   },
   inputIcon: {
     color: theme.palette.text.faded,
@@ -29,7 +32,12 @@ const CollectionCreatorList = ({
   onCollectionNameKeyDown,
 }) => (
   <React.Fragment>
-    <ListItem button disableRipple onClick={addCollectionEditor}>
+    <ListItem
+      className={classes.header}
+      button
+      disableRipple
+      onClick={addCollectionEditor}
+    >
       <Grid container justify="center">
         <AddIcon />
       </Grid>

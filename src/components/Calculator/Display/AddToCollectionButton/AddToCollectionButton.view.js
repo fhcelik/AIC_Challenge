@@ -12,6 +12,7 @@ const styles = {
     width: 300,
   },
   list: {
+    padding: 0,
     maxHeight: 300,
   },
 };

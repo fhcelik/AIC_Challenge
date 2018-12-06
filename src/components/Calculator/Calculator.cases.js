@@ -38,54 +38,6 @@ const testCalculators = [
       'Find mud weight based on pressure and total vertical distance (TVD)',
     tags: ['basic drilling'],
   },
-
-  {
-    id: 'mwMCalcId',
-    author: user.id,
-    args: {
-      pressure: { value: 5000, unit: 'psi' },
-      TVD: { value: 2500, unit: 'm', alias: 'Total vertical distance' },
-    },
-    result: { refId: 'mwCalcId' },
-  },
-
-  {
-    id: 'errCalcId',
-    author: user.id,
-    args: {
-      x: { value: 1 },
-      y: { value: 3 },
-    },
-    result: { execFormula: 'x^2 + y + z' },
-    title: 'Error test',
-    description: 'error',
-    tags: [],
-  },
-
-  {
-    id: 'nestedQuadraticCalcId',
-    author: user.id,
-    args: {
-      a: { value: 1 },
-      b: { refId: 'quadraticCalcId' },
-      c: { value: 4 },
-    },
-    result: { refId: 'quadraticCalcId' },
-  },
-
-  {
-    id: 'nestedPressureCalcId',
-    author: user.id,
-    args: {
-      MW: { refId: 'mwCalcId', unit: 'ppg' },
-      TVD: { value: 8000, unit: 'ft' },
-    },
-    result: { execFormula: 'MW * TVD', unit: 'psi' },
-    title: 'Derive Pressure',
-    description:
-      'Find pressure based on mud weight and total vertical distance (TVD)',
-    tags: ['basic drilling'],
-  },
 ];
 
 const { entities, result } = normalize(testCalculators, calculatorList);

@@ -31,6 +31,8 @@ const styles = theme => ({
   },
   fieldValue: {
     textTransform: 'uppercase',
+    color: theme.palette.text.primary,
+    fontWeight: 500,
   },
   noName: {
     color: theme.palette.text.faded,

@@ -58,7 +58,6 @@ const NavBar = ({ classes, isAuthorized, location }) => (
       <NavLink
         to={Routes.root}
         className={cx(classes.navigation, classes.logoWrapper)}
-        activeClassName={classes.activeLink}
         exact
       >
         <Logo className={classes.logo} />

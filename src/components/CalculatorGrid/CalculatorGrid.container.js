@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   compose,
   lifecycle,
+  pure,
   withContext,
   withHandlers,
   withStateHandlers,
@@ -28,5 +29,6 @@ export default compose(
       const { calculatorIds, fetchUsages } = this.props;
       if (R.length(calculatorIds)) fetchUsages(calculatorIds);
     },
-  })
+  }),
+  pure
 )(CalculatorGrid);

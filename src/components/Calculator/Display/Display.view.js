@@ -33,7 +33,6 @@ const Display = ({
   onCancel,
   onResultUnitChange,
   result,
-  setArgToFormula,
   shareLink,
   showEditor,
   showInfo,
@@ -107,7 +106,6 @@ const Display = ({
                 {...arg}
                 onArgValueChange={onArgValueChange}
                 onArgUnitChange={onArgUnitChange}
-                setArgToFormula={setArgToFormula}
               />
             ))}
           </Grid>
@@ -138,7 +136,6 @@ Display.propTypes = {
   onCancel: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
-  setArgToFormula: PropTypes.func.isRequired,
   shareLink: PropTypes.string.isRequired,
   showEditor: PropTypes.func.isRequired,
   showInfo: PropTypes.func.isRequired,
