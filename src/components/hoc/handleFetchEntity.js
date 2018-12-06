@@ -11,7 +11,7 @@ import {
   withHandlers,
   withState,
 } from 'recompose';
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 
 export default ({ entityName, entitySelector, fetchEntityAction }) =>
   compose(
@@ -21,7 +21,7 @@ export default ({ entityName, entitySelector, fetchEntityAction }) =>
       }),
       { fetchEntity: fetchEntityAction }
     ),
-    withState('isLoading', 'setIsLoading', false),
+    withState('isLoading', 'setIsLoading', true),
     withState('notFound', 'setNotFound', false),
     withState('serverError', 'setServerError', false),
     withHandlers({

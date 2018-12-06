@@ -31,7 +31,7 @@ import {
 import { fetchUnitDefinitions } from '../../redux/actions/units';
 import { noUnitsSelector } from '../../redux/selectors/units';
 import ErrorCatch from '../ErrorCatch';
-import updateLayoutOnChangeEnhancer from '../updateLayoutOnChange.enhancer';
+import updateLayoutOnChange from '../hoc/updateLayoutOnChange';
 import CalculatorView from './Calculator.view';
 
 export default compose(
@@ -119,7 +119,7 @@ export default compose(
     onCancel: ({ cancelAddingNewCalculator, id, collectionId }) => () =>
       cancelAddingNewCalculator({ collectionId, calculatorId: id }),
   }),
-  updateLayoutOnChangeEnhancer,
+  updateLayoutOnChange,
   lifecycle({
     componentDidUpdate({ args: prevArgs, isNew: prevIsNew }) {
       const {

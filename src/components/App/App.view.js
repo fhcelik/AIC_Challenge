@@ -11,12 +11,17 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  content: {
+    padding: '20px 30px',
+  },
 });
 
 const App = ({ classes }) => (
   <div className={classes.root}>
     <NavBar />
-    <Routing />
+    <div className={classes.content}>
+      <Routing />
+    </div>
     <NotificationToaster />
   </div>
 );

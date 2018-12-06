@@ -47,7 +47,7 @@ const CollectionSelect = ({
       {R.map(
         collection => (
           <NavLink
-            to={`${Routes.collection}${collection.id}`}
+            to={`${Routes.collections}${collection.id}`}
             exact={true}
             key={collection.id}
           >

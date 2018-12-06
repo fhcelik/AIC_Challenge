@@ -55,7 +55,7 @@ const NavBar = ({ classes, isAuthorized, location }) => (
       </NavLink>
       <CollectionSelect
         className={cx(classes.navigation, {
-          [classes.activeLink]: location.pathname.includes(Routes.collection),
+          [classes.activeLink]: location.pathname.includes(Routes.collections),
         })}
       />
       <SearchBar />

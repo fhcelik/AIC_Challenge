@@ -7,7 +7,7 @@ import {
   collectionByIdSelector,
   isCollectionAuthoredByLoggedInUserSelector,
 } from '../../redux/selectors/collections';
-import handleFetchEntityEnhancer from '../handleFetchEntity.enhancer';
+import handleFetchEntity from '../hoc/handleFetchEntity';
 import CalculatorGrid from '../CalculatorGrid';
 import { noUnitsSelector } from '../../redux/selectors/units';
 
@@ -20,7 +20,7 @@ export default compose(
     ),
     noUnits: noUnitsSelector(state, props),
   })),
-  handleFetchEntityEnhancer({
+  handleFetchEntity({
     entityName: 'collection',
     entitySelector: collectionByIdSelector,
     fetchEntityAction: fetchCollection,

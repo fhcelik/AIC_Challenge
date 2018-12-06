@@ -6,9 +6,6 @@ import Calculator from '../Calculator';
 import NewCalculatorButton from '../NewCalculatorButton';
 
 const styles = {
-  root: {
-    margin: '20px 30px',
-  },
   grid: {
     marginTop: '30px',
   },

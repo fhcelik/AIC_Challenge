@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose, withHandlers, withProps, withStateHandlers } from 'recompose';
 import { createCollectionFromCalculator } from '../../../../../redux/actions/collections';
 import { Collection } from '../../../../../redux/schemas/collection';
-import updateLayoutOnChangeEnhancer from '../../../../updateLayoutOnChange.enhancer';
+import updateLayoutOnChange from '../../../../hoc/updateLayoutOnChange';
 import CollectionCreatorList from './CollectionCreatorList.view';
 
 export default compose(
@@ -70,7 +70,7 @@ export default compose(
       }
     },
   }),
-  updateLayoutOnChangeEnhancer,
+  updateLayoutOnChange,
   withProps(({ newCollections }) => ({
     newEntries: R.values(newCollections),
   }))

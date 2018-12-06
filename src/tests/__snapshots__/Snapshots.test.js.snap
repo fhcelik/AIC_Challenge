@@ -3497,7 +3497,7 @@ exports[`Calculator quadraticCalcId 1`] = `
 
 exports[`Collection base 1`] = `
 <div
-  className="CalculatorGrid-root"
+  className={undefined}
 >
   <h1
     className="MuiTypography-root MuiTypography-display4"
@@ -6250,7 +6250,15 @@ exports[`NotificationToaster base 1`] = `
 </div>
 `;
 
-exports[`Routing collection 1`] = `
+exports[`Routing calculators 1`] = `
+<h1
+  className="MuiTypography-root MuiTypography-display4"
+>
+  Not Found
+</h1>
+`;
+
+exports[`Routing collections 1`] = `
 <h1
   className="MuiTypography-root MuiTypography-display4"
 >
@@ -6276,7 +6284,7 @@ exports[`Routing root 1`] = `
 
 exports[`Routing search 1`] = `
 <div
-  className="CalculatorGrid-root"
+  className={undefined}
 >
   <h1
     className="MuiTypography-root MuiTypography-display4"

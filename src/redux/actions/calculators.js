@@ -1,6 +1,8 @@
+import { normalize } from 'normalizr';
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
-import { Calculator } from '../schemas/calculator';
+import { debounceConfigNames } from '../config';
+import { Calculator, calculator } from '../schemas/calculator';
 import {
   allArgsHaveValuesSelector,
   calculatorSelector,
@@ -11,8 +13,17 @@ import {
   removeNewCalculatorFromCollection,
   saveCalculatorToCollection,
 } from './collections';
+import { saveEntities } from './entities';
 import { displayNotification } from './notifications';
-import { debounceConfigNames } from '../config';
+
+export const fetchCalculator = createAction(
+  '@@calcoola/calculator/fetchCalculator',
+  id => (dispatch, _, httpClient) =>
+    httpClient.get(`/calculators/${id}`).then(({ data }) => {
+      const { entities } = normalize(data, calculator);
+      dispatch(saveEntities(entities));
+    })
+);
 
 export const addCalculator = createAction(
   '@@calcoola/calculator/add',
