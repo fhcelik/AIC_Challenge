@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import SingleCalculator from '../../Calculator/SingleCalculator';
 import Collection from '../../Collection';
 import SearchResults from '../../SearchResults';
-import NotFound from '../../NotFound';
+import { Error404 } from '../../ErrorPage';
 
 export const Routes = {
   root: '/',
@@ -30,7 +30,7 @@ const Routing = () => (
       component={({ match }) => <Collection id={match.params.id} />}
     />
     <Route path={Routes.search} component={SearchResults} />
-    <Route component={NotFound} />
+    <Route component={Error404} />
   </Switch>
 );
 

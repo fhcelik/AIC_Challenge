@@ -5304,6 +5304,60 @@ exports[`Editor with arg 1`] = `
 </div>
 `;
 
+exports[`ErrorPage Error404 1`] = `
+<div
+  className="MuiGrid-container ErrorPage-root"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    404
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Not found
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      You're looking for something that probably doesn't exist.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ErrorPage Error500 1`] = `
+<div
+  className="MuiGrid-container ErrorPage-root"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    500
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Oops, something went wrong
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      Sorry for the inconvenience.
+      We are working to fix this.
+      Please try again later.
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Flipper flipper 1`] = `
 <div
   className="Flipper-flipperContainer"
@@ -6165,14 +6219,6 @@ exports[`NoUnitsInfo base 1`] = `
 </div>
 `;
 
-exports[`NotFound base 1`] = `
-<h1
-  className="MuiTypography-root MuiTypography-display4"
->
-  Not Found
-</h1>
-`;
-
 exports[`NotificationToaster base 1`] = `
 <div
   className="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter"
@@ -6251,27 +6297,81 @@ exports[`NotificationToaster base 1`] = `
 `;
 
 exports[`Routing calculators 1`] = `
-<h1
-  className="MuiTypography-root MuiTypography-display4"
+<div
+  className="MuiGrid-container ErrorPage-root"
 >
-  Not Found
-</h1>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    404
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Not found
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      You're looking for something that probably doesn't exist.
+    </p>
+  </div>
+</div>
 `;
 
 exports[`Routing collections 1`] = `
-<h1
-  className="MuiTypography-root MuiTypography-display4"
+<div
+  className="MuiGrid-container ErrorPage-root"
 >
-  Not Found
-</h1>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    404
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Not found
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      You're looking for something that probably doesn't exist.
+    </p>
+  </div>
+</div>
 `;
 
 exports[`Routing profile 1`] = `
-<h1
-  className="MuiTypography-root MuiTypography-display4"
+<div
+  className="MuiGrid-container ErrorPage-root"
 >
-  Not Found
-</h1>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    404
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Not found
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      You're looking for something that probably doesn't exist.
+    </p>
+  </div>
+</div>
 `;
 
 exports[`Routing root 1`] = `

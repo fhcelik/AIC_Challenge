@@ -11,7 +11,7 @@ import {
   withHandlers,
   withState,
 } from 'recompose';
-import NotFound from '../NotFound';
+import { Error404, Error500 } from '../ErrorPage';
 
 export default ({ entityName, entitySelector, fetchEntityAction }) =>
   compose(
@@ -55,8 +55,7 @@ export default ({ entityName, entitySelector, fetchEntityAction }) =>
       ({ isLoading, ...props }) => !props[entityName] && isLoading,
       renderComponent(() => <CircularProgress size={100} />)
     ),
-    branch(({ notFound }) => notFound, renderComponent(NotFound)),
-    // uncomment when we'll have Internal Server Error page component
-    // branch(({ serverError }) => serverError, renderComponent(ServerError)),
+    branch(({ notFound }) => notFound, renderComponent(Error404)),
+    branch(({ serverError }) => serverError, renderComponent(Error500)),
     pure
   );

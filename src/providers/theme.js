@@ -89,6 +89,11 @@ const typography = {
     fontWeight: 800,
     color: palette.text.primary,
   },
+  display5: {
+    fontSize: '7rem',
+    fontWeight: 800,
+    color: palette.text.primary,
+  },
 };
 // setup basic theme and any overrides that are
 // needed here
