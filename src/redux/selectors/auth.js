@@ -5,4 +5,9 @@ export const jwtSelector = R.pathOr(null, ['auth', 'jwt']);
 
 export const isAuthorizedSelector = createSelector(jwtSelector, Boolean);
 
-export const userSelector = R.pathOr(null, ['auth', 'user']);
+export const loggedInUserSelector = R.pathOr(null, ['auth', 'user']);
+
+export const loggedInUserIdSelector = createSelector(
+  loggedInUserSelector,
+  R.prop('id')
+);

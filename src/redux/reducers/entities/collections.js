@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import { handleActions } from 'redux-actions';
 import * as Actions from '../../actions/collections';
-import { MY_COLLECTION_ID } from '../../schemas/collection';
 
 const calculatorsByCollectionIdLensCreator = id =>
   R.lensPath([id, 'calculators']);
@@ -37,16 +36,6 @@ export default handleActions(
         ),
       throw: R.identity,
     },
-
-    [Actions.addCalculatorToMyCalculatorsCollection]: (
-      collections,
-      { payload: calculatorId }
-    ) =>
-      R.over(
-        calculatorsByCollectionIdLensCreator(MY_COLLECTION_ID),
-        R.append(calculatorId),
-        collections
-      ),
 
     [Actions.removeCalculatorFromCollection]: {
       next: (collections, { payload: { collectionId, calculatorId } }) =>

@@ -28,6 +28,9 @@ jest.mock('react-stack-grid', () => 'StackGrid');
 jest.mock('./redux/actions/collections', () => ({
   fetchCollection: mockAsyncActionCreator,
 }));
+jest.mock('./redux/actions/calculatorsByAuthor', () => ({
+  fetchCalculatorsByAuthorId: mockAsyncActionCreator,
+}));
 
 jest.mock(
   'popper.js',

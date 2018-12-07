@@ -3495,6 +3495,574 @@ exports[`Calculator quadraticCalcId 1`] = `
 </div>
 `;
 
+exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
+<div
+  className={undefined}
+>
+  <h1
+    className="MuiTypography-root MuiTypography-display4"
+  >
+    CALCULATORS BY some-author-uuid
+  </h1>
+  <StackGrid
+    className="CalculatorGrid-grid"
+    columnWidth={320}
+    gridRef={[Function]}
+    gutterHeight={25}
+    gutterWidth={25}
+  >
+    <div
+      className="Flipper-flipperContainer"
+    >
+      <div
+        className="Flipper-flipper"
+      >
+        <div
+          className="Flipper-tile Flipper-front"
+        >
+          <div
+            className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
+          >
+            <div
+              className="Header-root"
+            >
+              <div
+                className="MuiGrid-container MuiGrid-justify-xs-flex-end"
+              >
+                <Tooltip
+                  title="Info"
+                >
+                  <button
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex="0"
+                    type="button"
+                  >
+                    <span
+                      className="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root"
+                        color={undefined}
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </Tooltip>
+              </div>
+            </div>
+            <div
+              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
+            >
+              <div
+                className="Display-title"
+              >
+                <p
+                  className="MuiTypography-root MuiTypography-body1 Display-titleText"
+                  title="Formula for finding roots of a quadratic polynomial"
+                >
+                  Quadratic Formula
+                </p>
+                <div
+                  className="MuiGrid-container"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                    title="pure math"
+                  >
+                    pure math
+                  </p>
+                </div>
+              </div>
+              <div
+                className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
+              >
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="a"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          a
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="a"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={3}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="b"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          b
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="b"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={6}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="c"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          c
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="c"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={10}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="Result-result"
+              >
+                <div
+                  className="MuiGrid-container MuiGrid-justify-xs-space-between Result-container"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 Result-resultText"
+                  >
+                    -1 + 1.527525232i
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Flipper-tile Flipper-back"
+        />
+      </div>
+    </div>
+  </StackGrid>
+</div>
+`;
+
+exports[`CalculatorsByAuthor myCalculators 1`] = `
+<div
+  className={undefined}
+>
+  <h1
+    className="MuiTypography-root MuiTypography-display4"
+  >
+    MY CALCULATORS
+  </h1>
+  <StackGrid
+    className="CalculatorGrid-grid"
+    columnWidth={320}
+    gridRef={[Function]}
+    gutterHeight={25}
+    gutterWidth={25}
+  >
+    <div
+      className="Flipper-flipperContainer"
+    >
+      <div
+        className="Flipper-flipper"
+      >
+        <div
+          className="Flipper-tile Flipper-front"
+        >
+          <div
+            className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap Display-root"
+          >
+            <div
+              className="Header-root"
+            >
+              <div
+                className="MuiGrid-container MuiGrid-justify-xs-flex-end"
+              >
+                <Tooltip
+                  title="Info"
+                >
+                  <button
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex="0"
+                    type="button"
+                  >
+                    <span
+                      className="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root"
+                        color={undefined}
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </Tooltip>
+              </div>
+            </div>
+            <div
+              className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between Display-content"
+            >
+              <div
+                className="Display-title"
+              >
+                <p
+                  className="MuiTypography-root MuiTypography-body1 Display-titleText"
+                  title="Formula for finding roots of a quadratic polynomial"
+                >
+                  Quadratic Formula
+                </p>
+                <div
+                  className="MuiGrid-container"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap Display-tag"
+                    title="pure math"
+                  >
+                    pure math
+                  </p>
+                </div>
+              </div>
+              <div
+                className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
+              >
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="a"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          a
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="a"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={1}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="b"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          b
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="b"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={8}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="Argument-argument"
+                >
+                  <div
+                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  >
+                    <div
+                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                    >
+                      <div
+                        aria-describedby={undefined}
+                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        title="c"
+                      >
+                        <label
+                          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
+                          data-shrink={true}
+                          htmlFor={undefined}
+                        >
+                          c
+                        </label>
+                        <div
+                          className="MuiInput-root MuiInput-fullWidth MuiInput-formControl"
+                        >
+                          <input
+                            aria-invalid={false}
+                            aria-required={false}
+                            autoComplete="off"
+                            autoFocus={undefined}
+                            className="MuiInput-input MuiInput-inputType MuiInput-inputMarginDense"
+                            defaultValue={undefined}
+                            disabled={false}
+                            id={undefined}
+                            name="c"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={undefined}
+                            onKeyUp={undefined}
+                            placeholder={undefined}
+                            readOnly={undefined}
+                            required={undefined}
+                            rows={undefined}
+                            type="number"
+                            value={-9}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="Result-result"
+              >
+                <div
+                  className="MuiGrid-container MuiGrid-justify-xs-space-between Result-container"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 Result-resultText"
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Flipper-tile Flipper-back"
+        />
+      </div>
+    </div>
+  </StackGrid>
+</div>
+`;
+
 exports[`Collection base 1`] = `
 <div
   className={undefined}
@@ -5865,16 +6433,53 @@ exports[`NavBar base 1`] = `
   >
     <a
       aria-current="true"
-      className="NavBar-navigation NavBar-activeLink"
+      className="NavBar-navigation NavBar-logoWrapper NavBar-activeLink"
       href="/"
       onClick={[Function]}
       style={Object {}}
     >
-      <h1
-        className="MuiTypography-root MuiTypography-display3"
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root NavBar-logo"
+        color={undefined}
+        focusable="false"
+        viewBox="0 0 195.97 42.39"
       >
-        Dashboard
-      </h1>
+        <rect
+          fill="#fff"
+          height="35.63"
+          width="3.62"
+          x="158.67"
+          y="3.38"
+        />
+        <path
+          d="M193.68,26.93a11.79,11.79,0,1,0-3.61,8.78V39h3.62V26.93Zm-11.76,8.45a8.15,8.15,0,1,1,8.15-8.15A8.16,8.16,0,0,1,181.92,35.38Z"
+          fill="#fff"
+        />
+        <path
+          d="M14,35.38a8.15,8.15,0,1,1,7.27-11.85l3.23-1.65A11.77,11.77,0,1,0,25,31.55l-3.37-1.33A8.11,8.11,0,0,1,14,35.38Z"
+          fill="#fff"
+        />
+        <path
+          d="M42.43,15.46a11.78,11.78,0,1,0,8.15,20.25V39h3.62V26.93h0A11.78,11.78,0,0,0,42.43,15.46Zm0,19.93a8.15,8.15,0,1,1,8.15-8.15A8.16,8.16,0,0,1,42.43,35.38Z"
+          fill="#fff"
+        />
+        <rect
+          fill="#fff"
+          height="35.63"
+          width="3.62"
+          x="62.66"
+          y="3.38"
+        />
+        <path
+          d="M86.24,35.38A8.15,8.15,0,1,1,93.5,23.54l3.23-1.65a11.77,11.77,0,1,0,.46,9.66l-3.37-1.33A8.11,8.11,0,0,1,86.24,35.38Z"
+          fill="#fff"
+        />
+        <path
+          d="M140.74,16.19h-.47a11.14,11.14,0,0,0-7.18,3l-5.93,5.93-6-6a11.16,11.16,0,0,0-7.14-3h-.47a11.17,11.17,0,0,0,0,22.34H114a11.14,11.14,0,0,0,7.18-3l5.93-5.93,6,6a11.16,11.16,0,0,0,7.14,3h.46a11.17,11.17,0,1,0,0-22.34ZM124.47,27.36l-5.18,5.18q-.25.28-.52.52a7.71,7.71,0,1,1,0-11.45l5.5,5.51Zm24,0a7.71,7.71,0,0,1-12.84,5.75l0,0L130.1,27.6l-.24-.24L135,22.18q.25-.28.52-.52a7.71,7.71,0,0,1,12.89,5.71Z"
+          fill="#00d623"
+        />
+      </svg>
     </a>
     <div>
       <div
@@ -6374,13 +6979,7 @@ exports[`Routing profile 1`] = `
 </div>
 `;
 
-exports[`Routing root 1`] = `
-<h1
-  className="MuiTypography-root MuiTypography-display4"
->
-  The Dashboard
-</h1>
-`;
+exports[`Routing root 1`] = `null`;
 
 exports[`Routing search 1`] = `
 <div
@@ -6398,6 +6997,32 @@ exports[`Routing search 1`] = `
     gutterHeight={25}
     gutterWidth={25}
   />
+</div>
+`;
+
+exports[`Routing users 1`] = `
+<div
+  className="MuiGrid-container ErrorPage-root"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 ErrorPage-errorCode"
+  >
+    404
+  </p>
+  <div
+    className="ErrorPage-rightContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-title"
+    >
+      Not found
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 ErrorPage-rightContentText ErrorPage-description"
+    >
+      You're looking for something that probably doesn't exist.
+    </p>
+  </div>
 </div>
 `;
 

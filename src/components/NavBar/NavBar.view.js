@@ -1,5 +1,6 @@
+import * as R from 'ramda';
 import cx from 'classnames';
-import { AppBar, Toolbar, Typography, withStyles } from 'material-ui';
+import { AppBar, Toolbar, withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -10,6 +11,7 @@ import SearchBar from '../SearchBar';
 import CollectionSelect from './CollectionSelect';
 import Login from './Login';
 import UserProfileMenu from './UserProfileMenu';
+import { logo as Logo } from '../../images';
 
 const styles = theme => ({
   root: {
@@ -18,6 +20,7 @@ const styles = theme => ({
   },
   toolbar: {
     minHeight: '3em',
+    padding: '0 6px 0 0',
   },
   navigation: {
     textTransform: 'uppercase',
@@ -26,6 +29,13 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: theme.palette.link.hover,
     },
+  },
+  logoWrapper: {
+    padding: '0.8em 1em',
+  },
+  logo: {
+    width: '110px !important',
+    height: '22px !important',
   },
   activeLink: {
     backgroundColor: theme.palette.link.active,
@@ -47,15 +57,18 @@ const NavBar = ({ classes, isAuthorized, location }) => (
     <Toolbar className={classes.toolbar}>
       <NavLink
         to={Routes.root}
-        className={classes.navigation}
+        className={cx(classes.navigation, classes.logoWrapper)}
         activeClassName={classes.activeLink}
         exact
       >
-        <Typography variant="display3">Dashboard</Typography>
+        <Logo className={classes.logo} />
       </NavLink>
       <CollectionSelect
         className={cx(classes.navigation, {
-          [classes.activeLink]: location.pathname.includes(Routes.collections),
+          [classes.activeLink]: R.contains(
+            Routes.collections,
+            location.pathname
+          ),
         })}
       />
       <SearchBar />

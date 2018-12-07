@@ -2,8 +2,6 @@ import { schema } from 'normalizr';
 import { calculatorList } from './calculator';
 import uuid from 'uuid/v4';
 
-export const MY_COLLECTION_ID = 'my-calculators';
-
 export function Collection(props = {}) {
   return {
     id: uuid(),
@@ -18,7 +16,7 @@ export const collection = new schema.Entity(
   {
     calculators: calculatorList,
   },
-  { processStrategy: value => Collection(value) }
+  { processStrategy: Collection }
 );
 
 export const collectionList = new schema.Array(collection);

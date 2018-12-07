@@ -1,32 +1,34 @@
-import { Typography } from 'material-ui';
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import SingleCalculator from '../../Calculator/SingleCalculator';
+import CalculatorsByAuthor from '../../CalculatorsByAuthor';
 import Collection from '../../Collection';
-import SearchResults from '../../SearchResults';
+import Dashboard from '../../Dashboard';
 import { Error404 } from '../../ErrorPage';
+import SearchResults from '../../SearchResults';
+import SingleCalculator from '../../Calculator/SingleCalculator';
 
 export const Routes = {
   root: '/',
   calculators: '/calculators/',
   collections: '/collections/',
-  search: '/search',
   profile: '/profile',
+  search: '/search',
+  users: '/users/',
 };
 
 const Routing = () => (
   <Switch>
+    <Route exact path={Routes.root} component={Dashboard} />
     <Route
-      exact
-      path={Routes.root}
-      render={() => <Typography variant="display4">The Dashboard</Typography>}
+      path={`${Routes.users}:id/calculators`}
+      render={({ match }) => <CalculatorsByAuthor id={match.params.id} />}
     />
     <Route
-      path={Routes.calculators + ':id'}
+      path={`${Routes.calculators}:id`}
       render={({ match }) => <SingleCalculator id={match.params.id} />}
     />
     <Route
-      path={Routes.collections + ':id'}
+      path={`${Routes.collections}:id`}
       component={({ match }) => <Collection id={match.params.id} />}
     />
     <Route path={Routes.search} component={SearchResults} />

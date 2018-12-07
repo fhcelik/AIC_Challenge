@@ -18,7 +18,7 @@ export function Calculator(props = {}) {
 export const calculator = new schema.Entity(
   'calculators',
   {},
-  { processStrategy: value => Calculator(value) }
+  { processStrategy: Calculator }
 );
 export const calculatorList = new schema.Array(calculator);
 

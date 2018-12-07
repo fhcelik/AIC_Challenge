@@ -1,11 +1,11 @@
-import { normalize } from 'normalizr';
 import * as R from 'ramda';
 import { createAction } from 'redux-actions';
-import { collection, Collection, collectionList } from '../schemas/collection';
+import { normalize } from 'normalizr';
+import { Collection, collection, collectionList } from '../schemas/collection';
+import { displayNotification } from './notifications';
 import { newCalculatorsByCollectionIdSelector } from '../selectors/collections';
 import { prependMenuCollectionList, saveMenuCollectionList } from './app';
 import { saveEntities } from './entities';
-import { displayNotification } from './notifications';
 
 export const fetchCollections = createAction(
   '@@calcoola/collections/fetchCollections',
@@ -116,9 +116,8 @@ export const resetNewCalculatorsToCollection = createAction(
 
 export const saveCalculatorToCollection = createAction(
   '@@calcoola/calculator/saveCalculatorToCollection',
-  ({ calculatorId, collectionId }) => dispatch => {
-    dispatch(addCalculatorToMyCalculatorsCollection(calculatorId));
-    return dispatch(addCalculatorToCollection({ collectionId, calculatorId }))
+  ({ calculatorId, collectionId }) => dispatch =>
+    dispatch(addCalculatorToCollection({ collectionId, calculatorId }))
       .catch(() =>
         dispatch(
           displayNotification(
@@ -130,10 +129,5 @@ export const saveCalculatorToCollection = createAction(
         dispatch(
           removeNewCalculatorFromCollection({ collectionId, calculatorId })
         )
-      );
-  }
-);
-
-export const addCalculatorToMyCalculatorsCollection = createAction(
-  '@@calcoola/calculator/addCalculatorToMyCalculatorsCollection'
+      )
 );
