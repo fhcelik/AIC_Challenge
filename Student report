@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        String enrollment="",name="",code="",grade="";
+        enroll enrol=new enroll("","","","");
+        List<enrol> register=new List<enrol>();
+        boolean open=true;
+            while(scanner.hasNext())
+            {
+                String text=scanner.nextLine();
+                String[] parts = string.split(":\"");
+               
+                
+                if(parts[0].equals("enrollment")) {
+                    enrollment=parts[1];
+                }
+                if(parts[0].equals("name") ) {
+                    name=parts[1];
+                }
+                if(parts[0].equals("code")) {
+                    code=parts[1];
+                }
+                if(parts[0].equals("grade")) {
+                    grade=parts[1];
+                }
+             
+
+            }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    }
+}
+class enroll{
+    enroll(String enrollment, String name, String code, String grade){
+        enrollment=this.enrollmet;
+        name=this.name;
+        code=this.code;
+        grade=this.grade;
+    }
+
+}
