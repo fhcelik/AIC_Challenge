@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan= new Scanner(System.in);
+        String text=scan.nextLine();
+        String [] temp=text.split("");
+        String result="";
+        int counter=0,count=0;
+        
+        for(int i=0;i<temp.length;i++){
+        
+            if(temp[i].equals("("))      {result += temp[i]; counter++;}
+            else if(temp[i].equals(")")) {result += temp[i]; counter++;}
+            else if(temp[i].equals("{")) {result += temp[i]; counter++;}
+            else if(temp[i].equals("}")) {result += temp[i]; counter++;}
+            else if(temp[i].equals("[")) {result += temp[i]; counter++;}
+            else if(temp[i].equals("]")) {result += temp[i]; counter++;}
+            
+        }
+        count=counter%2;
+        if(count==1)System.out.println("N "+result);
+        else if(count==0) System.out.println("Y "+result);
+        
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    }
+}
+
