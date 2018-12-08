@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final int    BASE     = ALPHABET.length();
+    public static String encode(int num) {
+        StringBuilder sb = new StringBuilder();
+        while ( num > 0 ) {
+            sb.append( ALPHABET.charAt( num % BASE ) );
+            num /= BASE;
+        }
+        return sb.reverse().toString();   
+    }
+
+    public static void main(String args[] ) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+            while(scanner.hasNext())
+            {
+                String text=scanner.nextLine();
+                
+
+            }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    }
+}
+
