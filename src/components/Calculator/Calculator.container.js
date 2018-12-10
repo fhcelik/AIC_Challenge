@@ -7,10 +7,12 @@ import {
   lifecycle,
   pure,
   renderComponent,
+  withContext,
   withHandlers,
   withProps,
   withStateHandlers,
 } from 'recompose';
+import PropTypes from 'prop-types';
 import {
   cancelAddingNewCalculator,
   changeCalculatorArgUnit,
@@ -121,6 +123,9 @@ export default compose(
     onCancel: ({ cancelAddingNewCalculator, id, collectionId }) => () =>
       cancelAddingNewCalculator({ collectionId, calculatorId: id }),
   }),
+  withContext({ onCalculatorEditDone: PropTypes.func }, ({ onEditDone }) => ({
+    onCalculatorEditDone: onEditDone,
+  })),
   updateLayoutOnChange,
   lifecycle({
     componentDidUpdate({ args: prevArgs, isNew: prevIsNew }) {

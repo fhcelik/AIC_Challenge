@@ -191,6 +191,11 @@ const theme = createMuiTheme({
         maxWidth: 640,
       },
     },
+    MuiSvgIcon: {
+      root: {
+        color: palette.text.primary,
+      },
+    },
   },
   props: {
     MuiFormControl: {

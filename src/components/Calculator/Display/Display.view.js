@@ -1,23 +1,21 @@
-import cx from 'classnames';
-import { CircularProgress } from 'material-ui';
 import CancelIcon from 'material-ui-icons/Cancel';
-import CheckIcon from 'material-ui-icons/CheckCircle';
+import { CircularProgress, Grid, Typography } from 'material-ui';
+import cx from 'classnames';
 import EditIcon from 'material-ui-icons/Edit';
 import InfoIcon from 'material-ui-icons/InfoOutline';
-import Grid from 'material-ui/Grid';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import Header from '../Header';
-import HeaderButton from '../HeaderButton';
-import { CalculatorStyles as styles } from '../sharedStyles';
+import { withStyles } from 'material-ui/styles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Author from '../../Author';
+import { CalculatorStyles as styles } from '../sharedStyles';
+import Header from '../Header';
+import HeaderButton from '../HeaderButton';
+import NoUnitsInfo from './NoUnitsInfo';
+import PublishConfirmation from './PublishConfirmation';
 import Result from './Result';
 import Usages from './Usages';
-import NoUnitsInfo from './NoUnitsInfo';
 
 const Display = ({
   args,
@@ -32,7 +30,6 @@ const Display = ({
   onArgUnitChange,
   onArgValueChange,
   onCancel,
-  onEditDone,
   onResultUnitChange,
   result,
   setArgToFormula,
@@ -55,11 +52,7 @@ const Display = ({
           icon={EditIcon}
           tooltipTitle="Edit"
         />
-        <HeaderButton
-          onClick={onEditDone}
-          icon={CheckIcon}
-          tooltipTitle="Save"
-        />
+        <PublishConfirmation />
         <HeaderButton
           onClick={onCancel}
           icon={CancelIcon}
@@ -140,7 +133,6 @@ Display.propTypes = {
   onArgUnitChange: PropTypes.func.isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  onEditDone: PropTypes.func.isRequired,
   onResultUnitChange: PropTypes.func.isRequired,
   result: PropTypes.object.isRequired,
   setArgToFormula: PropTypes.func.isRequired,

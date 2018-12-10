@@ -7487,6 +7487,214 @@ exports[`NotificationToaster base 1`] = `
 </div>
 `;
 
+exports[`PublishConfirmation base 1`] = `
+<div
+  style={
+    Object {
+      "marginLeft": 20,
+      "width": 310,
+    }
+  }
+>
+  <div>
+    <div
+      className="DropdownMenu-target"
+      onClick={[Function]}
+    >
+      <Tooltip
+        title="Publish"
+      >
+        <button
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root"
+              color={undefined}
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"
+              />
+            </svg>
+          </span>
+        </button>
+      </Tooltip>
+    </div>
+    <div
+      className="DropdownMenu-popover"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      onClick={[Function]}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        className="MuiCollapse-container"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper"
+        >
+          <div
+            className="MuiCollapse-wrapperInner"
+          >
+            <div
+              className="DropdownMenu-items"
+            >
+              <div
+                className="MuiGrid-container PublishConfirmationContent-root"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root"
+                  color={undefined}
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"
+                  />
+                </svg>
+                <div
+                  className="PublishConfirmationContent-textContent"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 PublishConfirmationContent-text"
+                  >
+                    Publish this calculator?
+                  </p>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 PublishConfirmationContent-text PublishConfirmationContent-fadedText"
+                  >
+                    You cannot make any changes to a calculator after it's published
+                  </p>
+                </div>
+                <div
+                  className="MuiGrid-container MuiGrid-justify-xs-center"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root PublishConfirmationContent-button"
+                    color={undefined}
+                    focusable="false"
+                    onClick={undefined}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root PublishConfirmationContent-button"
+                    color={undefined}
+                    focusable="false"
+                    onClick={[Function]}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PublishConfirmationContent base 1`] = `
+<div
+  className="MuiGrid-container PublishConfirmationContent-root"
+>
+  <svg
+    aria-hidden="true"
+    className="MuiSvgIcon-root"
+    color={undefined}
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"
+    />
+  </svg>
+  <div
+    className="PublishConfirmationContent-textContent"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 PublishConfirmationContent-text"
+    >
+      Publish this calculator?
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 PublishConfirmationContent-text PublishConfirmationContent-fadedText"
+    >
+      You cannot make any changes to a calculator after it's published
+    </p>
+  </div>
+  <div
+    className="MuiGrid-container MuiGrid-justify-xs-center"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root PublishConfirmationContent-button"
+      color={undefined}
+      focusable="false"
+      onClick={undefined}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root PublishConfirmationContent-button"
+      color={undefined}
+      focusable="false"
+      onClick={undefined}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`Routing calculators 1`] = `
 <div
   className="MuiGrid-container ErrorPage-root"
