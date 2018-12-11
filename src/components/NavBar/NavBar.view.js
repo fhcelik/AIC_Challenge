@@ -53,7 +53,7 @@ const styles = theme => ({
 });
 
 const NavBar = ({ classes, isAuthorized, location }) => (
-  <AppBar position="static" className={classes.root}>
+  <AppBar position="fixed" className={classes.root}>
     <Toolbar className={classes.toolbar}>
       <NavLink
         to={Routes.root}

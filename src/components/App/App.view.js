@@ -10,9 +10,11 @@ const styles = theme => ({
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
+    height: '100%',
   },
   content: {
     padding: '20px 30px',
+    height: 'inherit',
   },
 });
 

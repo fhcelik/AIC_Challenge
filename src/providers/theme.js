@@ -6,7 +6,8 @@ import './app.css';
 export const colors = {
   darkGray: '#4F6374',
   gunmetal: '#1C2938',
-  gunmetalGradient: 'linear-gradient(180deg, #263440 0%, #1C2938 100%)',
+  gunmetalGradient:
+    'linear-gradient(180deg, #1e2529 0%, #1C2938 50%, #1C2938 100%)',
   lightGray: '#D5DBD8',
   midnightBlue: '#212E3D',
   navyBlue: '#314352',

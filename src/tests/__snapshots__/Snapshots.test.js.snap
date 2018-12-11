@@ -7603,7 +7603,7 @@ exports[`Formula with other text 1`] = `
 
 exports[`NavBar base 1`] = `
 <header
-  className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary NavBar-root"
+  className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed NavBar-root"
 >
   <div
     className="MuiToolbar-root MuiToolbar-gutters NavBar-toolbar"
