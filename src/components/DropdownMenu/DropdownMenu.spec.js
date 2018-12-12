@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { mount } from 'enzyme';
 
 import DropdownMenu from './DropdownMenu.container';
-import { Button } from 'material-ui';
+import { Button } from '@material-ui/core';
 import ThemeProvider from '../../providers/theme';
 
 describe('<DropdownMenu/>', () => {

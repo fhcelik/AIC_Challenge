@@ -1,8 +1,8 @@
-import { ClickAwayListener, Collapse } from 'material-ui';
-import DownIcon from 'material-ui-icons/ArrowDropDown';
-import { withStyles } from 'material-ui/styles';
+import { ClickAwayListener, Collapse } from '@material-ui/core';
+import DownIcon from '@material-ui/icons/ArrowDropDown';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import { Manager, Popper, Target } from 'react-popper';
 
 const styles = theme => ({

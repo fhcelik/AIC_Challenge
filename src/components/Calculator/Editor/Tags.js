@@ -1,8 +1,9 @@
 import cx from 'classnames';
-import { Chip, withStyles } from 'material-ui';
+import { Chip } from '@material-ui/core';
 import ChipInput from 'material-ui-chip-input';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 
 const styles = theme => ({

@@ -1,11 +1,11 @@
-import CancelIcon from 'material-ui-icons/Cancel';
-import { CircularProgress, Grid, Typography } from 'material-ui';
+import CancelIcon from '@material-ui/icons/Cancel';
+import { CircularProgress, Grid, Typography } from '@material-ui/core';
 import cx from 'classnames';
-import EditIcon from 'material-ui-icons/Edit';
-import InfoIcon from 'material-ui-icons/InfoOutline';
+import EditIcon from '@material-ui/icons/Edit';
+import InfoIcon from '@material-ui/icons/InfoOutlined';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
 import Author from '../../Author';

@@ -1,8 +1,8 @@
 import { Input } from '@material-ui/core';
-import { withStyles } from 'material-ui';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   searchIcon: {

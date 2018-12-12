@@ -4,13 +4,13 @@ import {
   ListItem,
   ListItemIcon,
   TextField,
-  withStyles,
-} from 'material-ui';
-import AddIcon from 'material-ui-icons/AddCircleOutline';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
-import NewIcon from 'material-ui-icons/RadioButtonUnchecked';
+} from '@material-ui/core';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import NewIcon from '@material-ui/icons/RadioButtonUnchecked';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   header: {

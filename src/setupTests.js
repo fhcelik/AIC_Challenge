@@ -21,9 +21,8 @@ const mockAsyncActionCreator = () => ({
   payload: Promise.resolve(),
 });
 
-jest.mock('material-ui/Tooltip', () => 'Tooltip');
-jest.mock('material-ui/transitions/Slide', () => 'Slide');
-jest.mock('material-ui/Tooltip', () => 'Tooltip');
+jest.mock('@material-ui/core/Tooltip', () => 'Tooltip');
+jest.mock('@material-ui/core/Slide', () => 'Slide');
 jest.mock('react-stack-grid', () => 'StackGrid');
 jest.mock('./redux/actions/collections', () => ({
   fetchCollection: mockAsyncActionCreator,

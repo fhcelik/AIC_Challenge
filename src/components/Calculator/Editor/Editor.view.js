@@ -1,9 +1,9 @@
 import cx from 'classnames';
-import { Grid, IconButton, Input, TextField } from 'material-ui';
-import AddIcon from 'material-ui-icons/AddCircleOutline';
-import CancelIcon from 'material-ui-icons/Cancel';
-import PreviewIcon from 'material-ui-icons/PlayCircleFilled';
-import { withStyles } from 'material-ui/styles';
+import { Grid, IconButton, Input, TextField } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
+import CancelIcon from '@material-ui/icons/Cancel';
+import PreviewIcon from '@material-ui/icons/PlayCircleFilled';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { dot } from '../../../images';

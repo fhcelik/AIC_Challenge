@@ -1,7 +1,8 @@
-import AccountIcon from 'material-ui-icons/AccountCircle';
-import { Button, Grid, Typography, withStyles } from '@material-ui/core';
+import AccountIcon from '@material-ui/icons/AccountCircle';
+import { Button, Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '../../../TextField';
 
 const emailPattern =
@@ -67,7 +68,6 @@ const Form = ({
       <Grid container direction="column" alignItems="center">
         {open && (
           <TextField
-            className={classes.textField}
             onChange={onInputChange}
             name="email"
             label="Email"

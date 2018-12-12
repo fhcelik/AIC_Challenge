@@ -15,6 +15,6 @@ describe('<UnitSelect/>', () => {
 
     wrapper.find('[role="button"]').simulate('click');
     wrapper.find(`li [data-value="${value}"]`).simulate('click');
-    expect(onChange.lastCall.lastArg.target.value).to.equal(value);
+    expect(onChange.lastCall.lastArg.key).to.equal(value);
   });
 });

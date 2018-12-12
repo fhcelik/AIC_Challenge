@@ -1,11 +1,12 @@
 import * as R from 'ramda';
 import cx from 'classnames';
-import { AppBar, Toolbar, withStyles } from 'material-ui';
+import { AppBar, Toolbar } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { compose } from 'recompose';
+import { withStyles } from '@material-ui/core/styles';
 import { Routes } from '../App/Routing';
 import SearchBar from '../SearchBar';
 import CollectionSelect from './CollectionSelect';

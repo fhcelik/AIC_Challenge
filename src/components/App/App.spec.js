@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { createShallow } from 'material-ui/test-utils';
+import { createShallow } from '@material-ui/core/test-utils';
 import React from 'react';
 import ThemeProvider from '../../providers/theme';
 import App from './index';
@@ -7,6 +7,10 @@ import Routing from './Routing';
 import NavBar from '../NavBar';
 
 describe('<App/>', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
   it('renders navigation and routing', () => {
     const shallow = createShallow({ untilSelector: 'App' });
     const wrapper = shallow(

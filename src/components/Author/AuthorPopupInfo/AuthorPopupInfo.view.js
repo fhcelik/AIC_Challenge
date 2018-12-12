@@ -1,9 +1,10 @@
-import AccountIcon from 'material-ui-icons/AccountBox';
+import AccountIcon from '@material-ui/icons/AccountBox';
 import cx from 'classnames';
-import { Button, Grid, TextField, Typography, withStyles } from 'material-ui';
+import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import { Routes } from '../../App/Routing';
 
 const styles = theme => ({

@@ -1,8 +1,7 @@
-import { TextField } from '@material-ui/core';
-import Grid from 'material-ui/Grid';
-import { withStyles } from 'material-ui/styles';
+import { Grid, TextField } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import UnitSelect from '../../UnitSelect';
 import { ArgumentStyles as styles } from '../sharedStyles';
 

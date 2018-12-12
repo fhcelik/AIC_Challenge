@@ -1,13 +1,8 @@
-import {
-  Icon,
-  ListItem,
-  ListItemIcon,
-  Typography,
-  withStyles,
-} from 'material-ui';
-import CheckedIcon from 'material-ui-icons/Check';
+import { Icon, ListItem, ListItemIcon, Typography } from '@material-ui/core';
+import CheckedIcon from '@material-ui/icons/Check';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {

@@ -1,6 +1,6 @@
-import { withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import Calculator from '../';
 
 const styles = {
@@ -12,6 +12,7 @@ const SingleCalculator = ({ classes, id }) => (
     <Calculator id={id} />
   </div>
 );
+
 SingleCalculator.propTypes = {
   classes: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired,

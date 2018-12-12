@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from 'material-ui/Typography';
+import { Typography } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
-function ErrorCatch({ message }) {
-  return <Typography variant="display4">{message}</Typography>
+const styles = theme => ({
+  root: {
+    ...theme.typography.display4,
+  },
+});
+
+function ErrorCatch({ classes, message }) {
+  return <Typography className={classes.root}>{message}</Typography>;
 }
 
 ErrorCatch.propTypes = {
+  classes: PropTypes.object.isRequired,
   message: PropTypes.string.isRequired,
 };
 
-export default ErrorCatch;
+export default withStyles(styles)(ErrorCatch);

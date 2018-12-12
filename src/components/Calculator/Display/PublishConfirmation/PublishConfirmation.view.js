@@ -1,4 +1,4 @@
-import PublishIcon from 'material-ui-icons/Publish';
+import PublishIcon from '@material-ui/icons/Publish';
 import React from 'react';
 import DropdownMenu from '../../../DropdownMenu';
 import HeaderButton from '../../HeaderButton';

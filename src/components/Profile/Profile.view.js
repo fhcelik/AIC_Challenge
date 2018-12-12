@@ -1,17 +1,13 @@
-import {
-  Button,
-  CircularProgress,
-  Grid,
-  Typography,
-  withStyles,
-} from 'material-ui';
+import { Button, CircularProgress, Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '../TextField';
 
 const styles = theme => ({
   title: {
     textTransform: 'uppercase',
+    ...theme.typography.display4,
   },
   fields: {
     marginTop: 20,
@@ -50,12 +46,10 @@ const Profile = ({
   role,
 }) => (
   <div className={classes.root}>
-    <Typography variant="display4" className={classes.title}>
-      YOUR PROFILE
-    </Typography>
+    <Typography className={classes.title}>YOUR PROFILE</Typography>
     <Grid container direction="column" className={classes.fields}>
       <TextField label="Email" value={email} disabled />
-    <TextField
+      <TextField
         label="Full Name"
         value={fullName}
         onChange={onChangeFullName}

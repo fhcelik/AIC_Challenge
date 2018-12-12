@@ -1,8 +1,8 @@
-import AddIcon from 'material-ui-icons/AddCircleOutline';
-import Button from 'material-ui/Button';
-import { withStyles } from 'material-ui/styles';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
+import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {

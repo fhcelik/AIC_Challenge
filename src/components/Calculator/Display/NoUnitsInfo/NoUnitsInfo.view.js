@@ -1,8 +1,8 @@
-import { Grid, Typography } from 'material-ui';
-import ErrorIcon from 'material-ui-icons/ErrorOutline';
+import { Grid, Typography } from '@material-ui/core';
+import ErrorIcon from '@material-ui/icons/ErrorOutline';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {

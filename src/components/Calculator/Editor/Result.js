@@ -1,7 +1,8 @@
 import cx from 'classnames';
-import { Input, withStyles } from 'material-ui';
+import { Input } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import UnitSelect from '../../UnitSelect';
 import { ResultStyles } from '../sharedStyles';
 

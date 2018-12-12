@@ -1,8 +1,9 @@
 import cx from 'classnames';
-import { IconButton, Snackbar, withStyles } from 'material-ui';
-import CloseIcon from 'material-ui-icons/Close';
+import { IconButton, Snackbar } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   message: {

@@ -1,7 +1,7 @@
 import cx from 'classnames';
-import { Grid, IconButton, TextField } from 'material-ui';
-import DeleteIcon from 'material-ui-icons/RemoveCircleOutline';
-import { withStyles } from 'material-ui/styles';
+import { Grid, IconButton, TextField } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/RemoveCircleOutline';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import UnitSelect from '../../UnitSelect';

@@ -1,7 +1,8 @@
-import { List, withStyles } from 'material-ui';
-import AddToCollectionIcon from 'material-ui-icons/PlaylistAdd';
+import { List } from '@material-ui/core';
+import AddToCollectionIcon from '@material-ui/icons/PlaylistAdd';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import DropdownMenu from '../../../DropdownMenu';
 import CollectionChecklist from './CollectionChecklist';
 import CollectionCreatorList from './CollectionCreatorList';

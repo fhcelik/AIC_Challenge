@@ -1,7 +1,8 @@
-import AccountIcon from 'material-ui-icons/AccountBox';
-import { Tooltip, withStyles } from 'material-ui';
+import AccountIcon from '@material-ui/icons/AccountBox';
+import { Tooltip } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import AuthorPopupInfo from './AuthorPopupInfo';
 
 const styles = theme => ({
@@ -9,6 +10,9 @@ const styles = theme => ({
     fontSize: 24,
     color: theme.palette.text.primary,
     marginRight: 10,
+  },
+  popper: {
+    opacity: 0.97,
   },
   tooltip: {
     padding: 0,
@@ -20,8 +24,9 @@ const styles = theme => ({
 const Author = ({ classes, fetchUser, id }) => (
   <Tooltip
     title={<AuthorPopupInfo id={id} />}
-    classes={{ tooltip: classes.tooltip }}
+    classes={{ tooltip: classes.tooltip, popper: classes.popper }}
     placement="bottom-start"
+    interactive
   >
     <AccountIcon onMouseEnter={fetchUser} className={classes.icon} />
   </Tooltip>

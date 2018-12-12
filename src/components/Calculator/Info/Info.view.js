@@ -1,9 +1,9 @@
 import cx from 'classnames';
-import { Grid, TextField, Typography } from 'material-ui';
-import CancelIcon from 'material-ui-icons/Cancel';
-import { withStyles } from 'material-ui/styles';
+import { Grid, TextField, Typography } from '@material-ui/core';
+import CancelIcon from '@material-ui/icons/Cancel';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import Author from '../../Author';
 import Formula from '../Formula';
 import Header from '../Header';

@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import { TextField, withStyles } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {

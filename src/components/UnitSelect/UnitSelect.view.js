@@ -1,28 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuItem } from 'material-ui/Menu';
-import Select from 'material-ui/Select';
+import { MenuItem, Select } from '@material-ui/core';
 import * as R from 'ramda';
 
-function UnitSelect({ classes, name, defaultUnit, units, onChange }) {
-  const unitOptions = units.map(unit => (
-    <MenuItem key={unit} value={unit}>
-      {unit}
-    </MenuItem>
-  ));
-  return (
-    <Select
-      value={defaultUnit || R.head(units)}
-      onChange={onChange}
-      classes={classes}
-      inputProps={{
-        name,
-      }}
-    >
-      {unitOptions}
-    </Select>
-  );
-}
+const UnitSelect = ({ classes, name, defaultUnit, units, onChange }) => (
+  <Select
+    value={defaultUnit || R.head(units)}
+    onChange={onChange}
+    classes={classes}
+    inputProps={{ name }}
+  >
+    {units.map(unit => (
+      <MenuItem key={unit} value={unit}>
+        {unit}
+      </MenuItem>
+    ))}
+  </Select>
+);
 
 UnitSelect.propTypes = {
   classes: PropTypes.object,

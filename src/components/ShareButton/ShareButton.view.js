@@ -1,5 +1,5 @@
-import { Tooltip } from 'material-ui';
-import ShareIcon from 'material-ui-icons/Share';
+import { Tooltip } from '@material-ui/core';
+import ShareIcon from '@material-ui/icons/Share';
 import PropTypes from 'prop-types';
 import React from 'react';
 import HeaderButton from '../Calculator/HeaderButton';

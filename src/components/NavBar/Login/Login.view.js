@@ -5,16 +5,17 @@ import {
   DialogContent,
   DialogContentText,
   Grid,
-  withStyles,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import DropdownMenu from '../../DropdownMenu';
 import Form from './Form';
 
 const styles = theme => ({
   button: {
-    padding: '1.15em',
+    padding: '1em',
+    paddingRight: '1.5em',
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: theme.palette.link.hover,

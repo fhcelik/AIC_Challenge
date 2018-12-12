@@ -1,5 +1,5 @@
-import CssBaseline from 'material-ui/CssBaseline';
-import { createMuiTheme, MuiThemeProvider } from 'material-ui/styles';
+import { CssBaseline } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import './app.css';
 
@@ -68,6 +68,7 @@ const palette = {
 };
 
 const typography = {
+  useNextVariants: true,
   fontFamily: 'oxygen mono',
   subheading: {
     fontSize: '0.7rem',
@@ -102,6 +103,13 @@ const theme = createMuiTheme({
   palette,
   typography,
   overrides: {
+    MuiFormLabel: {
+      root: {
+        '&$disabled': {
+          color: colors.darkGray,
+        },
+      },
+    },
     MuiTypography: {
       root: {
         color: palette.text.primary,
@@ -164,6 +172,7 @@ const theme = createMuiTheme({
         '&:hover': {
           backgroundColor: 'none',
         },
+        padding: 0,
       },
     },
     MuiListItemIcon: {

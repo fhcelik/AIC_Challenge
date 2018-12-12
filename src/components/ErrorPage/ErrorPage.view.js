@@ -1,6 +1,7 @@
 import cx from 'classnames';
-import { Grid, Typography, withStyles } from 'material-ui';
+import { Grid, Typography } from '@material-ui/core';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {

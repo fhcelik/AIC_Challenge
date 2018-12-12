@@ -10,7 +10,7 @@ import {
   withStateHandlers,
 } from 'recompose';
 import { FLIP_TIME } from './Flipper';
-import { withStyles } from 'material-ui';
+import { withStyles } from '@material-ui/core/styles';
 
 const SIDES = {
   front: 'front',

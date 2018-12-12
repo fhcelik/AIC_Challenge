@@ -1,11 +1,12 @@
-import CancelIcon from 'material-ui-icons/Cancel';
+import CancelIcon from '@material-ui/icons/Cancel';
 import { compose, getContext } from 'recompose';
-import ConfirmIcon from 'material-ui-icons/CheckCircle';
+import ConfirmIcon from '@material-ui/icons/CheckCircle';
 import cx from 'classnames';
-import { Grid, Typography, withStyles } from 'material-ui';
+import { Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import PublishIcon from 'material-ui-icons/Publish';
+import PublishIcon from '@material-ui/icons/Publish';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {

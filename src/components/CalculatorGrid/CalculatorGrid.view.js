@@ -1,19 +1,21 @@
-import { Grid, Typography, withStyles } from 'material-ui';
+import { Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import StackGrid from 'react-stack-grid';
+import { withStyles } from '@material-ui/core/styles';
 import Calculator from '../Calculator';
 import NewCalculatorButton from '../NewCalculatorButton';
 import ShareButton from '../ShareButton';
 
-const styles = {
+const styles = theme => ({
   grid: {
     marginTop: '30px',
   },
   title: {
     textTransform: 'uppercase',
+    ...theme.typography.display4,
   },
-};
+});
 
 const CalculatorGrid = ({
   calculatorIds,
@@ -32,9 +34,7 @@ const CalculatorGrid = ({
       className={classes.header}
     >
       <Grid item>
-        <Typography variant="display4" className={classes.title}>
-          {title}
-        </Typography>
+        <Typography className={classes.title}>{title}</Typography>
       </Grid>
       <Grid item>
         {urlToShare && (

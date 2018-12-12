@@ -1,14 +1,9 @@
-import AccountIcon from 'material-ui-icons/AccountBox';
-import {
-  Button,
-  ListItem,
-  MenuList,
-  Typography,
-  withStyles,
-} from 'material-ui';
+import AccountIcon from '@material-ui/icons/AccountBox';
+import { Button, ListItem, MenuList, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import DropdownMenu from '../../DropdownMenu';
 import { Routes } from '../../App/Routing';
 
@@ -39,6 +34,7 @@ const styles = theme => ({
   },
   listItemText: {
     textTransform: 'uppercase',
+    ...theme.typography.display3,
   },
 });
 
@@ -56,9 +52,7 @@ const UserProfileMenu = ({ classes, fullName, onLogout }) => (
     <MenuList disablePadding role="menu">
       <NavLink to={Routes.profile} exact>
         <ListItem color="inherit" button className={classes.listItem}>
-          <Typography variant="display3" className={classes.listItemText}>
-            Profile
-          </Typography>
+          <Typography className={classes.listItemText}>Profile</Typography>
         </ListItem>
       </NavLink>
       <ListItem
@@ -67,9 +61,7 @@ const UserProfileMenu = ({ classes, fullName, onLogout }) => (
         className={classes.listItem}
         onClick={onLogout}
       >
-        <Typography variant="display3" className={classes.listItemText}>
-          Logout
-        </Typography>
+        <Typography className={classes.listItemText}>Logout</Typography>
       </ListItem>
     </MenuList>
   </DropdownMenu>

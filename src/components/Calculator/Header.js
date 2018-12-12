@@ -1,5 +1,5 @@
-import Grid from 'material-ui/Grid';
-import { withStyles } from 'material-ui/styles';
+import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 

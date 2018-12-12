@@ -1,8 +1,7 @@
-import Grid from 'material-ui/Grid';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
+import { Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import UnitSelect from '../../UnitSelect';
 import { ResultStyles as styles } from '../sharedStyles';
 

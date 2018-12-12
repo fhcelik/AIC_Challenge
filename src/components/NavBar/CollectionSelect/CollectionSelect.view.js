@@ -1,15 +1,19 @@
-import { ListItem, MenuList, Typography, withStyles } from 'material-ui';
 import * as R from 'ramda';
+import cx from 'classnames';
+import { ListItem, MenuList, Typography } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
-
-import { NavLink } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import DropdownMenu from '../../DropdownMenu';
 import { Routes } from '../../App/Routing';
 
 const styles = theme => ({
   '@global a, a:active, a:visited': {
     textDecoration: 'none',
+  },
+  target: {
+    ...theme.typography.display3,
   },
   listItem: {
     color: 'white',
@@ -23,6 +27,7 @@ const styles = theme => ({
   listItemText: {
     textTransform: 'uppercase',
     maxWidth: '300px',
+    ...theme.typography.display3,
   },
 });
 
@@ -35,9 +40,8 @@ const CollectionSelect = ({
   <DropdownMenu
     target={
       <Typography
-        className={className}
+        className={cx(classes.target, className)}
         onClick={onTargetClick}
-        variant="display3"
       >
         Collections
       </Typography>
@@ -53,7 +57,6 @@ const CollectionSelect = ({
           >
             <ListItem button className={classes.listItem}>
               <Typography
-                variant="display3"
                 color="inherit"
                 noWrap
                 className={classes.listItemText}

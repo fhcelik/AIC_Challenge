@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flipper, Front, Back } from './index';
 import { compose, withStateHandlers, lifecycle } from 'recompose';
-import { Typography } from 'material-ui';
+import { Typography } from '@material-ui/core';
 
 const style = {
   backgroundColor: 'black',

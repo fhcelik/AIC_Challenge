@@ -1,4 +1,4 @@
-import { CircularProgress } from 'material-ui';
+import { CircularProgress } from '@material-ui/core';
 import React from 'react';
 import { branch, compose, flattenProp, pure, renderComponent } from 'recompose';
 import { connect } from 'react-redux';
