@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { MenuItem, Select } from '@material-ui/core';
 import * as R from 'ramda';
 
-const UnitSelect = ({ classes, name, defaultUnit, units, onChange }) => (
-  <Select
-    value={defaultUnit || R.head(units)}
-    onChange={onChange}
-    classes={classes}
-    inputProps={{ name }}
-  >
+const UnitSelect = ({
+  defaultUnit,
+  dispatch,
+  name,
+  units,
+  unrestricted,
+  ...props
+}) => (
+  <Select value={defaultUnit || R.head(units)} inputProps={{ name }} {...props}>
     {units.map(unit => (
       <MenuItem key={unit} value={unit}>
         {unit}
@@ -19,11 +21,11 @@ const UnitSelect = ({ classes, name, defaultUnit, units, onChange }) => (
 );
 
 UnitSelect.propTypes = {
-  classes: PropTypes.object,
-  name: PropTypes.string.isRequired,
   defaultUnit: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  dispatch: PropTypes.func,
   units: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onChange: PropTypes.func.isRequired,
+  unrestricted: PropTypes.bool,
 };
 
 export default UnitSelect;

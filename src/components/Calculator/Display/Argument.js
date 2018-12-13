@@ -1,13 +1,14 @@
-import { Grid, TextField } from '@material-ui/core';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import TextField from '../../TextField';
 import UnitSelect from '../../UnitSelect';
 import { ArgumentStyles as styles } from '../sharedStyles';
 
 const Argument = ({
   classes,
-  theme,
+  className,
   name,
   alias = name,
   value,
@@ -15,42 +16,30 @@ const Argument = ({
   onArgValueChange,
   onArgUnitChange,
 }) => (
-  <div className={classes.argument}>
-    <Grid
-      container
-      direction="column"
-      alignItems="flex-start"
-      className={classes.container}
-    >
-      <Grid container justify="space-between">
-        <TextField
-          className={classes.textField}
-          autoComplete="off"
+  <TextField
+    className={cx(classes.textField, className)}
+    autoComplete="off"
+    name={name}
+    label={alias}
+    type="number"
+    value={value}
+    onChange={onArgValueChange}
+    InputProps={{
+      endAdornment: unit && (
+        <UnitSelect
           name={name}
-          label={alias}
-          type="number"
-          value={value}
-          onChange={onArgValueChange}
-          InputProps={{
-            endAdornment: unit && (
-              <UnitSelect
-                name={name}
-                defaultUnit={unit}
-                onChange={onArgUnitChange}
-              />
-            ),
-          }}
-          {...theme.props.MuiFormControl}
-          InputLabelProps={{ className: classes.label }}
+          defaultUnit={unit}
+          className={classes.endAdornmentRoot}
+          onChange={onArgUnitChange}
         />
-      </Grid>
-    </Grid>
-  </div>
+      ),
+    }}
+  />
 );
 
 Argument.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   alias: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -59,4 +48,4 @@ Argument.propTypes = {
   onArgUnitChange: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Argument);
+export default withStyles(styles)(Argument);

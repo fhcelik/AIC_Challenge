@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import { Grid, IconButton, Input, TextField } from '@material-ui/core';
+import { Grid, IconButton, Input } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/AddCircleOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
 import PreviewIcon from '@material-ui/icons/PlayCircleFilled';
@@ -14,6 +14,7 @@ import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 import Argument from './Argument';
 import Result from './Result';
 import Tags from './Tags';
+import TextField from '../../TextField';
 
 const styles = theme => ({
   ...CalculatorStyles(theme),
@@ -22,10 +23,15 @@ const styles = theme => ({
     backgroundImage: `url(${dot})`,
     paddingBottom: '0.3em',
   },
-
   addIcon: {
     color: theme.palette.text.primary,
     fontSize: '30px',
+  },
+  title: {
+    minHeight: 22,
+  },
+  description: {
+    margin: -2,
   },
 });
 
@@ -49,7 +55,6 @@ const Editor = ({
   resultBaseUnit,
   showDisplay,
   tags,
-  theme,
   title,
 }) => (
   <Grid className={cx(classes.root, classes.editorRoot)}>
@@ -79,7 +84,7 @@ const Editor = ({
         type="text"
         multiline
         className={classes.title}
-        classes={{ input: classes.titleText }}
+        classes={{ input: cx(classes.titleText, classes.title) }}
       />
       <Tags tags={tags} onTagAdd={onTagAdd} onTagDelete={onTagDelete} />
       <Grid
@@ -111,21 +116,16 @@ const Editor = ({
       <Grid className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
       </Grid>
-      <Grid className={classes.border}>
-        <TextField
-          autoComplete="off"
-          name="description"
-          label="DESCRIPTION"
-          value={description}
-          onChange={onDescriptionChange}
-          type="text"
-          multiline
-          {...theme.props.MuiFormControl}
-          InputProps={{
-            classes: { input: classes.description },
-          }}
-        />
-      </Grid>
+      <TextField
+        className={classes.description}
+        autoComplete="off"
+        name="description"
+        label="DESCRIPTION"
+        value={description}
+        onChange={onDescriptionChange}
+        type="text"
+        multiline
+      />
     </Grid>
   </Grid>
 );
@@ -152,8 +152,7 @@ Editor.propTypes = {
   resultBaseUnit: PropTypes.string,
   showDisplay: PropTypes.func,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  theme: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Editor);
+export default withStyles(styles)(Editor);

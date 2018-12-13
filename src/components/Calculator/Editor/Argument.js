@@ -1,20 +1,27 @@
 import cx from 'classnames';
-import { Grid, IconButton, TextField } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/RemoveCircleOutline';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TextField from '../../TextField';
 import UnitSelect from '../../UnitSelect';
 import { ArgumentStyles } from '../sharedStyles';
 
 const styles = theme => ({
-  ...ArgumentStyles(theme),
+  ...ArgumentStyles,
+  root: {
+    margin: '-2px 0 0 0',
+    '& input': {
+      textTransform: 'uppercase',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+    },
+  },
   deleteButton: {
     position: 'absolute',
-    top: 5,
-    right: 5,
-    width: '16px',
-    height: '16px',
+    bottom: 25,
+    right: -7,
   },
   deleteIcon: {
     color: theme.palette.text.primary,
@@ -22,7 +29,7 @@ const styles = theme => ({
   },
 });
 
-function Argument({
+const Argument = ({
   classes,
   name,
   alias = name,
@@ -30,38 +37,36 @@ function Argument({
   onArgAliasChange,
   onArgUnitChange,
   onArgRemove,
-}) {
-  return (
-    <Grid
-      container
-      direction="column"
-      className={cx(classes.argument, classes.container)}
-    >
-      <TextField
-        autoComplete="off"
-        name={name}
-        label={`ARGUMENT: ${name}`}
-        type="text"
-        value={alias}
-        onChange={onArgAliasChange}
-        InputProps={{
-          endAdornment: (
-            <UnitSelect
-              name={name}
-              defaultUnit={unit}
-              unrestricted
-              onChange={onArgUnitChange}
-            />
-          ),
-        }}
-      />
-
-      <IconButton className={classes.deleteButton} onClick={onArgRemove(name)}>
-        <DeleteIcon className={classes.deleteIcon} />
-      </IconButton>
-    </Grid>
-  );
-}
+}) => (
+  <TextField
+    className={cx(classes.root, classes.textField)}
+    autoComplete="off"
+    name={name}
+    label={`ARGUMENT: ${name}`}
+    type="text"
+    value={alias}
+    onChange={onArgAliasChange}
+    InputProps={{
+      endAdornment: (
+        <Grid className={classes.endAdornmentRoot}>
+          <IconButton
+            className={classes.deleteButton}
+            onClick={onArgRemove(name)}
+          >
+            <DeleteIcon className={classes.deleteIcon} />
+          </IconButton>
+          <UnitSelect
+            className={classes.endAdornmentRoot}
+            name={name}
+            defaultUnit={unit}
+            unrestricted
+            onChange={onArgUnitChange}
+          />
+        </Grid>
+      ),
+    }}
+  />
+);
 
 Argument.propTypes = {
   classes: PropTypes.object.isRequired,

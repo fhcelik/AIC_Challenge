@@ -780,197 +780,173 @@ exports[`Calculator mwCalcId 1`] = `
             className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
           >
             <div
-              className="Argument-argument"
+              aria-describedby={undefined}
+              className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
-              <div
-                className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+              <label
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                data-shrink={true}
+                htmlFor={undefined}
               >
+                pressure
+              </label>
+              <div
+                className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoComplete="off"
+                  autoFocus={undefined}
+                  className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="pressure"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={false}
+                  rows={undefined}
+                  type="number"
+                  value={5000}
+                />
                 <div
-                  className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                  className="MuiInputBase-root MuiInput-root Argument-endAdornmentRoot"
+                  onClick={[Function]}
                 >
                   <div
-                    aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                    className="MuiSelect-root"
                   >
-                    <label
-                      className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                      data-shrink={true}
-                      htmlFor={undefined}
-                    >
-                      pressure
-                    </label>
                     <div
-                      className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
+                      aria-haspopup="true"
+                      aria-owns={undefined}
+                      aria-pressed="false"
+                      className="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
                     >
-                      <input
-                        aria-invalid={false}
-                        autoComplete="off"
-                        autoFocus={undefined}
-                        className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
-                        defaultValue={undefined}
-                        disabled={false}
-                        id={undefined}
-                        name="pressure"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={undefined}
-                        onKeyUp={undefined}
-                        placeholder={undefined}
-                        readOnly={undefined}
-                        required={false}
-                        rows={undefined}
-                        type="number"
-                        value={5000}
-                      />
-                      <div
-                        className="MuiInputBase-root MuiInput-root"
-                        onClick={[Function]}
-                      >
-                        <div
-                          className="MuiSelect-root"
-                        >
-                          <div
-                            aria-haspopup="true"
-                            aria-owns={undefined}
-                            aria-pressed="false"
-                            className="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            psi
-                          </div>
-                          <input
-                            autoComplete={undefined}
-                            autoFocus={undefined}
-                            defaultValue={undefined}
-                            id={undefined}
-                            name="pressure"
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            rows={undefined}
-                            type="hidden"
-                            value="psi"
-                          />
-                          <svg
-                            aria-hidden="true"
-                            className="MuiSvgIcon-root MuiSelect-icon"
-                            color={undefined}
-                            focusable="false"
-                            role="presentation"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              d="M7 10l5 5 5-5z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
+                      psi
                     </div>
+                    <input
+                      autoComplete={undefined}
+                      autoFocus={undefined}
+                      defaultValue={undefined}
+                      id={undefined}
+                      name="pressure"
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      rows={undefined}
+                      type="hidden"
+                      value="psi"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root MuiSelect-icon"
+                      color={undefined}
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7 10l5 5 5-5z"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              className="Argument-argument"
+              aria-describedby={undefined}
+              className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
-              <div
-                className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+              <label
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                data-shrink={true}
+                htmlFor={undefined}
               >
+                TVD
+              </label>
+              <div
+                className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoComplete="off"
+                  autoFocus={undefined}
+                  className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="TVD"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={false}
+                  rows={undefined}
+                  type="number"
+                  value={8000}
+                />
                 <div
-                  className="MuiGrid-container MuiGrid-justify-xs-space-between"
+                  className="MuiInputBase-root MuiInput-root Argument-endAdornmentRoot"
+                  onClick={[Function]}
                 >
                   <div
-                    aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
+                    className="MuiSelect-root"
                   >
-                    <label
-                      className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                      data-shrink={true}
-                      htmlFor={undefined}
-                    >
-                      TVD
-                    </label>
                     <div
-                      className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
+                      aria-haspopup="true"
+                      aria-owns={undefined}
+                      aria-pressed="false"
+                      className="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                      onBlur={[Function]}
                       onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
                     >
-                      <input
-                        aria-invalid={false}
-                        autoComplete="off"
-                        autoFocus={undefined}
-                        className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
-                        defaultValue={undefined}
-                        disabled={false}
-                        id={undefined}
-                        name="TVD"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={undefined}
-                        onKeyUp={undefined}
-                        placeholder={undefined}
-                        readOnly={undefined}
-                        required={false}
-                        rows={undefined}
-                        type="number"
-                        value={8000}
-                      />
-                      <div
-                        className="MuiInputBase-root MuiInput-root"
-                        onClick={[Function]}
-                      >
-                        <div
-                          className="MuiSelect-root"
-                        >
-                          <div
-                            aria-haspopup="true"
-                            aria-owns={undefined}
-                            aria-pressed="false"
-                            className="MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            ft
-                          </div>
-                          <input
-                            autoComplete={undefined}
-                            autoFocus={undefined}
-                            defaultValue={undefined}
-                            id={undefined}
-                            name="TVD"
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            rows={undefined}
-                            type="hidden"
-                            value="ft"
-                          />
-                          <svg
-                            aria-hidden="true"
-                            className="MuiSvgIcon-root MuiSelect-icon"
-                            color={undefined}
-                            focusable="false"
-                            role="presentation"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              d="M7 10l5 5 5-5z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
+                      ft
                     </div>
+                    <input
+                      autoComplete={undefined}
+                      autoFocus={undefined}
+                      defaultValue={undefined}
+                      id={undefined}
+                      name="TVD"
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      rows={undefined}
+                      type="hidden"
+                      value="ft"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root MuiSelect-icon"
+                      color={undefined}
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7 10l5 5 5-5z"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -1349,153 +1325,117 @@ exports[`Calculator quadraticCalcId 1`] = `
             className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
           >
             <div
-              className="Argument-argument"
+              aria-describedby={undefined}
+              className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
-              <div
-                className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+              <label
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                data-shrink={true}
+                htmlFor={undefined}
               >
-                <div
-                  className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                >
-                  <div
-                    aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                  >
-                    <label
-                      className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                      data-shrink={true}
-                      htmlFor={undefined}
-                    >
-                      a
-                    </label>
-                    <div
-                      className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                      onClick={[Function]}
-                    >
-                      <input
-                        aria-invalid={false}
-                        autoComplete="off"
-                        autoFocus={undefined}
-                        className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                        defaultValue={undefined}
-                        disabled={false}
-                        id={undefined}
-                        name="a"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={undefined}
-                        onKeyUp={undefined}
-                        placeholder={undefined}
-                        readOnly={undefined}
-                        required={false}
-                        rows={undefined}
-                        type="number"
-                        value={1}
-                      />
-                    </div>
-                  </div>
-                </div>
+                a
+              </label>
+              <div
+                className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoComplete="off"
+                  autoFocus={undefined}
+                  className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="a"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={false}
+                  rows={undefined}
+                  type="number"
+                  value={1}
+                />
               </div>
             </div>
             <div
-              className="Argument-argument"
+              aria-describedby={undefined}
+              className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
-              <div
-                className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+              <label
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                data-shrink={true}
+                htmlFor={undefined}
               >
-                <div
-                  className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                >
-                  <div
-                    aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                  >
-                    <label
-                      className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                      data-shrink={true}
-                      htmlFor={undefined}
-                    >
-                      b
-                    </label>
-                    <div
-                      className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                      onClick={[Function]}
-                    >
-                      <input
-                        aria-invalid={false}
-                        autoComplete="off"
-                        autoFocus={undefined}
-                        className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                        defaultValue={undefined}
-                        disabled={false}
-                        id={undefined}
-                        name="b"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={undefined}
-                        onKeyUp={undefined}
-                        placeholder={undefined}
-                        readOnly={undefined}
-                        required={false}
-                        rows={undefined}
-                        type="number"
-                        value={8}
-                      />
-                    </div>
-                  </div>
-                </div>
+                b
+              </label>
+              <div
+                className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoComplete="off"
+                  autoFocus={undefined}
+                  className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="b"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={false}
+                  rows={undefined}
+                  type="number"
+                  value={8}
+                />
               </div>
             </div>
             <div
-              className="Argument-argument"
+              aria-describedby={undefined}
+              className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
-              <div
-                className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+              <label
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                data-shrink={true}
+                htmlFor={undefined}
               >
-                <div
-                  className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                >
-                  <div
-                    aria-describedby={undefined}
-                    className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                  >
-                    <label
-                      className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                      data-shrink={true}
-                      htmlFor={undefined}
-                    >
-                      c
-                    </label>
-                    <div
-                      className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                      onClick={[Function]}
-                    >
-                      <input
-                        aria-invalid={false}
-                        autoComplete="off"
-                        autoFocus={undefined}
-                        className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                        defaultValue={undefined}
-                        disabled={false}
-                        id={undefined}
-                        name="c"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={undefined}
-                        onKeyUp={undefined}
-                        placeholder={undefined}
-                        readOnly={undefined}
-                        required={false}
-                        rows={undefined}
-                        type="number"
-                        value={-9}
-                      />
-                    </div>
-                  </div>
-                </div>
+                c
+              </label>
+              <div
+                className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoComplete="off"
+                  autoFocus={undefined}
+                  className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="c"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={false}
+                  rows={undefined}
+                  type="number"
+                  value={-9}
+                />
               </div>
             </div>
           </div>
@@ -1763,153 +1703,117 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                 className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
               >
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          a
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="a"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={3}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    a
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="a"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={3}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          b
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="b"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={6}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    b
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="b"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={6}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          c
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="c"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={10}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    c
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="c"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={10}
+                    />
                   </div>
                 </div>
               </div>
@@ -2179,153 +2083,117 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                 className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
               >
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          a
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="a"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={1}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    a
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="a"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={1}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          b
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="b"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={8}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    b
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="b"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={8}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          c
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="c"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={-9}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    c
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="c"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={-9}
+                    />
                   </div>
                 </div>
               </div>
@@ -2720,153 +2588,117 @@ exports[`Collection base 1`] = `
                 className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
               >
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          a
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="a"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={1}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    a
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="a"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={1}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          b
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="b"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={8}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    b
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="b"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={8}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          c
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="c"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={-9}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    c
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="c"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={-9}
+                    />
                   </div>
                 </div>
               </div>
@@ -3187,153 +3019,117 @@ exports[`Collection base 1`] = `
                 className="MuiGrid-container MuiGrid-direction-xs-column Display-args"
               >
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          a
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="a"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={1}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    a
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="a"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={1}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          b
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="b"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={8}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    b
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="b"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={8}
+                    />
                   </div>
                 </div>
                 <div
-                  className="Argument-argument"
+                  aria-describedby={undefined}
+                  className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
-                  <div
-                    className="MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-flex-start Argument-container"
+                  <label
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    data-shrink={true}
+                    htmlFor={undefined}
                   >
-                    <div
-                      className="MuiGrid-container MuiGrid-justify-xs-space-between"
-                    >
-                      <div
-                        aria-describedby={undefined}
-                        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Argument-textField"
-                      >
-                        <label
-                          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Argument-label"
-                          data-shrink={true}
-                          htmlFor={undefined}
-                        >
-                          c
-                        </label>
-                        <div
-                          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
-                          onClick={[Function]}
-                        >
-                          <input
-                            aria-invalid={false}
-                            autoComplete="off"
-                            autoFocus={undefined}
-                            className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-                            defaultValue={undefined}
-                            disabled={false}
-                            id={undefined}
-                            name="c"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={undefined}
-                            onKeyUp={undefined}
-                            placeholder={undefined}
-                            readOnly={undefined}
-                            required={false}
-                            rows={undefined}
-                            type="number"
-                            value={-9}
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    c
+                  </label>
+                  <div
+                    className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense"
+                    onClick={[Function]}
+                  >
+                    <input
+                      aria-invalid={false}
+                      autoComplete="off"
+                      autoFocus={undefined}
+                      className="MuiInputBase-input MuiInput-input MuiInputBase-inputType MuiInput-inputType MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+                      defaultValue={undefined}
+                      disabled={false}
+                      id={undefined}
+                      name="c"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={undefined}
+                      onKeyUp={undefined}
+                      placeholder={undefined}
+                      readOnly={undefined}
+                      required={false}
+                      rows={undefined}
+                      type="number"
+                      value={-9}
+                    />
                   </div>
                 </div>
               </div>
@@ -3558,7 +3354,7 @@ exports[`Editor editor 1`] = `
           aria-invalid={undefined}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-titleText MuiInputBase-inputMultiline MuiInput-inputMultiline"
+          className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-titleText Editor-title MuiInputBase-inputMultiline MuiInput-inputMultiline"
           defaultValue={undefined}
           disabled={undefined}
           id={undefined}
@@ -3791,69 +3587,65 @@ exports[`Editor editor 1`] = `
       />
     </div>
     <div
-      className="Editor-border"
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Editor-description"
     >
-      <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={false}
+        htmlFor={undefined}
       >
-        <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense"
-          data-shrink={false}
-          htmlFor={undefined}
-        >
-          DESCRIPTION
-        </label>
+        DESCRIPTION
+      </label>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-multiline MuiInput-multiline"
+        onClick={[Function]}
+      >
         <div
-          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-multiline MuiInput-multiline"
-          onClick={[Function]}
+          className="MuiPrivateTextarea-root"
         >
-          <div
-            className="MuiPrivateTextarea-root"
-          >
-            <textarea
-              aria-hidden="true"
-              className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
-              readOnly={true}
-              rows="1"
-              tabIndex={-1}
-              value=""
-            />
-            <textarea
-              aria-hidden="true"
-              className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
-              defaultValue={undefined}
-              readOnly={true}
-              rows={1}
-              tabIndex={-1}
-              value=""
-            />
-            <textarea
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={undefined}
-              className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-description MuiInputBase-inputMultiline MuiInput-inputMultiline MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-              defaultValue={undefined}
-              disabled={false}
-              id={undefined}
-              name="description"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={undefined}
-              onKeyUp={undefined}
-              placeholder={undefined}
-              readOnly={undefined}
-              required={false}
-              rows={1}
-              style={
-                Object {
-                  "height": 19,
-                }
+          <textarea
+            aria-hidden="true"
+            className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
+            readOnly={true}
+            rows="1"
+            tabIndex={-1}
+            value=""
+          />
+          <textarea
+            aria-hidden="true"
+            className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
+            defaultValue={undefined}
+            readOnly={true}
+            rows={1}
+            tabIndex={-1}
+            value=""
+          />
+          <textarea
+            aria-invalid={false}
+            autoComplete="off"
+            autoFocus={undefined}
+            className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input MuiInputBase-inputMultiline MuiInput-inputMultiline MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name="description"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={1}
+            style={
+              Object {
+                "height": 19,
               }
-              value=""
-            />
-          </div>
+            }
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -3988,7 +3780,7 @@ exports[`Editor with arg 1`] = `
           aria-invalid={undefined}
           autoComplete={undefined}
           autoFocus={undefined}
-          className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-titleText MuiInputBase-inputMultiline MuiInput-inputMultiline"
+          className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-titleText Editor-title MuiInputBase-inputMultiline MuiInput-inputMultiline"
           defaultValue={undefined}
           disabled={undefined}
           id={undefined}
@@ -4118,46 +3910,87 @@ exports[`Editor with arg 1`] = `
       className="MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-items-xs-center Editor-args"
     >
       <div
-        className="MuiGrid-container MuiGrid-direction-xs-column Argument-argument Argument-container"
+        aria-describedby={undefined}
+        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-root Argument-textField"
       >
-        <div
-          aria-describedby={undefined}
-          className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+        <label
+          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+          data-shrink={true}
+          htmlFor={undefined}
         >
-          <label
-            className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense"
-            data-shrink={true}
-            htmlFor={undefined}
-          >
-            ARGUMENT: a
-          </label>
+          ARGUMENT: a
+        </label>
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            autoFocus={undefined}
+            className="MuiInputBase-input MuiInput-input MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name="a"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={undefined}
+            type="text"
+            value="STARTING DENSITY"
+          />
           <div
-            className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-adornedEnd"
-            onClick={[Function]}
+            className="Argument-endAdornmentRoot"
           >
-            <input
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={undefined}
-              className="MuiInputBase-input MuiInput-input MuiInputBase-inputMarginDense MuiInput-inputMarginDense MuiInputBase-inputAdornedEnd"
-              defaultValue={undefined}
+            <button
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Argument-deleteButton"
               disabled={false}
-              id={undefined}
-              name="a"
               onBlur={[Function]}
-              onChange={[Function]}
+              onClick={null}
               onFocus={[Function]}
-              onKeyDown={undefined}
-              onKeyUp={undefined}
-              placeholder={undefined}
-              readOnly={undefined}
-              required={false}
-              rows={undefined}
-              type="text"
-              value="STARTING DENSITY"
-            />
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root Argument-deleteIcon"
+                  color={undefined}
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                  />
+                </svg>
+              </span>
+              <span
+                className="MuiTouchRipple-root"
+              />
+            </button>
             <div
-              className="MuiInputBase-root MuiInput-root"
+              className="MuiInputBase-root MuiInput-root Argument-endAdornmentRoot"
               onClick={[Function]}
             >
               <div
@@ -4206,47 +4039,6 @@ exports[`Editor with arg 1`] = `
             </div>
           </div>
         </div>
-        <button
-          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit Argument-deleteButton"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={null}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex="0"
-          type="button"
-        >
-          <span
-            className="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root Argument-deleteIcon"
-              color={undefined}
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-              />
-            </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root"
-          />
-        </button>
       </div>
     </div>
     <button
@@ -4353,69 +4145,65 @@ exports[`Editor with arg 1`] = `
       />
     </div>
     <div
-      className="Editor-border"
+      aria-describedby={undefined}
+      className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Editor-description"
     >
-      <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense Component-inputLabel"
+        data-shrink={false}
+        htmlFor={undefined}
       >
-        <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense"
-          data-shrink={false}
-          htmlFor={undefined}
-        >
-          DESCRIPTION
-        </label>
+        DESCRIPTION
+      </label>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-multiline MuiInput-multiline"
+        onClick={[Function]}
+      >
         <div
-          className="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-marginDense MuiInputBase-multiline MuiInput-multiline"
-          onClick={[Function]}
+          className="MuiPrivateTextarea-root"
         >
-          <div
-            className="MuiPrivateTextarea-root"
-          >
-            <textarea
-              aria-hidden="true"
-              className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
-              readOnly={true}
-              rows="1"
-              tabIndex={-1}
-              value=""
-            />
-            <textarea
-              aria-hidden="true"
-              className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
-              defaultValue={undefined}
-              readOnly={true}
-              rows={1}
-              tabIndex={-1}
-              value=""
-            />
-            <textarea
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={undefined}
-              className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input Editor-description MuiInputBase-inputMultiline MuiInput-inputMultiline MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
-              defaultValue={undefined}
-              disabled={false}
-              id={undefined}
-              name="description"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={undefined}
-              onKeyUp={undefined}
-              placeholder={undefined}
-              readOnly={undefined}
-              required={false}
-              rows={1}
-              style={
-                Object {
-                  "height": 19,
-                }
+          <textarea
+            aria-hidden="true"
+            className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
+            readOnly={true}
+            rows="1"
+            tabIndex={-1}
+            value=""
+          />
+          <textarea
+            aria-hidden="true"
+            className="MuiPrivateTextarea-textarea MuiPrivateTextarea-shadow"
+            defaultValue={undefined}
+            readOnly={true}
+            rows={1}
+            tabIndex={-1}
+            value=""
+          />
+          <textarea
+            aria-invalid={false}
+            autoComplete="off"
+            autoFocus={undefined}
+            className="MuiPrivateTextarea-textarea MuiInputBase-input MuiInput-input MuiInputBase-inputMultiline MuiInput-inputMultiline MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name="description"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={1}
+            style={
+              Object {
+                "height": 19,
               }
-              value=""
-            />
-          </div>
+            }
+            value=""
+          />
         </div>
       </div>
     </div>

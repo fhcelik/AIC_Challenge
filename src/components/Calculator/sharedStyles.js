@@ -3,17 +3,14 @@ export const CalculatorStyles = theme => ({
     width: '320px',
     backgroundColor: theme.palette.card.background,
   },
-
   content: {
     flexGrow: 1,
     width: 'auto',
     margin: '0 0.4em 0.4em',
   },
-
   tags: {
     overflow: 'auto',
   },
-
   tag: {
     ...theme.typography.subheading,
     backgroundColor: theme.palette.tag.background,
@@ -24,12 +21,14 @@ export const CalculatorStyles = theme => ({
     padding: 6,
     maxWidth: 304,
   },
-
   args: {
     flexGrow: 2,
     marginBottom: 6,
   },
-
+  argument: {
+    marginTop: -1,
+    marginBottom: -1,
+  },
   title: {
     marginBottom: '0.5em',
     marginTop: '0.1em',
@@ -37,11 +36,9 @@ export const CalculatorStyles = theme => ({
     textTransform: 'uppercase',
     width: '100%',
   },
-
   titleText: {
     ...theme.typography.display3,
   },
-
   progress: {
     margin: 'auto',
     position: 'absolute',
@@ -51,13 +48,11 @@ export const CalculatorStyles = theme => ({
     right: 0,
     zIndex: 100,
   },
-
   isSaving: {
     pointerEvents: 'none',
     opacity: '0.6',
     minHeight: '200px',
   },
-
   author: {
     margin: '2px 7px 0 5px',
     padding: '0 7px',
@@ -66,23 +61,8 @@ export const CalculatorStyles = theme => ({
     borderRight: `1px solid ${theme.palette.card.header}`,
   },
 });
-export const ArgumentStyles = theme => ({
-  argument: {
-    border: `2px solid ${theme.palette.card.header}`,
-    padding: '0.2em',
-    marginTop: '-2px',
-  },
-  label: {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    textTransform: 'uppercase',
-    whiteSpace: 'nowrap',
-    width: 380,
-  },
-  container: {
-    padding: '0 0.3em',
-    position: 'relative',
-  },
+
+export const ArgumentStyles = {
   textField: {
     '& input::-webkit-inner-spin-button, & input::-webkit-outer-spin-button': {
       '-webkit-appearance': 'none',
@@ -91,9 +71,12 @@ export const ArgumentStyles = theme => ({
     '& input': {
       '-moz-appearance': 'textfield',
     },
-    overflowX: 'hidden',
   },
-});
+  endAdornmentRoot: {
+    margin: '0 2px 2px 0',
+  },
+};
+
 export const ResultStyles = theme => ({
   result: {
     margin: '0.5em 0',

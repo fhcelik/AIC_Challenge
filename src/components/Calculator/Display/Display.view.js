@@ -106,6 +106,7 @@ const Display = ({
                 {...arg}
                 onArgValueChange={onArgValueChange}
                 onArgUnitChange={onArgUnitChange}
+                className={classes.argument}
               />
             ))}
           </Grid>
