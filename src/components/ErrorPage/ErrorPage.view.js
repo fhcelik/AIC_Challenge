@@ -4,13 +4,11 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
-  root: {
-    padding: '30px 50px',
-  },
   errorCode: {
     marginRight: 25,
     ...theme.typography.display5,
     fontWeight: 500,
+    lineHeight: 1,
   },
   rightContent: {
     width: 400,
@@ -21,7 +19,7 @@ const styles = theme => ({
     fontWeight: 500,
   },
   title: {
-    marginTop: 33,
+    marginTop: 7,
   },
   description: {
     marginTop: 10,
@@ -31,7 +29,7 @@ const styles = theme => ({
 });
 
 const ErrorPage = ({ classes, errorCode, title, description }) => (
-  <Grid container className={classes.root}>
+  <Grid container>
     <Typography className={classes.errorCode}>{errorCode}</Typography>
     <Grid className={classes.rightContent}>
       <Typography className={cx(classes.rightContentText, classes.title)}>

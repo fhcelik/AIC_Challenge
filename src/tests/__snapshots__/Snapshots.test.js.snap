@@ -251,8 +251,8 @@ exports[`Author base 1`] = `
 <Tooltip
   classes={
     Object {
-      "popper": "Author-popper-206",
-      "tooltip": "Author-tooltip-207",
+      "popper": "Author-popper-205",
+      "tooltip": "Author-tooltip-206",
     }
   }
   interactive={true}
@@ -737,8 +737,8 @@ exports[`Calculator mwCalcId 1`] = `
                 <Tooltip
                   classes={
                     Object {
-                      "popper": "Author-popper-206",
-                      "tooltip": "Author-tooltip-207",
+                      "popper": "Author-popper-205",
+                      "tooltip": "Author-tooltip-206",
                     }
                   }
                   interactive={true}
@@ -1306,8 +1306,8 @@ exports[`Calculator quadraticCalcId 1`] = `
                 <Tooltip
                   classes={
                     Object {
-                      "popper": "Author-popper-206",
-                      "tooltip": "Author-tooltip-207",
+                      "popper": "Author-popper-205",
+                      "tooltip": "Author-tooltip-206",
                     }
                   }
                   interactive={true}
@@ -1720,8 +1720,8 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-206",
-                          "tooltip": "Author-tooltip-207",
+                          "popper": "Author-popper-205",
+                          "tooltip": "Author-tooltip-206",
                         }
                       }
                       interactive={true}
@@ -2136,8 +2136,8 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-206",
-                          "tooltip": "Author-tooltip-207",
+                          "popper": "Author-popper-205",
+                          "tooltip": "Author-tooltip-206",
                         }
                       }
                       interactive={true}
@@ -2677,8 +2677,8 @@ exports[`Collection base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-206",
-                          "tooltip": "Author-tooltip-207",
+                          "popper": "Author-popper-205",
+                          "tooltip": "Author-tooltip-206",
                         }
                       }
                       interactive={true}
@@ -3144,8 +3144,8 @@ exports[`Collection base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-206",
-                          "tooltip": "Author-tooltip-207",
+                          "popper": "Author-popper-205",
+                          "tooltip": "Author-tooltip-206",
                         }
                       }
                       interactive={true}
@@ -4425,7 +4425,7 @@ exports[`Editor with arg 1`] = `
 
 exports[`ErrorPage Error404 1`] = `
 <div
-  className="MuiGrid-container ErrorPage-root"
+  className="MuiGrid-container"
 >
   <p
     className="MuiTypography-root MuiTypography-body2 ErrorPage-errorCode"
@@ -4451,7 +4451,7 @@ exports[`ErrorPage Error404 1`] = `
 
 exports[`ErrorPage Error500 1`] = `
 <div
-  className="MuiGrid-container ErrorPage-root"
+  className="MuiGrid-container"
 >
   <p
     className="MuiTypography-root MuiTypography-body2 ErrorPage-errorCode"
@@ -5926,7 +5926,7 @@ exports[`PublishConfirmationContent base 1`] = `
 
 exports[`Routing calculators 1`] = `
 <div
-  className="MuiGrid-container ErrorPage-root"
+  className="MuiGrid-container"
 >
   <p
     className="MuiTypography-root MuiTypography-body2 ErrorPage-errorCode"
@@ -5952,7 +5952,7 @@ exports[`Routing calculators 1`] = `
 
 exports[`Routing collections 1`] = `
 <div
-  className="MuiGrid-container ErrorPage-root"
+  className="MuiGrid-container"
 >
   <p
     className="MuiTypography-root MuiTypography-body2 ErrorPage-errorCode"
@@ -6012,7 +6012,7 @@ exports[`Routing search 1`] = `
 
 exports[`Routing users 1`] = `
 <div
-  className="MuiGrid-container ErrorPage-root"
+  className="MuiGrid-container"
 >
   <p
     className="MuiTypography-root MuiTypography-body2 ErrorPage-errorCode"
