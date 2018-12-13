@@ -5,16 +5,21 @@ import {
   ListItemIcon,
   TextField,
 } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/AddCircleOutline';
+import AddIcon from '@material-ui/icons/AddCircle';
+import AddIconOutlined from '@material-ui/icons/AddCircleOutline';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import NewIcon from '@material-ui/icons/RadioButtonUnchecked';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import IconButton from '../../../../IconButton';
 
 const styles = theme => ({
   header: {
     borderBottom: `1px solid ${theme.palette.navbar.border}`,
+  },
+  addIcon: {
+    padding: 10,
   },
   item: {
     padding: 8,
@@ -32,16 +37,16 @@ const CollectionCreatorList = ({
   onCollectionNameKeyDown,
 }) => (
   <React.Fragment>
-    <ListItem
-      className={classes.header}
-      button
-      disableRipple
-      onClick={addCollectionEditor}
-    >
-      <Grid container justify="center">
-        <AddIcon />
-      </Grid>
-    </ListItem>
+    <Grid container justify="center" className={classes.header}>
+      <IconButton
+        className={classes.addIcon}
+        onClick={addCollectionEditor}
+        iconOnHover={AddIcon}
+        tooltipTitle="Create a new collection"
+      >
+        <AddIconOutlined />
+      </IconButton>
+    </Grid>
     {newEntries.map(({ id, name, saving }) => (
       <ListItem key={id} className={classes.item}>
         <ListItemIcon>

@@ -1,12 +1,15 @@
 import CancelIcon from '@material-ui/icons/Cancel';
+import CancelIconOutlined from '@material-ui/icons/CancelOutlined';
 import { compose, getContext } from 'recompose';
 import ConfirmIcon from '@material-ui/icons/CheckCircle';
+import ConfirmIconOutlined from '@material-ui/icons/CheckCircleOutlined';
 import cx from 'classnames';
 import { Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import PublishIcon from '@material-ui/icons/Publish';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import IconButton from '../../../../IconButton';
 
 const styles = theme => ({
   root: {
@@ -25,8 +28,10 @@ const styles = theme => ({
     color: theme.palette.text.faded,
   },
   button: {
-    fontSize: 36,
     margin: '5px 7px',
+  },
+  icon: {
+    fontSize: '36px !important',
   },
 });
 
@@ -49,8 +54,22 @@ const PublishConfirmationContent = ({
       </Typography>
     </Grid>
     <Grid container justify="center" className={classes.buttons}>
-      <ConfirmIcon className={classes.button} onClick={onCalculatorEditDone} />
-      <CancelIcon className={classes.button} onClick={handleClose} />
+      <IconButton
+        className={classes.button}
+        onClick={onCalculatorEditDone}
+        iconOnHover={ConfirmIcon}
+        tooltipTitle="Confirm"
+      >
+        <ConfirmIconOutlined className={classes.icon} />
+      </IconButton>
+      <IconButton
+        className={classes.button}
+        onClick={handleClose}
+        iconOnHover={CancelIcon}
+        tooltipTitle="Cancel"
+      >
+        <CancelIconOutlined className={classes.icon} />
+      </IconButton>
     </Grid>
   </Grid>
 );

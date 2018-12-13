@@ -1,15 +1,18 @@
 import cx from 'classnames';
-import { Grid, IconButton, Input } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/AddCircleOutline';
+import { Grid, Input } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/AddCircle';
+import AddIconOutlined from '@material-ui/icons/AddCircleOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
+import CancelIconOutlined from '@material-ui/icons/CancelOutlined';
 import PreviewIcon from '@material-ui/icons/PlayCircleFilled';
+import PreviewIconOutlined from '@material-ui/icons/PlayCircleFilledWhiteOutlined';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { dot } from '../../../images';
 import Formula from '../Formula';
 import Header from '../Header';
-import HeaderButton from '../HeaderButton';
+import IconButton from '../../IconButton';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 import Argument from './Argument';
 import Result from './Result';
@@ -59,16 +62,20 @@ const Editor = ({
 }) => (
   <Grid className={cx(classes.root, classes.editorRoot)}>
     <Header>
-      <HeaderButton
+      <IconButton
         onClick={showDisplay}
-        icon={PreviewIcon}
+        iconOnHover={PreviewIcon}
         tooltipTitle="Preview"
-      />
-      <HeaderButton
+      >
+        <PreviewIconOutlined />
+      </IconButton>
+      <IconButton
         onClick={onCancel}
-        icon={CancelIcon}
+        iconOnHover={CancelIcon}
         tooltipTitle="Cancel"
-      />
+      >
+        <CancelIconOutlined />
+      </IconButton>
     </Header>
     <Grid
       container
@@ -104,8 +111,12 @@ const Editor = ({
           />
         ))}
       </Grid>
-      <IconButton key="addicon" onClick={onArgAdd}>
-        <AddIcon className={classes.addIcon} />
+      <IconButton
+        onClick={onArgAdd}
+        iconOnHover={AddIcon}
+        tooltipTitle="Add argument"
+      >
+        <AddIconOutlined />
       </IconButton>
       <Result
         {...result}

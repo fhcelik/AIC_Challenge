@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import DropdownMenu from '../../../DropdownMenu';
 import CollectionChecklist from './CollectionChecklist';
 import CollectionCreatorList from './CollectionCreatorList';
-import HeaderButton from '../../HeaderButton';
+import IconButton from '../../../IconButton';
 
 const styles = {
   items: {
@@ -26,10 +26,9 @@ const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
     onResize={onResize}
     placement="bottom-end"
     target={
-      <HeaderButton
-        icon={AddToCollectionIcon}
-        tooltipTitle="Add to collection"
-      />
+      <IconButton tooltipTitle="Add to collection">
+        <AddToCollectionIcon />
+      </IconButton>
     }
   >
     <List className={classes.list}>

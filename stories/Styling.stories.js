@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import * as R from 'ramda';
 import TestProvider from '../src/tests/TestProvider';
-import { Typography, Grid, Paper } from 'material-ui';
+import { Typography, Grid, Paper } from '@material-ui/core';
 import { colors } from '../src/providers/theme';
-import { getContrastRatio } from 'material-ui/styles/colorManipulator';
+import { getContrastRatio } from '@material-ui/core/styles/colorManipulator';
 
 const getContrastingColor = background => {
   try {

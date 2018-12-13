@@ -1,13 +1,14 @@
 import cx from 'classnames';
 import { Grid, TextField, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
+import CancelIconOutlined from '@material-ui/icons/CancelOutlined';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Author from '../../Author';
 import Formula from '../Formula';
 import Header from '../Header';
-import HeaderButton from '../HeaderButton';
+import IconButton from '../../IconButton';
 import { CalculatorStyles, InfoStyles } from '../sharedStyles';
 
 const styles = theme => ({
@@ -26,11 +27,13 @@ const Info = ({
 }) => (
   <Grid container direction="column" className={classes.root} wrap="nowrap">
     <Header>
-      <HeaderButton
+      <IconButton
         onClick={showDisplay}
-        icon={CancelIcon}
+        iconOnHover={CancelIcon}
         tooltipTitle="Cancel"
-      />
+      >
+        <CancelIconOutlined />
+      </IconButton>
     </Header>
     <Grid
       container

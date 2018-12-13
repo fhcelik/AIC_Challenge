@@ -7,9 +7,8 @@ import AuthorPopupInfo from './AuthorPopupInfo';
 
 const styles = theme => ({
   icon: {
-    fontSize: 24,
-    color: theme.palette.text.primary,
     marginRight: 10,
+    fontSize: 28,
   },
   popper: {
     opacity: 0.97,

@@ -1,7 +1,8 @@
 import PublishIcon from '@material-ui/icons/Publish';
+import PublishIconOutlined from '@material-ui/icons/PublishOutlined';
 import React from 'react';
 import DropdownMenu from '../../../DropdownMenu';
-import HeaderButton from '../../HeaderButton';
+import IconButton from '../../../IconButton';
 import PublishConfirmationContent from './PublishConfirmationContent';
 
 const PublishConfirmation = () => (
@@ -11,7 +12,11 @@ const PublishConfirmation = () => (
     hasIcon={false}
     keepOpen
     withPropsToChildren
-    target={<HeaderButton icon={PublishIcon} tooltipTitle="Publish" />}
+    target={
+      <IconButton iconOnHover={PublishIcon} tooltipTitle="Publish">
+        <PublishIconOutlined />
+      </IconButton>
+    }
   >
     <PublishConfirmationContent />
   </DropdownMenu>

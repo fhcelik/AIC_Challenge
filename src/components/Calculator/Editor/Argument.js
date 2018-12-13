@@ -1,14 +1,16 @@
 import cx from 'classnames';
-import { Grid, IconButton } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/RemoveCircleOutline';
+import { Grid } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/RemoveCircle';
+import DeleteIconOutlined from '@material-ui/icons/RemoveCircleOutline';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import React from 'react';
+import IconButton from '../../IconButton';
 import TextField from '../../TextField';
 import UnitSelect from '../../UnitSelect';
 import { ArgumentStyles } from '../sharedStyles';
 
-const styles = theme => ({
+const styles = {
   ...ArgumentStyles,
   root: {
     margin: '-2px 0 0 0',
@@ -24,10 +26,9 @@ const styles = theme => ({
     right: -7,
   },
   deleteIcon: {
-    color: theme.palette.text.primary,
-    fontSize: '16px',
+    fontSize: '16px !important',
   },
-});
+};
 
 const Argument = ({
   classes,
@@ -52,8 +53,10 @@ const Argument = ({
           <IconButton
             className={classes.deleteButton}
             onClick={onArgRemove(name)}
+            iconOnHover={DeleteIcon}
+            tooltipTitle="Delete argument"
           >
-            <DeleteIcon className={classes.deleteIcon} />
+            <DeleteIconOutlined className={classes.deleteIcon} />
           </IconButton>
           <UnitSelect
             className={classes.endAdornmentRoot}

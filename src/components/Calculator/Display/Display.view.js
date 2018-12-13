@@ -1,8 +1,11 @@
 import CancelIcon from '@material-ui/icons/Cancel';
+import CancelIconOutlined from '@material-ui/icons/CancelOutlined';
 import { CircularProgress, Grid, Typography } from '@material-ui/core';
 import cx from 'classnames';
 import EditIcon from '@material-ui/icons/Edit';
-import InfoIcon from '@material-ui/icons/InfoOutlined';
+import EditIconOutlined from '@material-ui/icons/EditOutlined';
+import InfoIcon from '@material-ui/icons/Info';
+import InfoIconOutLined from '@material-ui/icons/InfoOutlined';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
@@ -11,7 +14,7 @@ import Argument from './Argument';
 import Author from '../../Author';
 import { CalculatorStyles as styles } from '../sharedStyles';
 import Header from '../Header';
-import HeaderButton from '../HeaderButton';
+import IconButton from '../../IconButton';
 import NoUnitsInfo from './NoUnitsInfo';
 import PublishConfirmation from './PublishConfirmation';
 import Result from './Result';
@@ -47,25 +50,41 @@ const Display = ({
   >
     {isNew ? (
       <Header>
-        <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
-        <HeaderButton
+        <IconButton
+          onClick={showInfo}
+          iconOnHover={InfoIcon}
+          tooltipTitle="Info"
+        >
+          <InfoIconOutLined />
+        </IconButton>
+        <IconButton
           onClick={showEditor}
-          icon={EditIcon}
+          iconOnHover={EditIcon}
           tooltipTitle="Edit"
-        />
+        >
+          <EditIconOutlined />
+        </IconButton>
         <PublishConfirmation />
-        <HeaderButton
+        <IconButton
           onClick={onCancel}
-          icon={CancelIcon}
+          iconOnHover={CancelIcon}
           tooltipTitle="Cancel"
-        />
+        >
+          <CancelIconOutlined />
+        </IconButton>
       </Header>
     ) : (
       <Header>
         <Usages id={id} />
         {isAuthorized && <AddToCollectionButton calculatorId={id} />}
         <ShareButton urlToShare={shareLink} hoverText="Share this calculator" />
-        <HeaderButton onClick={showInfo} icon={InfoIcon} tooltipTitle="Info" />
+        <IconButton
+          onClick={showInfo}
+          iconOnHover={InfoIcon}
+          tooltipTitle="Info"
+        >
+          <InfoIconOutLined />
+        </IconButton>
       </Header>
     )}
     <Grid
