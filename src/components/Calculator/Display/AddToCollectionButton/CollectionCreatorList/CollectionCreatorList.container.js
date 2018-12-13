@@ -61,11 +61,15 @@ export default compose(
       createCollection,
       removeCollectionEditor,
     }) => id => event => {
-      if (event.target.value !== '' && event.key === 'Enter') {
-        createCollection({ id, name: event.target.value });
+      const {
+        target: { value },
+        key,
+      } = event;
+
+      if (!R.isEmpty(value) && key === 'Enter') {
+        createCollection({ id, name: value });
       }
-      if (event.target.value === '' && event.key === 'Backspace') {
-        event.preventDefault();
+      if ((R.isEmpty(value) && key === 'Backspace') || key === 'Escape') {
         removeCollectionEditor({ id });
       }
     },
