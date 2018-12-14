@@ -29,6 +29,12 @@ const styles = theme => ({
     maxWidth: '300px',
     ...theme.typography.display3,
   },
+  noCollectionMessage: {
+    width: 210,
+    padding: 10,
+    textTransform: 'uppercase',
+    color: theme.palette.text.faded,
+  },
 });
 
 const CollectionSelect = ({
@@ -47,28 +53,34 @@ const CollectionSelect = ({
       </Typography>
     }
   >
-    <MenuList disablePadding role="menu">
-      {R.map(
-        collection => (
-          <NavLink
-            to={`${Routes.collections}${collection.id}`}
-            exact={true}
-            key={collection.id}
-          >
-            <ListItem button className={classes.listItem}>
-              <Typography
-                color="inherit"
-                noWrap
-                className={classes.listItemText}
-              >
-                {collection.name}
-              </Typography>
-            </ListItem>
-          </NavLink>
-        ),
-        collections
-      )}
-    </MenuList>
+    {R.length(collections) ? (
+      <MenuList disablePadding role="menu">
+        {R.map(
+          collection => (
+            <NavLink
+              to={`${Routes.collections}${collection.id}`}
+              exact={true}
+              key={collection.id}
+            >
+              <ListItem button className={classes.listItem}>
+                <Typography
+                  color="inherit"
+                  noWrap
+                  className={classes.listItemText}
+                >
+                  {collection.name}
+                </Typography>
+              </ListItem>
+            </NavLink>
+          ),
+          collections
+        )}
+      </MenuList>
+    ) : (
+      <Typography className={classes.noCollectionMessage}>
+        You haven't created any collections yet...
+      </Typography>
+    )}
   </DropdownMenu>
 );
 
