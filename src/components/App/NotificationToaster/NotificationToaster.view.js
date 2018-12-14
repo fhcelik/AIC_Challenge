@@ -34,7 +34,7 @@ const NotificationToaster = ({
       </IconButton>
     }
     onClose={closeMessage}
-    SnackbarContentProps={{
+    ContentProps={{
       className: cx(classes.message, { [classes.error]: isError }),
     }}
   />

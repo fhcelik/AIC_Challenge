@@ -5440,11 +5440,6 @@ exports[`NoUnitsInfo base 1`] = `
 
 exports[`NotificationToaster base 1`] = `
 <div
-  SnackbarContentProps={
-    Object {
-      "className": "NotificationToaster-message-1",
-    }
-  }
   className="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -5467,7 +5462,7 @@ exports[`NotificationToaster base 1`] = `
     }
   >
     <div
-      className="MuiTypography-root MuiTypography-body2 MuiPaper-root MuiPaper-elevation6 MuiSnackbarContent-root"
+      className="MuiTypography-root MuiTypography-body2 MuiPaper-root MuiPaper-elevation6 MuiSnackbarContent-root NotificationToaster-message"
       role="alertdialog"
     >
       <div
