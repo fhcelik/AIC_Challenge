@@ -2270,6 +2270,47 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
         />
       </div>
     </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root NewCalculatorButton-icon"
+          color={undefined}
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </button>
   </StackGrid>
 </div>
 `;

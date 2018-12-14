@@ -1,6 +1,6 @@
-import Promise from 'bluebird';
-import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { configure } from 'enzyme';
+import Promise from 'bluebird';
 import 'jest-enzyme';
 
 configure({ adapter: new Adapter() });
@@ -16,8 +16,10 @@ if (global.document) {
   });
 }
 
+const mockActionCreator = () => ({ type: '@@calcoola/mock' });
+
 const mockAsyncActionCreator = () => ({
-  type: '@@calcoola/stub',
+  type: '@@calcoola/mock',
   payload: Promise.resolve(),
 });
 
@@ -30,6 +32,8 @@ jest.mock('./redux/actions/collections', () => ({
 }));
 jest.mock('./redux/actions/calculatorsByAuthor', () => ({
   fetchCalculatorsByAuthorId: mockAsyncActionCreator,
+  saveMyCalculator: mockActionCreator,
+  removeMyNewCalculator: mockActionCreator,
 }));
 
 jest.mock(

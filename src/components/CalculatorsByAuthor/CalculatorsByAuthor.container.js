@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import { connect } from 'react-redux';
 import { compose, pure, withProps } from 'recompose';
-import { calculatorsByAuthorId } from '../../redux/selectors/calculatorsByAuthor';
+import { newAndSavedCalculatorsByAuthorIdSelector } from '../../redux/selectors/calculatorsByAuthor';
 import { fetchCalculatorsByAuthorId } from '../../redux/actions/calculatorsByAuthor';
 import { getCalculatorsByUserLink } from '../App/Routing/Routing';
 import handleFetchEntityEnhancer from '../hoc/handleFetchEntity';
@@ -12,10 +12,13 @@ export default compose(
   connect(state => ({
     loggedInUserId: loggedInUserIdSelector(state),
   })),
+  withProps(({ id, loggedInUserId }) => ({
+    isMyCalculators: loggedInUserId === id,
+  })),
   withProps(
     R.ifElse(
-      ({ id, loggedInUserId }) => loggedInUserId === id,
-      () => ({ title: 'my calculators' }),
+      R.prop('isMyCalculators'),
+      () => ({ title: 'my calculators', showAddCalculatorButton: true }),
       ({ id }) => ({ title: `calculators by ${id}` })
     )
   ),
@@ -25,7 +28,7 @@ export default compose(
   })),
   handleFetchEntityEnhancer({
     entityName: 'calculatorIds',
-    entitySelector: calculatorsByAuthorId,
+    entitySelector: newAndSavedCalculatorsByAuthorIdSelector,
     fetchEntityAction: fetchCalculatorsByAuthorId,
   }),
   pure

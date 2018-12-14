@@ -13,6 +13,11 @@ import {
 import { Calculator, calculator } from '../schemas/calculator';
 import { debounceConfigNames } from '../config';
 import { displayNotification } from './notifications';
+import {
+  addToMyNewCalculators,
+  removeMyNewCalculator,
+  saveMyCalculator,
+} from './calculatorsByAuthor';
 import { saveEntities } from './entities';
 
 export const fetchCalculator = createAction(
@@ -28,12 +33,14 @@ export const addCalculator = createAction(
   '@@calcoola/calculator/add',
   ({ collectionId, ...rest }) => dispatch => {
     const newCalculator = Calculator(rest);
-    dispatch(
-      addNewCalculatorToCollection({
-        collectionId,
-        calculatorId: newCalculator.id,
-      })
-    );
+    collectionId
+      ? dispatch(
+          addNewCalculatorToCollection({
+            collectionId,
+            calculatorId: newCalculator.id,
+          })
+        )
+      : dispatch(addToMyNewCalculators(newCalculator.id));
     return newCalculator;
   }
 );
@@ -41,12 +48,14 @@ export const addCalculator = createAction(
 export const cancelAddingNewCalculator = createAction(
   '@@calcoola/calculator/cancelAddingNewCalculator',
   ({ collectionId, calculatorId }) => dispatch => {
-    dispatch(
-      removeNewCalculatorFromCollection({
-        collectionId,
-        calculatorId,
-      })
-    );
+    collectionId
+      ? dispatch(
+          removeNewCalculatorFromCollection({
+            collectionId,
+            calculatorId,
+          })
+        )
+      : dispatch(removeMyNewCalculator(calculatorId));
     return { id: calculatorId };
   }
 );
@@ -76,7 +85,9 @@ export const saveCalculator = createAction(
         dispatch(
           displayNotification('Your calculator has been saved successfully.')
         );
-        dispatch(saveCalculatorToCollection({ collectionId, calculatorId }));
+        collectionId
+          ? dispatch(saveCalculatorToCollection({ collectionId, calculatorId }))
+          : dispatch(saveMyCalculator(calculatorId));
       });
   }
 );

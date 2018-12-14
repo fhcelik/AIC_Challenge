@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import {
   compose,
   lifecycle,
@@ -29,7 +28,10 @@ import {
   calculatorTagsSelector,
   calculatorTitleSelector,
 } from '../../redux/selectors/calculators';
-import { isAuthorizedSelector } from '../../redux/selectors/auth';
+import {
+  isAuthorizedSelector,
+  loggedInUserIdSelector,
+} from '../../redux/selectors/auth';
 import { fetchUnitDefinitions } from '../../redux/actions/units';
 import { getCalculatorLink } from '../App/Routing/Routing';
 import { noUnitsSelector } from '../../redux/selectors/units';
@@ -37,10 +39,8 @@ import updateLayoutOnChange from '../hoc/updateLayoutOnChange';
 import CalculatorView from './Calculator.view';
 
 export default compose(
-  withRouter,
-  withProps(({ id, match: { params } }) => ({
-    collectionId: params.id,
-    shareLink: getCalculatorLink(id),
+  connect(state => ({
+    loggedInUserId: loggedInUserIdSelector(state),
   })),
   connect(
     (state, props) => ({
@@ -65,7 +65,8 @@ export default compose(
       saveCalculator,
     }
   ),
-  withProps(({ noUnits }) => ({
+  withProps(({ id, noUnits }) => ({
+    shareLink: getCalculatorLink(id),
     error: noUnits,
   })),
   withStateHandlers(
@@ -128,21 +129,12 @@ export default compose(
   withContext({ onCalculatorEditDone: PropTypes.func }, ({ onEditDone }) => ({
     onCalculatorEditDone: onEditDone,
   })),
-  updateLayoutOnChange,
   lifecycle({
     componentDidCatch(error) {
       return this.setState({ error });
     },
-    componentDidUpdate({ args: prevArgs, isNew: prevIsNew }) {
-      const {
-        args,
-        id,
-        incrementCalculatorUsage,
-        isNew,
-        showDisplay,
-      } = this.props;
-
-      prevIsNew && !isNew && showDisplay();
+    componentDidUpdate({ args: prevArgs }) {
+      const { args, id, incrementCalculatorUsage, isNew } = this.props;
 
       if (!R.equals(prevArgs, args) && !isNew) {
         incrementCalculatorUsage(id);
@@ -155,5 +147,6 @@ export default compose(
     shouldComponentUpdate(prevProps) {
       return !R.equals(prevProps, this.props);
     },
-  })
+  }),
+  updateLayoutOnChange
 )(CalculatorView);

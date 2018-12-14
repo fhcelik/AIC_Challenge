@@ -29,6 +29,7 @@ export default compose(
   withProps(
     ({ collection, id, isCollectionAuthoredByLoggedInUser, noUnits }) => ({
       title: `COLLECTION: ${R.propOr('', 'name', collection)}`,
+      collectionId: R.prop('id', collection),
       showAddCalculatorButton: isCollectionAuthoredByLoggedInUser && !noUnits,
       onShareHoverText: 'Share this collection',
       urlToShare: getCollectionLink(id),

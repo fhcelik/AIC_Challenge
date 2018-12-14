@@ -1,5 +1,4 @@
-import { compose } from 'recompose';
-import updateLayoutOnChange from '../../../hoc/updateLayoutOnChange';
 import AddToCollectionButton from './AddToCollectionButton.view';
+import updateLayoutOnChange from '../../../hoc/updateLayoutOnChange';
 
-export default compose(updateLayoutOnChange)(AddToCollectionButton);
+export default updateLayoutOnChange(AddToCollectionButton);

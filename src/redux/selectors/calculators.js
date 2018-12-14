@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import { createSelector } from 'reselect';
 import math, { parse } from '../../mathjs-secured';
+import { myNewCalculatorsSelector } from './calculatorsByAuthor';
 import { newCalculatorsByCollectionIdSelector } from './collections';
 
 export const calculatorsSelector = R.path(['entities', 'calculators']);
@@ -145,7 +146,7 @@ export const calculatorResultSelector = createSelector(
   calculatorResultValueSelector,
   allArgsHaveValuesSelector,
   (calculator, result, allArgsHaveValues) => ({
-    ...calculator.result,
+    ...R.prop('result', calculator),
     result: allArgsHaveValues ? result : '',
   })
 );
@@ -171,13 +172,15 @@ export const calculatorAuthorSelector = createCalculatorPropertySelector(
 );
 
 export const calculatorIsNewSelector = createSelector(
-  (state, { collectionId, id: calculatorId }) => ({
-    newCalculators: newCalculatorsByCollectionIdSelector(state, {
-      id: collectionId,
-    }),
-    calculatorId,
-  }),
-  ({ newCalculators, calculatorId }) => R.contains(calculatorId, newCalculators)
+  (state, { id }) => id,
+  (state, { collectionId: id }) =>
+    newCalculatorsByCollectionIdSelector(state, { id }),
+  (state, { loggedInUserId: id }) => myNewCalculatorsSelector(state, { id }),
+  (id, collectionNewCalculators, myNewCalculators) =>
+    R.pipe(R.ap([R.contains(id)]), R.any(R.equals(true)))([
+      collectionNewCalculators,
+      myNewCalculators,
+    ])
 );
 
 export const listCalculatorIdsSelector = createSelector(

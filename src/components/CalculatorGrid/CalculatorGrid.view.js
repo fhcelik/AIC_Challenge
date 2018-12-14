@@ -20,6 +20,7 @@ const styles = theme => ({
 const CalculatorGrid = ({
   calculatorIds,
   classes,
+  collectionId,
   onShareHoverText,
   setDomNode,
   showAddCalculatorButton = false,
@@ -49,8 +50,12 @@ const CalculatorGrid = ({
       gutterWidth={25}
       gutterHeight={25}
     >
-      {calculatorIds.map(id => <Calculator key={id} id={id} />)}
-      {showAddCalculatorButton && <NewCalculatorButton />}
+      {calculatorIds.map(id => (
+        <Calculator key={id} id={id} collectionId={collectionId} />
+      ))}
+      {showAddCalculatorButton && (
+        <NewCalculatorButton collectionId={collectionId} />
+      )}
     </StackGrid>
   </Grid>
 );
@@ -58,6 +63,7 @@ const CalculatorGrid = ({
 CalculatorGrid.propTypes = {
   calculatorIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   classes: PropTypes.object.isRequired,
+  collectionId: PropTypes.string,
   onShareHoverText: PropTypes.string,
   setDomNode: PropTypes.func.isRequired,
   showAddCalculatorButton: PropTypes.bool,

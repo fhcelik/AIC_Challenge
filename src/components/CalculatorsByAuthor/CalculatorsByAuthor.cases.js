@@ -40,8 +40,12 @@ export const initialState = {
     },
   },
   calculatorsByAuthor: {
-    'some-author-uuid': ['8308d829-b7b3-4693-8a89-0f3ffb40d804'],
-    [user.id]: ['5838d829-b7b3-4693-8a89-0f3ffb40d804'],
+    'some-author-uuid': {
+      calculators: ['8308d829-b7b3-4693-8a89-0f3ffb40d804'],
+    },
+    [user.id]: {
+      calculators: ['5838d829-b7b3-4693-8a89-0f3ffb40d804'],
+    },
   },
   auth: { user },
 };
