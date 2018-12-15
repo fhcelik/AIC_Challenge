@@ -1,12 +1,12 @@
 import { createAction } from 'redux-actions';
 import { fetchCollections } from './collections';
-import { fetchUnitDefinitions } from './units';
+import { loadUnitDefinitions } from './units';
 import { isAuthorizedSelector } from '../selectors/auth';
 
 export const bootstrap = createAction(
   '@@calcoola/app/bootstrap',
   () => (dispatch, getState) => {
-    dispatch(fetchUnitDefinitions());
+    dispatch(loadUnitDefinitions());
 
     if (isAuthorizedSelector(getState())) {
       dispatch(fetchCollections());

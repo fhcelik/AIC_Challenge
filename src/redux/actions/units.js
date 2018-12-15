@@ -12,15 +12,15 @@ export const saveUnitDefinitions = createAction(
   '@@calcoola/units/saveUnitDefinitions'
 );
 
-const loadUnitDefinitions = state => {
+const createUnits = state => {
   createUnit(unitDefinitionsSelector(state), { override: true });
 };
 
 export const registerUnitDefinitions = createAction(
-  '@@calcoola/units/registerDefinitions',
+  '@@calcoola/units/registerUnitDefinitions',
   ({ unitList, unitDefinitions }) => (dispatch, getState) => {
     dispatch(saveUnitDefinitions(unitDefinitions));
-    loadUnitDefinitions(getState());
+    createUnits(getState());
     const recordUnit = unit => dispatch(addUnit({ unit }));
     R.forEach(recordUnit, unitList);
     R.forEach(recordUnit, R.keys(unitDefinitions));
@@ -35,7 +35,14 @@ export const fetchUnitDefinitions = createAction(
       .then(({ data }) => dispatch(registerUnitDefinitions(data)))
       .catch(() => {
         dispatch(displayNotification(new Error('Failed to load units')));
-        loadUnitDefinitions(getState());
       }),
   () => ({ debounce: debounceConfigNames.UNITS })
+);
+
+export const loadUnitDefinitions = createAction(
+  '@@calcoola/units/loadUnitDefinitions',
+  () => (dispatch, getState) => {
+    createUnits(getState());
+    return dispatch(fetchUnitDefinitions());
+  }
 );

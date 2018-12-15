@@ -2,11 +2,9 @@ import * as R from 'ramda';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import {
-  branch,
   compose,
   lifecycle,
   pure,
-  renderComponent,
   withContext,
   withHandlers,
   withProps,
@@ -36,24 +34,11 @@ import { isAuthorizedSelector } from '../../redux/selectors/auth';
 import { fetchUnitDefinitions } from '../../redux/actions/units';
 import { getCalculatorLink } from '../App/Routing/Routing';
 import { noUnitsSelector } from '../../redux/selectors/units';
-import ErrorCatch from '../ErrorCatch';
 import updateLayoutOnChange from '../hoc/updateLayoutOnChange';
 import CalculatorView from './Calculator.view';
 
 export default compose(
   withRouter,
-  lifecycle({
-    componentDidCatch(error, info) {
-      this.setState({ brokenId: this.props.id });
-    },
-  }),
-  branch(
-    ({ brokenId, id }) => brokenId === id,
-    compose(
-      withProps({ message: 'Invalid formula' }),
-      renderComponent(ErrorCatch)
-    )
-  ),
   withProps(({ id, match: { params } }) => ({
     collectionId: params.id,
     shareLink: getCalculatorLink(id),
@@ -81,6 +66,9 @@ export default compose(
       saveCalculator,
     }
   ),
+  withProps(({ noUnits }) => ({
+    error: noUnits,
+  })),
   withStateHandlers(
     ({ isNew }) => ({
       renderDisplay: !isNew,
@@ -143,6 +131,9 @@ export default compose(
   })),
   updateLayoutOnChange,
   lifecycle({
+    componentDidCatch(error) {
+      return this.setState({ error });
+    },
     componentDidUpdate({ args: prevArgs, isNew: prevIsNew }) {
       const {
         args,

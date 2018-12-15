@@ -7,7 +7,7 @@ import EditIconOutlined from '@material-ui/icons/EditOutlined';
 import InfoIcon from '@material-ui/icons/Info';
 import InfoIconOutLined from '@material-ui/icons/InfoOutlined';
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import AddToCollectionButton from './AddToCollectionButton';
 import Argument from './Argument';
@@ -15,7 +15,7 @@ import Author from '../../Author';
 import { CalculatorStyles as styles } from '../sharedStyles';
 import Header from '../Header';
 import IconButton from '../../IconButton';
-import NoUnitsInfo from './NoUnitsInfo';
+import ErrorInfo from './ErrorInfo';
 import PublishConfirmation from './PublishConfirmation';
 import Result from './Result';
 import ShareButton from '../../ShareButton';
@@ -26,11 +26,11 @@ const Display = ({
   authorId,
   classes,
   description,
+  error,
   id,
   isAuthorized,
   isNew,
   isSaving,
-  noUnits,
   onArgUnitChange,
   onArgValueChange,
   onCancel,
@@ -114,24 +114,20 @@ const Display = ({
           ))}
         </Grid>
       </Grid>
-      {noUnits ? (
-        <NoUnitsInfo />
-      ) : (
-        <Fragment>
-          <Grid container direction="column" className={classes.args}>
-            {args.map(arg => (
-              <Argument
-                key={arg.name}
-                {...arg}
-                onArgValueChange={onArgValueChange}
-                onArgUnitChange={onArgUnitChange}
-                className={classes.argument}
-              />
-            ))}
-          </Grid>
-          <Result {...result} onResultUnitChange={onResultUnitChange} />
-        </Fragment>
-      )}
+      <ErrorInfo error={error}>
+        <Grid container direction="column" className={classes.args}>
+          {args.map(arg => (
+            <Argument
+              key={arg.name}
+              {...arg}
+              onArgValueChange={onArgValueChange}
+              onArgUnitChange={onArgUnitChange}
+              className={classes.argument}
+            />
+          ))}
+        </Grid>
+        <Result {...result} onResultUnitChange={onResultUnitChange} />
+      </ErrorInfo>
     </Grid>
     {isSaving && <CircularProgress className={classes.progress} size={150} />}
   </Grid>
@@ -146,11 +142,11 @@ Display.propTypes = {
   authorId: PropTypes.string.isRequired,
   classes: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
+  error: PropTypes.bool,
   id: PropTypes.string.isRequired,
   isAuthorized: PropTypes.bool.isRequired,
   isNew: PropTypes.bool,
   isSaving: PropTypes.bool,
-  noUnits: PropTypes.bool.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
   onArgValueChange: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
