@@ -1,0 +1,28 @@
+import json
+
+all_bracelet = []
+json_str = ''
+while True:
+    n = input()
+    if(n == '{'):
+        all_bracelet.append(n)
+    elif(n == '}'):
+        all_bracelet.pop()
+
+    json_str += n
+    if(len(all_bracelet) <= 0):
+        break
+
+data = json.loads(json_str)
+
+all_subjects = []
+if('report' in data):
+    for one_student in data["report"]:
+        for one_subject in one_student['subject']:
+            if(one_subject['grade'] != "F"):
+                all_subjects.append({'code':one_subject['code'],'grade':one_subject['grade'],'name': one_student['name'],'enrollment':one_student['enrollment']})
+
+    sorted_list = sorted(all_subjects, key=lambda one_subject: (one_subject['code'],one_subject['grade'],one_subject['enrollment']))
+
+    for one_list in sorted_list:
+        print(one_list['code'] + ' ' + one_list['grade'] + ' ' + one_list['enrollment'] + ' ' + one_list['name'])
