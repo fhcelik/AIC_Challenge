@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Copyright from './Copyright';
 import NavBar from '../NavBar';
 import Routing from './Routing';
 import NotificationToaster from './NotificationToaster';
@@ -7,14 +8,13 @@ import NotificationToaster from './NotificationToaster';
 const styles = theme => ({
   root: {
     background: theme.palette.background.gradient,
-    flexGrow: 1,
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
   },
   content: {
     padding: '75px 30px',
-    height: 'inherit',
+    flex: '1 0 auto',
   },
 });
 
@@ -25,6 +25,7 @@ const App = ({ classes }) => (
       <Routing />
     </div>
     <NotificationToaster />
+    <Copyright />
   </div>
 );
 
