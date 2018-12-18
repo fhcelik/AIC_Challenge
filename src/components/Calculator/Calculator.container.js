@@ -4,7 +4,6 @@ import { withRouter } from 'react-router';
 import {
   compose,
   lifecycle,
-  pure,
   withContext,
   withHandlers,
   withProps,
@@ -153,6 +152,8 @@ export default compose(
       const { noUnits, fetchUnitDefinitions } = this.props;
       noUnits && fetchUnitDefinitions();
     },
-  }),
-  pure
+    shouldComponentUpdate(prevProps) {
+      return !R.equals(prevProps, this.props);
+    },
+  })
 )(CalculatorView);
