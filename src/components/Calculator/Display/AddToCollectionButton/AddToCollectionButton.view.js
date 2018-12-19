@@ -18,12 +18,20 @@ const styles = {
   },
 };
 
+const Content = ({ classes, ...props }) => (
+  <List className={classes.list}>
+    <CollectionCreatorList {...props} />
+    <CollectionChecklist {...props} />
+  </List>
+);
+
 const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
   <DropdownMenu
     classes={{ items: classes.items }}
     hasIcon={false}
     keepOpen
     onResize={onResize}
+    withPropsToChildren
     placement="bottom-end"
     target={
       <IconButton tooltipTitle="Add to collection">
@@ -31,10 +39,7 @@ const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
       </IconButton>
     }
   >
-    <List className={classes.list}>
-      <CollectionCreatorList calculatorId={calculatorId} />
-      <CollectionChecklist calculatorId={calculatorId} />
-    </List>
+    <Content classes={classes} calculatorId={calculatorId} />
   </DropdownMenu>
 );
 

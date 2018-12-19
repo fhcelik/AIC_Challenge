@@ -30,11 +30,12 @@ const styles = theme => ({
 });
 
 const CollectionCreatorList = ({
-  classes,
-  newEntries,
   addCollectionEditor,
-  onCollectionNameChange,
+  classes,
+  isSaving,
+  newCollection,
   onCollectionNameKeyDown,
+  renameNewCollection,
 }) => (
   <React.Fragment>
     <Grid container justify="center" className={classes.header}>
@@ -47,37 +48,35 @@ const CollectionCreatorList = ({
         <AddIconOutlined />
       </IconButton>
     </Grid>
-    {newEntries.map(({ id, name, saving }) => (
-      <ListItem key={id} className={classes.item}>
+    {newCollection && (
+      <ListItem className={classes.item}>
         <ListItemIcon>
-          {saving ? <CircularProgress size={20} /> : <NewIcon />}
+          {isSaving ? <CircularProgress size={20} /> : <NewIcon />}
         </ListItemIcon>
         <TextField
-          value={name}
+          value={newCollection.name}
           autoFocus
-          onChange={onCollectionNameChange(id)}
-          onKeyDown={onCollectionNameKeyDown(id)}
+          onChange={renameNewCollection}
+          onKeyDown={onCollectionNameKeyDown}
           InputProps={{
             startAdornment: <MoreVertIcon className={classes.inputIcon} />,
           }}
         />
       </ListItem>
-    ))}
+    )}
   </React.Fragment>
 );
 
 CollectionCreatorList.propTypes = {
-  classes: PropTypes.object.isRequired,
-  newEntries: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      saving: PropTypes.bool.isRequired,
-    })
-  ),
   addCollectionEditor: PropTypes.func.isRequired,
-  onCollectionNameChange: PropTypes.func.isRequired,
+  classes: PropTypes.object.isRequired,
+  isSaving: PropTypes.bool.isRequired,
+  newCollection: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }),
   onCollectionNameKeyDown: PropTypes.func.isRequired,
+  renameNewCollection: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(CollectionCreatorList);

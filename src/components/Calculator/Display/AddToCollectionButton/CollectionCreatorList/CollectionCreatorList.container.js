@@ -1,6 +1,12 @@
 import * as R from 'ramda';
 import { connect } from 'react-redux';
-import { compose, withHandlers, withProps, withStateHandlers } from 'recompose';
+import {
+  compose,
+  lifecycle,
+  withHandlers,
+  withState,
+  withStateHandlers,
+} from 'recompose';
 import { createCollectionFromCalculator } from '../../../../../redux/actions/collections';
 import { Collection } from '../../../../../redux/schemas/collection';
 import updateLayoutOnChange from '../../../../hoc/updateLayoutOnChange';
@@ -11,71 +17,54 @@ export default compose(
     createCollectionFromCalculator,
   }),
   withStateHandlers(
-    { newCollections: {} },
+    { newCollection: null },
     {
-      addCollectionEditor: ({ newCollections }) => event => {
-        const newCollection = Collection({ saving: false });
-        return {
-          newCollections: R.assoc(
-            newCollection.id,
-            newCollection,
-            newCollections
-          ),
-        };
-      },
-      renameCollectionEditor: ({ newCollections }) => ({ id, name }) => ({
-        newCollections: R.assocPath([id, 'name'], name, newCollections),
+      addCollectionEditor: ({ newCollection }) => () => ({
+        newCollection: newCollection || Collection(),
       }),
-      removeCollectionEditor: ({ newCollections }) => ({ id }) => ({
-        newCollections: R.dissoc(id, newCollections),
+      renameNewCollection: ({ newCollection }) => e => ({
+        newCollection: R.assoc('name', e.target.value, newCollection),
       }),
-      saveCollectionEditor: ({ newCollections }) => ({ id, saving }) => ({
-        newCollections: R.assocPath([id, 'saving'], saving, newCollections),
-      }),
+      removeCollectionEditor: () => () => ({ newCollection: null }),
     }
   ),
+  withState('isSaving', 'setIsSaving', false),
   withHandlers({
     createCollection: ({
       calculatorId,
       removeCollectionEditor,
-      saveCollectionEditor,
+      setIsSaving,
       createCollectionFromCalculator,
     }) => ({ id, name }) => {
-      saveCollectionEditor({ id, saving: true });
+      setIsSaving(true);
       return createCollectionFromCalculator({
         calculatorId,
         id,
         name,
       })
-        .then(() => {
-          removeCollectionEditor({ id });
-        })
-        .catch(() => saveCollectionEditor({ id, saving: false }));
+        .then(removeCollectionEditor)
+        .finally(() => setIsSaving(false));
     },
   }),
   withHandlers({
-    onCollectionNameChange: ({ renameCollectionEditor }) => id => event => {
-      renameCollectionEditor({ id, name: event.target.value });
-    },
     onCollectionNameKeyDown: ({
       createCollection,
+      newCollection: { id, name },
       removeCollectionEditor,
-    }) => id => event => {
-      const {
-        target: { value },
-        key,
-      } = event;
-
-      if (!R.isEmpty(value) && key === 'Enter') {
-        createCollection({ id, name: value });
+    }) => e => {
+      if (!R.isEmpty(name) && e.key === 'Enter') {
+        createCollection({ id, name });
       }
-      if ((R.isEmpty(value) && key === 'Backspace') || key === 'Escape') {
-        removeCollectionEditor({ id });
+      if ((R.isEmpty(name) && e.key === 'Backspace') || e.key === 'Escape') {
+        removeCollectionEditor();
       }
     },
   }),
-  updateLayoutOnChange,
-  withProps(({ newCollections }) => ({
-    newEntries: R.values(newCollections),
-  }))
+  lifecycle({
+    componentDidUpdate() {
+      const { open, removeCollectionEditor } = this.props;
+      if (!open) removeCollectionEditor();
+    },
+  }),
+  updateLayoutOnChange
 )(CollectionCreatorList);
