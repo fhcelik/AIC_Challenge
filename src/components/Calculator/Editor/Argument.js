@@ -15,7 +15,6 @@ const styles = {
   root: {
     margin: '-2px 0 0 0',
     '& input': {
-      textTransform: 'uppercase',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
     },
@@ -68,6 +67,7 @@ const Argument = ({
         </Grid>
       ),
     }}
+    InputLabelProps={{ className: classes.inputLabel }}
   />
 );
 

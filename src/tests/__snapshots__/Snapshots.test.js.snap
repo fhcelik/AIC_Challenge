@@ -808,7 +808,7 @@ exports[`Calculator mwCalcId 1`] = `
               className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
               <label
-                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                 data-shrink={true}
                 htmlFor={undefined}
               >
@@ -894,7 +894,7 @@ exports[`Calculator mwCalcId 1`] = `
               className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
               <label
-                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                 data-shrink={true}
                 htmlFor={undefined}
               >
@@ -1367,7 +1367,7 @@ exports[`Calculator quadraticCalcId 1`] = `
               className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
               <label
-                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                 data-shrink={true}
                 htmlFor={undefined}
               >
@@ -1405,7 +1405,7 @@ exports[`Calculator quadraticCalcId 1`] = `
               className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
               <label
-                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                 data-shrink={true}
                 htmlFor={undefined}
               >
@@ -1443,7 +1443,7 @@ exports[`Calculator quadraticCalcId 1`] = `
               className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
             >
               <label
-                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                 data-shrink={true}
                 htmlFor={undefined}
               >
@@ -1752,7 +1752,7 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -1790,7 +1790,7 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -1828,7 +1828,7 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2139,7 +2139,7 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2177,7 +2177,7 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2215,7 +2215,7 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2661,7 +2661,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2699,7 +2699,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -2737,7 +2737,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -3106,7 +3106,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -3144,7 +3144,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -3182,7 +3182,7 @@ exports[`Collection base 1`] = `
                   className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-textField Display-argument"
                 >
                   <label
-                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+                    className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
                     data-shrink={true}
                     htmlFor={undefined}
                   >
@@ -4017,7 +4017,7 @@ exports[`Editor with arg 1`] = `
         className="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth Component-root Argument-root Argument-textField"
       >
         <label
-          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel"
+          className="MuiFormLabel-root MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense Component-inputLabel Argument-inputLabel"
           data-shrink={true}
           htmlFor={undefined}
         >

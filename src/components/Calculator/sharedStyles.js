@@ -75,6 +75,9 @@ export const ArgumentStyles = {
   endAdornmentRoot: {
     margin: '0 2px 2px 0',
   },
+  inputLabel: {
+    textTransform: 'none',
+  },
 };
 
 export const ResultStyles = theme => ({

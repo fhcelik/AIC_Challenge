@@ -22,17 +22,16 @@ const styles = theme => ({
     textOverflow: 'ellipsis',
     textTransform: 'uppercase',
     whiteSpace: 'nowrap',
-    width: 380,
   },
 });
 
 export default withStyles(styles, { withTheme: true })(
-  ({ classes, className, InputLabelProps, theme, ...props }) => (
+  ({ classes, className, InputLabelProps = {}, theme, ...props }) => (
     <TextField
       className={cx(classes.root, className)}
       InputLabelProps={{
-        className: classes.inputLabel,
         ...InputLabelProps,
+        className: cx(classes.inputLabel, InputLabelProps.className),
       }}
       {...theme.props.MuiFormControl}
       {...props}

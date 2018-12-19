@@ -34,6 +34,7 @@ const Argument = ({
         />
       ),
     }}
+    InputLabelProps={{ className: classes.inputLabel }}
   />
 );
 
