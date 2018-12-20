@@ -10,6 +10,7 @@ import PublishIcon from '@material-ui/icons/Publish';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '../../../../IconButton';
+import updateLayoutOnChange from '../../../../hoc/updateLayoutOnChange';
 
 const styles = theme => ({
   root: {
@@ -37,6 +38,7 @@ const styles = theme => ({
 
 const enhance = compose(
   getContext({ onCalculatorEditDone: PropTypes.func }),
+  updateLayoutOnChange,
   withStyles(styles)
 );
 

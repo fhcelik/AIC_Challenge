@@ -7,7 +7,7 @@ import PublishConfirmationContent from './PublishConfirmationContent';
 
 const PublishConfirmation = () => (
   <DropdownMenu
-    offset="22px, 3px"
+    offset="26px, 2px"
     placement="bottom-end"
     hasIcon={false}
     keepOpen
