@@ -22,6 +22,9 @@ const styles = theme => ({
       backgroundColor: theme.palette.link.hover,
     },
   },
+  email: {
+    textTransform: 'none',
+  },
   listItem: {
     minWidth: 170,
     cursor: 'pointer',
@@ -38,14 +41,14 @@ const styles = theme => ({
   },
 });
 
-const UserProfileMenu = ({ classes, fullName, onLogout }) => (
+const UserProfileMenu = ({ classes, email, fullName, onLogout }) => (
   <DropdownMenu
     offset="0"
     placement="bottom-end"
     target={
       <Button className={classes.button}>
         <AccountIcon className={classes.accountIcon} />
-        {fullName}
+        {fullName || <span className={classes.email}>{email}</span>}
       </Button>
     }
   >
@@ -69,7 +72,8 @@ const UserProfileMenu = ({ classes, fullName, onLogout }) => (
 
 UserProfileMenu.propTypes = {
   classes: PropTypes.object.isRequired,
-  fullName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  fullName: PropTypes.string,
   onLogout: PropTypes.func.isRequired,
 };
 
