@@ -10,7 +10,7 @@ import IconButton from '../../../IconButton';
 
 const styles = {
   items: {
-    width: 300,
+    width: 308,
   },
   list: {
     padding: 0,
@@ -27,6 +27,7 @@ const Content = ({ classes, ...props }) => (
 
 const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
   <DropdownMenu
+    offset="54px, 2px"
     classes={{ items: classes.items }}
     hasIcon={false}
     keepOpen
