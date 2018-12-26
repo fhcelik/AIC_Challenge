@@ -35,6 +35,10 @@ jest.mock('./redux/actions/calculatorsByAuthor', () => ({
   saveMyCalculator: mockActionCreator,
   removeMyNewCalculator: mockActionCreator,
 }));
+jest.mock('./redux/actions/popularCalculators', () => ({
+  fetchPopularCalculators: mockAsyncActionCreator,
+  setPopularCalculators: mockActionCreator,
+}));
 
 jest.mock(
   'popper.js',

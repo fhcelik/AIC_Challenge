@@ -27,7 +27,7 @@ export const removeMyNewCalculator = createActionWithLoggedInUserIdInPayload(
 );
 
 export const fetchCalculatorsByAuthorId = createAction(
-  '@@calcoola/calculator/fetchCalculatorsByAuthorId',
+  '@@calcoola/calculatorsByAuthor/fetchCalculatorsByAuthorId',
   authorId => (dispatch, getState, httpClient) =>
     httpClient.get(`/users/${authorId}/calculators`).then(({ data }) => {
       const { entities, result } = normalize(data, calculatorList);

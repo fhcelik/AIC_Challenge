@@ -3,8 +3,9 @@ import app from './app';
 import auth from './auth';
 import calculatorsByAuthor from './calculatorsByAuthor';
 import entities from './entities';
-import units from './units';
 import notifications from './notifications';
+import popularCalculators from './popularCalculators';
+import units from './units';
 
 export default combineReducers({
   app,
@@ -12,5 +13,6 @@ export default combineReducers({
   calculatorsByAuthor,
   entities,
   notifications,
+  popularCalculators,
   units,
 });

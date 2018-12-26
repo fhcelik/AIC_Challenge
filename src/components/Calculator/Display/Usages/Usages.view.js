@@ -5,12 +5,13 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     border: `2px ${theme.palette.text.faded} solid`,
-    height: '1.5em',
-    padding: '0 11px',
+    height: '1.6em',
+    padding: '1px 11px',
     borderRadius: '30px',
     fontFamily: 'oxygen mono',
     textAlign: 'center',
     textTransform: 'uppercase',
+    marginTop: 1,
     marginRight: 3,
   },
 });

@@ -6269,7 +6269,35 @@ exports[`Routing collections 1`] = `
 
 exports[`Routing profile 1`] = `null`;
 
-exports[`Routing root 1`] = `null`;
+exports[`Routing root 1`] = `
+<div
+  className="MuiGrid-container MuiGrid-direction-xs-column"
+>
+  <div
+    className="MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between"
+  >
+    <div
+      className="MuiGrid-item"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body2 CalculatorGrid-title"
+      >
+        popular calculators
+      </p>
+    </div>
+    <div
+      className="MuiGrid-item"
+    />
+  </div>
+  <StackGrid
+    className="CalculatorGrid-grid"
+    columnWidth={320}
+    gridRef={[Function]}
+    gutterHeight={25}
+    gutterWidth={25}
+  />
+</div>
+`;
 
 exports[`Routing search 1`] = `
 <div
