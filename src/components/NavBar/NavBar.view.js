@@ -25,18 +25,16 @@ const styles = theme => ({
   },
   navigation: {
     textTransform: 'uppercase',
-    padding: '1em',
+    padding: '17px 16px 15px 16px',
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: theme.palette.link.hover,
     },
   },
-  logoWrapper: {
-    padding: '0.8em 1em',
-  },
   logo: {
-    width: '110px !important',
-    height: '22px !important',
+    width: '125px !important',
+    height: '25px !important',
+    margin: '-9px -3px -3px 10px',
   },
   activeLink: {
     backgroundColor: theme.palette.link.active,
@@ -56,11 +54,7 @@ const styles = theme => ({
 const NavBar = ({ classes, isAuthorized, location }) => (
   <AppBar position="fixed" className={classes.root}>
     <Toolbar className={classes.toolbar}>
-      <NavLink
-        to={Routes.root}
-        className={cx(classes.navigation, classes.logoWrapper)}
-        exact
-      >
+      <NavLink to={Routes.root} className={classes.navigation} exact>
         <Logo className={classes.logo} />
       </NavLink>
       <CollectionSelect

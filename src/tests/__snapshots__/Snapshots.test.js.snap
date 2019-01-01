@@ -5164,7 +5164,7 @@ exports[`NavBar base 1`] = `
   >
     <a
       aria-current="true"
-      className="NavBar-navigation NavBar-logoWrapper active"
+      className="NavBar-navigation active"
       href="/"
       onClick={[Function]}
       style={Object {}}

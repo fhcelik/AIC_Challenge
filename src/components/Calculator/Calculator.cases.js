@@ -20,6 +20,7 @@ const testCalculators = [
     title: 'Quadratic Formula',
     description: 'Formula for finding roots of a quadratic polynomial',
     tags: ['pure math'],
+    usages: 2860,
   },
 
   {
@@ -37,6 +38,7 @@ const testCalculators = [
     description:
       'Find mud weight based on pressure and total vertical distance (TVD)',
     tags: ['basic drilling'],
+    usages: 365,
   },
 ];
 
@@ -46,7 +48,6 @@ export const initialState = {
   auth: { jwt },
   entities: {
     ...entities,
-    usages: { quadraticCalcId: 2860, mwCalcId: 365, mwMCalcId: 2042394 },
     users: {
       [user.id]: {
         fullName: 'John Smith',

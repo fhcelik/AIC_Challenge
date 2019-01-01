@@ -171,6 +171,11 @@ export const calculatorAuthorSelector = createCalculatorPropertySelector(
   'author'
 );
 
+export const calculatorUsagesSelector = createCalculatorPropertySelector(
+  'usages',
+  0
+);
+
 export const calculatorIsNewSelector = createSelector(
   (state, { id }) => id,
   (state, { collectionId: id }) =>

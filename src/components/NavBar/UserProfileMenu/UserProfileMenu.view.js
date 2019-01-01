@@ -15,8 +15,7 @@ const styles = theme => ({
   },
   button: {
     whiteSpace: 'nowrap',
-    padding: 8,
-    paddingRight: 20,
+    padding: '9px 20px 7px 8px',
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: theme.palette.link.hover,

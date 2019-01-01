@@ -32,7 +32,7 @@ const middleware = [
 ];
 
 const reduxPersistConfig = {
-  key: 'calcoola/root/184',
+  key: 'calcoola/root/232',
   timeout: 35000,
   storage: localforage,
   blacklist: ['notifications'],

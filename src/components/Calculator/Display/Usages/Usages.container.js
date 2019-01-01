@@ -1,14 +1,14 @@
 import abbreviate from 'number-abbreviate';
-import { connect } from 'react-redux';
 import { compose, branch, renderNothing, withProps } from 'recompose';
-import { usagesSelector } from '../../../../redux/selectors/usages';
+import { connect } from 'react-redux';
+import { calculatorUsagesSelector } from '../../../../redux/selectors/calculators';
 import Usages from './Usages.view';
 
 const MIN_USAGE_COUNT = 100;
 
 const enhance = compose(
   connect((state, props) => ({
-    usagesCount: usagesSelector(state, props),
+    usagesCount: calculatorUsagesSelector(state, props),
   })),
   branch(({ usagesCount }) => usagesCount < MIN_USAGE_COUNT, renderNothing),
   withProps(({ usagesCount }) => ({
