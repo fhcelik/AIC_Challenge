@@ -1,6 +1,6 @@
 {
   "name": "calcoola",
-  "version": "1.38.8",
+  "version": "1.38.9",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.6.2",
