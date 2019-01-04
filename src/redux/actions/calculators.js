@@ -10,6 +10,7 @@ import {
   removeNewCalculatorFromCollection,
   saveCalculatorToCollection,
 } from './collections';
+import { addRecentlyUsedCalculator } from './recentlyUsedCalculators';
 import { Calculator, calculator } from '../schemas/calculator';
 import { debounceConfigNames } from '../config';
 import { displayNotification } from './notifications';
@@ -18,6 +19,7 @@ import {
   removeMyNewCalculator,
   saveMyCalculator,
 } from './calculatorsByAuthor';
+import { isAuthorizedSelector } from '../selectors/auth';
 import { saveEntities } from './entities';
 
 export const fetchCalculator = createAction(
@@ -157,10 +159,18 @@ export const changeCalculatorResultFormula = createAction(
     dispatch(changeCalculatorResult({ id, result: { execFormula } }))
 );
 
+export const setCalculatorUsages = createAction(
+  '@@calcoola/calculator/setCalculatorUsages'
+);
+
 export const incrementCalculatorUsage = createAction(
   '@@calcoola/calculator/incrementCalculatorUsage',
   id => (dispatch, getState, httpClient) =>
     allArgsHaveValuesSelector(getState(), { id }) &&
-    httpClient.post(`/usages/${id}`),
+    httpClient.post(`/usages/${id}`).then(() => {
+      dispatch(setCalculatorUsages(id));
+      isAuthorizedSelector(getState()) &&
+        dispatch(addRecentlyUsedCalculator(id));
+    }),
   () => ({ debounce: debounceConfigNames.CALCULATOR_USAGE })
 );

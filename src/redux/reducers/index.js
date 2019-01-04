@@ -5,6 +5,7 @@ import calculatorsByAuthor from './calculatorsByAuthor';
 import entities from './entities';
 import notifications from './notifications';
 import popularCalculators from './popularCalculators';
+import recentlyUsedCalculators from './recentlyUsedCalculators';
 import units from './units';
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
   entities,
   notifications,
   popularCalculators,
+  recentlyUsedCalculators,
   units,
 });

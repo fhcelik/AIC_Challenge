@@ -39,6 +39,11 @@ jest.mock('./redux/actions/popularCalculators', () => ({
   fetchPopularCalculators: mockAsyncActionCreator,
   setPopularCalculators: mockActionCreator,
 }));
+jest.mock('./redux/actions/recentlyUsedCalculators', () => ({
+  fetchRecentlyUsedCalculators: mockAsyncActionCreator,
+  addRecentlyUsedCalculator: mockActionCreator,
+  setRecentlyUsedCalculators: mockActionCreator,
+}));
 
 jest.mock(
   'popper.js',

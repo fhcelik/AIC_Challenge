@@ -70,6 +70,8 @@ export default handleActions(
         R.merge(calculators[id].result, result),
         calculators
       ),
+    [Actions.setCalculatorUsages]: (calculators, { payload: calculatorId }) =>
+      R.over(R.lensPath([calculatorId, 'usages']), R.inc, calculators),
   },
   {}
 );
