@@ -25,7 +25,7 @@ const Result = ({
 }) => (
   <Input
     classes={{
-      root: cx(classes.result, classes.resultText),
+      root: cx(classes.result, classes.editorResultText),
       input: classes.formulaInput,
     }}
     value={execFormula}

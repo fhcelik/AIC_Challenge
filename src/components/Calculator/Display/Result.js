@@ -12,6 +12,7 @@ const Result = ({ classes, unit, result, onResultUnitChange }) => (
       {unit && (
         <UnitSelect
           classes={{
+            root: classes.resultSelectRoot,
             selectMenu: classes.resultSelectMenu,
             icon: classes.resultSelectIcon,
           }}

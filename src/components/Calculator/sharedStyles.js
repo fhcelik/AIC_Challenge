@@ -92,14 +92,22 @@ export const ResultStyles = theme => ({
     position: 'relative',
     minHeight: 25,
   },
+  editorResultText: {
+    ...theme.typography.display4,
+  },
+  resultSelectRoot: {
+    height: '100%',
+  },
   resultText: {
     ...theme.typography.display4,
+    color: theme.palette.text.success,
   },
   resultSelectMenu: {
     ...theme.typography.display4,
+    color: theme.palette.text.success,
   },
   resultSelectIcon: {
-    bottom: '-0.75em',
+    bottom: '-0.5em',
     right: '-0.35em',
   },
 });

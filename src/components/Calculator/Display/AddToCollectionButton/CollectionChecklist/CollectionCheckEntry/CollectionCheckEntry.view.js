@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = {
+const styles = theme => ({
   root: {
     padding: 8,
+    '&:hover': {
+      backgroundColor: theme.palette.link.hover,
+    },
   },
   text: {
     textTransform: 'uppercase',
   },
-};
+});
 
 const CollectionCheckEntry = ({
   checked,

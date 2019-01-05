@@ -5,6 +5,7 @@ import './app.css';
 
 export const colors = {
   darkGray: '#4F6374',
+  green: '#00D623',
   gunmetal: '#1C2938',
   gunmetalGradient:
     'linear-gradient(180deg, #1e2529 0%, #1C2938 50%, #1C2938 100%)',
@@ -42,7 +43,7 @@ const palette = {
   },
   link: {
     active: colors.navyBlue,
-    hover: colors.steelTeal,
+    hover: colors.navyBlue,
   },
   tag: {
     background: colors.stormcloud,
@@ -50,6 +51,7 @@ const palette = {
   },
   text: {
     primary: colors.lightGray,
+    success: colors.green,
     faded: colors.darkGray,
     disabled: colors.steelBlue,
   },

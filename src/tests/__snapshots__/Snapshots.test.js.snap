@@ -992,7 +992,7 @@ exports[`Calculator mwCalcId 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="MuiSelect-root"
+                  className="MuiSelect-root Result-resultSelectRoot"
                 >
                   <div
                     aria-haspopup="true"
@@ -3660,7 +3660,7 @@ exports[`Editor editor 1`] = `
       </button>
     </Tooltip>
     <div
-      className="MuiInputBase-root MuiInput-root Result-result Result-resultText MuiInputBase-error MuiInput-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-multiline MuiInput-multiline"
+      className="MuiInputBase-root MuiInput-root Result-result Result-editorResultText MuiInputBase-error MuiInput-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-multiline MuiInput-multiline"
       onClick={[Function]}
     >
       <div
@@ -4231,7 +4231,7 @@ exports[`Editor with arg 1`] = `
       </button>
     </Tooltip>
     <div
-      className="MuiInputBase-root MuiInput-root Result-result Result-resultText MuiInputBase-error MuiInput-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-multiline MuiInput-multiline"
+      className="MuiInputBase-root MuiInput-root Result-result Result-editorResultText MuiInputBase-error MuiInput-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-multiline MuiInput-multiline"
       onClick={[Function]}
     >
       <div
