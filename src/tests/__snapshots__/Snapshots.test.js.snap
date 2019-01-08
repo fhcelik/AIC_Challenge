@@ -507,11 +507,15 @@ exports[`Calculator mwCalcId 1`] = `
           <div
             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
           >
-            <div
-              className="Usages-root"
+            <Tooltip
+              title="Has been used 365 times"
             >
-              365
-            </div>
+              <div
+                className="Usages-root"
+              >
+                365
+              </div>
+            </Tooltip>
             <div>
               <div
                 className="DropdownMenu-target"
@@ -1066,11 +1070,15 @@ exports[`Calculator quadraticCalcId 1`] = `
           <div
             className="MuiGrid-container MuiGrid-justify-xs-flex-end"
           >
-            <div
-              className="Usages-root"
+            <Tooltip
+              title="Has been used 2860 times"
             >
-              3k
-            </div>
+              <div
+                className="Usages-root"
+              >
+                3k
+              </div>
+            </Tooltip>
             <div>
               <div
                 className="DropdownMenu-target"

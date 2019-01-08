@@ -1,6 +1,8 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import WithTooltip from '../../../WithTooltip';
 
 const styles = theme => ({
   root: {
@@ -16,8 +18,16 @@ const styles = theme => ({
   },
 });
 
-const Usages = ({ classes, label }) => (
-  <Grid className={classes.root}>{label}</Grid>
+const Usages = ({ classes, label, tooltipTitle }) => (
+  <WithTooltip title={tooltipTitle}>
+    <Grid className={classes.root}>{label}</Grid>
+  </WithTooltip>
 );
+
+Usages.propTypes = {
+  classes: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  tooltipTitle: PropTypes.string,
+};
 
 export default withStyles(styles)(Usages);

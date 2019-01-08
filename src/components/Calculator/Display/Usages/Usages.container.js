@@ -12,7 +12,8 @@ const enhance = compose(
   })),
   branch(({ usagesCount }) => usagesCount < MIN_USAGE_COUNT, renderNothing),
   withProps(({ usagesCount }) => ({
-    label: usagesCount < 1000 ? usagesCount : abbreviate(usagesCount),
+    tooltipTitle: `Has been used ${usagesCount} times`,
+    label: usagesCount < 1000 ? String(usagesCount) : abbreviate(usagesCount),
   }))
 );
 
