@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import { Grid, TextField, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import CancelIconOutlined from '@material-ui/icons/CancelOutlined';
 import PropTypes from 'prop-types';
@@ -22,7 +22,6 @@ const Info = ({
   formula,
   authorId,
   showDisplay,
-  theme,
   title,
 }) => (
   <Grid container direction="column" className={classes.root} wrap="nowrap">
@@ -50,18 +49,14 @@ const Info = ({
       <Grid className={cx(classes.border, classes.formula)}>
         <Formula formula={formula} />
       </Grid>
-      <TextField
-        autoComplete="off"
-        label="DESCRIPTION"
-        value={description}
-        disabled
-        type="text"
-        multiline
-        {...theme.props.MuiFormControl}
-        InputProps={{
-          classes: { input: classes.description },
-        }}
-      />
+      <Grid className={cx(classes.description, classes.border)}>
+        <Typography className={classes.descriptionHeader}>
+          DESCRIPTION
+        </Typography>
+        <Typography className={classes.descriptionBody}>
+          {description}
+        </Typography>
+      </Grid>
     </Grid>
   </Grid>
 );
@@ -71,8 +66,7 @@ Info.propTypes = {
   description: PropTypes.string.isRequired,
   formula: PropTypes.string.isRequired,
   showDisplay: PropTypes.func.isRequired,
-  theme: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Info);
+export default withStyles(styles)(Info);

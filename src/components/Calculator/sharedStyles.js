@@ -115,7 +115,7 @@ export const ResultStyles = theme => ({
 export const InfoStyles = theme => ({
   border: {
     border: `2px solid ${theme.palette.card.header}`,
-    padding: '0.2em',
+    padding: '0.33em',
     marginTop: '-2px',
     width: '100%',
   },
@@ -124,7 +124,16 @@ export const InfoStyles = theme => ({
     overflow: 'auto',
   },
   description: {
-    ...theme.typography.display3,
+    maxHeight: 200,
+    overflow: 'auto',
+  },
+  descriptionHeader: {
+    color: theme.palette.text.disabled,
+    fontSize: '0.75rem',
+    marginBottom: 2,
+  },
+  descriptionBody: {
+    padding: '0px 6px',
   },
   author: {
     margin: '10px 0',
