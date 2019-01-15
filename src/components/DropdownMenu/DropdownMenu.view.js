@@ -21,8 +21,8 @@ const styles = theme => ({
     position: 'relative',
   },
   items: {
-    background: theme.palette.navbar.background,
-    borderColor: theme.palette.card.header,
+    background: theme.palette.dropdownMenu.background,
+    borderColor: theme.palette.dropdownMenu.border,
     border: '1px solid',
     overflowY: 'auto',
     maxHeight: '75vh',

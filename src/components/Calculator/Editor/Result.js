@@ -36,7 +36,7 @@ const Result = ({
     endAdornment={
       unit && (
         <UnitSelect
-          classes={{
+          selectClasses={{
             selectMenu: classes.resultSelectMenu,
             icon: classes.resultSelectIcon,
           }}

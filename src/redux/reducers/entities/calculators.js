@@ -61,6 +61,10 @@ export default handleActions(
         R.dissoc(argprop),
         calculators
       ),
+    [Actions.removeCalculatorArgUnit]: (
+      calculators,
+      { payload: { id, argname } }
+    ) => R.dissocPath([id, 'args', argname, 'unit'], calculators),
     [Actions.changeCalculatorResult]: (
       calculators,
       { payload: { id, result } }

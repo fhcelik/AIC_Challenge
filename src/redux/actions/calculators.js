@@ -143,6 +143,10 @@ export const removeCalculatorArg = createAction(
   '@@calcoola/calculator/argument-remove'
 );
 
+export const removeCalculatorArgUnit = createAction(
+  '@@calcoola/calculator/removeCalculatorArgUnit'
+);
+
 export const changeCalculatorResult = createAction(
   '@@calcoola/calculator/result-change'
 );

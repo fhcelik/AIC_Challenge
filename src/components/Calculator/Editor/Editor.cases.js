@@ -15,6 +15,7 @@ const stubs = {
   onArgAdd: stubHandler,
   onArgAliasChange: stubHandler,
   onArgUnitChange: stubHandler,
+  onArgUnitRemove: stubHandler,
   onArgRemove: stubHandler,
   onResultFormulaChange: stubHandler,
   onResultUnitChange: stubHandler,

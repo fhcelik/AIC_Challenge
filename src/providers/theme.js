@@ -5,6 +5,7 @@ import './app.css';
 
 export const colors = {
   darkGray: '#4F6374',
+  gray: 'rgba(0, 0, 0, 0.2)',
   green: '#00D623',
   gunmetal: '#1C2938',
   gunmetalGradient:
@@ -17,7 +18,6 @@ export const colors = {
   steelTeal: 'rgba(26, 60, 71, 0.5)',
   stormcloud: '#1C444D',
   white: 'white',
-  gray: 'rgba(0, 0, 0, 0.2)',
 };
 
 const palette = {
@@ -65,6 +65,8 @@ const palette = {
     },
   },
   dropdownMenu: {
+    background: colors.midnightBlue,
+    border: colors.navyBlue,
     shadow: colors.gray,
   },
 };

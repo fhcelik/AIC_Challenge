@@ -11,7 +11,7 @@ const Result = ({ classes, unit, result, onResultUnitChange }) => (
       <Typography className={classes.resultText}>{result}</Typography>
       {unit && (
         <UnitSelect
-          classes={{
+          selectClasses={{
             root: classes.resultSelectRoot,
             selectMenu: classes.resultSelectMenu,
             icon: classes.resultSelectIcon,

@@ -8,6 +8,7 @@ import {
   changeCalculatorResultFormula,
   changeCalculatorTitle,
   removeCalculatorArg,
+  removeCalculatorArgUnit,
   removeCalculatorTag,
 } from '../../../redux/actions/calculators';
 import {
@@ -30,6 +31,7 @@ export default compose(
       changeCalculatorResultFormula,
       changeCalculatorTitle,
       removeCalculatorArg,
+      removeCalculatorArgUnit,
       removeCalculatorTag,
     }
   ),
@@ -58,6 +60,9 @@ export default compose(
     },
     onArgRemove: ({ id, removeCalculatorArg }) => argname => () => {
       removeCalculatorArg({ id, argname });
+    },
+    onArgUnitRemove: ({ id, removeCalculatorArgUnit }) => argname => {
+      removeCalculatorArgUnit({ id, argname });
     },
     onResultFormulaChange: ({ id, changeCalculatorResultFormula }) => event => {
       changeCalculatorResultFormula({

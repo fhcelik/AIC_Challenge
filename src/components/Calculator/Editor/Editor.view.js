@@ -47,6 +47,7 @@ const Editor = ({
   onArgAliasChange,
   onArgRemove,
   onArgUnitChange,
+  onArgUnitRemove,
   onCancel,
   onDescriptionChange,
   onResultFormulaChange,
@@ -107,6 +108,7 @@ const Editor = ({
             {...arg}
             onArgAliasChange={onArgAliasChange}
             onArgUnitChange={onArgUnitChange}
+            onArgUnitRemove={onArgUnitRemove}
             onArgRemove={onArgRemove}
           />
         ))}
@@ -152,6 +154,7 @@ Editor.propTypes = {
   onArgAliasChange: PropTypes.func.isRequired,
   onArgRemove: PropTypes.func.isRequired,
   onArgUnitChange: PropTypes.func.isRequired,
+  onArgUnitRemove: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   onDescriptionChange: PropTypes.func.isRequired,
   onResultFormulaChange: PropTypes.func.isRequired,
