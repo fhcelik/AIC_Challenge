@@ -178,14 +178,16 @@ export const calculatorUsagesSelector = createCalculatorPropertySelector(
 
 export const calculatorIsNewSelector = createSelector(
   (state, { id }) => id,
+  calculatorSelector,
   (state, { collectionId: id }) =>
     newCalculatorsByCollectionIdSelector(state, { id }),
   (state, { loggedInUserId: id }) => myNewCalculatorsSelector(state, { id }),
-  (id, collectionNewCalculators, myNewCalculators) =>
-    R.pipe(R.ap([R.contains(id)]), R.any(R.equals(true)))([
-      collectionNewCalculators,
-      myNewCalculators,
-    ])
+  (id, calculator, collectionNewCalculators, myNewCalculators) =>
+    R.pipe(
+      R.ap([R.contains(id)]),
+      R.any(R.equals(true)),
+      R.or(R.isNil(calculator))
+    )([collectionNewCalculators, myNewCalculators])
 );
 
 export const listCalculatorIdsSelector = createSelector(
