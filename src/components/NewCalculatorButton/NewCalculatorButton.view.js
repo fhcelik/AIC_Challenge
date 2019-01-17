@@ -3,6 +3,8 @@ import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import RequireLogin from '../RequireLogin';
+import WithTooltip from '../WithTooltip';
 
 const styles = theme => ({
   root: {
@@ -18,15 +20,24 @@ const styles = theme => ({
   },
 });
 
-const NewCalculatorButton = ({ classes, onClick }) => (
-  <Button className={classes.root} onClick={onClick}>
-    <AddIcon className={classes.icon} />
-  </Button>
+const AddButton = ({ classes, onClick, tooltipTitle }) => (
+  <WithTooltip title={tooltipTitle}>
+    <Button className={classes.root} onClick={onClick}>
+      <AddIcon className={classes.icon} />
+    </Button>
+  </WithTooltip>
 );
 
-NewCalculatorButton.propTypes = {
+AddButton.propTypes = {
   classes: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  tooltipTitle: PropTypes.string,
 };
+
+const NewCalculatorButton = ({ classes, ...props }) => (
+  <RequireLogin {...props} tooltipTitle="Create a new calculator">
+    <AddButton classes={classes} />
+  </RequireLogin>
+);
 
 export default withStyles(styles)(NewCalculatorButton);

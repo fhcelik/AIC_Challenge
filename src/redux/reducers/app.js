@@ -21,10 +21,19 @@ export default handleActions(
       ...app,
       searchQuery,
     }),
+    [Actions.openLoginDropdown]: app =>
+      R.mergeRight(app, { isLoginDropdownOpen: true }),
+    [Actions.toggleLoginDropdown]: app =>
+      R.mergeRight(app, {
+        isLoginDropdownOpen: !R.prop('isLoginDropdownOpen', app),
+      }),
+    [Actions.closeLoginDropdown]: app =>
+      R.mergeRight(app, { isLoginDropdownOpen: false }),
   },
   {
     menuCollectionList: [],
     searchResults: [],
     searchQuery: '',
+    isLoginDropdownOpen: false,
   }
 );

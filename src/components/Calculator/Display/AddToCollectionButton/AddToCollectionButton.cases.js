@@ -1,6 +1,7 @@
 import { normalize } from 'normalizr';
 import React from 'react';
 import { collectionList } from '../../../../redux/schemas/collection';
+import { jwt, user } from '../../../../tests/data';
 import AddToCollectionButton from '../AddToCollectionButton';
 
 const testData = [
@@ -24,6 +25,7 @@ const { entities, result } = normalize(testData, collectionList);
 export const initialState = {
   entities,
   app: { menuCollectionList: result },
+  auth: { jwt, user },
 };
 
 export const Decorator = story => (

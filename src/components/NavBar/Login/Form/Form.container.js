@@ -23,7 +23,12 @@ export default compose(
   withState('isInvalidInput', 'setIsInvalidInput', false),
   withState('isSubmitDisabled', 'setIsSubmitDisabled', true),
   withHandlers({
-    onSubmit: ({ login, handleClose, openDialog, setIsInvalidInput }) => e => {
+    onSubmit: ({
+      login,
+      handleClose,
+      openConfirmationDialog,
+      setIsInvalidInput,
+    }) => e => {
       e.preventDefault();
       if (!e.target.checkValidity()) {
         setIsInvalidInput(true);
@@ -31,7 +36,7 @@ export default compose(
       }
       handleClose();
       login(getInputValueOnFormSubmit('email', e)).then(() => {
-        openDialog();
+        openConfirmationDialog();
       });
     },
     onInputChange: ({ setIsInvalidInput, setIsSubmitDisabled }) => e => {

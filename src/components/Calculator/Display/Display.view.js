@@ -28,7 +28,6 @@ const Display = ({
   description,
   error,
   id,
-  isAuthorized,
   isNew,
   isSaving,
   onArgUnitChange,
@@ -76,7 +75,7 @@ const Display = ({
     ) : (
       <Header>
         <Usages id={id} />
-        {isAuthorized && <AddToCollectionButton calculatorId={id} />}
+        <AddToCollectionButton calculatorId={id} />
         <ShareButton urlToShare={shareLink} hoverText="Share this calculator" />
         <IconButton
           onClick={showInfo}
@@ -144,7 +143,6 @@ Display.propTypes = {
   description: PropTypes.string.isRequired,
   error: PropTypes.bool,
   id: PropTypes.string.isRequired,
-  isAuthorized: PropTypes.bool.isRequired,
   isNew: PropTypes.bool,
   isSaving: PropTypes.bool,
   onArgUnitChange: PropTypes.func.isRequired,

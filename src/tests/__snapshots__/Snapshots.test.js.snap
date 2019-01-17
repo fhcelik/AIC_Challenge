@@ -20,6 +20,7 @@ exports[`AddToCollectionButton base 1`] = `
           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
           disabled={false}
           onBlur={[Function]}
+          onClick={undefined}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
@@ -261,8 +262,8 @@ exports[`Author base 1`] = `
 <Tooltip
   classes={
     Object {
-      "popper": "Author-popper-205",
-      "tooltip": "Author-tooltip-206",
+      "popper": "Author-popper-234",
+      "tooltip": "Author-tooltip-235",
     }
   }
   interactive={true}
@@ -528,6 +529,7 @@ exports[`Calculator mwCalcId 1`] = `
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                     disabled={false}
                     onBlur={[Function]}
+                    onClick={undefined}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
@@ -765,8 +767,8 @@ exports[`Calculator mwCalcId 1`] = `
                 <Tooltip
                   classes={
                     Object {
-                      "popper": "Author-popper-205",
-                      "tooltip": "Author-tooltip-206",
+                      "popper": "Author-popper-234",
+                      "tooltip": "Author-tooltip-235",
                     }
                   }
                   interactive={true}
@@ -1091,6 +1093,7 @@ exports[`Calculator quadraticCalcId 1`] = `
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                     disabled={false}
                     onBlur={[Function]}
+                    onClick={undefined}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
@@ -1328,8 +1331,8 @@ exports[`Calculator quadraticCalcId 1`] = `
                 <Tooltip
                   classes={
                     Object {
-                      "popper": "Author-popper-205",
-                      "tooltip": "Author-tooltip-206",
+                      "popper": "Author-popper-234",
+                      "tooltip": "Author-tooltip-235",
                     }
                   }
                   interactive={true}
@@ -1599,6 +1602,142 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
               <div
                 className="MuiGrid-container MuiGrid-justify-xs-flex-end"
               >
+                <div>
+                  <div
+                    className="DropdownMenu-target"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      title="Add to collection"
+                    >
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={undefined}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex="0"
+                        type="button"
+                      >
+                        <span
+                          className="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            className="MuiSvgIcon-root"
+                            color={undefined}
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                            <path
+                              d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </Tooltip>
+                  </div>
+                  <div
+                    className="DropdownMenu-popover"
+                    data-placement={undefined}
+                    data-x-out-of-boundaries={undefined}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "opacity": 0,
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      className="MuiCollapse-container"
+                      style={
+                        Object {
+                          "minHeight": "0px",
+                        }
+                      }
+                    >
+                      <div
+                        className="MuiCollapse-wrapper"
+                      >
+                        <div
+                          className="MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            className="DropdownMenu-items AddToCollectionButton-items"
+                          >
+                            <ul
+                              className="MuiList-root MuiList-padding AddToCollectionButton-list"
+                            >
+                              <div
+                                className="MuiGrid-container MuiGrid-justify-xs-center CollectionCreatorList-header"
+                              >
+                                <Tooltip
+                                  title="Create a new collection"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton CollectionCreatorList-addIcon"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex="0"
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiIconButton-label"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        className="MuiSvgIcon-root"
+                                        color={undefined}
+                                        focusable="false"
+                                        role="presentation"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M0 0h24v24H0z"
+                                          fill="none"
+                                        />
+                                        <path
+                                          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </Tooltip>
+                              </div>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <Tooltip
                   title="Share this calculator"
                 >
@@ -1713,8 +1852,8 @@ exports[`CalculatorsByAuthor calculatorsByAuthor 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -1986,6 +2125,142 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
               <div
                 className="MuiGrid-container MuiGrid-justify-xs-flex-end"
               >
+                <div>
+                  <div
+                    className="DropdownMenu-target"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      title="Add to collection"
+                    >
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={undefined}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex="0"
+                        type="button"
+                      >
+                        <span
+                          className="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            className="MuiSvgIcon-root"
+                            color={undefined}
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                            <path
+                              d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </Tooltip>
+                  </div>
+                  <div
+                    className="DropdownMenu-popover"
+                    data-placement={undefined}
+                    data-x-out-of-boundaries={undefined}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "opacity": 0,
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                      }
+                    }
+                  >
+                    <div
+                      className="MuiCollapse-container"
+                      style={
+                        Object {
+                          "minHeight": "0px",
+                        }
+                      }
+                    >
+                      <div
+                        className="MuiCollapse-wrapper"
+                      >
+                        <div
+                          className="MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            className="DropdownMenu-items AddToCollectionButton-items"
+                          >
+                            <ul
+                              className="MuiList-root MuiList-padding AddToCollectionButton-list"
+                            >
+                              <div
+                                className="MuiGrid-container MuiGrid-justify-xs-center CollectionCreatorList-header"
+                              >
+                                <Tooltip
+                                  title="Create a new collection"
+                                >
+                                  <button
+                                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton CollectionCreatorList-addIcon"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex="0"
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiIconButton-label"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        className="MuiSvgIcon-root"
+                                        color={undefined}
+                                        focusable="false"
+                                        role="presentation"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M0 0h24v24H0z"
+                                          fill="none"
+                                        />
+                                        <path
+                                          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </Tooltip>
+                              </div>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <Tooltip
                   title="Share this calculator"
                 >
@@ -2100,8 +2375,8 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -2278,47 +2553,51 @@ exports[`CalculatorsByAuthor myCalculators 1`] = `
         />
       </div>
     </div>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      type="button"
+    <Tooltip
+      title="Create a new calculator"
     >
-      <span
-        className="MuiButton-label"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root NewCalculatorButton-icon"
-          color={undefined}
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
+        <span
+          className="MuiButton-label"
         >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
-      </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
-    </button>
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root NewCalculatorButton-icon"
+            color={undefined}
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </Tooltip>
   </StackGrid>
 </div>
 `;
@@ -2426,6 +2705,7 @@ exports[`Collection base 1`] = `
                         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                         disabled={false}
                         onBlur={[Function]}
+                        onClick={undefined}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onKeyUp={[Function]}
@@ -2663,8 +2943,8 @@ exports[`Collection base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -2871,6 +3151,7 @@ exports[`Collection base 1`] = `
                         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                         disabled={false}
                         onBlur={[Function]}
+                        onClick={undefined}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onKeyUp={[Function]}
@@ -3108,8 +3389,8 @@ exports[`Collection base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -3286,47 +3567,51 @@ exports[`Collection base 1`] = `
         />
       </div>
     </div>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      type="button"
+    <Tooltip
+      title="Create a new calculator"
     >
-      <span
-        className="MuiButton-label"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
       >
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root NewCalculatorButton-icon"
-          color={undefined}
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
+        <span
+          className="MuiButton-label"
         >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
-      </span>
-      <span
-        className="MuiTouchRipple-root"
-      />
-    </button>
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root NewCalculatorButton-icon"
+            color={undefined}
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </Tooltip>
   </StackGrid>
 </div>
 `;
@@ -3431,6 +3716,7 @@ exports[`Dashboard base 1`] = `
                             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                             disabled={false}
                             onBlur={[Function]}
+                            onClick={undefined}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
@@ -3668,8 +3954,8 @@ exports[`Dashboard base 1`] = `
                         <Tooltip
                           classes={
                             Object {
-                              "popper": "Author-popper-205",
-                              "tooltip": "Author-tooltip-206",
+                              "popper": "Author-popper-234",
+                              "tooltip": "Author-tooltip-235",
                             }
                           }
                           interactive={true}
@@ -3885,6 +4171,7 @@ exports[`Dashboard base 1`] = `
                             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                             disabled={false}
                             onBlur={[Function]}
+                            onClick={undefined}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
@@ -4122,8 +4409,8 @@ exports[`Dashboard base 1`] = `
                         <Tooltip
                           classes={
                             Object {
-                              "popper": "Author-popper-205",
-                              "tooltip": "Author-tooltip-206",
+                              "popper": "Author-popper-234",
+                              "tooltip": "Author-tooltip-235",
                             }
                           }
                           interactive={true}
@@ -4414,6 +4701,7 @@ exports[`Dashboard base 1`] = `
                           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                           disabled={false}
                           onBlur={[Function]}
+                          onClick={undefined}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
                           onKeyUp={[Function]}
@@ -4651,8 +4939,8 @@ exports[`Dashboard base 1`] = `
                       <Tooltip
                         classes={
                           Object {
-                            "popper": "Author-popper-205",
-                            "tooltip": "Author-tooltip-206",
+                            "popper": "Author-popper-234",
+                            "tooltip": "Author-tooltip-235",
                           }
                         }
                         interactive={true}
@@ -4868,6 +5156,7 @@ exports[`Dashboard base 1`] = `
                           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
                           disabled={false}
                           onBlur={[Function]}
+                          onClick={undefined}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
                           onKeyUp={[Function]}
@@ -5105,8 +5394,8 @@ exports[`Dashboard base 1`] = `
                       <Tooltip
                         classes={
                           Object {
-                            "popper": "Author-popper-205",
-                            "tooltip": "Author-tooltip-206",
+                            "popper": "Author-popper-234",
+                            "tooltip": "Author-tooltip-235",
                           }
                         }
                         interactive={true}
@@ -5283,47 +5572,51 @@ exports[`Dashboard base 1`] = `
           />
         </div>
       </div>
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
+      <Tooltip
+        title="Create a new calculator"
       >
-        <span
-          className="MuiButton-label"
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root NewCalculatorButton-icon"
-            color={undefined}
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
+          <span
+            className="MuiButton-label"
           >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-            />
-          </svg>
-        </span>
-        <span
-          className="MuiTouchRipple-root"
-        />
-      </button>
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root NewCalculatorButton-icon"
+              color={undefined}
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root"
+          />
+        </button>
+      </Tooltip>
     </StackGrid>
   </div>
 </div>
@@ -7523,47 +7816,56 @@ exports[`NavBar base 1`] = `
 `;
 
 exports[`NewCalculatorButton render 1`] = `
-<button
-  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  onMouseDown={[Function]}
+<div
+  className=""
   onMouseLeave={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchMove={[Function]}
-  onTouchStart={[Function]}
-  tabIndex="0"
-  type="button"
 >
-  <span
-    className="MuiButton-label"
+  <Tooltip
+    title="Create a new calculator"
   >
-    <svg
-      aria-hidden="true"
-      className="MuiSvgIcon-root NewCalculatorButton-icon"
-      color={undefined}
-      focusable="false"
-      role="presentation"
-      viewBox="0 0 24 24"
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
+      <span
+        className="MuiButton-label"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root NewCalculatorButton-icon"
+          color={undefined}
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiTouchRipple-root"
       />
-      <path
-        d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-      />
-    </svg>
-  </span>
-  <span
-    className="MuiTouchRipple-root"
-  />
-</button>
+    </button>
+  </Tooltip>
+</div>
 `;
 
 exports[`NotificationToaster base 1`] = `
@@ -7702,6 +8004,54 @@ exports[`PopularCalculators base 1`] = `
                     343
                   </div>
                 </Tooltip>
+                <div
+                  className=""
+                  onMouseLeave={[Function]}
+                >
+                  <Tooltip
+                    title="Add to collection"
+                  >
+                    <button
+                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex="0"
+                      type="button"
+                    >
+                      <span
+                        className="MuiIconButton-label"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="MuiSvgIcon-root"
+                          color={undefined}
+                          focusable="false"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          />
+                          <path
+                            d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </Tooltip>
+                </div>
                 <Tooltip
                   title="Share this calculator"
                 >
@@ -7816,8 +8166,8 @@ exports[`PopularCalculators base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -8021,6 +8371,54 @@ exports[`PopularCalculators base 1`] = `
                     121
                   </div>
                 </Tooltip>
+                <div
+                  className=""
+                  onMouseLeave={[Function]}
+                >
+                  <Tooltip
+                    title="Add to collection"
+                  >
+                    <button
+                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      tabIndex="0"
+                      type="button"
+                    >
+                      <span
+                        className="MuiIconButton-label"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="MuiSvgIcon-root"
+                          color={undefined}
+                          focusable="false"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          />
+                          <path
+                            d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </Tooltip>
+                </div>
                 <Tooltip
                   title="Share this calculator"
                 >
@@ -8135,8 +8533,8 @@ exports[`PopularCalculators base 1`] = `
                     <Tooltip
                       classes={
                         Object {
-                          "popper": "Author-popper-205",
-                          "tooltip": "Author-tooltip-206",
+                          "popper": "Author-popper-234",
+                          "tooltip": "Author-tooltip-235",
                         }
                       }
                       interactive={true}
@@ -8932,6 +9330,142 @@ exports[`RecentlyUsedCalculators base 1`] = `
                       121
                     </div>
                   </Tooltip>
+                  <div>
+                    <div
+                      className="DropdownMenu-target"
+                      onClick={[Function]}
+                    >
+                      <Tooltip
+                        title="Add to collection"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={undefined}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex="0"
+                          type="button"
+                        >
+                          <span
+                            className="MuiIconButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root"
+                              color={undefined}
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </Tooltip>
+                    </div>
+                    <div
+                      className="DropdownMenu-popover"
+                      data-placement={undefined}
+                      data-x-out-of-boundaries={undefined}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "pointerEvents": "none",
+                          "position": "absolute",
+                        }
+                      }
+                    >
+                      <div
+                        className="MuiCollapse-container"
+                        style={
+                          Object {
+                            "minHeight": "0px",
+                          }
+                        }
+                      >
+                        <div
+                          className="MuiCollapse-wrapper"
+                        >
+                          <div
+                            className="MuiCollapse-wrapperInner"
+                          >
+                            <div
+                              className="DropdownMenu-items AddToCollectionButton-items"
+                            >
+                              <ul
+                                className="MuiList-root MuiList-padding AddToCollectionButton-list"
+                              >
+                                <div
+                                  className="MuiGrid-container MuiGrid-justify-xs-center CollectionCreatorList-header"
+                                >
+                                  <Tooltip
+                                    title="Create a new collection"
+                                  >
+                                    <button
+                                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton CollectionCreatorList-addIcon"
+                                      disabled={false}
+                                      onBlur={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex="0"
+                                      type="button"
+                                    >
+                                      <span
+                                        className="MuiIconButton-label"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          className="MuiSvgIcon-root"
+                                          color={undefined}
+                                          focusable="false"
+                                          role="presentation"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M0 0h24v24H0z"
+                                            fill="none"
+                                          />
+                                          <path
+                                            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </Tooltip>
+                                </div>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <Tooltip
                     title="Share this calculator"
                   >
@@ -9046,8 +9580,8 @@ exports[`RecentlyUsedCalculators base 1`] = `
                       <Tooltip
                         classes={
                           Object {
-                            "popper": "Author-popper-205",
-                            "tooltip": "Author-tooltip-206",
+                            "popper": "Author-popper-234",
+                            "tooltip": "Author-tooltip-235",
                           }
                         }
                         interactive={true}
@@ -9251,6 +9785,142 @@ exports[`RecentlyUsedCalculators base 1`] = `
                       343
                     </div>
                   </Tooltip>
+                  <div>
+                    <div
+                      className="DropdownMenu-target"
+                      onClick={[Function]}
+                    >
+                      <Tooltip
+                        title="Add to collection"
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={undefined}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex="0"
+                          type="button"
+                        >
+                          <span
+                            className="MuiIconButton-label"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root"
+                              color={undefined}
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </Tooltip>
+                    </div>
+                    <div
+                      className="DropdownMenu-popover"
+                      data-placement={undefined}
+                      data-x-out-of-boundaries={undefined}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "pointerEvents": "none",
+                          "position": "absolute",
+                        }
+                      }
+                    >
+                      <div
+                        className="MuiCollapse-container"
+                        style={
+                          Object {
+                            "minHeight": "0px",
+                          }
+                        }
+                      >
+                        <div
+                          className="MuiCollapse-wrapper"
+                        >
+                          <div
+                            className="MuiCollapse-wrapperInner"
+                          >
+                            <div
+                              className="DropdownMenu-items AddToCollectionButton-items"
+                            >
+                              <ul
+                                className="MuiList-root MuiList-padding AddToCollectionButton-list"
+                              >
+                                <div
+                                  className="MuiGrid-container MuiGrid-justify-xs-center CollectionCreatorList-header"
+                                >
+                                  <Tooltip
+                                    title="Create a new collection"
+                                  >
+                                    <button
+                                      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit IconButtonWithTooltip-iconButton CollectionCreatorList-addIcon"
+                                      disabled={false}
+                                      onBlur={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex="0"
+                                      type="button"
+                                    >
+                                      <span
+                                        className="MuiIconButton-label"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          className="MuiSvgIcon-root"
+                                          color={undefined}
+                                          focusable="false"
+                                          role="presentation"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M0 0h24v24H0z"
+                                            fill="none"
+                                          />
+                                          <path
+                                            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </Tooltip>
+                                </div>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <Tooltip
                     title="Share this calculator"
                   >
@@ -9365,8 +10035,8 @@ exports[`RecentlyUsedCalculators base 1`] = `
                       <Tooltip
                         classes={
                           Object {
-                            "popper": "Author-popper-205",
-                            "tooltip": "Author-tooltip-206",
+                            "popper": "Author-popper-234",
+                            "tooltip": "Author-tooltip-235",
                           }
                         }
                         interactive={true}
@@ -9604,31 +10274,116 @@ exports[`Routing profile 1`] = `null`;
 
 exports[`Routing root 1`] = `
 <div
-  className="MuiGrid-container MuiGrid-direction-xs-column"
+  className=""
 >
   <div
-    className="MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between"
+    className="MuiGrid-container MuiGrid-direction-xs-column"
   >
     <div
-      className="MuiGrid-item"
+      className="MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between"
     >
-      <p
-        className="MuiTypography-root MuiTypography-body2 CalculatorGrid-title"
+      <div
+        className="MuiGrid-item"
       >
-        popular calculators
-      </p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 CalculatorGrid-title"
+        >
+          popular calculators
+        </p>
+      </div>
+      <div
+        className="MuiGrid-item"
+      />
     </div>
-    <div
-      className="MuiGrid-item"
+    <StackGrid
+      className="CalculatorGrid-grid"
+      columnWidth={320}
+      gridRef={[Function]}
+      gutterHeight={25}
+      gutterWidth={25}
     />
   </div>
-  <StackGrid
-    className="CalculatorGrid-grid"
-    columnWidth={320}
-    gridRef={[Function]}
-    gutterHeight={25}
-    gutterWidth={25}
+  <div
+    className="pure-Dashboard--divider"
   />
+  <div
+    className="MuiGrid-container MuiGrid-direction-xs-column"
+  >
+    <div
+      className="MuiGrid-container MuiGrid-wrap-xs-nowrap MuiGrid-justify-xs-space-between"
+    >
+      <div
+        className="MuiGrid-item"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body2 CalculatorGrid-title"
+        >
+          my calculators
+        </p>
+      </div>
+      <div
+        className="MuiGrid-item"
+      />
+    </div>
+    <StackGrid
+      className="CalculatorGrid-grid"
+      columnWidth={320}
+      gridRef={[Function]}
+      gutterHeight={25}
+      gutterWidth={25}
+    >
+      <div
+        className=""
+        onMouseLeave={[Function]}
+      >
+        <Tooltip
+          title="Create a new calculator"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat NewCalculatorButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root NewCalculatorButton-icon"
+                color={undefined}
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+            </span>
+            <span
+              className="MuiTouchRipple-root"
+            />
+          </button>
+        </Tooltip>
+      </div>
+    </StackGrid>
+  </div>
 </div>
 `;
 

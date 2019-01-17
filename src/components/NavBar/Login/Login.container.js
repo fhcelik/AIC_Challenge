@@ -1,14 +1,34 @@
-import { compose, withStateHandlers } from 'recompose';
+import { compose, withHandlers, withStateHandlers } from 'recompose';
+import { connect } from 'react-redux';
+import { isLoginDropdownOpenSelector } from '../../../redux/selectors/app';
+import {
+  closeLoginDropdown,
+  toggleLoginDropdown,
+} from '../../../redux/actions/app';
 import Login from './Login.view';
 
 export default compose(
+  connect(
+    state => ({ isLoginDropdownOpen: isLoginDropdownOpenSelector(state) }),
+    {
+      closeLoginDropdown,
+      toggleLoginDropdown,
+    }
+  ),
+  withHandlers({
+    closeLoginDropdown: ({ closeLoginDropdown }) => () => closeLoginDropdown(),
+    toggleLoginDropdown: ({ toggleLoginDropdown }) => () =>
+      toggleLoginDropdown(),
+  }),
   withStateHandlers(
     {
-      isDialogOpen: false,
+      isConfirmationDialogOpen: false,
     },
     {
-      closeDialog: () => () => ({ isDialogOpen: false }),
-      openDialog: () => () => ({ isDialogOpen: true }),
+      closeConfirmationDialog: () => () => ({
+        isConfirmationDialogOpen: false,
+      }),
+      openConfirmationDialog: () => () => ({ isConfirmationDialogOpen: true }),
     }
   )
 )(Login);

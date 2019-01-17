@@ -1,5 +1,5 @@
 import React from 'react';
-import { user } from '../../tests/data';
+import { jwt, user } from '../../tests/data';
 import CalculatorsByAuthor from './';
 
 export const initialState = {
@@ -47,7 +47,7 @@ export const initialState = {
       calculators: ['5838d829-b7b3-4693-8a89-0f3ffb40d804'],
     },
   },
-  auth: { user },
+  auth: { jwt, user },
 };
 
 export default {
