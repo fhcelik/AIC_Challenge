@@ -5,7 +5,6 @@ import StackGrid from 'react-stack-grid';
 import { withStyles } from '@material-ui/core/styles';
 import Calculator from '../Calculator';
 import NewCalculatorButton from '../NewCalculatorButton';
-import ShareButton from '../ShareButton';
 
 const styles = theme => ({
   grid: {
@@ -21,11 +20,10 @@ const CalculatorGrid = ({
   calculatorIds,
   classes,
   collectionId,
-  onShareHoverText,
   setDomNode,
   showAddCalculatorButton = false,
   title,
-  urlToShare,
+  toolbarItems,
 }) => (
   <Grid className={classes.root} container direction="column">
     <Grid
@@ -34,13 +32,16 @@ const CalculatorGrid = ({
       wrap="nowrap"
       className={classes.header}
     >
-      <Grid item>
+      <Grid item xs={9}>
         <Typography className={classes.title}>{title}</Typography>
       </Grid>
-      <Grid item>
-        {urlToShare && (
-          <ShareButton urlToShare={urlToShare} hoverText={onShareHoverText} />
-        )}
+      <Grid item xs={3} container spacing={16} justify="flex-end">
+        {toolbarItems &&
+          toolbarItems.map((item, key) => (
+            <Grid item key={key}>
+              {React.cloneElement(item)}
+            </Grid>
+          ))}
       </Grid>
     </Grid>
     <StackGrid
@@ -64,11 +65,10 @@ CalculatorGrid.propTypes = {
   calculatorIds: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   classes: PropTypes.object.isRequired,
   collectionId: PropTypes.string,
-  onShareHoverText: PropTypes.string,
   setDomNode: PropTypes.func.isRequired,
   showAddCalculatorButton: PropTypes.bool,
   title: PropTypes.string,
-  urlToShare: PropTypes.string,
+  toolbarItems: PropTypes.arrayOf(PropTypes.node.isRequired),
 };
 
 export default withStyles(styles)(CalculatorGrid);

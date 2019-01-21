@@ -15,7 +15,8 @@ export const collectionByIdSelector = createSelector(
 export const menuCollectionsSelector = createSelector(
   menuCollectionListSelector,
   collectionsSelector,
-  R.props
+  (collectionIds, collections) =>
+    R.compose(R.filter(R.identity), R.props(collectionIds))(collections)
 );
 
 export const calculatorsByCollectionIdSelector = createSelector(

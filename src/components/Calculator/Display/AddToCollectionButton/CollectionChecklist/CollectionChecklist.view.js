@@ -4,13 +4,16 @@ import CollectionCheckEntry from './CollectionCheckEntry';
 
 const CollectionChecklist = ({ calculatorId, menuEntries }) => (
   <React.Fragment>
-    {menuEntries.map(props => (
-      <CollectionCheckEntry
-        key={props.id}
-        calculatorId={calculatorId}
-        {...props}
-      />
-    ))}
+    {menuEntries.map(
+      props =>
+        props && (
+          <CollectionCheckEntry
+            key={props.id}
+            calculatorId={calculatorId}
+            {...props}
+          />
+        )
+    )}
   </React.Fragment>
 );
 

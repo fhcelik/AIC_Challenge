@@ -22,6 +22,10 @@ export const prependMenuCollectionList = createAction(
   '@@calcoola/app/prependMenuCollectionList'
 );
 
+export const removeMenuCollectionItem = createAction(
+  '@@calcoola/app/removeMenuCollectionItem'
+);
+
 export const saveSearchQuery = createAction('@@calcoola/app/saveSearchQuery');
 
 export const saveSearchResults = createAction(

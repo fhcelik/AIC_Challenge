@@ -1,12 +1,14 @@
 import * as R from 'ramda';
 import { connect } from 'react-redux';
 import { compose, pure, withProps } from 'recompose';
+import React from 'react';
 import { newAndSavedCalculatorsByAuthorIdSelector } from '../../redux/selectors/calculatorsByAuthor';
 import { fetchCalculatorsByAuthorId } from '../../redux/actions/calculatorsByAuthor';
 import { getCalculatorsByUserLink } from '../App/Routing/Routing';
 import handleFetchEntityEnhancer from '../hoc/handleFetchEntity';
 import { loggedInUserIdSelector } from '../../redux/selectors/auth';
 import CalculatorGrid from '../CalculatorGrid';
+import ShareButton from '../ShareButton';
 
 export default compose(
   connect(state => ({
@@ -23,8 +25,12 @@ export default compose(
     )
   ),
   withProps(({ id, title }) => ({
-    onShareHoverText: `Share ${title}`,
-    urlToShare: getCalculatorsByUserLink(id),
+    toolbarItems: [
+      <ShareButton
+        hoverText={`Share ${title}`}
+        urlToShare={getCalculatorsByUserLink(id)}
+      />,
+    ],
   })),
   handleFetchEntityEnhancer({
     entityName: 'calculatorIds',

@@ -28,7 +28,7 @@ const styles = theme => ({
     maxHeight: '75vh',
   },
   popover: {
-    zIndex: 2,
+    zIndex: 1000,
     boxShadow: `${theme.palette.dropdownMenu.shadow} 4px 5px 4px -1px`,
   },
 });

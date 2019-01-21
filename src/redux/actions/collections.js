@@ -4,7 +4,11 @@ import { normalize } from 'normalizr';
 import { Collection, collection, collectionList } from '../schemas/collection';
 import { displayNotification } from './notifications';
 import { newCalculatorsByCollectionIdSelector } from '../selectors/collections';
-import { prependMenuCollectionList, saveMenuCollectionList } from './app';
+import {
+  prependMenuCollectionList,
+  removeMenuCollectionItem,
+  saveMenuCollectionList,
+} from './app';
 import { saveEntities } from './entities';
 
 export const fetchCollections = createAction(
@@ -94,12 +98,13 @@ export const createCollectionFromCalculator = createAction(
   }
 );
 
-export const removeCollection = createAction(
-  '@@calcoola/collections/remove',
-  ({ collectionId }) => (dispatch, getState, httpClient) =>
-    httpClient
-      .delete(`/collections/${collectionId}`)
-      .then(() => ({ collectionId }))
+export const deleteCollection = createAction(
+  '@@calcoola/collections/deleteCollection',
+  collectionId => (dispatch, getState, httpClient) =>
+    httpClient.delete(`/collections/${collectionId}`).then(() => {
+      dispatch(removeMenuCollectionItem(collectionId));
+      return collectionId;
+    })
 );
 
 export const addNewCalculatorToCollection = createAction(

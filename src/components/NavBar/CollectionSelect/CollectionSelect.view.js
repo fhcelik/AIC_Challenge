@@ -65,23 +65,24 @@ const CollectionSelect = ({
     {R.length(collections) ? (
       <MenuList disablePadding role="menu">
         {R.map(
-          collection => (
-            <NavLink
-              to={`${Routes.collections}${collection.id}`}
-              exact={true}
-              key={collection.id}
-            >
-              <ListItem button className={classes.listItem}>
-                <Typography
-                  color="inherit"
-                  noWrap
-                  className={classes.listItemText}
-                >
-                  {collection.name}
-                </Typography>
-              </ListItem>
-            </NavLink>
-          ),
+          collection =>
+            collection && (
+              <NavLink
+                to={`${Routes.collections}${collection.id}`}
+                exact={true}
+                key={collection.id}
+              >
+                <ListItem button className={classes.listItem}>
+                  <Typography
+                    color="inherit"
+                    noWrap
+                    className={classes.listItemText}
+                  >
+                    {collection.name}
+                  </Typography>
+                </ListItem>
+              </NavLink>
+            ),
           collections
         )}
       </MenuList>

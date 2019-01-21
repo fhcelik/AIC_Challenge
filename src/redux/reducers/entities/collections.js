@@ -47,8 +47,8 @@ export default handleActions(
       throw: R.identity,
     },
 
-    [Actions.removeCollection]: {
-      next: (collections, { payload: { collectionId } }) =>
+    [Actions.deleteCollection]: {
+      next: (collections, { payload: collectionId }) =>
         R.dissoc(collectionId, collections),
       throw: R.identity,
     },

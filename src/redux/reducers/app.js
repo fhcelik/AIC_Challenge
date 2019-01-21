@@ -2,6 +2,8 @@ import * as R from 'ramda';
 import { handleActions } from 'redux-actions';
 import * as Actions from '../actions/app';
 
+const menuCollectionListLens = R.lensProp('menuCollectionList');
+
 export default handleActions(
   {
     [Actions.saveMenuCollectionList]: (
@@ -12,7 +14,9 @@ export default handleActions(
       menuCollectionList,
     }),
     [Actions.prependMenuCollectionList]: (app, { payload }) =>
-      R.over(R.lensProp('menuCollectionList'), R.prepend(payload))(app),
+      R.over(menuCollectionListLens, R.prepend(payload))(app),
+    [Actions.removeMenuCollectionItem]: (app, { payload: collectionId }) =>
+      R.over(menuCollectionListLens, R.filter(id => id !== collectionId), app),
     [Actions.saveSearchResults]: (app, { payload: searchResults }) => ({
       ...app,
       searchResults,
