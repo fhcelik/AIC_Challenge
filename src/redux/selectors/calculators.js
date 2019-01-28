@@ -27,7 +27,11 @@ const convertToUnit = (value, unit) => {
   if (R.isNil(unit)) return value;
 
   if (typeof value === typeof math.unit(unit)) {
-    return value.to(unit);
+    try {
+      return value.to(unit);
+    } catch (error) {
+      return value;
+    }
   }
 
   return math.unit(value, unit);
