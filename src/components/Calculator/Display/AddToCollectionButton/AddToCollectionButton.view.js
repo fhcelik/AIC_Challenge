@@ -1,11 +1,12 @@
-import { List } from '@material-ui/core';
 import AddToCollectionIcon from '@material-ui/icons/PlaylistAdd';
+import { List } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import DropdownMenu from '../../../DropdownMenu';
 import CollectionChecklist from './CollectionChecklist';
 import CollectionCreatorList from './CollectionCreatorList';
+import RequireLogin from '../../../RequireLogin';
+import DropdownMenu from '../../../DropdownMenu';
 import IconButton from '../../../IconButton';
 
 const styles = {
@@ -25,19 +26,31 @@ const Content = ({ classes, ...props }) => (
   </List>
 );
 
-const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
+const AddToCollectionButtonTarget = ({ onClick, tooltipTitle }) => (
+  <IconButton onClick={onClick} tooltipTitle={tooltipTitle}>
+    <AddToCollectionIcon />
+  </IconButton>
+);
+
+const AddToCollectionButton = ({
+  classes,
+  calculatorId,
+  isAuthorized,
+  onResize,
+}) => (
   <DropdownMenu
     offset="54px, 2px"
     classes={{ items: classes.items }}
     hasIcon={false}
     keepOpen
+    disabled={!isAuthorized}
     onResize={onResize}
     withPropsToChildren
     placement="bottom-end"
     target={
-      <IconButton tooltipTitle="Add to collection">
-        <AddToCollectionIcon />
-      </IconButton>
+      <RequireLogin tooltipTitle="Add to collection">
+        <AddToCollectionButtonTarget />
+      </RequireLogin>
     }
   >
     <Content classes={classes} calculatorId={calculatorId} />
@@ -47,6 +60,7 @@ const AddToCollectionButton = ({ classes, calculatorId, onResize }) => (
 AddToCollectionButton.propTypes = {
   classes: PropTypes.object.isRequired,
   calculatorId: PropTypes.string.isRequired,
+  isAuthorized: PropTypes.bool.isRequired,
   onResize: PropTypes.func,
 };
 

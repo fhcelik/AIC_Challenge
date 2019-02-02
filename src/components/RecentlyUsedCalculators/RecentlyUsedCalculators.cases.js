@@ -1,6 +1,6 @@
 import React from 'react';
 import RecentlyUsedCalculators from './';
-import { user } from '../../tests/data';
+import { jwt, user } from '../../tests/data';
 
 const calculators = {
   '5838d829-b7b3-4693-8a89-0f3ffb40d804': {
@@ -54,6 +54,7 @@ export const initialState = {
     '8308d829-b7b3-4693-8a89-0f3ffb40d804',
     '5838d829-b7b3-4693-8a89-0f3ffb40d804',
   ],
+  auth: { jwt, user },
 };
 
 export default {

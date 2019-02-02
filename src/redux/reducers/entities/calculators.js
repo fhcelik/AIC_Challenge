@@ -69,11 +69,11 @@ export default handleActions(
       calculators,
       { payload: { id, result } }
     ) =>
-      R.assocPath(
-        [id, 'result'],
-        R.merge(calculators[id].result, result),
-        calculators
-      ),
+      R.ifElse(
+        R.has(id),
+        R.over(R.lensPath([id, 'result']), R.mergeLeft(result)),
+        () => calculators
+      )(calculators),
     [Actions.setCalculatorUsages]: (calculators, { payload: calculatorId }) =>
       R.over(R.lensPath([calculatorId, 'usages']), R.inc, calculators),
   },

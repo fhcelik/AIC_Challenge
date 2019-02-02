@@ -27,3 +27,15 @@ export const saveSearchQuery = createAction('@@calcoola/app/saveSearchQuery');
 export const saveSearchResults = createAction(
   '@@calcoola/app/saveSearchResults'
 );
+
+export const openLoginDropdown = createAction(
+  '@@calcoola/app/openLoginDropdown'
+);
+
+export const toggleLoginDropdown = createAction(
+  '@@calcoola/app/toggleLoginDropdown'
+);
+
+export const closeLoginDropdown = createAction(
+  '@@calcoola/app/closeLoginDropdown'
+);

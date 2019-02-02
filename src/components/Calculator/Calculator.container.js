@@ -28,10 +28,7 @@ import {
   calculatorTagsSelector,
   calculatorTitleSelector,
 } from '../../redux/selectors/calculators';
-import {
-  isAuthorizedSelector,
-  loggedInUserIdSelector,
-} from '../../redux/selectors/auth';
+import { loggedInUserIdSelector } from '../../redux/selectors/auth';
 import { fetchUnitDefinitions } from '../../redux/actions/units';
 import { getCalculatorLink } from '../App/Routing/Routing';
 import { noUnitsSelector } from '../../redux/selectors/units';
@@ -51,7 +48,6 @@ export default compose(
       description: calculatorDescriptionSelector(state, props),
       tags: calculatorTagsSelector(state, props),
       formula: calculatorResultFormulaSelector(state, props),
-      isAuthorized: isAuthorizedSelector(state),
       isNew: calculatorIsNewSelector(state, props),
       noUnits: noUnitsSelector(state, props),
     }),

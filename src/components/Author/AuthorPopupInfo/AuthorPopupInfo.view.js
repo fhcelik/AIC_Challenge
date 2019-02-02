@@ -1,5 +1,4 @@
 import AccountIcon from '@material-ui/icons/AccountBox';
-import cx from 'classnames';
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -58,11 +57,7 @@ const AuthorPopupInfo = ({ classes, fullName, id, role, company }) => (
     <Grid className={classes.header}>
       <Grid container alignItems="center">
         <AccountIcon className={classes.icon} />
-        <Typography
-          className={cx(classes.name, { [classes.noName]: !fullName })}
-        >
-          {fullName || 'No name...'}
-        </Typography>
+        <Typography className={classes.name}>{fullName}</Typography>
       </Grid>
       <NavLink
         to={`${Routes.users}${id}/calculators`}

@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import RequireLogin from '../../RequireLogin';
 import DropdownMenu from '../../DropdownMenu';
 import { Routes } from '../../App/Routing';
 
@@ -37,20 +38,28 @@ const styles = theme => ({
   },
 });
 
+const CollectionSelectTarget = ({ className, onClick }) => (
+  <Typography className={className} onClick={onClick}>
+    Collections
+  </Typography>
+);
+
 const CollectionSelect = ({
   classes,
   className,
   collections,
+  isAuthorized,
   onTargetClick,
 }) => (
   <DropdownMenu
+    disabled={!isAuthorized}
     target={
-      <Typography
+      <RequireLogin
         className={cx(classes.target, className)}
         onClick={onTargetClick}
       >
-        Collections
-      </Typography>
+        <CollectionSelectTarget />
+      </RequireLogin>
     }
   >
     {R.length(collections) ? (
@@ -93,6 +102,8 @@ CollectionSelect.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
+  isAuthorized: PropTypes.bool.isRequired,
+  onTargetClick: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(CollectionSelect);

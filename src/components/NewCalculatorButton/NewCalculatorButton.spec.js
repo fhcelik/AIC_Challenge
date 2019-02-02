@@ -6,10 +6,11 @@ import ThemeProvider from '../../providers/theme';
 import NewCalculatorButton from './index';
 import configureStore from 'redux-mock-store';
 import { addCalculator } from '../../redux/actions/calculators';
+import { jwt, user } from '../../tests/data';
 
 describe('<NewCalculatorButton/>', () => {
   it('calls addCalculator action with correct payload', () => {
-    const mockStore = configureStore()({});
+    const mockStore = configureStore()({ auth: { jwt, user } });
 
     const wrapper = mount(
       <MemoryRouter>

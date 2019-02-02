@@ -1,14 +1,8 @@
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  Grid,
-} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import ConfirmationDialog from './ConfirmationDialog';
 import DropdownMenu from '../../DropdownMenu';
 import Form from './Form';
 
@@ -26,37 +20,44 @@ const styles = theme => ({
   },
 });
 
-const Login = ({ classes, closeDialog, isDialogOpen, openDialog }) => (
+const Login = ({
+  classes,
+  closeConfirmationDialog,
+  closeLoginDropdown,
+  isConfirmationDialogOpen,
+  isLoginDropdownOpen,
+  openConfirmationDialog,
+  toggleLoginDropdown,
+}) => (
   <Fragment>
     <DropdownMenu
       offset="-130%"
       placement="bottom"
       keepOpen
+      openControlled
+      isDropdownOpen={isLoginDropdownOpen}
+      closeDropdown={closeLoginDropdown}
+      toggleDropdown={toggleLoginDropdown}
       withPropsToChildren
       target={<Button className={classes.button}>Login</Button>}
     >
-      <Form openDialog={openDialog} />
+      <Form openConfirmationDialog={openConfirmationDialog} />
     </DropdownMenu>
-    <Dialog open={isDialogOpen} onClose={closeDialog}>
-      <DialogContent>
-        <DialogContentText className={classes.dialogText}>
-          Access link has been sent to your email.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Grid container justify="center">
-          <Button onClick={closeDialog}>OK</Button>
-        </Grid>
-      </DialogActions>
-    </Dialog>
+    <ConfirmationDialog
+      closeConfirmationDialog={closeConfirmationDialog}
+      isConfirmationDialogOpen={isConfirmationDialogOpen}
+    />
   </Fragment>
 );
 
 Login.propTypes = {
   classes: PropTypes.object.isRequired,
-  closeDialog: PropTypes.func.isRequired,
-  isDialogOpen: PropTypes.bool.isRequired,
-  openDialog: PropTypes.func.isRequired,
+  closeConfirmationDialog: PropTypes.func.isRequired,
+  closeLoginDropdown: PropTypes.func.isRequired,
+  isConfirmationDialogOpen: PropTypes.bool.isRequired,
+  isLoginDropdownOpen: PropTypes.bool.isRequired,
+  openConfirmationDialog: PropTypes.func.isRequired,
+  toggleLoginDropdown: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(Login);
